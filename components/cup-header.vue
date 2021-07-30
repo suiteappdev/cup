@@ -11,7 +11,7 @@
             <i class='bx bx-home-alt'></i>
           </vs-button>
         </vs-navbar-item>
-        <vs-navbar-item  @click="$router.push('/') && (active = 0)" :active="active == 'about'" id="about">
+        <vs-navbar-item  @click="$router.push('/about') && (active = 0)" :active="active == 'about'" id="about">
             Quiénes somos?
         </vs-navbar-item>
         <vs-navbar-item  @click="$router.push('/unique')" :active="active == 'unique'" id="unique">

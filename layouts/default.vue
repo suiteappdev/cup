@@ -2,6 +2,7 @@
   <div>
     <cup-header />
     <Nuxt />
+    <cup-footer />
   </div>
 </template>
 <style>
@@ -72,7 +73,7 @@
   }
 
   .cup-logo{
-    width:130px;
+    width:110px;
   }
 
   .vs-navbar__line{

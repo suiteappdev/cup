@@ -267,7 +267,6 @@
             font-size: 0.75em;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: 5px;
             color: #fff;
         }
         
@@ -319,7 +318,6 @@
         .pricing-palden .pricing-feature-list {
             margin: 0;
             padding: 0.25em 0 2.5em;
-            list-style: none;
             text-align: left;
         }
         
@@ -510,7 +508,17 @@
  </style>
 <script>
     export default {
-      data:() => ({
+        beforeMount(){
+            this.$nextTick( ()=> {
+                //alert("before render");
+            }); 
+        },
+        mounted() {
+            this.$nextTick( ()=> {
+               // alert("after rendered");
+            });
+        },
+        data:() => ({
         comments : [
                 {name : 'Andrew Castro', image :`${require(`~/assets/images/foto5.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
                 {name : 'Miguel Martinez', image : `${require(`~/assets/images/foto3.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },

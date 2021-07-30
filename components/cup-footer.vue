@@ -1,12 +1,122 @@
 <template>
-    <div class="cup-footer">
+    <div class="cup-footer" style="position:relative;">
+        <div class="center grid">
+                <template>
+                    <vs-row>
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                               <h1 class="footer-title">Menu</h1>
+                               <ul class="link-list">
+                                   <li class="footer-link"><a href=""></a>Inicio</li>
+                                   <li  class="footer-link"><a href=""></a>Acerca de CUP</li>
+                                   <li  class="footer-link"><a href=""></a>¿porque somos únicos?</li>
+                                   <li class="footer-link"><a href=""></a>Casos de éxito</li>
+                                   <li  class="footer-link"><a href=""></a>Preguntas frecuentes</li>
+                               </ul>
+                            </vs-col>
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                                <h1 class="footer-title">Compañia</h1>
+                                     <ul class="link-list">
+                                   <li class="footer-link"><a href=""></a>Email</li>
+                                   <li  class="footer-link"><a href=""></a>Teléfono</li>
+                                   <li  class="footer-link"><a href=""></a>¿porque somos únicos?</li>
+                                   <li  class="footer-link"><a href=""></a>Horarios de atención</li>
+                                   <li  class="footer-link"><a href=""></a>Términos y condiciones</li>
+                               </ul>
+                            </vs-col>
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                               <h1 class="footer-title">Redes sociales</h1>
+                                <div class="networks">
+                                    <vs-button
+                                        icon
+                                        color="facebook"
+                                    >
+                                        <i class='bx bxl-facebook-square'></i>
+                                    </vs-button>
+                                    <vs-button
+                                        icon
+                                        color="facebpok"
+                                    >
+                                        <i class='bx bxl-instagram'></i>
+                                    </vs-button> 
+                                    <vs-button
+                                        icon
+                                        color="youtube"
+                                    >
+                                        <i class='bx bxl-youtube'></i>
+                                    </vs-button>
+                                </div>
+                            </vs-col>
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                               <h1 class="footer-title">Contacto</h1>
+                                <div class="form-contact">
+                                    <p class="wp-color">agregame a WhatsApp..</p>
+                                    <img class="qr" src="~/assets/images/qr.jpg" alt="Escanea con tu whatsapps">
+                                    <p class="wp-color">ó</p>
+                                    <a class="wp-color" href="https://wa.me/+573005382511">Escribeme al WhatsApp</a>
+                                </div>
+                            </vs-col>
+                    </vs-row>
 
+                </template>
+
+        </div>
+        <div class="mini-footer">
+            <p class="text-center text-white" style="font-size:12px;"> &copy; Todos los derechos reservados <a  style="color:#1dc4e2;" href="">consigueunprestamo.com</a> S.A.S. Creado por <span>suiteapp.</span>  </p>
+        </div>
     </div>
+    
 </template>
 <style lang="postcss" scoped>
-    .cup-footer{
+    .networks{
+            display: flex;
+        justify-content: center;
+    }
+    
+    .wp-color{
+        color: #02AF9C;
+    }
+    .qr{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .form-contact{
         width: 100%;
-        background-color : rgb(15, 0, 0);
-        height: 400px;
+        height: auto;
+        margin: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .mini-footer{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 47px;
+        background-color: #00131c;
+        right: 0px;
+    }
+    .footer-title{
+        text-align: center;
+        color: white;
+        border-left: 5px solid #1fc6e2;
+    }
+
+    .link-list{
+        list-style: none;
+    }
+
+    .footer-link{
+        text-align: left;
+        padding: 5px;
+        color:gray;
+    }
+    .cup-footer{
+        padding: 50px;
+        width: 100%;
+        background-color :rgb(0 0 0);
+        height: auto;
+        box-sizing: border-box
      }
 </style>

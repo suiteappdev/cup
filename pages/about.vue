@@ -1,18 +1,22 @@
  <template>
         <div class="center grid">
-             <div class="section-about">
-                <h1 class="text-center cases animated bounceInRight text-dark">Quienes <span class="light">somos ?</span></h1>
-                <p class="text-dark"><p class="text-dark">La idea de crear consigue un préstamo.com surgió cuando empecé a estudiar mi segunda carrera universitaria de contaduría. Mi nombre es Luis Florez soy administrador de empresas y en esta página te brindare información financiera y contable que te ayudara a conseguir cupos de préstamos en diferentes entidades bancarias.</p>
-                <p class="text-dark"><p class="text-dark">He trabajado durante más de 8 años en la industria financiera en diferentes áreas. Durante 2 años me desempeñe como asesor financiero, lo cual me llevo a conocer las fórmulas de endeudamiento y estrategias que usan las entidades a la hora de aprobar un préstamo u otorgar cualquier producto a crédito.</p>
-                <h1 class="text-center cases animated bounceInRight text-dark">Nuestra <span class="light">misión</span></h1>
-                <p class="text-dark"><p class="text-dark">Ayudar a que mas personas puedan acceder con mas facilidad a todos los servicios finacieros en las entidades bancarias.</p>
-                <h1 class="text-center cases animated bounceInRight text-dark"><span class="light">visión</span></h1>
-                <p class="text-dark"><p class="text-dark">Ser la empresa líder en Colombia en ofrecer asesorías de cómo obtener préstamos o aumentar sus cupos actuales. Queremos que cada vez más personas pasen de la informalidad a la formalidad.</p>
+             <div class="section-unique">
+                <h1 class="text-center cases animated bounceInRight text-dark">¿ Quienes <span class="light">somos ?</span></h1>
+                <p>La idea de crear consigueunprestamo.com surgió cuando empecé a estudiar mi segunda carrera universitaria de contaduría. Mi nombre es Luis Florez soy administrador de empresas y en esta página te brindare información financiera y contable que te ayudara a conseguir cupos de préstamos en diferentes entidades bancarias.</p>
+                <p> He trabajado durante más de 8 años en la industria financiera en diferentes áreas. Durante 2 años me desempeñe como asesor financiero, lo cual me llevo a conocer las fórmulas de endeudamiento y estrategias que usan los bancos a la hora de aprobar un préstamo u otorgar cualquier producto a crédito.</p>
+                
+                <h1 class="text-center cases animated bounceInRight text-dark">Misión</h1>
+                <p>La idea de crear consigueunprestamo.com surgió cuando empecé a estudiar mi segunda carrera universitaria de contaduría. Mi nombre es Luis Florez soy administrador de empresas y en esta página te brindare información financiera y contable que te ayudara a conseguir cupos de préstamos en diferentes entidades bancarias.</p>
+                <p> He trabajado durante más de 8 años en la industria financiera en diferentes áreas. Durante 2 años me desempeñe como asesor financiero, lo cual me llevo a conocer las fórmulas de endeudamiento y estrategias que usan los bancos a la hora de aprobar un préstamo u otorgar cualquier producto a crédito.</p>
+
+                <h1 class="text-center cases animated bounceInRight light">Visión</h1>
+                <p>La idea de crear consigueunprestamo.com surgió cuando empecé a estudiar mi segunda carrera universitaria de contaduría. Mi nombre es Luis Florez soy administrador de empresas y en esta página te brindare información financiera y contable que te ayudara a conseguir cupos de préstamos en diferentes entidades bancarias.</p>
+                <p> He trabajado durante más de 8 años en la industria financiera en diferentes áreas. Durante 2 años me desempeñe como asesor financiero, lo cual me llevo a conocer las fórmulas de endeudamiento y estrategias que usan los bancos a la hora de aprobar un préstamo u otorgar cualquier producto a crédito.</p>
             </div>
         </div>
 </template>
  <style scoped>
-    .section-about{
+    .section-unique{
         padding-top: 70px;
         height: 600px;
         width: 80%;

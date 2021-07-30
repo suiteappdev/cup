@@ -318,7 +318,7 @@ font-size: 0.6em;
 .alerta {     background-color: coral; }
     .section-about{
         padding-top: 70px;
-        height: 600px;
+        height: auto;
         width: 80%;
         margin: 0 auto;
     }
