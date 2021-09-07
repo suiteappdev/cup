@@ -50,7 +50,7 @@ debes contactarnos y seguir nuestras indicaciones.</p>
                         <li>
                             <input type="checkbox" checked>
                             <i class="chevron"></i>
-                            <h3>¿Cómo hago para saber mi score?</h3>
+                            <h3>¿Cómo hago para saber mi score o puntaje crediticio?</h3>
                             <div class="contAcordeon">
                                 <p>Tienes dos opciones para conocer tu puntaje crediticio, la primera es pagar un
 mes de suscripción en la plataforma de mi Datacrédito, la segunda es
@@ -63,8 +63,8 @@ solicitarle este servicio a uno de nuestros asesores.</p>
                             <h3>¿En cuánto tiempo puedo obtener mi primer préstamo o tarjeta de crédito?</h3>
                             <div class="contAcordeon">
                                 <p>Cada caso es particular y diferente, el tiempo depende de varios factores (
-bienes a tu nombre, planes de celular a tu nombre, etc.) sin embargo nosotros</p>
-                               <p>te garantizamos que con nuestros servicios y asesoramiento obtendrás tu
+bienes a tu nombre, planes de celular a tu nombre, etc.) sin embargo nosotros
+                               te garantizamos que con nuestros servicios y asesoramiento obtendrás tu
 tarjeta de crédito o préstamo.</p>        
                             </div>
                         </li>
