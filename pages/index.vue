@@ -522,7 +522,7 @@
         comments : [
                 {name : 'Andrew Castro', image :`${require(`~/assets/images/foto5.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
                 {name : 'Miguel Martinez', image : `${require(`~/assets/images/foto3.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-                {name : 'Lina Peñates', image : `${require(`~/assets/images/foto4.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }, 
+                {name : 'Lina Peñates', image : `${require(`~/assets/images/foto4.png`)}`, comment :'Antes de nosotrosTodo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto o, es decir comenzamos desde cero.Ahora con nosotros Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:' }, 
                 {name : 'Luis David Florez', image : `${require(`~/assets/images/foto2.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }],
         value1 : '',
         value2:'',

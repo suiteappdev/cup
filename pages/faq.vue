@@ -25,7 +25,12 @@
                             <i class="chevron"></i>
                             <h3>¿No estoy ganando mucho dinero, cuánto dinero me podría llegar a prestar el banco en mi situación actual?</h3>
                             <div class="contAcordeon">
-                                <p>Hemos asesorado adecuadamente a muchos clientes, entre estos clientes tenemos un grupo grande de estudiantes universitarios que en el transcurso de 3 años han logrado conseguir cupos bancarios entre los 15 a 40 millones de pesos colombianos, con la adecuada información se puede acceder a mejores oportunidades financieras.</p>        
+                                <p>No importa si no ganas mucho dinero, nosotros hemos asesorado
+financieramente a muchos clientes, entre estos a un grupo grande de
+estudiantes universitarios que en el transcurso de 3 años han logrado
+conseguir cupos bancarios entre los 15 y 40 millones de pesos colombianos,
+con un manejo inteligente y adecuado se puede acceder a mejores
+oportunidades financieras.</p>        
                             </div>
                         </li>
                         <li>
@@ -33,7 +38,8 @@
                             <i class="chevron"></i>
                             <h3>¿Estoy reportado en Datacrédito o TransUnion (Cifin) me pueden ayudar a eliminar el reporte?</h3>
                             <div class="contAcordeon">
-                                <p>Nosotros hemos ayudado a muchas personas a eliminar sus reportes negativos de las centrales de riesgo, si este es tu caso puedes contactarte con nosotros.</p>        
+                                <p>Si, nosotros te ayudamos a eliminar tu reporte en las centrales de riesgo, solo
+debes contactarnos y seguir nuestras indicaciones.</p>        
                             </div>
                         </li>
                         <li>
@@ -41,7 +47,9 @@
                             <i class="chevron"></i>
                             <h3>¿Cómo hago para saber mi score?</h3>
                             <div class="contAcordeon">
-                                <p>El score se puede conocer pagando un mes de suscripción en la plataforma de Datacrédito, también puedes solicitar que un asesor consulte tu puntaje en Datacrédito si no deseas suscribirte a dicho servicio.</p>        
+                                <p>Tienes dos opciones para conocer tu puntaje crediticio, la primera es pagar un
+mes de suscripción en la plataforma de mi Datacrédito, la segunda es
+solicitarle este servicio a uno de nuestros asesores.</p>        
                             </div>
                         </li>
                         <li>
@@ -49,8 +57,10 @@
                             <i class="chevron"></i>
                             <h3>¿En cuánto tiempo puedo obtener mi primer préstamo o tarjeta de crédito?</h3>
                             <div class="contAcordeon">
-                                <p>Eso depende de varios factores, no es lo mismo una persona que nunca ha tenido absolutamente nada a su nombre (totalmente nuevo en el sistema financiero) que alguien que ha tenido un plan de celular o ha adquirido algún producto financiero.</p>
-                               <p>Pero generalmente las personas obtienen su primer préstamo bancario o tarjeta de crédito de 3 a 18 meses.</p>        
+                                <p>Cada caso es particular y diferente, el tiempo depende de varios factores (
+bienes a tu nombre, planes de celular a tu nombre, etc.) sin embargo nosotros</p>
+                               <p>te garantizamos que con nuestros servicios y asesoramiento obtendrás tu
+tarjeta de crédito o préstamo.</p>        
                             </div>
                         </li>
                         <li>
@@ -58,7 +68,11 @@
                             <i class="chevron"></i>
                             <h3>¿Qué pasa con la información que les dejo en su página?</h3>
                             <div class="contAcordeon">
-                                <p>Bajo el cumplimiento de las disposiciones de la ley 1581 de 2012 y sus decretos reglamentarios. En esa medida la recolección y tratamiento de los datos personales de nuestros clientes, usuarios y empleados está sujeta a las normas vigentes en la República de Colombia sobre protección de datos personales.</p>
+                                <p>Estamos bajo el cumplimiento de las disposiciones de la ley 1581 de 2012 y
+sus decretos reglamentarios. La recolección y tratamiento de los datos
+personales de nuestros clientes, usuarios y empleados está sujeta a las
+normas vigentes en la República de Colombia sobre protección de datos
+personales.</p>
                             </div>
                         </li>
                         <li>
@@ -66,7 +80,8 @@
                             <i class="chevron"></i>
                             <h3>¿Debo cancelar algún excedente por asesoría?</h3>
                             <div class="contAcordeon">
-                                <p>Bajo el cumplimiento de las disposiciones de la ley 1581 de 2012 y sus decretos reglamentarios. En esa medida la recolección y tratamiento de los datos personales de nuestros clientes, usuarios y empleados está sujeta a las normas vigentes en la República de Colombia sobre protección de datos personales.</p>
+                                <p>No, la asesoría es completamente gratis. Si deseas más información y un
+estudio financiero a fondo puedes solicitar la asesoría preferencial.</p>
                             </div>
                         </li>
                     </ul>
