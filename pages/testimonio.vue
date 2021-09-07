@@ -1,96 +1,7 @@
   <template>
         <div class="center grid">
              <div class="section-about">
-                <h1 class="text-center cases animated bounceInRight text-dark" style="margin-top:4%;"> Preguntas  <span class="light">frecuentes</span></h1>
-                <div id="accesos">
-                    <ul>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿Puedo obtener préstamos estando reportado negativamente en las centrales de riesgo?</h3>
-                            <div class="contAcordeon">
-                                    <p>Si, puedes obtener préstamos a pesar de estar reportado. El 90% de las
-entidades no desembolsan en estos casos, sin embargo nosotros te ayudamos
-a que encuentres oportunidades de conseguir un crédito.</p>        
-                            </div>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿Puedo empezar a construir mi vida financiera con 18 años?</h3>
-                            <div class="contAcordeon">
-                                <p>Si, lo mejor es comenzar tu vida financiera lo más pronto posible, de esta
-forma tendrás más oportunidades de conseguir altos cupos de crédito
-bancario. Podrás solicitar préstamos para tus necesidades, proyectos y
-comenzar tu vida financiera de la mejor forma.</p>        
-                            </div>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿No estoy ganando mucho dinero, cuánto dinero me podría llegar a prestar el banco en mi situación actual?</h3>
-                            <div class="contAcordeon">
-                                <p>No importa si no ganas mucho dinero, nosotros hemos asesorado
-financieramente a muchos clientes, entre estos a un grupo grande de
-estudiantes universitarios que en el transcurso de 3 años han logrado
-conseguir cupos bancarios entre los 15 y 40 millones de pesos colombianos,
-con un manejo inteligente y adecuado se puede acceder a mejores
-oportunidades financieras.</p>        
-                            </div>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿Estoy reportado en Datacrédito o TransUnion (Cifin) me pueden ayudar a eliminar el reporte?</h3>
-                            <div class="contAcordeon">
-                                <p>Si, nosotros te ayudamos a eliminar tu reporte en las centrales de riesgo, solo
-debes contactarnos y seguir nuestras indicaciones.</p>        
-                            </div>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿Cómo hago para saber mi score o puntaje crediticio?</h3>
-                            <div class="contAcordeon">
-                                <p>Tienes dos opciones para conocer tu puntaje crediticio, la primera es pagar un
-mes de suscripción en la plataforma de mi Datacrédito, la segunda es
-solicitarle este servicio a uno de nuestros asesores.</p>        
-                            </div>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿En cuánto tiempo puedo obtener mi primer préstamo o tarjeta de crédito?</h3>
-                            <div class="contAcordeon">
-                                <p>Cada caso es particular y diferente, el tiempo depende de varios factores (
-bienes a tu nombre, planes de celular a tu nombre, etc.) sin embargo nosotros
-                               te garantizamos que con nuestros servicios y asesoramiento obtendrás tu
-tarjeta de crédito o préstamo.</p>        
-                            </div>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿Qué pasa con la información que les dejo en su página?</h3>
-                            <div class="contAcordeon">
-                                <p>Estamos bajo el cumplimiento de las disposiciones de la ley 1581 de 2012 y
-sus decretos reglamentarios. La recolección y tratamiento de los datos
-personales de nuestros clientes, usuarios y empleados está sujeta a las
-normas vigentes en la República de Colombia sobre protección de datos
-personales.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="checkbox" checked>
-                            <i class="chevron"></i>
-                            <h3>¿Debo cancelar algún excedente por asesoría?</h3>
-                            <div class="contAcordeon">
-                                <p>No, la asesoría es completamente gratis. Si deseas más información y un
-estudio financiero a fondo puedes solicitar la asesoría preferencial.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <h1 class="text-center cases animated bounceInRight text-dark" style="margin-top:4%;"> Testimonio </h1>
             </div>
         </div>
 </template>
@@ -465,14 +376,31 @@ font-size: 0.6em;
  </style>
 <script>
     export default {
-      data:() => ({
-        value1 : '',
-        value2:'',
-        option : false,
-        active: false,
-        email: '',
-        password: '',
-        remember: false
+        created() {
+            console.log("EL ID DEL CLIENTE", this.$route.query.cliente); // john
+           
+            this.cliente =  this.comments.filter((c)=>{
+                return c.id == this.$route.query.cliente
+            })[0];
+
+            console.log("cliente" , this.cliente);
+        },
+        beforeMount(){
+            this.$nextTick( ()=> {
+                //alert("before render");
+            }); 
+        },
+        mounted() {
+            this.$nextTick( ()=> {
+               // alert("after rendered");
+            });
+        },
+        data:() => ({
+        comments : [
+                {id: 1, name : 'Luis Florez', image :`${require(`~/assets/images/foto5.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+                {id : 2, name : 'Miguel Martinez', image : `${require(`~/assets/images/foto3.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+                {id : 3,name : 'Lina Peñates', image : `${require(`~/assets/images/foto4.png`)}`, comment :'Antes de nosotrosTodo comenzó el 18 de noviembre de 2017, Lina no contaba con' }, 
+                {id : 4, name : 'Luis David Florez', image : `${require(`~/assets/images/foto2.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }],
       })
     }
   </script>

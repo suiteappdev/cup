@@ -24,7 +24,7 @@
     }
 
     .light {
-        color: #1fc6e2;
+        color: #00E6E3;
     }
 
     .text-dark{

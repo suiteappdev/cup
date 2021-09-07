@@ -110,12 +110,12 @@
 <script>
   export default {
       mounted() {
-        this.$vs.setColor('primary', '#1fc6e2')
+        this.$vs.setColor('primary', '#00E6E3')
         this.$vs.setColor('secondary', '#FF8A15')
         this.$vs.setColor('success', 'rgb(23, 201, 100)')
         this.$vs.setColor('danger', 'rgb(242, 19, 93')
         this.$vs.setColor('warning', 'rgb(255, 130, 0)')
-        this.$vs.setColor('dark', '#00131C')
+        this.$vs.setColor('dark', '#151730')
       }
   }
 </script>
