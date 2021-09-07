@@ -9,7 +9,9 @@
                             <i class="chevron"></i>
                             <h3>¿Puedo obtener préstamos estando reportado negativamente en las centrales de riesgo?</h3>
                             <div class="contAcordeon">
-                                    <p>Si, aunque el estar reportado negativamente te cierra las puertas en el 90% de los lugares todavía siguen quedando algunas oportunidades de poder conseguir un préstamo para ti.</p>        
+                                    <p>Si, puedes obtener préstamos a pesar de estar reportado. El 90% de las
+entidades no desembolsan en estos casos, sin embargo nosotros te ayudamos
+a que encuentres oportunidades de conseguir un crédito.</p>        
                             </div>
                         </li>
                         <li>
@@ -17,7 +19,10 @@
                             <i class="chevron"></i>
                             <h3>¿Puedo empezar a construir mi vida financiera con 18 años?</h3>
                             <div class="contAcordeon">
-                                <p>Si, entre más pronto un joven comience su vida financiera más oportunidades tendrá de conseguir altos cupos de crédito en su madurez.</p>        
+                                <p>Si, lo mejor es comenzar tu vida financiera lo más pronto posible, de esta
+forma tendrás más oportunidades de conseguir altos cupos de crédito
+bancario. Podrás solicitar préstamos para tus necesidades, proyectos y
+comenzar tu vida financiera de la mejor forma.</p>        
                             </div>
                         </li>
                         <li>
