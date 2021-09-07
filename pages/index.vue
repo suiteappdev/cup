@@ -3,63 +3,31 @@
         <div class="home-section">
             <div class="center grid">
                 <vs-row>
-                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
+                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12" lg="12" sm="12" xs="12">
                             <div class="box-left">
                                 <div class="presentation">
                                     <div class="wrap-overlay">
-                                        <h2 class="text-white animate__animated animate__fadeIn entry-title">Consigue el préstamo de tus sueños.</h2>
-                                        <p class="text-white  animate__animated animate__fadeInTopRight" style="line-height : 1.5;width:100%;">Construye tu vida financiera con nosotros. Consigue el préstamo que siempre soñaste. Aqui en consigueunprestamo.com te ayudamos a conseguir libertad en tus finanzas.</p>   
-                                        <div class="form-control">
-                                            <vs-button class="call-action animated bounceInRight" size="xl" warning :active="active == 1" @click="active = 1">Recibe tu asesoria gratis.</vs-button>
-                                        </div>
+                                        <h1 class="text-white animate__animated animate__fadeIn entry-title">Bienvenido a <span class="light">Asesorías Florez</span> ,<br /> Te ayudamos a mejorar tu vida financiera</h1>
+                                        <p class="text-white  animate__animated animate__fadeInTopRight" style="line-height : 1.5;width:100%;">Aquí te guiamos paso a paso para que mejores tu vida financiera.</p>   
                                     </div>
                                 </div>
                             </div>
                     </vs-col>
-                    <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                            <div class="box-right">
-                                <div class="form">
-                                    <div class="form-inner">
-                                        <div class="form-control">
-                                            <h1 class="form-title">Inicia sesión</h1>
-                                        </div>
-                                        <div class="form-control">
-                                            <vs-input v-model="value1" placeholder="Correo electronico" shadow>
-                                                <template #icon>
-                                                <i class='bx bx-user'></i>
-                                                </template>
-                                            </vs-input>
-                                        </div>
-                                        <div class="form-control">
-                                            <vs-input color="#7d33ff" shadow type="password" v-model="value2" placeholder="Password">
-                                                <template #icon>
-                                                    <i class='bx bx-lock-open-alt'></i>
-                                                </template>
-                                            </vs-input>
-                                        </div>
-                                            <div class="center grid">
-                                                <vs-row>
-                                                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                        <vs-checkbox v-model="option">
-                                                        Recordar datos
-                                                        </vs-checkbox>
-                                                    </vs-col>
-                                                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                        <a href="">No tienes cuenta aun ?</a>
-                                                    </vs-col>
-                                                </vs-row>
-                                            </div>
-
-                                        <vs-button
-                                            flat
-                                            :active="active == 0"
-                                            @click="active = 0"
-                                        >
-                                            Iniciar Sesión
-                                        </vs-button>
-                                </div>
-                                </div>
-                            </div>
+                </vs-row>
+            </div>            
+        </div>
+        <div class="services-section">
+            <div class="center grid">
+                <vs-row>
+                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
+                        <div class="box-service-1">
+                            
+                        </div>
+                    </vs-col>
+                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
+                        <div class="box-service-2">
+                            
+                        </div>
                     </vs-col>
                 </vs-row>
             </div>            
@@ -215,6 +183,20 @@
             top : -50px;
             position: relative;
         }
+
+        .box-service-1{
+            background-color: #00131c;
+            box-sizing: border-box;
+            width: 100%;
+            height: 800px;
+        }
+
+        .box-service-2{
+            box-sizing: border-box;
+            width: 100%;
+            height: 800px;
+        }
+        
         
         .pricing-action:focus {
             outline: none;
@@ -318,7 +300,6 @@
         .pricing-palden .pricing-feature-list {
             margin: 0;
             padding: 0.25em 0 2.5em;
-            text-align: left;
         }
         
         .pricing-palden .pricing-feature {
@@ -502,7 +483,7 @@
         padding-left: 40px;
         width : 70%;
         border-radius: 20px;
-        border-left: 1px solid #1fc6e2;
+        text-align: center;
     }
     
  </style>
