@@ -2,23 +2,31 @@
         <div class="center grid">
              <div class="section-unique">
                 <h1 class="text-center cases animated bounceInRight text-dark">¿ Quienes <span class="light">somos ?</span></h1>
-                <p>La idea de crear consigueunprestamo.com surgió cuando empecé a estudiar mi segunda carrera universitaria de contaduría. Mi nombre es Luis Florez soy administrador de empresas y en esta página te brindare información financiera y contable que te ayudara a conseguir cupos de préstamos en diferentes entidades bancarias.</p>
-                <p> He trabajado durante más de 8 años en la industria financiera en diferentes áreas. Durante 2 años me desempeñe como asesor financiero, lo cual me llevo a conocer las fórmulas de endeudamiento y estrategias que usan los bancos a la hora de aprobar un préstamo u otorgar cualquier producto a crédito.</p>
-                
-                <h1 class="text-center cases animated bounceInRight text-dark">Misión</h1>
-                <p>La idea de crear consigueunprestamo.com surgió cuando empecé a estudiar mi segunda carrera universitaria de contaduría. Mi nombre es Luis Florez soy administrador de empresas y en esta página te brindare información financiera y contable que te ayudara a conseguir cupos de préstamos en diferentes entidades bancarias.</p>
-                <p> He trabajado durante más de 8 años en la industria financiera en diferentes áreas. Durante 2 años me desempeñe como asesor financiero, lo cual me llevo a conocer las fórmulas de endeudamiento y estrategias que usan los bancos a la hora de aprobar un préstamo u otorgar cualquier producto a crédito.</p>
+                <p>Somos una empresa que te ayuda a mejorar paso a paso tu vida financiera. En nuestros 5 años de operación hemos asesorado a más de 5000 personas. A todas ellas las hemos ayudado en temas como:</p>
+                <ul>
+                    <li>Obtención de créditos de libre inversión.</li>
+                    <li>Obtención de tarjetas de crédito.</li>
+                    <li>Obtención de cupos rotativos.</li>
+                    <li>Obtención de créditos hipotecarios.</li>
+                    <li>Obtención de crédito de vehículos.</li>
+                    <li>Aumentar el puntaje en las centrales de riesgo.</li>
+                    <li>Eliminar reportes negativos en las centrales de riesgo.</li>
+                    <li>Elaboración de declaraciones de renta.</li>
+                </ul>
+                <h1 class="text-center cases animated bounceInRight text-dark ">Misión</h1>
+                <p>Ayudar a las personas a mejorar su vida financiera de una forma rápida, fácil y efectiva.</p>
 
                 <h1 class="text-center cases animated bounceInRight light">Visión</h1>
-                <p>La idea de crear consigueunprestamo.com surgió cuando empecé a estudiar mi segunda carrera universitaria de contaduría. Mi nombre es Luis Florez soy administrador de empresas y en esta página te brindare información financiera y contable que te ayudara a conseguir cupos de préstamos en diferentes entidades bancarias.</p>
-                <p> He trabajado durante más de 8 años en la industria financiera en diferentes áreas. Durante 2 años me desempeñe como asesor financiero, lo cual me llevo a conocer las fórmulas de endeudamiento y estrategias que usan los bancos a la hora de aprobar un préstamo u otorgar cualquier producto a crédito.</p>
+                <p>Convertirnos en la empresa número uno en asesoramiento financiero del país. Todo esto gracias a nuestra metodología efectiva, a nuestros profesionales capacitados y atención al cliente.</p>
             </div>
         </div>
 </template>
  <style scoped>
+    .text-center{
+        text-align: center;
+    }
     .section-unique{
         padding-top: 70px;
-        height: 600px;
         width: 80%;
         margin: 0 auto;
     }

@@ -15,7 +15,7 @@
             Quiénes somos?
         </vs-navbar-item>
         <vs-navbar-item  @click="$router.push('/unique')" :active="active == 'unique'" id="unique">
-          Que nos hace unicos?
+         ¿Por qué debes elegirnos?
         </vs-navbar-item>
         <vs-navbar-item  @click="$router.push('/cases')" :active="active == 'cases'" id="cases">
           Casos de éxito

@@ -6,9 +6,10 @@
                     <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12" lg="12" sm="12" xs="12">
                             <div class="box-left">
                                 <div class="presentation">
-                                    <div class="wrap-overlay">
-                                        <h1 class="text-white animate__animated animate__fadeIn entry-title">Bienvenido a <span class="light">Asesorías Florez</span> ,<br /> Te ayudamos a mejorar tu vida financiera</h1>
-                                        <p class="text-white  animate__animated animate__fadeInTopRight" style="line-height : 1.5;width:100%;">Aquí te guiamos paso a paso para que mejores tu vida financiera.</p>   
+                                    <div class="wrap-overlay flex flex-center flex-column">
+                                        <h1 class="text-white animated fadeInUp entry-title">Bienvenido a <span class="light">Asesorías Florez</span> ,<br /> Te ayudamos a mejorar tu vida financiera</h1>
+                                        <p class="text-white animated fadeInUp" style="line-height : 1.5;width:100%;">Aquí te guiamos paso a paso para que mejores tu vida financiera.</p>   
+                                        <div class="arrows"></div>
                                     </div>
                                 </div>
                             </div>
@@ -21,30 +22,61 @@
                 <vs-row>
                     <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
                         <div class="box-service-1">
-                            
+                            <div class="box-service-inner flex flex-center flex-column">
+                                <h2 class="text-white no-margin text-left mt-40">Asesoria <span class="light">gratis</span></h2>
+                                <ul class="service-list">
+                                    <li class="text-white service-item">Aumentar tu puntaje en Datacrédito o TransUnion.</li>
+                                    <li class="text-white service-item">Aumentar el cupo actual de tus tarjetas de crédito.</li>
+                                    <li class="text-white service-item">Pagar menos intereses en tus préstamos bancarios.</li>
+                                    <li class="text-white service-item">Saber si estas reportado en las centrales de riesgo.</li>
+                                    <li class="text-white service-item">Conocer cuánto tiempo estarás reportado negativamente en las centrales de riesgo por incumplimiento de pago.</li>
+                                    <li class="text-white service-item">Conocer cuáles son las mejores tarjetas de crédito en Colombia.</li>
+                                    <li class="text-white service-item">Conocer cuáles son las mejores tasas de crédito hipotecario.</li>
+                                    <li class="text-white service-item">Conocer los requisitos que exigen la mayoría de bancos a la hora de solicitar un préstamo de libre inversión.</li>
+                                    <li class="text-white service-item">Como empezar tu vida crediticia (personas jóvenes o adultas que nunca
+han tenido un producto financiero).</li>
+                                    <li class="text-white service-item">Saber si tengo que declarar renta o no.</li>
+                                </ul>
+                                <br />
+                                <vs-button size="xl">
+                                    Recibe tu asesoría gratis 
+                                </vs-button>
+                            </div>
                         </div>
                     </vs-col>
                     <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
                         <div class="box-service-2">
-                            
+                            <div class="box-service-inner flex flex-center flex-column">
+                                <h2 class="text-dark no-margin text-center mt-40">Asesoria <span class="light">preferencial</span></h2>
+                                <ul class="service-list">
+                                    <li class="text-dark service-item-premium">Resolver todas tus dudas financieras por vía telefónica o WhatsApp.</li>
+                                    <li class="text-dark service-item-premium">Revisar minuciosamente tu Datacrédito y aumentar tu puntaje.</li>
+                                    <li class="text-dark service-item-premium">Interpretar tu historial crediticio de Datacrédito para que tengas claro cuáles
+son tus fortalezas y tus falencias.</li>
+                                    <li class="text-dark service-item-premium">Elaborar un plan financiero a mediano plazo (2 años), deberás seguirlo para
+                                        mejorar tu vida financiera bien sea aumentando los cupos bancarios
+                                        actuales o adquiriendo nuevos productos (nuevas tarjetas de créditos,
+                                        nuevos cupos rotativos, nuevos préstamos hipotecarios, nuevos préstamos
+                                        de libre inversión, etc.</li>
+                                    <li class="text-dark service-item-premium">Eliminar un reporte negativo en las centrales de riesgo.</li>
+                                    <li class="text-dark service-item-premium">Resolver todas tus dudas contables en materia tributaria (impuestos).</li>
+                                </ul>
+                                <br />
+                                <vs-button size="xl">
+                                    Recibe tu asesoría - $99.500 COP
+                                </vs-button>
+                            </div>
                         </div>
                     </vs-col>
                 </vs-row>
             </div>            
         </div>
-        <div class="howto-section">
-         <h1 class="text-center cases animated bounceInRight text-white">¿ Como <span class="light">funciona ?</span></h1>
-            <div class="howto-text">
-                <p class="text-white">En CUP te asesoramos para que puedas conseguir diferentes tipos de beneficios y préstamos con varias entidades financieras.</p>
-                <p class="text-white">Te ayudamos a incrementar el cupo de tus tarjetas de crédito actuales brindándote asesoría contable en todo momento.</p>
-            </div>
-        </div>  
         <div class="testimonial-section">
             <h1 class="text-center cases animated bounceInRight">Casos de <span class="light">éxito</span></h1>
             <template>
                 <div class="center grid">
                     <vs-row>
-                        <vs-col :key="index" v-for="col,index in comments" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                        <vs-col :key="index" v-for="col, index in comments" vs-type="flex" vs-justify="center" vs-align="center" w="3">
                             <vs-card class="animated fadeInLeft">
                                 <template #title>
                                     <h3> {{ col.name }}</h3>
@@ -53,13 +85,15 @@
                                     <img :src="col.image" alt="">
                                 </template>
                                 <template #text>
-                                    <p>{{col.comment}}</p>
+                                    <p>{{col.preview}}</p>
+                                    <br />
+                                    <vs-button primary icon @click="$router.push('/testimonio/?cliente=' + col.id)">
+                                        Conocer Historia
+                                    <i class='bx bx-heart'></i>
+                                    </vs-button>
                                 </template>
                                 <template #interactions>
-                                <vs-button primary icon @click="$router.push('/testimonio/?cliente=' + col.id)">
-                                    Conocer Historia
-                                    <i class='bx bx-heart'></i>
-                                </vs-button>
+                              
                                 </template>
                             </vs-card>
                         </vs-col>
@@ -87,10 +121,7 @@
                                         <h3 class="pricing-title">Asesoría preferencial</h3>
                                     </div>
                                     <ul class="pricing-feature-list">
-                                        <li class="pricing-feature">Comunicación instantánea con un profesional en finanzas y contaduría.</li>
-                                        <li class="pricing-feature">Asesoría personalizada</li>
-                                        <li class="pricing-feature">Interpretación de tu historial de crediticio</li>
-                                        <li class="pricing-feature">Claridad en tu futuro financiero en los dos próximos años</li>
+                                       
                                     </ul>
                                     <button class="pricing-action">Quiero la asesoría</button>
                                 </div>
@@ -108,10 +139,7 @@
                                         <h3 class="pricing-title">Acompañamiento financiero.</h3>
                                     </div>
                                     <ul class="pricing-feature-list">
-                                        <li class="pricing-feature">
-                                            La vida crediticia no es una carrera si no una maratón, por eso lo más importante es ir avanzando poco a poco pero de manera segura.
-                                        </li>
-                                        <li class="pricing-feature">Al tomar la asesoría financiera durante un año te iremos dando recomendaciones de que productos financieros debes tener y cuales deberías evitar.</li>
+                                      
                                     </ul>
                                     <button class="pricing-action">Saber más</button>
                                 </div>
@@ -129,9 +157,7 @@
                                         <h3 class="pricing-title">Otros servicios</h3>
                                     </div>
                                     <ul class="pricing-feature-list">
-                                        <li class="pricing-feature">Consulta en Datacrédito</li>
-                                        <li class="pricing-feature">Eliminar un reporte negativo de las centrales de riesgo</li>
-                                        <li class="pricing-feature">Asesoría contable</li>
+                                      
                                     </ul>
                                     <button class="pricing-action">Saber más</button>
                                 </div>
@@ -143,6 +169,63 @@
  </div>
 </template>
  <style scoped>
+.arrows {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  top: 180px;
+  transform: translate(-50%, -50%);
+}
+body .arrows:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-left: 26.6666666667px solid rgba(0, 230, 227, 0.7);
+  border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0.7);
+  transform: translate(26.6666666667px, 106.6666666667px) rotate(-45deg);
+  animation: arrows 3s linear infinite;
+}
+body .arrows:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-left: 26.6666666667px solid rgba(0, 0, 0, 0.7);
+  border-bottom: 26.6666666667px solid rgba(0, 0, 0, 0.7);
+  transform: translate(53.3333333333px, 0px) rotate(-45deg);
+  animation: arrows 3s linear infinite -1.5s;
+}
+
+@keyframes arrows {
+  0% {
+    border-left: 26.6666666667px solid rgba(0, 230, 227, 0);
+    border-bottom: 26.6666666667px solid rgba(0, 230, 227, 0);
+    transform: translate(-13.3333333333px, -53.3333333333px) rotate(-45deg);
+  }
+  10%, 90% {
+    border-left: 26.6666666667px solid rgba(0, 230, 227, 0);
+    border-bottom: 26.6666666667px solid rgba(0, 230, 227, 0);
+  }
+  50% {
+    border-left: 26.6666666667px solid rgba(0, 230, 227, 0.7);
+    border-bottom: 26.6666666667px solid rgba(0, 230, 227, 0.7);
+    transform: translate(-13.3333333333px, 0px) rotate(-45deg);
+  }
+  100% {
+    border-left: 26.6666666667px solid rgba(0, 230, 227, 0);
+    border-bottom: 26.6666666667px solid rgba(0, 230, 227, 0);
+    transform: translate(-13.3333333333px, 53.3333333333px) rotate(-45deg);
+  }
+}
+.box-service-inner{
+    padding: 20px;
+}
+
+.mt-40{
+    margin-top: 30px!important;
+}
+
  section {
             color: #7a90ff;
             padding: 2em 0 2em;
@@ -188,7 +271,52 @@
             background-color: #00131c;
             box-sizing: border-box;
             width: 100%;
-            height: 800px;
+        }
+
+        .service-list{
+            list-style: none;
+            padding : 0;
+        }
+
+        .service-item{
+            padding: 10px;
+            border: 1px solid #033c3b;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .service-item-premium{
+            padding: 10px;
+            border: 1px solid #033c3b;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .service-item:hover{
+            border: 1px solid #00E6E3;
+            background-color: #032b2a;
+        }
+
+        .service-item-premium:hover{
+            border: 1px solid #00E6E3;
+            background-color: #00E6E3;
+        }
+
+        .flex{
+            display: flex;
+        }
+
+        .flex-center{
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex-column{
+            flex-direction: column;
         }
 
         .box-service-2{
@@ -200,6 +328,10 @@
         
         .pricing-action:focus {
             outline: none;
+        }
+
+        .no-margin{
+            margin: 0;
         }
         
         .pricing-feature-list {
@@ -351,7 +483,6 @@
         box-sizing: border-box;
         padding: 50px;
         width: 100%;
-        height: 600px;
     }
 
     .pricing-section{
@@ -388,6 +519,9 @@
          display: flex;
          align-items: center;
          justify-content: center;
+        box-shadow: 0px -43px 33px -46px rgb(0 230 227 / 71%) inset;
+        -webkit-box-shadow: 0px -43px 33px -46px rgb(0 230 227 / 71%) inset;
+        -moz-box-shadow: 0px -43px 33px -46px rgb(0 230 227 / 71%) inset;
      }
 
      .form{
@@ -485,6 +619,10 @@
         border-radius: 20px;
         text-align: center;
     }
+
+    .text-left{
+        text-align: left;
+    }
     
  </style>
 <script>
@@ -501,10 +639,68 @@
         },
         data:() => ({
         comments : [
-                {id: 1, name : 'Luis Florez', image :`${require(`~/assets/images/foto5.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-                {id : 2, name : 'Miguel Martinez', image : `${require(`~/assets/images/foto3.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-                {id : 3,name : 'Lina Peñates', image : `${require(`~/assets/images/foto4.png`)}`, comment :'Antes de nosotrosTodo comenzó el 18 de noviembre de 2017, Lina no contaba con' }, 
-                {id : 4, name : 'Luis David Florez', image : `${require(`~/assets/images/foto2.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }],
+                {
+                    id: 1, 
+                    name : 'Luis Florez', 
+                    image :`${require(`~/assets/images/foto5.png`)}`, 
+                    preview :'El 25 de julio de 2018 contaba con los siguientes productos...',
+                    pretext : 'El 25 de julio de 2018 contaba con los siguientes productos:',
+                    posttext : 'Luego de 3 años de trabajo ( del 25 de julio de 20187 al 25 de julio de 2021) cuenta con los siguientes productos:',
+                    credits_before : [
+                        "Tarjeta de crédito BANCO DAVIVIENDA, cupo $10.000.000",
+                        "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo $5.000.000",
+                    ],
+                    credits_before_total : '$15.000.000',
+                    credits_after :[
+                        "BANCOLOMBIA HIPOTECARIO, cupo $90.000.000",
+                        "BANCOLOMBIA ROTATIVO, cupo $30.000.000",
+                        "ROTATIVO BCO DE BOGOTA, cupo $20.250.000",
+                        "Tarjeta de crédito BANCOLOMBIA MASTERCARD, $12.000.000",
+                        "Tarjeta de crédito COLPATRIA VISA, cupo $33.500.000",
+                        "Tarjeta de crédito COLPATRIA MASTERCARD, cupo $7.772.000",
+                        "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo $5.000.000"
+                    ],
+                     credits_after_total : '$198.522.000',
+                    note : ''
+                },
+                {
+                    id : 2, 
+                    name : 'Miguel Martinez', 
+                    image : `${require(`~/assets/images/foto3.png`)}`, 
+                    preview :'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018...',
+                    posttext:'',
+                    pretext : '',
+                    credits_before : [],
+                    credits_after : [],
+                    note : '' 
+                },
+                {
+                    id : 3, 
+                    name : 'Lina Peñates', 
+                    image : `${require(`~/assets/images/foto4.png`)}`, 
+                    preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
+                    pretext : 'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto financiero, es decir comenzamos desde cero.',
+                    posttext:'Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:',
+                    credits_before : [],
+                    credits_after : [],
+                    note : ''  
+                }, 
+                {
+                    id : 4,
+                    name : 'Luis David Florez', 
+                    image : `${require(`~/assets/images/foto2.png`)}`, 
+                    preview :'En abril del 2019 Luis Carlos solicito la primera tarjeta de crédito...',
+                    pretext : '',
+                    posttext:'Luego de 3 años de trabajo ( del 25 de julio de 20187 al 25 de julio de 2021) cuenta con los siguientes productos:',
+                    credits_before : [
+                        "Tarjeta de crédito BANCO DAVIVIENDA, cupo $10.000.000",
+                        "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo $5.000.000",
+                    ],
+                    credits_before_total : '$15.000.000',
+                    credits_after : [],
+                    note : ''  
+                }
+            ],
         value1 : '',
         value2:'',
         option : false,

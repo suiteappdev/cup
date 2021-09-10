@@ -1,11 +1,36 @@
-  <template>
-        <div class="center grid">
-             <div class="section-about">
-                <h1 class="text-center cases animated bounceInRight text-dark" style="margin-top:4%;"> Testimonio </h1>
-            </div>
+<template>
+    <div class="center grid">
+          <div class="section-testimonial">
+            <h1 class="text-center cases animated bounceInRight text-dark flex flex-center flex-column">{{ selected.name }}</h1>
+            <h2>Antes de nosotros:</h2>
+            <p>{{selected.pretext}}</p>
+            <ul>
+              <li :key="index" v-for="col,index in selected.credits_before">{{col.text}} <span class="strong">{{col.amount}}</span></li>
+              <br />
+              <li v-if="selected.credits_before_total"><span class="strong">Cupo total: {{selected.credits_before_total}}</span></li>
+            </ul>
+            <h2>Ahora con nosotros:</h2>
+            <p>{{selected.posttext}}</p>
+            <ul>
+              <li :key="index" v-for="col,index in selected.credits_after">{{col.text}} <span class="strong">{{col.amount}}</span></li>
+              <br />
+              <li><span class="strong">Cupo total: {{selected.credits_after_total}}</span></li>
+            </ul>
+            <p v-if="selected.note">{{selected.note}}</p>
+            <p v-if="selected.note_2"><span class="strong">NOTA</span>  : {{selected.note_2}}</p>
+            <br />
         </div>
+    </div>
 </template>
  <style scoped>
+ .strong{
+   font-weight: bold;
+ }
+  .section-testimonial{
+        padding-top: 70px;
+        width: 80%;
+        margin: 0 auto;
+    }
  .transition,  ul li i:before, ul li i:after, .contAcordeon {
   transition: all 0.25s ease-in-out;
 }
@@ -377,9 +402,8 @@ font-size: 0.6em;
 <script>
     export default {
         created() {
-            console.log("EL ID DEL CLIENTE", this.$route.query.cliente); // john
-           
-            this.cliente =  this.comments.filter((c)=>{
+            
+            this.selected =  this.comments.filter((c)=>{
                 return c.id == this.$route.query.cliente
             })[0];
 
@@ -396,11 +420,91 @@ font-size: 0.6em;
             });
         },
         data:() => ({
+        selected  : null,
         comments : [
-                {id: 1, name : 'Luis Florez', image :`${require(`~/assets/images/foto5.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-                {id : 2, name : 'Miguel Martinez', image : `${require(`~/assets/images/foto3.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-                {id : 3,name : 'Lina Peñates', image : `${require(`~/assets/images/foto4.png`)}`, comment :'Antes de nosotrosTodo comenzó el 18 de noviembre de 2017, Lina no contaba con' }, 
-                {id : 4, name : 'Luis David Florez', image : `${require(`~/assets/images/foto2.png`)}`, comment :'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }],
+
+                {
+                    id: 1, 
+                    name : 'Luis Florez', 
+                    image :`${require(`~/assets/images/foto5.png`)}`, 
+                    preview :'El 25 de julio de 2018 contaba con los siguientes productos...',
+                    pretext : 'El 25 de julio de 2018 contaba con los siguientes productos:',
+                    posttext : 'Luego de 3 años de trabajo ( del 25 de julio de 20187 al 25 de julio de 2021) cuenta con los siguientes productos:',
+                    credits_before : [
+                        { text : "Tarjeta de crédito BANCO DAVIVIENDA, cupo ", amount : "$10.000.000"}, 
+                        {text : "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo ", amount : "$5.000.000"}
+                    ],
+                    credits_before_total : '$15.000.000',
+                    credits_after :[
+                        {text : "BANCOLOMBIA HIPOTECARIO, cupo ", amount:"$90.000.000"},
+                        {text : "BANCOLOMBIA ROTATIVO , cupo ", amount:"$30.000.000"},
+                        {text : "ROTATIVO BCO DE BOGOTA, cupo ", amount:"$20.250.000"},
+                        {text : "Tarjeta de crédito BANCOLOMBIA MASTERCARD, cupo ", amount:"$12.000.000"},
+                        {text : "Tarjeta de crédito COLPATRIA VISA, cupo", amount:"$33.500.000"},
+                        {text : "Tarjeta de crédito COLPATRIA MASTERCARD, cupo ", amount:"$7.772.000"},
+                        {text : "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo ", amount:"$5.000.000"}
+                    ],
+                     credits_after_total : '$198.522.000',
+                    note : ''
+                },
+                {
+                    id : 2, 
+                    name : 'Miguel Martinez', 
+                    image : `${require(`~/assets/images/foto3.png`)}`, 
+                    preview :'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018...',
+                    posttext:'Se elimino el reporte negativo además también pudo adquirir nuevos productos financieros. En este periodo Miguel obtuvo 2 nuevas tarjetas de crédito en BANCOLOMBIA, una tarjeta AMERICAN EXPRESS con el cupo de $1.200.000 y otra VISA con el cupo de $1.400.000. Además, aumento el cupo de la tarjeta MASTERCARD que ya tenía, pasando de $800.000 a $1.400.000',
+                    pretext : 'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018, él contaba con un reporte negativo como codeudor con la empresa LEBON por el valor de $41.000 pesos, una situación que le pasa a muchos colombianos, estar reportados por montos inferiores a los $100.000 colombianos.',
+                     credits_before : [
+                        { text : "Sin tarjeta de crédito ", amount : "$0"}, 
+                    ],
+                    credits_after :[
+                          {text : "tarjetas de crédito en BANCOLOMBIA AMERICAN EXPRESS, cupo ", amount:"$1.200.000"},
+                          {text : "tarjetas de crédito en BANCOLOMBIA VISA, cupo ", amount:"$1.400.000."},
+                          {text : "tarjetas de crédito en BANCOLOMBIA MASTERCARD, aumento cupo de $800.000", amount:"$1.400.000"},
+                      ],
+                     credits_after_total : '$4.000000',
+                    note : 'Miguel paso de tener un puntaje en Datacrédito de CERO a 811, Este logro lo obtuvo en aproximadamente 15 meses.', 
+                    note_2 : 'Miguel en estos momentos podría ir a cualquier entidad financiera y obtener un cupo entre $30.000.000 a $50.000.000.'
+                },
+                {
+                    id : 3, 
+                    name : 'Lina Peñates', 
+                    image : `${require(`~/assets/images/foto4.png`)}`, 
+                    preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
+                    pretext : 'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto financiero, es decir comenzamos desde cero.',
+                    posttext:'Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:',
+                    credits_before : [
+                         { text : "Sin tarjeta de crédito ", amount : "$0"}, 
+                    ],
+                    credits_after : [
+                         { text : "Tarjeta crédito BANCOLOMBIA MASTERCARD, cupo ", amount : "$16.000.000"}, 
+                         { text : "Tarjeta crédito BANCOLOMBIA AMERICAN EXPRESS, cupo ", amount : "$8.000.000"}, 
+                         { text : "Crediágil BANCOLOMBIA, cupo", amount : "$10.500.000"}, 
+                         { text : "Tarjeta crédito BANCOLOMBIA MASTERCARD, cupo ", amount : "$16.000.000"}, 
+                         { text : "Tarjeta de crédito SERFINANZAS (olímpica), cupo ", amount : "$2.000.000"}, 
+                    ],
+                    credits_after_total : '$36.500.000',
+                    note : ''  
+                }, 
+                {
+                    id : 4,
+                    name : 'Luis Carlos Alvarez', 
+                    image : `${require(`~/assets/images/foto2.png`)}`, 
+                    preview :'En abril del 2019 Luis Carlos solicito la primera tarjeta de crédito...',
+                    pretext : 'En abril del 2019 Luis Carlos solicito la primera tarjeta de crédito en Davivienda y se la aprobaron por $1.500.000',
+                    posttext:'Luego de mas de 2 años ( abril del 2019 a agosto del 2021) Luis Carlos cuenta con los siguientes productos financieros:',
+                    credits_before : [
+                         { text : "Tarjetas de crédito Banco Davivienda, cupo ", amount : "$1.500.000"}
+                    ],
+                    credits_after : [
+                        { text : "Tarjetas de crédito Banco Davivienda, cupo ", amount : "$6.300.000"}, 
+                        { text : "Tarjeta de crédito Banco Colpatria, cupo", amount : "$4.000.000"}, 
+                        { text : "Rotativo Banco de Bogotá, cupo", amount : "$10.000.000"}, 
+                    ],
+                    credits_after_total : '$20.300.000',
+                    note : ''  
+                }
+            ]
       })
     }
   </script>

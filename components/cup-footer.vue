@@ -3,27 +3,26 @@
         <div class="center grid">
                 <template>
                     <vs-row>
-                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                <h1 class="footer-title">Menu</h1>
                                <ul class="link-list">
                                    <li class="footer-link"><a href=""></a>Inicio</li>
                                    <li  class="footer-link"><a href=""></a>Acerca de CUP</li>
-                                   <li  class="footer-link"><a href=""></a>¿porque somos únicos?</li>
+                                   <li  class="footer-link"><a href=""></a>¿Por qué debes elegirnos?</li>
                                    <li class="footer-link"><a href=""></a>Casos de éxito</li>
                                    <li  class="footer-link"><a href=""></a>Preguntas frecuentes</li>
                                </ul>
                             </vs-col>
-                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                 <h1 class="footer-title">Compañia</h1>
                                      <ul class="link-list">
                                    <li class="footer-link"><a href=""></a>Email</li>
                                    <li  class="footer-link"><a href=""></a>Teléfono</li>
-                                   <li  class="footer-link"><a href=""></a>¿porque somos únicos?</li>
                                    <li  class="footer-link"><a href=""></a>Horarios de atención</li>
                                    <li  class="footer-link"><a href=""></a>Términos y condiciones</li>
                                </ul>
                             </vs-col>
-                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                <h1 class="footer-title">Redes sociales</h1>
                                 <div class="networks">
                                     <vs-button
@@ -46,7 +45,7 @@
                                     </vs-button>
                                 </div>
                             </vs-col>
-                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3">
+                            <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                <h1 class="footer-title">Contacto</h1>
                                 <div class="form-contact">
                                     <p class="wp-color">agregame a WhatsApp..</p>
@@ -61,7 +60,7 @@
 
         </div>
         <div class="mini-footer">
-            <p class="text-center text-white" style="font-size:12px;"> &copy; Todos los derechos reservados <a  style="color:#1dc4e2;" href="">consigueunprestamo.com</a> S.A.S. Creado por <span>suiteapp.</span>  </p>
+            <p class="text-center text-white" style="font-size:12px;"> &copy; Todos los derechos reservados <a  style="color:#1dc4e2;" href="">asesoriasflorez.com</a> S.A.S. Creado por <span>GrupoFlorez</span>  </p>
         </div>
     </div>
     
