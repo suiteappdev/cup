@@ -120,13 +120,13 @@ son tus fortalezas y tus falencias.</li>
                                         </div>
                                         <h3 class="pricing-title">Asesoría preferencial</h3>
                                     </div>
-                                    <ul class="pricing-feature-list">
+                                    <div class="pricing-feature-list">
                                      <ul class="service-list">
-                                    <li class="text-dark service-item">•	Asesoría personalizada</li>
-                                    <li class="text-dark service-item">•	Resolver todas tus dudas financieras y contables</li>
-                                    <li class="text-dark service-item">•	Quitar reporte negativo o aumentar el puntaje en las centrales de riesgo</li>
-                                </ul>  
-                                    </ul>
+                                        <li class="text-dark service-item-premium">Asesoría personalizada</li>
+                                        <li class="text-dark service-item-premium">Resolver todas tus dudas financieras y contables</li>
+                                        <li class="text-dark service-item-premium">Quitar reporte negativo o aumentar el puntaje en las centrales de riesgo</li>
+                                        </ul>  
+                                    </div>
                                     <button class="pricing-action">Quiero mi asesoría ya</button>
                                 </div>
                                 <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
@@ -142,10 +142,12 @@ son tus fortalezas y tus falencias.</li>
                                         </div>
                                         <h3 class="pricing-title">Acompañamiento financiero premium anual - 965.000 (cupos limitados 300)</h3>
                                     </div>
-                                    <ul class="pricing-feature-list">
-                                    <li class="text-dark service-item-premium">•	No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
-                                    <li class="text-dark service-item-premium">•	Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
-                                    </ul>
+                                    <div class="pricing-feature-list">
+                                        <ul class="service-list">
+                                            <li class="text-dark service-item-premium">No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
+                                            <li class="text-dark service-item-premium">Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
+                                        </ul>
+                                    </div>
                                     <button class="pricing-action">Conoce más</button>
                                 </div>
                                 <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
@@ -161,13 +163,15 @@ son tus fortalezas y tus falencias.</li>
                                         </div>
                                         <h3 class="pricing-title">Otros servicios</h3>
                                     </div>
-                                    <ul class="pricing-feature-list">
-                                    <li class="text-dark service-item">•	Consulta en Datacrédito</li>
-                                    <li class="text-dark service-item">•	Eliminación de un reporte negativo</li>
-                                    <li class="text-dark service-item">•	Asesoría contable</li>
-                                    <li class="text-dark service-item">•	Asesoría jurídica en procesos financieros (embargos, suplantaciones, etc.)</li>
-                                    <li class="text-dark service-item">•	Te respondemos en un plazo máximo de 8 horas hábiles.</li>
-                                    </ul>
+                                    <div class="pricing-feature-list">
+                                        <ul class="service-list">
+                                            <li class="text-dark service-item-premium">Consulta en Datacrédito</li>
+                                            <li class="text-dark service-item-premium">Eliminación de un reporte negativo</li>
+                                            <li class="text-dark service-item-premium">Asesoría contable</li>
+                                            <li class="text-dark service-item-premium">Asesoría jurídica en procesos financieros (embargos, suplantaciones, etc.)</li>
+                                            <li class="text-dark service-item-premium">Te respondemos en un plazo máximo de 8 horas hábiles.</li>
+                                        </ul>
+                                    </div>
                                     <button class="pricing-action">Escríbenos por WhatsApp para ayudarte</button>
                                 </div>
                             </div>
