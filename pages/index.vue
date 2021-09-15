@@ -115,15 +115,19 @@ son tus fortalezas y tus falencias.</li>
                                             <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                                             <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                                         </svg>
-                                        <div class="pricing-price"><span class="pricing-currency">$</span>98.500
+                                        <div class="pricing-price"><span class="pricing-currency">$</span>99.500
                                          <span class="pricing-period">/ Pago único</span>
                                         </div>
                                         <h3 class="pricing-title">Asesoría preferencial</h3>
                                     </div>
                                     <ul class="pricing-feature-list">
-                                       
+                                     <ul class="service-list">
+                                    <li class="text-dark service-item">•	Asesoría personalizada</li>
+                                    <li class="text-dark service-item">•	Resolver todas tus dudas financieras y contables</li>
+                                    <li class="text-dark service-item">•	Quitar reporte negativo o aumentar el puntaje en las centrales de riesgo</li>
+                                </ul>  
                                     </ul>
-                                    <button class="pricing-action">Quiero la asesoría</button>
+                                    <button class="pricing-action">Quiero mi asesoría ya</button>
                                 </div>
                                 <div class="pricing-item features-item ja-animate pricing__item--featured" data-animation="move-from-bottom" data-delay="item-1" style="min-height: 497px;">
                                     <div class="pricing-deco" style="background: linear-gradient(135deg,#a93bfe,#584efd)">
@@ -133,15 +137,16 @@ son tus fortalezas y tus falencias.</li>
                                             <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                                             <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                                         </svg>
-                                        <div class="pricing-price"><span class="pricing-currency">$</span>700.000
+                                        <div class="pricing-price"><span class="pricing-currency">$</span>965.000
                                           <span class="pricing-period">/ Anual</span>
                                         </div>
-                                        <h3 class="pricing-title">Acompañamiento financiero.</h3>
+                                        <h3 class="pricing-title">Acompañamiento financiero premium anual - 965.000 (cupos limitados 300)</h3>
                                     </div>
                                     <ul class="pricing-feature-list">
-                                      
+                                    <li class="text-dark service-item-premium">•	No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
+                                    <li class="text-dark service-item-premium">•	Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
                                     </ul>
-                                    <button class="pricing-action">Saber más</button>
+                                    <button class="pricing-action">Conoce más</button>
                                 </div>
                                 <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
                                     <div class="pricing-deco">
@@ -157,9 +162,13 @@ son tus fortalezas y tus falencias.</li>
                                         <h3 class="pricing-title">Otros servicios</h3>
                                     </div>
                                     <ul class="pricing-feature-list">
-                                      
+                                    <li class="text-dark service-item">•	Consulta en Datacrédito</li>
+                                    <li class="text-dark service-item">•	Eliminación de un reporte negativo</li>
+                                    <li class="text-dark service-item">•	Asesoría contable</li>
+                                    <li class="text-dark service-item">•	Asesoría jurídica en procesos financieros (embargos, suplantaciones, etc.)</li>
+                                    <li class="text-dark service-item">•	Te respondemos en un plazo máximo de 8 horas hábiles.</li>
                                     </ul>
-                                    <button class="pricing-action">Saber más</button>
+                                    <button class="pricing-action">Escríbenos por WhatsApp para ayudarte</button>
                                 </div>
                             </div>
                         </section>

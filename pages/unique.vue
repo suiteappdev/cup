@@ -1,19 +1,26 @@
  <template>
         <div class="center grid">
              <div class="section-unique">
-                <h1 class="text-center cases animated bounceInRight text-dark">¿ Que nos hace <span class="light">únicos ?</span></h1>
-                <p>Durante más de 6 años hemos estado asesorando a un gran número de clientes a adquirir nuevos productos financieros, lo cual nos ha permitido estar a la vanguardia de las novedades financieras.</p>
-                <p>Existe mucha información en internet de como aumentar tu score en las centrales de riesgo, pero hay pocos tutoriales de como aumentar la capacidad de endeudamiento. Aunque una persona tenga alto su score crediticio no podrá acceder a grandes montos si este no aumenta su capacidad de endeudamiento. Y eso buscamos en esta página, brindarle las herramientas a la persona para subir su puntaje en las centrales de riesgo, pero también su capacidad de endeudamiento.</p>
-                <p>o trabaje en una financiera como analista financiero y era la persona encargada de aprobar y rechazar las solicitudes de préstamos de un gran número de clientes. Esta experiencia me ayuda a darle mejores consejos a mis clientes de qué acciones debes realizar para aumentar sus posibilidades de tener préstamos nuevos o de aumentar el cupo actual de los préstamos que ya tienes.</p>
-                <p>Algunos bancos tienen políticas internas en las cuales “discriminan” a cierto tipo de clientes, por ejemplo, hay un banco específico el cual no puedo decir el nombre por problemas de confidencialidad, pero ese banco suele rechazar los préstamos a las personas naturales que tengan de actividad principal la de rentista de capital, código CIIU 0090. Este es uno de los tantos casos de “requisitos ocultos” que tienen los bancos para otorgar préstamos que nunca lo dicen a los clientes pero que los afecta en gran manera.</p>
-                <p>También puedo ofrecer a mis clientes una asesoría contable que hará que estos aumenten en un 95% sus posibilidades de obtener cupos de préstamos más altos. Hay muchos asesores financieros allá afuera que dan consejos básicos de como aumentar los cupos bancarios, pero la realidad es que si esta asesoría no está acompañada de la contabilidad esta pierde credibilidad, porque una buena contabilidad puede ser el factor decisivo en muchos casos de que te otorguen o no un préstamo.</p>
+                <h1 class="text-center cases animated bounceInRight text-dark">¿Por qué debes <span class="light">elegirnos?</span></h1>
+                <h1 class="text-center cases animated bounceInRight text-dark">Alto porcentaje de casos exitosos:</h1>
+<p> Nuestra tasa de éxito es del 99%. Durante más de 5 años hemos ayudado a más de 5000 clientes a adquirir nuevos productos financieros tales como tarjetas de crédito, cupos rotativos, créditos de libre inversión, préstamos hipotecarios, entre otros.</p> 
+                <h1 class="text-center cases animated bounceInLeft text-dark">Asesoría integral:</h1>
+<p> Existe mucha información en internet de como aumentar tu score en las centrales de riesgo, pero este es solo uno de los parámetros que tienen en cuenta los bancos a la hora de otorgar un préstamo. Para que a una persona le sea otorgado un producto financiero este debe cumplir con una serie de requisitos. Nuestro objetivo no es solo ayudarte aumentar tu score crediticio sino también a cumplir con todos los requisitos que exigen las entidades bancarias.</p>
+                <h1 class="text-center cases animated bounceInRight text-dark">Experiencia en el sector:</h1>
+<p> con más de 5 años de experiencia en el mercado financiero, lo cual nos ha ayudado a entender a las entidades bancarias y las diferentes políticas que manejan. Cada banco maneja políticas diferentes y los requisitos varían. Te vamos a guiar paso a paso con base en la experiencia que he obtenido en nuestra trayectoria, con nosotros vas a lograr todos tus objetivos financieros y a mejorar tu vida crediticia.</p>
+                <h1 class="text-center cases animated bounceInLeft text-dark">Información actualizada:</h1>
+<p>Los bancos día a día están cambiando, la entidad que hoy te ofrece buenas tasas de interés mañana puede cambiar y brindar el peor servicio, o también el banco más flexible para aprobar prestamos mañana puede negarlos todos.
+Nuestro constante asesoramiento a los clientes nos brinda un flujo de información actualizada que nos permite darle a nuestros usuarios los mejores consejos ajustados a sus necesidades.
+Por ejemplo te podemos decir al día de hoy cual es el banco que te puede dar el crédito hipotecario más rápido o a una menor tasa. 
+Además nuestra base de clientes nos permite compartirte cuales son las principales quejas de los usuarios con los bancos, para que de esta manera evites malos ratos con entidades financieras y te dirijas a los mejores bancos.</p>
+                <h1 class="text-center cases animated bounceInLeft text-dark">Contaduría en orden:</h1>
+<p>Organizamos tu vida contable para que vaya de la mano con tu vida financiera. Tener en orden documentos tales como el RUT, declaración de renta, aumentara enormemente tus posibilidades de obtener mejores cupos bancarios.</p>
             </div>
         </div>
 </template>
  <style scoped>
     .section-unique{
         padding-top: 70px;
-        height: 600px;
         width: 80%;
         margin: 0 auto;
     }

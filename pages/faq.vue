@@ -83,7 +83,7 @@ personales.</p>
                         <li>
                             <input type="checkbox" checked>
                             <i class="chevron"></i>
-                            <h3>¿Debo cancelar algún excedente por asesoría?</h3>
+                            <h3>¿Debo cancelar algún excedente por la asesoría gratuita</h3>
                             <div class="contAcordeon">
                                 <p>No, la asesoría es completamente gratis. Si deseas más información y un
 estudio financiero a fondo puedes solicitar la asesoría preferencial.</p>
