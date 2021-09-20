@@ -16,7 +16,7 @@
               <br />
               <li><span class="strong">Cupo total: {{selected.credits_after_total}}</span></li>
             </ul>
-            <p v-if="selected.note">{{selected.note}}</p>
+            <p v-if="selected.note"><span class="strong">NOTA</span> : {{selected.note}}</p>
             <p v-if="selected.note_2"><span class="strong">NOTA</span>  : {{selected.note_2}}</p>
             <br />
         </div>
@@ -449,25 +449,6 @@ font-size: 0.6em;
                 },
                 {
                     id : 2, 
-                    name : 'Miguel Martinez', 
-                    image : `${require(`~/assets/images/foto3.png`)}`, 
-                    preview :'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018...',
-                    posttext:'Se elimino el reporte negativo además también pudo adquirir nuevos productos financieros. En este periodo Miguel obtuvo 2 nuevas tarjetas de crédito en BANCOLOMBIA, una tarjeta AMERICAN EXPRESS con el cupo de $1.200.000 y otra VISA con el cupo de $1.400.000. Además, aumento el cupo de la tarjeta MASTERCARD que ya tenía, pasando de $800.000 a $1.400.000',
-                    pretext : 'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018, él contaba con un reporte negativo como codeudor con la empresa LEBON por el valor de $41.000 pesos, una situación que le pasa a muchos colombianos, estar reportados por montos inferiores a los $100.000 colombianos.',
-                     credits_before : [
-                        { text : "Sin tarjeta de crédito ", amount : "$0"}, 
-                    ],
-                    credits_after :[
-                          {text : "tarjetas de crédito en BANCOLOMBIA AMERICAN EXPRESS, cupo ", amount:"$1.200.000"},
-                          {text : "tarjetas de crédito en BANCOLOMBIA VISA, cupo ", amount:"$1.400.000."},
-                          {text : "tarjetas de crédito en BANCOLOMBIA MASTERCARD, aumento cupo de $800.000", amount:"$1.400.000"},
-                      ],
-                     credits_after_total : '$4.000000',
-                    note : 'Miguel paso de tener un puntaje en Datacrédito de CERO a 811, Este logro lo obtuvo en aproximadamente 15 meses.', 
-                    note_2 : 'Miguel en estos momentos podría ir a cualquier entidad financiera y obtener un cupo entre $30.000.000 a $50.000.000.'
-                },
-                {
-                    id : 3, 
                     name : 'Lina Peñates', 
                     image : `${require(`~/assets/images/foto4.png`)}`, 
                     preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
@@ -484,7 +465,26 @@ font-size: 0.6em;
                          { text : "Tarjeta de crédito SERFINANZAS (olímpica), cupo ", amount : "$2.000.000"}, 
                     ],
                     credits_after_total : '$36.500.000',
-                    note : ''  
+                    note : 'En el mes de Julio del 2021 el banco Colpatria le ofreció a Lina una tarjeta de crédito preaprobada de $8.000.000 pero esta se rechazó debido a la alta cuota de manejo que tenía ($30.000 al mes).'  
+                },
+                {
+                    id : 3, 
+                    name : 'Miguel Martinez', 
+                    image : `${require(`~/assets/images/foto3.png`)}`, 
+                    preview :'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018...',
+                    posttext:'Se elimino el reporte negativo además también pudo adquirir nuevos productos financieros. En este periodo Miguel obtuvo 2 nuevas tarjetas de crédito en BANCOLOMBIA, una tarjeta AMERICAN EXPRESS con el cupo de $1.200.000 y otra VISA con el cupo de $1.400.000. Además, aumento el cupo de la tarjeta MASTERCARD que ya tenía, pasando de $800.000 a $1.400.000',
+                    pretext : 'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018, él contaba con un reporte negativo como codeudor con la empresa LEBON por el valor de $41.000 pesos, una situación que le pasa a muchos colombianos, estar reportados por montos inferiores a los $100.000 colombianos.',
+                     credits_before : [
+                        { text : "Sin tarjeta de crédito ", amount : "$0"}, 
+                    ],
+                    credits_after :[
+                          {text : "tarjetas de crédito en BANCOLOMBIA AMERICAN EXPRESS, cupo ", amount:"$1.200.000"},
+                          {text : "tarjetas de crédito en BANCOLOMBIA VISA, cupo ", amount:"$1.400.000."},
+                          {text : "tarjetas de crédito en BANCOLOMBIA MASTERCARD, aumento cupo de $800.000", amount:"$1.400.000"},
+                      ],
+                     credits_after_total : '$4.000000',
+                    note : 'Miguel paso de tener un puntaje en Datacrédito de CERO a 811, Este logro lo obtuvo en aproximadamente 15 meses.', 
+                    note_2 : 'Miguel en estos momentos podría ir a cualquier entidad financiera y obtener un cupo entre $30.000.000 a $50.000.000.'
                 }, 
                 {
                     id : 4,

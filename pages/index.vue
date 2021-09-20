@@ -23,7 +23,7 @@
                     <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
                         <div class="box-service-1">
                             <div class="box-service-inner flex flex-center flex-column">
-                                <h2 class="text-white no-margin text-left mt-40">Asesoria <span class="light">gratis</span></h2>
+                                <h2 class="text-white no-margin text-left mt-40">Asesoría <span class="light">gratuita</span></h2>
                                 <ul class="service-list">
                                     <li class="text-white service-item">Aumentar tu puntaje en Datacrédito o TransUnion.</li>
                                     <li class="text-white service-item">Aumentar el cupo actual de tus tarjetas de crédito.</li>
@@ -39,7 +39,7 @@ han tenido un producto financiero).</li>
                                 </ul>
                                 <br />
                                 <vs-button size="xl">
-                                    Recibe tu asesoría gratis 
+                                    Recibe tu asesoría gratuita 
                                 </vs-button>
                             </div>
                         </div>
@@ -47,7 +47,7 @@ han tenido un producto financiero).</li>
                     <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
                         <div class="box-service-2">
                             <div class="box-service-inner flex flex-center flex-column">
-                                <h2 class="text-dark no-margin text-center mt-40">Asesoria <span class="light">preferencial</span></h2>
+                                <h2 class="text-dark no-margin text-center mt-40">Asesoría <span class="light">preferencial</span></h2>
                                 <ul class="service-list">
                                     <li class="text-dark service-item-premium">Resolver todas tus dudas financieras por vía telefónica o WhatsApp.</li>
                                     <li class="text-dark service-item-premium">Revisar minuciosamente tu Datacrédito y aumentar tu puntaje.</li>
@@ -63,7 +63,7 @@ son tus fortalezas y tus falencias.</li>
                                 </ul>
                                 <br />
                                 <vs-button size="xl">
-                                    Recibe tu asesoría - $99.500 COP
+                                    Recibe tu asesoría preferencial - $99.500 COP
                                 </vs-button>
                             </div>
                         </div>
@@ -149,7 +149,7 @@ son tus fortalezas y tus falencias.</li>
                                         </ul>
                                     </div>
                                     <button class="pricing-action">Conoce más</button>
-                                </div>
+                                    </div>
                                 <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
                                     <div class="pricing-deco">
                                         <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
@@ -287,7 +287,6 @@ body .arrows:after {
         }
 
         .service-list{
-            list-style: none;
             padding : 0;
         }
 
@@ -678,6 +677,17 @@ body .arrows:after {
                 },
                 {
                     id : 2, 
+                    name : 'Lina Peñates', 
+                    image : `${require(`~/assets/images/foto4.png`)}`, 
+                    preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
+                    pretext : 'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto financiero, es decir comenzamos desde cero.',
+                    posttext:'Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:',
+                    credits_before : [],
+                    credits_after : [],
+                    note : 'En el mes de Julio del 2021 el banco Colpatria le ofreció a Lina una tarjeta de crédito preaprobada de $8.000.000 pero esta se rechazó debido a la alta cuota de manejo que tenía ($30.000 al mes).'  
+                },
+                {
+                    id : 3, 
                     name : 'Miguel Martinez', 
                     image : `${require(`~/assets/images/foto3.png`)}`, 
                     preview :'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018...',
@@ -686,21 +696,10 @@ body .arrows:after {
                     credits_before : [],
                     credits_after : [],
                     note : '' 
-                },
-                {
-                    id : 3, 
-                    name : 'Lina Peñates', 
-                    image : `${require(`~/assets/images/foto4.png`)}`, 
-                    preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
-                    pretext : 'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto financiero, es decir comenzamos desde cero.',
-                    posttext:'Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:',
-                    credits_before : [],
-                    credits_after : [],
-                    note : ''  
                 }, 
                 {
                     id : 4,
-                    name : 'Luis David Florez', 
+                    name : 'Luis Carlos Alvarez', 
                     image : `${require(`~/assets/images/foto2.png`)}`, 
                     preview :'En abril del 2019 Luis Carlos solicito la primera tarjeta de crédito...',
                     pretext : '',

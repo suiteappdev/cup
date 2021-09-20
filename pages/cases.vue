@@ -607,6 +607,17 @@ body .arrows:after {
                 },
                 {
                     id : 2, 
+                    name : 'Lina Peñates', 
+                    image : `${require(`~/assets/images/foto4.png`)}`, 
+                    preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
+                    pretext : 'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto financiero, es decir comenzamos desde cero.',
+                    posttext:'Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:',
+                    credits_before : [],
+                    credits_after : [],
+                    note : 'En el mes de Julio del 2021 el banco Colpatria le ofreció a Lina una tarjeta de crédito preaprobada de $8.000.000 pero esta se rechazó debido a la alta cuota de manejo que tenía ($30.000 al mes).'  
+                },
+                {
+                    id : 3, 
                     name : 'Miguel Martinez', 
                     image : `${require(`~/assets/images/foto3.png`)}`, 
                     preview :'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018...',
@@ -616,18 +627,7 @@ body .arrows:after {
                     credits_after : [],
                     note : '' 
                 },
-                {
-                    id : 3, 
-                    name : 'Lina Peñates', 
-                    image : `${require(`~/assets/images/foto4.png`)}`, 
-                    preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
-                    pretext : 'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto financiero, es decir comenzamos desde cero.',
-                    posttext:'Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:',
-                    credits_before : [],
-                    credits_after : [],
-                    note : ''  
-                }, 
-                {
+                 {
                     id : 4,
                     name : 'Luis David Florez', 
                     image : `${require(`~/assets/images/foto2.png`)}`, 
