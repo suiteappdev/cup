@@ -6,11 +6,11 @@
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                <h1 class="footer-title">Menu</h1>
                                <ul class="link-list">
-                                   <li class="footer-link"><a href=""></a>Inicio</li>
-                                   <li  class="footer-link"><a href=""></a>Acerca de CUP</li>
-                                   <li  class="footer-link"><a href=""></a>¿Por qué debes elegirnos?</li>
-                                   <li class="footer-link"><a href=""></a>Casos de éxito</li>
-                                   <li  class="footer-link"><a href=""></a>Preguntas frecuentes</li>
+                                   <li class="footer-link"><a href="#" class="footer-link no-underline">Inicio</a></li>
+                                   <li  class="footer-link"><a href="#" class="footer-link no-underline">¿Quiénes somos?</a></li>
+                                   <li  class="footer-link"><a href="#" class="footer-link no-underline">¿Por qué debes elegirnos?</a></li>
+                                   <li class="footer-link"><a href="#" class="footer-link no-underline">Casos de éxito</a></li>
+                                   <li  class="footer-link"><a href="#" class="footer-link no-underline">Preguntas frecuentes</a></li>
                                </ul>
                             </vs-col>
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
