@@ -6,11 +6,11 @@
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                <h1 class="footer-title">Menu</h1>
                                <ul class="link-list">
-                                   <li class="footer-link"><a href="#" class="footer-link no-underline">Inicio</a></li>
-                                   <li  class="footer-link"><a href="#" class="footer-link no-underline">¿Quiénes somos?</a></li>
-                                   <li  class="footer-link"><a href="#" class="footer-link no-underline">¿Por qué debes elegirnos?</a></li>
-                                   <li class="footer-link"><a href="#" class="footer-link no-underline">Casos de éxito</a></li>
-                                   <li  class="footer-link"><a href="#" class="footer-link no-underline">Preguntas frecuentes</a></li>
+                                   <li class="footer-link"><a href="/" class="footer-link no-underline">Inicio</a></li>
+                                   <li  class="footer-link"><a href="/about" class="footer-link no-underline">¿Quiénes somos?</a></li>
+                                   <li  class="footer-link"><a href="/unique" class="footer-link no-underline">¿Por qué debes elegirnos?</a></li>
+                                   <li class="footer-link"><a href="/cases" class="footer-link no-underline">Casos de éxito</a></li>
+                                   <li  class="footer-link"><a href="/faq" class="footer-link no-underline">Preguntas frecuentes</a></li>
                                </ul>
                             </vs-col>
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
@@ -19,9 +19,13 @@
                                    <li class="footer-link">Email <br />
                                     <a href="mailto:asesoriasflorez1@gmail.com" class="no-underline"><p class="light" style="font-size:14px;margin:0;">asesoriasflorez1@gmail.com</p></a>
                                    </li>
-                                   <li  class="footer-link"><a href=""></a>Teléfono</li>
-                                   <li  class="footer-link"><a href=""></a>Horarios de atención</li>
-                                   <li  class="footer-link"><a href=""></a>Términos y condiciones</li>
+                                   <li  class="footer-link">Teléfono
+                                   <a class="no-underline"><p class="light" style="font-size:14px;margin:0;">3118221549</p></a>
+                                   </li>
+                                   <li  class="footer-link">Horarios de atención <br />
+                                    <p class="light" style="font-size:14px;margin:0;">Lunes a Viernes de 8:00 AM a 6:00 PM</p>
+                                   </li>
+                                   <li  class="footer-link">Términos y condiciones</li>
                                </ul>
                             </vs-col>
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
@@ -35,12 +39,14 @@
                                             <i class='bx bxl-facebook-square'></i>
                                         </vs-button>
                                     </a>
+                                    <a class="no-underline" href="https://www.instagram.com/luisflorez.23/" target="_blank">
                                     <vs-button
                                         icon
                                         color="facebpok"
                                     >
                                         <i class='bx bxl-instagram'></i>
                                     </vs-button> 
+                                    </a>
                                     <vs-button
                                         icon
                                         color="youtube"
