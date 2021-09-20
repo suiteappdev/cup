@@ -7,7 +7,7 @@
                                <h1 class="footer-title">Menu</h1>
                                <ul class="link-list">
                                    <li class="footer-link"><a href=""></a>Inicio</li>
-                                   <li  class="footer-link"><a href=""></a>Acerca de CUP</li>
+                                   <li  class="footer-link"><a href=""></a>¿ Quiénes somos ?</li>
                                    <li  class="footer-link"><a href=""></a>¿Por qué debes elegirnos?</li>
                                    <li class="footer-link"><a href=""></a>Casos de éxito</li>
                                    <li  class="footer-link"><a href=""></a>Preguntas frecuentes</li>
@@ -19,8 +19,11 @@
                                    <li class="footer-link">Email <br />
                                     <a href="mailto:asesoriasflorez1@gmail.com" class="no-underline"><p class="light" style="font-size:14px;margin:0;">asesoriasflorez1@gmail.com</p></a>
                                    </li>
-                                   <li  class="footer-link"><a href=""></a>Teléfono</li>
+                                   <li  class="footer-link"><a href=""></a>Teléfono
+                                   <a class="no-underline"><p class="light" style="font-size:14px;margin:0;">3118221549</p></a>
+                                   </li>
                                    <li  class="footer-link"><a href=""></a>Horarios de atención</li>
+                                   <a class="no-underline"><p class="light" style="font-size:14px;margin:0;">lunes a viernes de 8:00 AM a 6:00 PM</p></a>
                                    <li  class="footer-link"><a href=""></a>Términos y condiciones</li>
                                </ul>
                             </vs-col>
@@ -35,12 +38,14 @@
                                             <i class='bx bxl-facebook-square'></i>
                                         </vs-button>
                                     </a>
+                                    <a class="no-underline" href="https://www.instagram.com/luisflorez.23/" target="_blank">
                                     <vs-button
                                         icon
                                         color="facebpok"
                                     >
                                         <i class='bx bxl-instagram'></i>
                                     </vs-button> 
+                                    </a>
                                     <vs-button
                                         icon
                                         color="youtube"
