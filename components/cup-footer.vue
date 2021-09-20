@@ -16,7 +16,9 @@
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                 <h1 class="footer-title">Compañia</h1>
                                      <ul class="link-list">
-                                   <li class="footer-link"><a href=""></a>Email</li>
+                                   <li class="footer-link">Email <br />
+                                    <a href="mailto:asesoriasflorez1@gmail.com" class="no-underline"><p class="light" style="font-size:14px;margin:0;">asesoriasflorez1@gmail.com</p></a>
+                                   </li>
                                    <li  class="footer-link"><a href=""></a>Teléfono</li>
                                    <li  class="footer-link"><a href=""></a>Horarios de atención</li>
                                    <li  class="footer-link"><a href=""></a>Términos y condiciones</li>
@@ -25,12 +27,14 @@
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                <h1 class="footer-title">Redes sociales</h1>
                                 <div class="networks">
-                                    <vs-button
-                                        icon
-                                        color="facebook"
-                                    >
-                                        <i class='bx bxl-facebook-square'></i>
-                                    </vs-button>
+                                    <a class="no-underline" href="https://www.facebook.com/lordwinoficial" target="_blank">
+                                        <vs-button
+                                            icon
+                                            color="facebook"
+                                        >
+                                            <i class='bx bxl-facebook-square'></i>
+                                        </vs-button>
+                                    </a>
                                     <vs-button
                                         icon
                                         color="facebpok"
@@ -66,6 +70,9 @@
     
 </template>
 <style lang="postcss" scoped>
+    .light{
+        color:#00E6E3 ;
+    }
     .networks{
             display: flex;
         justify-content: center;
@@ -96,6 +103,11 @@
         background-color: #00131c;
         right: 0px;
     }
+
+    .no-underline{
+        text-decoration: none;
+    }
+
     .footer-title{
         text-align: center;
         color: white;

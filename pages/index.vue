@@ -148,7 +148,7 @@ son tus fortalezas y tus falencias.</li>
                                             <li class="text-dark service-item-premium">Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
                                         </ul>
                                     </div>
-                                    <button class="pricing-action">Conoce más</button>
+                                    <button @click="$router.push('/testimonio2')" class="pricing-action">Conoce más</button>
                                     </div>
                                 <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
                                     <div class="pricing-deco">
