@@ -24,7 +24,7 @@
                         <div class="box-service-1">
                             <div class="box-service-inner flex flex-center flex-column">
                                 <h2 class="text-white no-margin text-left mt-40">Asesoría <span class="light">gratuita</span></h2>
-                                <ul class="service-list">
+                                <ul class="service-list vineta">
                                     <li class="text-white service-item">Aumentar tu puntaje en Datacrédito o TransUnion.</li>
                                     <li class="text-white service-item">Aumentar el cupo actual de tus tarjetas de crédito.</li>
                                     <li class="text-white service-item">Pagar menos intereses en tus préstamos bancarios.</li>
@@ -33,8 +33,7 @@
                                     <li class="text-white service-item">Conocer cuáles son las mejores tarjetas de crédito en Colombia.</li>
                                     <li class="text-white service-item">Conocer cuáles son las mejores tasas de crédito hipotecario.</li>
                                     <li class="text-white service-item">Conocer los requisitos que exigen la mayoría de bancos a la hora de solicitar un préstamo de libre inversión.</li>
-                                    <li class="text-white service-item">Como empezar tu vida crediticia (personas jóvenes o adultas que nunca
-han tenido un producto financiero).</li>
+                                    <li class="text-white service-item">Como empezar tu vida crediticia (personas jóvenes o adultas que nunca han tenido un producto financiero).</li>
                                     <li class="text-white service-item">Saber si tengo que declarar renta o no.</li>
                                 </ul>
                                 <br />
@@ -48,7 +47,7 @@ han tenido un producto financiero).</li>
                         <div class="box-service-2">
                             <div class="box-service-inner flex flex-center flex-column">
                                 <h2 class="text-dark no-margin text-center mt-40">Asesoría <span class="light">preferencial</span></h2>
-                                <ul class="service-list">
+                                <ul class="service-list vineta">
                                     <li class="text-dark service-item-premium">Resolver todas tus dudas financieras por vía telefónica o WhatsApp.</li>
                                     <li class="text-dark service-item-premium">Revisar minuciosamente tu Datacrédito y aumentar tu puntaje.</li>
                                     <li class="text-dark service-item-premium">Interpretar tu historial crediticio de Datacrédito para que tengas claro cuáles
@@ -121,7 +120,7 @@ son tus fortalezas y tus falencias.</li>
                                         <h3 class="pricing-title">Asesoría preferencial</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                     <ul class="service-list">
+                                     <ul class="service-list vineta">
                                         <li class="text-dark service-item-premium">Asesoría personalizada</li>
                                         <li class="text-dark service-item-premium">Resolver todas tus dudas financieras y contables</li>
                                         <li class="text-dark service-item-premium">Quitar reporte negativo o aumentar el puntaje en las centrales de riesgo</li>
@@ -143,7 +142,7 @@ son tus fortalezas y tus falencias.</li>
                                         <h3 class="pricing-title">Acompañamiento financiero premium anual - 965.000 (cupos limitados 300)</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                        <ul class="service-list">
+                                        <ul class="service-list vineta">
                                             <li class="text-dark service-item-premium">No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
                                             <li class="text-dark service-item-premium">Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
                                         </ul>
@@ -164,7 +163,7 @@ son tus fortalezas y tus falencias.</li>
                                         <h3 class="pricing-title">Otros servicios</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                        <ul class="service-list">
+                                        <ul class="service-list vineta">
                                             <li class="text-dark service-item-premium">Consulta en Datacrédito</li>
                                             <li class="text-dark service-item-premium">Eliminación de un reporte negativo</li>
                                             <li class="text-dark service-item-premium">Asesoría contable</li>
@@ -287,12 +286,12 @@ body .arrows:after {
         }
 
         .service-list{
-            padding : 0;
+            padding : 40;
+            list-style: none;
         }
 
         .service-item{
             padding: 10px;
-            border: 1px solid #033c3b;
             border-radius: 5px;
             margin-bottom: 10px;
             cursor: pointer;
@@ -301,21 +300,10 @@ body .arrows:after {
 
         .service-item-premium{
             padding: 10px;
-            border: 1px solid #033c3b;
             border-radius: 5px;
             margin-bottom: 10px;
             cursor: pointer;
             font-size: 0.9rem;
-        }
-
-        .service-item:hover{
-            border: 1px solid #00E6E3;
-            background-color: #032b2a;
-        }
-
-        .service-item-premium:hover{
-            border: 1px solid #00E6E3;
-            background-color: #00E6E3;
         }
 
         .flex{
@@ -336,7 +324,10 @@ body .arrows:after {
             width: 100%;
             height: 800px;
         }
-        
+
+        .vineta{
+            list-style-image: url('~/assets/images/vineta.png');
+        }
         
         .pricing-action:focus {
             outline: none;
