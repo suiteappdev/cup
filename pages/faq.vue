@@ -2,7 +2,7 @@
         <div class="center grid">
              <div class="section-about">
                 <h1 class="text-center cases animated bounceInRight text-dark" style="margin-top:4%;"> Preguntas  <span class="light">frecuentes</span></h1>
-                <div id="accesos">
+                <div id="accesos"> 
                     <ul>
                         <li>
                             <input type="checkbox" checked>
@@ -83,11 +83,12 @@ personales.</p>
                         <li>
                             <input type="checkbox" checked>
                             <i class="chevron"></i>
-                            <h3>¿Debo cancelar algún excedente por la asesoría gratuita</h3>
+                          <h3>¿Debo cancelar algún excedente por la asesoría gratuita?</h3>
                             <div class="contAcordeon">
                                 <p>No, la asesoría es completamente gratis. Si deseas más información y un
 estudio financiero a fondo puedes solicitar la asesoría preferencial.</p>
                             </div>
+                            <p>NOTA:Cualquier duda que no te quede aclarada aquí, puedes dejarnos un mensaje en nuestro número de WhatsApp 3118221549, te atenderemos en el menor tiempo posible.</p>
                         </li>
                     </ul>
                 </div>
@@ -466,13 +467,13 @@ font-size: 0.6em;
 <script>
     export default {
       data:() => ({
-        value1 : '',
+        value1 : '', 
         value2:'',
         option : false,
         active: false,
         email: '',
         password: '',
-        remember: false
+        remember: false 
       })
     }
   </script>
