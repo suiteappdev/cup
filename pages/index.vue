@@ -36,6 +36,8 @@
                                     <li class="text-white service-item">Conocer los requisitos que exigen la mayoría de bancos a la hora de solicitar un préstamo de libre inversión.</li>
                                     <li class="text-white service-item">Como empezar tu vida crediticia (personas jóvenes o adultas que nunca han tenido un producto financiero).</li>
                                     <li class="text-white service-item">Saber si tengo que declarar renta o no.</li>
+                                    <p>Nota: Solo puedes seleccionar uno de los temas anteriores en la asesoría gratis. 
+                                       Nota: Si quieres saber tu estado en las centrales de riesgo, debes pagar el valor de la consulta ($10.000).</p>
                                 </ul>
                                 <br />
                                 <vs-button size="xl">
