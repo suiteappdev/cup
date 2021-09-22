@@ -2,7 +2,7 @@
     <div class="hidden">
       <vs-navbar fixed dark shadow text-white square center-collapsed v-model="active" right>
        <template #left>
-          <img class="cup-logo" @click="$router.push('login')" src="~/assets/images/logo.svg" alt="">
+        <img class="cup-logo" @click="$router.push('login')" src="~/assets/images/logo.png" alt="">
         </template>
           <vs-navbar-item :active="active == 'home'" id="home">
 
@@ -24,14 +24,6 @@
           Preguntas frencuentes
         </vs-navbar-item>
         <template #right>
-      <vs-button
-        warning
-        size="large"
-        :active="active == 1"
-        @click="active = 1"
-      >
-        <i class="bx bxs-phone-call"></i> Asesoria Gratis
-      </vs-button>
         <vs-button
           @click="$router.push('login')"
           circle
