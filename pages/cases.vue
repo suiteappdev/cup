@@ -111,6 +111,9 @@
  </div>
 </template>
  <style scoped>
+ .strong{
+     font-weight: bold;
+ }
 .arrows {
   position: relative;
   width: 20px;
@@ -216,13 +219,12 @@ body .arrows:after {
         }
 
         .service-list{
+            padding : 40;
             list-style: none;
-            padding : 0;
         }
 
         .service-item{
             padding: 10px;
-            border: 1px solid #033c3b;
             border-radius: 5px;
             margin-bottom: 10px;
             cursor: pointer;
@@ -231,21 +233,10 @@ body .arrows:after {
 
         .service-item-premium{
             padding: 10px;
-            border: 1px solid #033c3b;
             border-radius: 5px;
             margin-bottom: 10px;
             cursor: pointer;
             font-size: 0.9rem;
-        }
-
-        .service-item:hover{
-            border: 1px solid #00E6E3;
-            background-color: #032b2a;
-        }
-
-        .service-item-premium:hover{
-            border: 1px solid #00E6E3;
-            background-color: #00E6E3;
         }
 
         .flex{
@@ -266,7 +257,10 @@ body .arrows:after {
             width: 100%;
             height: 800px;
         }
-        
+
+        .vineta{
+            list-style-image: url('~/assets/images/vineta.png');
+        }
         
         .pricing-action:focus {
             outline: none;

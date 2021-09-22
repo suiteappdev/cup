@@ -21,7 +21,7 @@
                             :active="active == 0"
                             @click="active = 0"
                         >
-                        Premium anual - $965.000 COP (cupos limitados 300)
+                        Premium anual - $965.000 COP
                         </vs-button>
                  </p>
             </div>

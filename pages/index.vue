@@ -24,8 +24,8 @@
                         <div class="box-service-1">
                             <div class="box-service-inner flex flex-center flex-column">
                                 <h2 class="text-white no-margin text-left mt-40">Asesoría <span class="light">gratuita</span></h2>
-                                <p class="text-white">Selecciona esta opción y uno de nuestros profesionales en menos de 24 horas hábiles te ayudara a:</p>
-                                <ul class="service-list">
+                                <p class="light" style="padding:40px;margin:0;">Selecciona esta opción y uno de nuestros profesionales en menos de 24 horas hábiles te ayudara a:</p>
+                                <ul class="service-list vineta">
                                     <li class="text-white service-item">Aumentar tu puntaje en Datacrédito o TransUnion.</li>
                                     <li class="text-white service-item">Aumentar el cupo actual de tus tarjetas de crédito.</li>
                                     <li class="text-white service-item">Pagar menos intereses en tus préstamos bancarios.</li>
@@ -36,8 +36,10 @@
                                     <li class="text-white service-item">Conocer los requisitos que exigen la mayoría de bancos a la hora de solicitar un préstamo de libre inversión.</li>
                                     <li class="text-white service-item">Como empezar tu vida crediticia (personas jóvenes o adultas que nunca han tenido un producto financiero).</li>
                                     <li class="text-white service-item">Saber si tengo que declarar renta o no.</li>
-                                    <p>Nota: Solo puedes seleccionar uno de los temas anteriores en la asesoría gratis. 
-                                       Nota: Si quieres saber tu estado en las centrales de riesgo, debes pagar el valor de la consulta ($10.000).</p>
+                                    <p class="light">
+                                       <span class="strong text-white">Nota:</span> <br />  Solo puedes seleccionar uno de los temas anteriores en la asesoría gratis. <br />
+                                       <br />
+                                       <span class="strong text-white">Nota:</span> <br /> Si quieres saber tu estado en las centrales de riesgo, debes pagar el valor de la consulta ($10.000).</p>
                                 </ul>
                                 <br />
                                 <vs-button size="xl">
@@ -50,8 +52,8 @@
                         <div class="box-service-2">
                             <div class="box-service-inner flex flex-center flex-column">
                                 <h2 class="text-dark no-margin text-center mt-40">Asesoría <span class="light">preferencial</span></h2>
-                                <p>Selecciona esta opción y uno de nuestros profesionales en menos de 12 horas hábiles te ayudara a:</p>
-                                <ul class="service-list">
+                                <p style="padding:40px;margin:0;" class="light">Selecciona esta opción y uno de nuestros profesionales en menos de 12 horas hábiles te ayudara a:</p>
+                                <ul class="service-list vineta">
                                     <li class="text-dark service-item-premium">Resolver todas tus dudas financieras por vía telefónica o WhatsApp.</li>
                                     <li class="text-dark service-item-premium">Revisar minuciosamente tu Datacrédito y aumentar tu puntaje.</li>
                                     <li class="text-dark service-item-premium">Interpretar tu historial crediticio de Datacrédito para que tengas claro cuáles son tus fortalezas y tus falencias.</li>
@@ -184,6 +186,9 @@
  </div>
 </template>
  <style scoped>
+ .strong{
+     font-weight: bold;
+ }
 .arrows {
   position: relative;
   width: 20px;
