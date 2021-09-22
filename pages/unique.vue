@@ -2,18 +2,18 @@
         <div class="center grid">
              <div class="section-unique">
                 <h1 class="text-center cases animated bounceInRight text-dark">¿Por qué debes <span class="light">elegirnos?</span></h1>
-                <h1 class="text-center cases animated bounceInRight text-dark">Alto porcentaje de casos exitosos:</h1>
+                <h1 class="text-center cases animated bounceInRight text-dark">Alto porcentaje de casos exitosos</h1>
 <p> Nuestra tasa de éxito es del 99%. Durante más de 5 años hemos ayudado a más de 5000 clientes a adquirir nuevos productos financieros tales como tarjetas de crédito, cupos rotativos, créditos de libre inversión, préstamos hipotecarios, entre otros.</p> 
-                <h1 class="text-center cases animated bounceInLeft text-dark">Asesoría integral:</h1>
+                <h1 class="text-center cases animated bounceInLeft text-dark">Asesoría integral</h1>
 <p> Existe mucha información en internet de como aumentar tu score en las centrales de riesgo, pero este es solo uno de los parámetros que tienen en cuenta los bancos a la hora de otorgar un préstamo. Para que a una persona le sea otorgado un producto financiero este debe cumplir con una serie de requisitos. Nuestro objetivo no es solo ayudarte aumentar tu score crediticio sino también a cumplir con todos los requisitos que exigen las entidades bancarias.</p>
-                <h1 class="text-center cases animated bounceInRight text-dark">Experiencia en el sector:</h1>
+                <h1 class="text-center cases animated bounceInRight text-dark">Experiencia en el sector</h1>
 <p> con más de 5 años de experiencia en el mercado financiero, lo cual nos ha ayudado a entender a las entidades bancarias y las diferentes políticas que manejan. Cada banco maneja políticas diferentes y los requisitos varían. Te vamos a guiar paso a paso con base en la experiencia que he obtenido en nuestra trayectoria, con nosotros vas a lograr todos tus objetivos financieros y a mejorar tu vida crediticia.</p>
-                <h1 class="text-center cases animated bounceInLeft text-dark">Información actualizada:</h1>
+                <h1 class="text-center cases animated bounceInLeft text-dark">Información actualizada</h1>
 <p>Los bancos día a día están cambiando, la entidad que hoy te ofrece buenas tasas de interés mañana puede cambiar y brindar el peor servicio, o también el banco más flexible para aprobar prestamos mañana puede negarlos todos.
 Nuestro constante asesoramiento a los clientes nos brinda un flujo de información actualizada que nos permite darle a nuestros usuarios los mejores consejos ajustados a sus necesidades.
 Por ejemplo te podemos decir al día de hoy cual es el banco que te puede dar el crédito hipotecario más rápido o a una menor tasa. 
 Además nuestra base de clientes nos permite compartirte cuales son las principales quejas de los usuarios con los bancos, para que de esta manera evites malos ratos con entidades financieras y te dirijas a los mejores bancos.</p>
-                <h1 class="text-center cases animated bounceInLeft text-dark">Contaduría en orden:</h1>
+                <h1 class="text-center cases animated bounceInLeft text-dark">Contaduría en orden</h1>
 <p>Organizamos tu vida contable para que vaya de la mano con tu vida financiera. Tener en orden documentos tales como el RUT, declaración de renta, aumentara enormemente tus posibilidades de obtener mejores cupos bancarios.</p>
             </div>
         </div>
