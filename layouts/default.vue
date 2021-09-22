@@ -72,8 +72,12 @@
     height: 70px!important;
   }
 
+  .vs-navbar__left{
+    justify-content: center!important;
+  }
+
   .cup-logo{
-    width:110px;
+    width:220px;
   }
 
   .vs-navbar__line{

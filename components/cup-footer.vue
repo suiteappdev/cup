@@ -70,7 +70,7 @@
 
         </div>
         <div class="mini-footer">
-            <p class="text-center text-white" style="font-size:12px;"> &copy; Todos los derechos reservados <a  style="color:#1dc4e2;" href="">asesoriasflorez.com</a> S.A.S. Creado por <span>GrupoFlorez</span>  </p>
+            <p class="text-center text-white" style="font-size:12px;"> &copy; Todos los derechos reservados <a  class="light" href="">asesoriasflorez.com</a> S.A.S. Creado por <span>GrupoFlorez</span>  </p>
         </div>
     </div>
     

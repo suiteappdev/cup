@@ -50,7 +50,7 @@
                         <div class="box-service-2">
                             <div class="box-service-inner flex flex-center flex-column">
                                 <h2 class="text-dark no-margin text-center mt-40">Asesoría <span class="light">preferencial</span></h2>
-                                <p class="text-dark">Selecciona esta opción y uno de nuestros profesionales en menos de 12 horas hábiles te ayudara a:</p>
+                                <p>Selecciona esta opción y uno de nuestros profesionales en menos de 12 horas hábiles te ayudara a:</p>
                                 <ul class="service-list">
                                     <li class="text-dark service-item-premium">Resolver todas tus dudas financieras por vía telefónica o WhatsApp.</li>
                                     <li class="text-dark service-item-premium">Revisar minuciosamente tu Datacrédito y aumentar tu puntaje.</li>
@@ -123,7 +123,7 @@
                                         <h3 class="pricing-title">Asesoría preferencial</h3>
                                         </div>
                                     <div class="pricing-feature-list">
-                                     <ul class="service-list">
+                                     <ul class="service-list vineta">
                                         <li class="text-dark service-item-premium">Asesoría personalizada</li>
                                         <li class="text-dark service-item-premium">Resolver todas tus dudas financieras y contables</li>
                                         <li class="text-dark service-item-premium">Quitar reporte negativo o aumentar el puntaje en las centrales de riesgo</li>
@@ -145,7 +145,7 @@
                                         <h3 class="pricing-title">Acompañamiento financiero premium anual - 965.000 (cupos limitados 300)</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                        <ul class="service-list">
+                                        <ul class="service-list vineta">
                                             <li class="text-dark service-item-premium">No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
                                             <li class="text-dark service-item-premium">Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
                                         </ul>
@@ -166,7 +166,7 @@
                                         <h3 class="pricing-title">Otros servicios</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                        <ul class="service-list">
+                                        <ul class="service-list vineta">
                                             <li class="text-dark service-item-premium">Consulta en Datacrédito</li>
                                             <li class="text-dark service-item-premium">Eliminación de un reporte negativo</li>
                                             <li class="text-dark service-item-premium">Asesoría contable</li>
@@ -289,12 +289,12 @@ body .arrows:after {
         }
 
         .service-list{
-            padding : 0;
+            padding : 40;
+            list-style: none;
         }
 
         .service-item{
             padding: 10px;
-            border: 1px solid #033c3b;
             border-radius: 5px;
             margin-bottom: 10px;
             cursor: pointer;
@@ -303,21 +303,10 @@ body .arrows:after {
 
         .service-item-premium{
             padding: 10px;
-            border: 1px solid #033c3b;
             border-radius: 5px;
             margin-bottom: 10px;
             cursor: pointer;
             font-size: 0.9rem;
-        }
-
-        .service-item:hover{
-            border: 1px solid #00E6E3;
-            background-color: #032b2a;
-        }
-
-        .service-item-premium:hover{
-            border: 1px solid #00E6E3;
-            background-color: #00E6E3;
         }
 
         .flex{
@@ -338,7 +327,10 @@ body .arrows:after {
             width: 100%;
             height: 800px;
         }
-        
+
+        .vineta{
+            list-style-image: url('~/assets/images/vineta.png');
+        }
         
         .pricing-action:focus {
             outline: none;
