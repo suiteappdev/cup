@@ -15,6 +15,15 @@
                     <li>Organizar toda la documentación que te exigen los bancos de una manera efectiva. Te garantizamos que las entidades bancarias van a aceptar tus solitudes (préstamo hipotecario, tarjeta de crédito, cupo rotativo, crédito de libre inversión, crédito de vehículos).</li>
                 </ul>
                 <p>Nota: Este plan solo lo pueden tomar las personas que hayan pagado antes la asesoría preferencial debido a que debemos conocer tu vida financiera y saber si eres apto para este servicio.</p>
+                 <p class=" flex flex-center">
+                        <vs-button
+                            size="xl"
+                            :active="active == 0"
+                            @click="active = 0"
+                        >
+                        Premium anual - $965.000 COP (cupos limitados 300)
+                        </vs-button>
+                 </p>
             </div>
         </div>
 </template>

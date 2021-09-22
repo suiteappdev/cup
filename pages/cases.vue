@@ -50,7 +50,7 @@
                                         <h3 class="pricing-title">Asesoría preferencial</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                     <ul class="service-list">
+                                     <ul class="service-list vineta">
                                         <li class="text-dark service-item-premium">Asesoría personalizada</li>
                                         <li class="text-dark service-item-premium">Resolver todas tus dudas financieras y contables</li>
                                         <li class="text-dark service-item-premium">Quitar reporte negativo o aumentar el puntaje en las centrales de riesgo</li>
@@ -72,13 +72,13 @@
                                         <h3 class="pricing-title">Acompañamiento financiero premium anual - 965.000 (cupos limitados 300)</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                        <ul class="service-list">
+                                        <ul class="service-list vineta">
                                             <li class="text-dark service-item-premium">No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
                                             <li class="text-dark service-item-premium">Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
                                         </ul>
                                     </div>
-                                    <button class="pricing-action">Conoce más</button>
-                                </div>
+                                    <button @click="$router.push('/premium')" class="pricing-action">Conoce más</button>
+                                    </div>
                                 <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
                                     <div class="pricing-deco">
                                         <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
@@ -93,7 +93,7 @@
                                         <h3 class="pricing-title">Otros servicios</h3>
                                     </div>
                                     <div class="pricing-feature-list">
-                                        <ul class="service-list">
+                                        <ul class="service-list vineta">
                                             <li class="text-dark service-item-premium">Consulta en Datacrédito</li>
                                             <li class="text-dark service-item-premium">Eliminación de un reporte negativo</li>
                                             <li class="text-dark service-item-premium">Asesoría contable</li>

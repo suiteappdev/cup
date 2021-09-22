@@ -80,6 +80,19 @@
     width:220px;
   }
 
+  .flex{
+      display: flex;
+  }
+
+  .flex-center{
+      align-items: center;
+      justify-content: center;
+  }
+
+  .flex-column{
+      flex-direction: column;
+  }
+
   .vs-navbar__line{
     background-color: #8FD4DA!important;
     top:0px!important;
