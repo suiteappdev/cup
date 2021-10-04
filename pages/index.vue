@@ -80,8 +80,8 @@
             <template>
                 <div class="center grid">
                     <vs-row>
-                        <vs-col :key="index" v-for="col, index in comments" vs-type="flex" vs-justify="center" vs-align="center" w="3">
-                            <vs-card class="animated fadeInLeft">
+                        <vs-col :key="index" v-for="col, index in comments" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
+                            <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important;">
                                 <template #title>
                                     <h3> {{ col.name }}</h3>
                                 </template>
@@ -185,7 +185,7 @@
         </div> 
  </div>
 </template>
- <style scoped>
+ <style>
  .strong{
      font-weight: bold;
  }
@@ -193,7 +193,7 @@
   position: relative;
   width: 20px;
   height: 20px;
-  top: 180px;
+  top: 50px;
   transform: translate(-50%, -50%);
 }
 body .arrows:before {
@@ -330,7 +330,6 @@ body .arrows:after {
         .box-service-2{
             box-sizing: border-box;
             width: 100%;
-            height: 800px;
         }
 
         .vineta{
@@ -347,7 +346,7 @@ body .arrows:after {
         
         .pricing-feature-list {
             text-align: left;
-            padding: 27px!important;
+            padding: 10px!important;
             top: -60px;
             position: relative;
         }
@@ -371,8 +370,13 @@ body .arrows:after {
                 z-index: 10;
                 box-shadow: 0 0 20px rgba(46, 59, 125, 0.23);
             }
+
+            .testimonial-section{
+                padding: 10px!important;
+            }
         }
-        
+
+    
         .pricing-palden .pricing-deco {
             border-radius: 10px 10px 0 0;
             background: linear-gradient(135deg,#4097f9,#0af0c7);
@@ -562,7 +566,6 @@ body .arrows:after {
 
     .box-right{
         width: 100%;
-        height: 600px; 
         background-color: white;
      }
      
@@ -634,6 +637,90 @@ body .arrows:after {
     .text-left{
         text-align: left;
     }
+
+    /* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  /* CSS */
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .testimonial-section{
+      padding: 10px!important;
+  }
+
+  .vs-card-content{
+      width: 90%!important;
+  }
+
+  .pricing-section{
+      padding: 10px!important;
+  }
+
+  .cup-footer{
+      padding: 20px!important;
+  }
+
+  .form-inner{
+      padding: 10%!important;
+  }
+  
+}
     
  </style>
 <script>

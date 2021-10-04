@@ -102,11 +102,9 @@
         flex-direction: column;
     }
     .mini-footer{
-        position: absolute;
-        bottom: 0px;
+        bottom: -50px;
         width: 100%;
         height: 47px;
-        background-color: #00131c;
         right: 0px;
     }
 
