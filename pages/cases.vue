@@ -1,7 +1,7 @@
  <template>
  <div class="wrapper">
         <div class="testimonial-section">
-            <h1 class="text-center cases animated bounceInRight" style="margin-top:50px;">Casos de <span class="light">éxito</span></h1>
+            <h1 class="text-center cases animated bounceInRight" style="margin-top:70px;">Casos de <span class="light">éxito</span></h1>
             <template>
                 <div class="center grid">
                     <vs-row>
