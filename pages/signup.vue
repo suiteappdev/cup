@@ -9,35 +9,35 @@
                                         <h1 class="form-title">Formulario de registro</h1>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="value1" placeholder="Cédula o dcumento de identidad" shadow>
+                                        <vs-input v-model="username" placeholder="Cédula o dcumento de identidad" shadow>
                                             <template #icon>
                                             <i class='bx bx-card'></i>
                                             </template>
                                         </vs-input>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="value1" placeholder="Correo electronico" shadow>
+                                        <vs-input v-model="email" placeholder="Correo electronico" shadow>
                                             <template #icon>
                                             <i class='bx bx-user'></i>
                                             </template>
                                         </vs-input>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="value1" placeholder="Numero telefonico" shadow>
+                                        <vs-input v-model="celular" placeholder="Numero telefonico" shadow>
                                             <template #icon>
                                                 <i class='bx bx-phone'></i>
                                             </template>
                                         </vs-input>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input color="#7d33ff" shadow type="password" v-model="value2" placeholder="Contraseña">
+                                        <vs-input color="#7d33ff" shadow type="password" v-model="password" placeholder="Contraseña">
                                             <template #icon>
                                                 <i class='bx bx-lock-open-alt'></i>
                                             </template>
                                         </vs-input>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input color="#7d33ff" shadow type="password" v-model="value2" placeholder="Confirmar contraseña">
+                                        <vs-input color="#7d33ff" shadow type="password" v-model="password" placeholder="Confirmar contraseña">
                                             <template #icon>
                                                 <i class='bx bx-lock-open-alt'></i>
                                             </template>
@@ -51,19 +51,12 @@
                                                             size="large"
                                                             flat
                                                             :active="active == 0"
-                                                            @click="active = 0"
+                                                            @click="active = 0, registrar()"
                                                             block
+                                                            
                                                         >
                                                         Registrarme
                                                         </vs-button>
-                                                </vs-col>
-                                            </vs-row>
-                                            <vs-row>
-                                                <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                    <a href="/signup" class="footer-link no-underline">Registrarme</a>
-                                                </vs-col>
-                                                <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                    <a href="/recover" class="footer-link no-underline">¿Olvidaste tu contraseña?</a>
                                                 </vs-col>
                                             </vs-row>
                                         </div>
@@ -75,6 +68,40 @@
             </vs-row>
         </div>
 </template>
+<script>
+    export default {
+      data(){
+          return{
+                    username : '',
+                    email:'',
+                    celular:'',
+                    option : false,
+                    active: false,
+                    email: '',
+                    password: '',
+                    remember: false
+                }
+      
+        },
+                methods: {
+                async registrar() {
+                    try {
+                        let res = await this.$axios.post("auth/local/register", {
+                            username: this.username,
+                            password: this.password,
+                            email: this.email,
+                            celular: this.celular
+                        });
+                        this.$router.push('login')
+                    } catch(error) {
+                        this.error = true
+                        this.password = ''
+                    }
+                },
+        
+                }
+    }
+  </script>
  <style>
      .box-left{
         background-image: url('~/assets/images/bg.jpg');
@@ -257,16 +284,3 @@
   }
 }
  </style>
-<script>
-    export default {
-      data:() => ({
-        value1 : '',
-        value2:'',
-        option : false,
-        active: false,
-        email: '',
-        password: '',
-        remember: false
-      })
-    }
-  </script>

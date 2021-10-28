@@ -75,7 +75,7 @@
     </div>
     
 </template>
-<style lang="postcss" scoped>
+<style>
     .light{
         color:#00E6E3 ;
     }

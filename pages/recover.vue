@@ -1,5 +1,5 @@
  <template>
-    <form @submit.prevent="login">
+    <form @submit.prevent="recover">
         <div class="center grid">
             <vs-row>
                 <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
@@ -7,30 +7,21 @@
                             <div class="form">
                                 <div class="form-inner">
                                     <div class="form-control">
-                                        <h1 class="form-title">Inicia sesión</h1>
+                                        <h1 class="form-title">Recuperar contraseña</h1>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="username" placeholder="Cédula o dcumento de identidad" shadow>
+                                        <vs-input
+                                         v-model="email"
+                                         placeholder="Escriba el correo electronico"
+                                         shadow
+                                         type = email
+                                         >
                                             <template #icon>
                                             <i class='bx bx-user'></i>
                                             </template>
                                         </vs-input>
                                     </div>
-                                    <div class="form-control">
-                                        <vs-input color="#7d33ff" shadow type="password" v-model="password" placeholder="Password">
-                                            <template #icon>
-                                                <i class='bx bx-lock-open-alt'></i>
-                                            </template>
-                                        </vs-input>
-                                    </div>
                                         <div class="center grid">
-                                            <vs-row>
-                                                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
-                                                    <vs-checkbox  style="float:right;" v-model="option">
-                                                     Recordar datos
-                                                    </vs-checkbox>
-                                                </vs-col>
-                                            </vs-row>
                                             <vs-row>
                                             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
                                                 <vs-button 
@@ -41,20 +32,10 @@
                                                     block
                                                     type="submit" 
                                                     size="large"
-                                                    :disabled="password.length < 5"
-                                                    >Entrar</vs-button>
-                                                </vs-col>
-                                            </vs-row>
-                                            <vs-row>
-                                                <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                    <a href="/signup" style="text-decoration: none;">Registrarme</a>
-                                                </vs-col>
-                                                <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                    <a href="/recover" style="text-decoration: none;">¿Olvidaste tu contraseña?</a>
+                                                    >Recuperar</vs-button>
                                                 </vs-col>
                                             </vs-row>
                                         </div>
-
                                </div>
                             </div>
                         </div>
@@ -64,67 +45,39 @@
     </form>    
 </template>
 <script>
-export default {
+
+    export default {
 
         name: 'Login',
             data(){
                 return{
-                    username : '',
-                    password:'',
+                    email : '',
                     option : false,
                     active: false,
-                    email: '',
-                    password: '',
-                    remember: false,
-                    error: false,
-                    errorMsg: `Usuario o Contraseña erroneos`,
-                    success:false,
-                    successMsg:'logueado con exito',
                     }
                 },
             methods: {
-                async login() {
+                async recover() {
                     try {
-                        let res = await this.$axios.post("auth/local", {
-                            identifier: this.username,
-                            password: this.password
-                        });
-                        
-                        const { jwt, user } = res.data
-                        window.localStorage.setItem('jwt', jwt)
-                        window.localStorage.setItem('userData', JSON.stringify(user))
+                        this.$axios.post("auth/forgot-password", {
+                                email: this.email
+                            })
+
                         this.success = this.openSuccess('top-center','success')
-                        this.actDatos = this.actDatos()
+
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
-                        this.$router.push('/login')
+                        this.$router.push('/recover')
                         this.password = ''
                     }
                 },
-                async actDatos(){
-                    this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + ''
-                    const metoken =  window.localStorage.getItem('jwt')
-                    this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
-                    let res = await this.$axios.get("/perfil/username/" + this.username)
-                    const useract1 = res.data
-                    if(useract1[0].actDatos1){
-                        this.go('/board')
-                    }else{
-                        this.go('/actDatos1')
-                    }
-                },
-
-                go : (route)=>{
-                    window.location.href = route
-                },
-
                     openSuccess(position = null, color) {
                     const noti = this.$vs.notification({
                         flat: true,
                         color,
                         position,
                         title: 'Mensaje',
-                        text: `Logueado con exito`
+                        text: `Hemos enviado un enlace de recuperación a tu bandeja de entrada o correo no deseado. Expira en 1 Hora`
                     })
                     },
                     openError(position = null, color) {
@@ -133,14 +86,14 @@ export default {
                         color,
                         position,
                         title: 'Mensaje',
-                        text: `Ocurrio un error usuario o contraseña invalido`
+                        text: `No existe una cuenta asociada a este correo.`
                     })
                     }
         
                 }
     }
   </script>
- <style scoped>
+ <style>
      .footer-link{
          text-combine-upright: none;   
      }

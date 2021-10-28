@@ -1,9 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'consigueunprestamo.com',
+    title: 'Asesorias Florez',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },
@@ -45,14 +45,13 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'http://52.15.244.21:1337',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
 
-  server: {
-    host: '0.0.0.0',
-    port: 80
-  }
+  //ssr:false
 }
