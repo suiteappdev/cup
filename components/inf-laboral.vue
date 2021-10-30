@@ -11,27 +11,27 @@
                   placeholder="Nivel de estudio"
                   v-model="nestudio"
                 >
-                  <vs-option v-for="(n, index) in nivest()" :key="index" :label="n" :value="n">
-                    {{nivelest}}
-                  </vs-option>
-                </vs-select>
-              </div>
-            </div>
-            <div style="float: left; margin-top:10px;padding-left: 10px;">  
-            <label  style="margin-bottom:10px;" for="">Actualmente soy</label>
-              <div class="form-control">
-                <vs-select
-                  placeholder="Actualmente soy"
-                  v-model="actualsoy"
-                >
-                  <vs-option v-for="(s, index) in acts()" :key="index" :label="as" :value="as">
-                    {{actsoy}}
+                  <vs-option v-for="(ne, index) in nivest()" :key="index" :label="ne" :value="ne">
+                    {{ne}}
                   </vs-option>
                 </vs-select>
               </div>
             </div>
           <div style="float: left; margin-top:10px;padding-left: 10px;">  
-            <label  style="margin-bottom:10px;" for="">Ingresos Mensuales</label>
+            <label  style="margin-bottom:10px;" for="">Actualmente soy</label>
+              <div class="form-control">
+                <vs-select
+                  placeholder="Actualmente soy"
+                  v-model="actsoy"
+                >
+                  <vs-option v-for="(as, index) in actualmentes()" :key="index" :label="as" :value="as">
+                    {{as}}
+                  </vs-option>
+                </vs-select>
+              </div>
+            </div>
+          <div style="float: left; margin-top:10px;padding-left: 10px;">  
+            <label  style="margin-bottom:10px;" for="">Ingresos mensuales</label>
               <div class="form-control">
                 <vs-select
                   placeholder="Ingresos mensuales"
@@ -44,7 +44,7 @@
               </div>
             </div>
             <div style="float: left; margin-top:10px;padding-left: 10px;">  
-            <label  style="margin-bottom:10px;" for="">Estrato</label>
+            <label  style="margin-bottom:10px;" for="">Gastos mensuales</label>
               <div class="form-control">
                 <vs-select
                   placeholder="Gastos mensuales"
@@ -62,11 +62,10 @@
 export default {
         data(){
             return{
-              nestudio :'',
               actsoy :'',
               imensual : '',
               gtomensual : '',
-              nivelest : '',
+              nestudio : '',
               as : '',
               actualsoy : ''
 
@@ -75,19 +74,21 @@ export default {
                 methods: {
                
                 nivest : ()=>{
-                    var ne = [
+                    var nivestudio = [
 
                         "Basica Primaria","Bachiller","Tecnico","Tecnologo","Profesional"
                     ]
-                    return ne;
+                    return nivestudio;
+                    
                 },
 
-                acts : ()=>{
-                    var actsoy = [
+                actualmentes : ()=>{
+                    var actualmente = [
 
                         "Estudiante","Empleado","Independiente","Desempleado","Pensionado"
                     ]
-                    return actsoy;
+                    return actualmente;
+                    
                 },
 
                 ingmensual : ()=>{

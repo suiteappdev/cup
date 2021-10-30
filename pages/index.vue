@@ -21,7 +21,7 @@
             <div class="center grid">
                 <vs-row>
                     <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
-                        <div class="box-service-1">
+                        <div class="box-service-1" >
                             <div class="box-service-inner flex flex-center flex-column">
                                 <h2 class="text-white no-margin text-left mt-40">Asesoría <span class="light">gratuita</span></h2>
                                 <p class="light" style="padding:40px;margin:0;">Selecciona esta opción y uno de nuestros profesionales en menos de 24 horas hábiles te ayudara a:</p>
@@ -42,9 +42,9 @@
                                        <span class="strong text-white">Nota:</span> <br /> Si quieres saber tu estado en las centrales de riesgo, debes pagar el valor de la consulta ($10.000).</p>
                                 </ul>
                                 <br />
-                                <vs-button size="xl">
-                                    Recibe tu asesoría gratuita 
-                                </vs-button>
+                                    <vs-button v-model="ag" size="xl" @click="$router.push('/login/?tase=ag')">
+                                    Recibe tu asesoría gratuita
+                                    </vs-button> 
                             </div>
                         </div>
                     </vs-col>
@@ -66,7 +66,7 @@
                                     <li class="text-dark service-item-premium">Resolver todas tus dudas contables en materia tributaria (impuestos).</li>
                                 </ul>
                                 <br />
-                                <vs-button size="xl">
+                                <vs-button v-model="ap" size="xl" @click="$router.push('/login/?tase=ap')">
                                     Recibe tu asesoría preferencial - $99.500 COP
                                 </vs-button>
                             </div>
@@ -185,6 +185,95 @@
         </div> 
  </div>
 </template>
+<script>
+    export default {
+        beforeMount(){
+            this.$nextTick( ()=> {
+                //alert("before render");
+            }); 
+        },
+        mounted() {
+            this.$nextTick( ()=> {
+               // alert("after rendered");
+            });
+        },
+        data:() => ({
+        ap:'',
+        ag:'',
+        comments : [
+                {
+
+                    id: 1, 
+                    name : 'Luis Florez', 
+                    image :`${require(`~/assets/images/foto5.png`)}`, 
+                    preview :'El 25 de julio de 2018 contaba con los siguientes productos...',
+                    pretext : 'El 25 de julio de 2018 contaba con los siguientes productos:',
+                    posttext : 'Luego de 3 años de trabajo ( del 25 de julio de 20187 al 25 de julio de 2021) cuenta con los siguientes productos:',
+                    credits_before : [
+                        "Tarjeta de crédito BANCO DAVIVIENDA, cupo $10.000.000",
+                        "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo $5.000.000",
+                    ],
+                    credits_before_total : '$15.000.000',
+                    credits_after :[
+                        "BANCOLOMBIA HIPOTECARIO, cupo $90.000.000",
+                        "BANCOLOMBIA ROTATIVO, cupo $30.000.000",
+                        "ROTATIVO BCO DE BOGOTA, cupo $20.250.000",
+                        "Tarjeta de crédito BANCOLOMBIA MASTERCARD, $12.000.000",
+                        "Tarjeta de crédito COLPATRIA VISA, cupo $33.500.000",
+                        "Tarjeta de crédito COLPATRIA MASTERCARD, cupo $7.772.000",
+                        "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo $5.000.000"
+                    ],
+                     credits_after_total : '$198.522.000',
+                    note : ''
+                },
+                {
+                    id : 2, 
+                    name : 'Lina Peñates', 
+                    image : `${require(`~/assets/images/foto4.png`)}`, 
+                    preview :'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto...',
+                    pretext : 'Todo comenzó el 18 de noviembre de 2017, Lina no contaba con ningún producto financiero, es decir comenzamos desde cero.',
+                    posttext:'Luego de más de 3 años y medio de trabajo ( del 18 de noviembre del 2017 al 24 de junio del 2021) Lina cuenta con los siguientes productos financieros:',
+                    credits_before : [],
+                    credits_after : [],
+                    note : 'En el mes de Julio del 2021 el banco Colpatria le ofreció a Lina una tarjeta de crédito preaprobada de $8.000.000 pero esta se rechazó debido a la alta cuota de manejo que tenía ($30.000 al mes).'  
+                },
+                {
+                    id : 3, 
+                    name : 'Miguel Martinez', 
+                    image : `${require(`~/assets/images/foto3.png`)}`, 
+                    preview :'Miguel solicito nuestra asesoría el día 12 de septiembre del 2018...',
+                    posttext:'',
+                    pretext : '',
+                    credits_before : [],
+                    credits_after : [],
+                    note : '' 
+                }, 
+                {
+                    id : 4,
+                    name : 'Luis Carlos Alvarez', 
+                    image : `${require(`~/assets/images/foto2.png`)}`, 
+                    preview :'En abril del 2019 Luis Carlos solicito la primera tarjeta de crédito...',
+                    pretext : '',
+                    posttext:'Luego de 3 años de trabajo ( del 25 de julio de 20187 al 25 de julio de 2021) cuenta con los siguientes productos:',
+                    credits_before : [
+                        "Tarjeta de crédito BANCO DAVIVIENDA, cupo $10.000.000",
+                        "Tarjeta de crédito TUYA S.A. (grupo Éxito), cupo $5.000.000",
+                    ],
+                    credits_before_total : '$15.000.000',
+                    credits_after : [],
+                    note : ''  
+                }
+            ],
+        value1 : '',
+        value2:'',
+        option : false,
+        active: false,
+        email: '',
+        password: '',
+        remember: false,
+      })
+    }
+  </script>
  <style>
  .strong{
      font-weight: bold;

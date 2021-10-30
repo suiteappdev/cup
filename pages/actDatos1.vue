@@ -15,7 +15,7 @@
                                             </template>
                                         </vs-input>
                                     <!-- Componente-->
-                                    <!--<inf-fecha-nacimiento />-->
+                                    <inf-fecha-nacimiento />
                                     <!-- Componente-->
                                         <div style="float: left; margin-top:10px;padding-left: 10px;">    
                                             <label  style="margin-bottom:10px;" for="">Sexo</label>
@@ -59,17 +59,19 @@
                                         <inf-fecha-expedicion />
                                         <!-- Componente-->
                                         </vs-col>
-                                                                                <!-- Componente-->
-                                        <inf-contacto />
                                         <!-- Componente-->
+                                        <inf-contacto />
                                         <!-- Componente-->
                                         <inf-residencial />
                                         <!-- Componente-->
-                                        <inf-laboral />        
+                                        <inf-laboral />
+                                        <!-- Componente-->
+                                        <inf-bancaria />
+                                        <!-- Componente-->
+                                        <inf-centralesderiesgo />
+                                        <!-- Componente-->
+                                        <inf-contable />        
                                         </vs-row>
-   
-
-
                                     </div>
                                     <div class="form-control">
                                             <div>
@@ -106,13 +108,16 @@
         </div>
 </template>
 <script>
+import InfCentralesderiesgo from '~/components/inf-centralesderiesgo.vue';
 import Contacto from '~/components/inf-contacto.vue';
 import FechaExpedicion from '~/components/inf-fecha-expedicion.vue';
 import fechaNacimiento from '~/components/inf-fecha-nacimiento.vue';
 import InfLaboral from '~/components/inf-laboral.vue';
 import InfResidencial from '~/components/inf-residencial.vue';
+import InfBancaria from '~/components/inf-bancaria.vue';
+import InfContable from '~/components/inf-contable.vue';
 export default {
-  components: { fechaNacimiento, FechaExpedicion, Contacto, InfResidencial, InfLaboral },
+  components: { fechaNacimiento, FechaExpedicion, Contacto, InfResidencial, InfLaboral, InfBancaria, InfCentralesderiesgo, InfContable },
         data(){
             return{
                 cllamadas:'',
@@ -176,7 +181,7 @@ export default {
          margin-top: 30px;
      }   
      .center-grid{
-        height: 2000px !important;
+        height: 2500px !important;
         margin-top: 90px;
      }   
      .box-right{

@@ -80,10 +80,22 @@ export default {
                     errorMsg: `Usuario o Contraseña erroneos`,
                     success:false,
                     successMsg:'logueado con exito',
+                    ag:'',
+                    ap:''
                     }
+                    
+                },
+                created(to, from) {
+                    console.log(this.$route.params);
+                    console.log(this.$route.path);
                 },
             methods: {
-                async login() {
+
+            verurl(){
+                    console.log(this.$route.params);
+                },
+
+            async login() {
                     try {
                         let res = await this.$axios.post("auth/local", {
                             identifier: this.username,
@@ -101,7 +113,7 @@ export default {
                         this.password = ''
                     }
                 },
-                async actDatos(){
+            async actDatos(){
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + ''
                     const metoken =  window.localStorage.getItem('jwt')
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
@@ -114,11 +126,11 @@ export default {
                     }
                 },
 
-                go : (route)=>{
+            go : (route)=>{
                     window.location.href = route
                 },
 
-                    openSuccess(position = null, color) {
+            openSuccess(position = null, color) {
                     const noti = this.$vs.notification({
                         flat: true,
                         color,
@@ -127,7 +139,7 @@ export default {
                         text: `Logueado con exito`
                     })
                     },
-                    openError(position = null, color) {
+            openError(position = null, color) {
                     const noti = this.$vs.notification({
                         flat: true,
                         color,
@@ -137,7 +149,7 @@ export default {
                     })
                     }
         
-                }
+                },
     }
   </script>
  <style scoped>

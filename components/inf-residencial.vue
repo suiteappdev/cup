@@ -24,8 +24,8 @@
                   placeholder="Ciudad"
                   v-model="ciudad"
                 >
-                  <vs-option v-for="(c, index) in ciu(d.departamento)" :key="index" :label="c.ciudades" :value="c.ciudades">
-                    {{c.ciudades}}
+                  <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c" :value="c">
+                    {{c}}
                   </vs-option>
                 </vs-select>
               </div>
@@ -66,8 +66,15 @@ export default {
               estrato :'',
               departamento : '',
               ciudad : '',
-              d: ''
+              d: '',
+              selectedCiudades :''
 
+            }
+        },
+        
+        watch: {
+            departamento(nuevoValor, valorAnterior){
+                this.selectedCiudades = this.dpto().filter((e)=>{return e.id == nuevoValor})[0].ciudades;
             }
         },
                 methods: {
@@ -78,6 +85,10 @@ export default {
                         "Propia","Familiar","Arrendada"
                     ]
                     return tipovivienda;
+                },
+
+               onChange(event) {
+                     alert(event.target.value)
                 },
 
                 est : ()=>{
