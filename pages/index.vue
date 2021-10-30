@@ -42,7 +42,7 @@
                                        <span class="strong text-white">Nota:</span> <br /> Si quieres saber tu estado en las centrales de riesgo, debes pagar el valor de la consulta ($10.000).</p>
                                 </ul>
                                 <br />
-                                <vs-button size="xl">
+                                <vs-button size="xl" @click="$router.push('/login/?type=ag')">
                                     Recibe tu asesoría gratuita 
                                 </vs-button>
                             </div>
@@ -186,6 +186,10 @@
  </div>
 </template>
  <style>
+
+ .vs-card{
+      cursor: unset!important;
+  }
  .strong{
      font-weight: bold;
  }
@@ -699,7 +703,8 @@ body .arrows:after {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
+
+
   .testimonial-section{
       padding: 10px!important;
   }

@@ -15,7 +15,7 @@
                             </vs-col>
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
                                 <h1 class="footer-title">Compañia</h1>
-                                     <ul class="link-list">
+                                <ul class="link-list">
                                    <li class="footer-link">Email <br />
                                     <a href="mailto:asesoriasflorez1@gmail.com" class="no-underline"><p class="light" style="font-size:14px;margin:0;">asesoriasflorez1@gmail.com</p></a>
                                    </li>
@@ -23,9 +23,9 @@
                                    <a class="no-underline"><p class="light" style="font-size:14px;margin:0;">3118221549</p></a>
                                    </li>
                                    <li  class="footer-link">Horarios de atención <br />
-                                    <p class="light" style="font-size:14px;margin:0;">Lunes a Viernes de 8:00 AM a 6:00 PM</p>
+                                        <p class="light" style="font-size:14px;margin:0;">Lunes a Viernes de 8:00 AM a 6:00 PM</p>
                                    </li>
-                                   <li  class="footer-link">Términos y condiciones</li>
+                                    <li class="footer-link"><a href="/terminos-condiciones" class="footer-link no-underline">Términos y condiciones</a></li>      
                                </ul>
                             </vs-col>
                             <vs-col class="text-center" vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
