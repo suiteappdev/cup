@@ -1,7 +1,7 @@
 <template>
       <vs-navbar fixed dark shadow text-white square center-collapsed v-model="active" right>
        <template #left>
-        <img class="cup-logo" @click="$router.push('login')" src="~/assets/images/logo.png" alt="">
+        <img class="cup-logo" @click="$router.push('/')" src="~/assets/images/logo.png" alt="">
         </template>
           <vs-navbar-item :active="active == 'home'" id="home">
 
@@ -18,6 +18,9 @@
         </vs-navbar-item>
         <vs-navbar-item  @click="$router.push('/cases')" :active="active == 'cases'" id="cases">
           Casos de éxito
+        </vs-navbar-item>
+        <vs-navbar-item @click="$router.push('/package')" :active="active == 'package'" id="package">
+          Paquete de servicios
         </vs-navbar-item>
         <vs-navbar-item @click="$router.push('/faq')" :active="active == 'faq'" id="faq">
           Preguntas frencuentes
