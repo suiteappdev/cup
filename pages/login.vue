@@ -65,7 +65,9 @@
 </template>
 <script>
 export default {
-
+        created() {
+            console.log("type", this.$route.query.type)
+        },
         name: 'Login',
             data(){
                 return{

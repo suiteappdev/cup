@@ -623,7 +623,7 @@ body .arrows:after {
                 },
                  {
                     id : 4,
-                    name : 'Luis David Florez', 
+                    name : 'Luis Carlos Alvarez', 
                     image : `${require(`~/assets/images/foto2.png`)}`, 
                     preview :'En abril del 2019 Luis Carlos solicito la primera tarjeta de crédito...',
                     pretext : '',

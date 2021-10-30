@@ -275,6 +275,10 @@
     }
   </script>
  <style>
+
+ .vs-card{
+      cursor: unset!important;
+  }
  .strong{
      font-weight: bold;
  }
@@ -788,7 +792,8 @@ body .arrows:after {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
+
+
   .testimonial-section{
       padding: 10px!important;
   }
