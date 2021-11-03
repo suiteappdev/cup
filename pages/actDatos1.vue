@@ -51,18 +51,18 @@
                                     <!--<inf-sexo />-->
                                     <template>
                                         <div style="float: left; margin-top:10px;padding-left: 10px;">    
-                                            <label  style="margin-bottom:10px;" for="">Sexo</label>
-                                                <div class="form-control">
-                                                    <vs-select
-                                                        placeholder="Sexo"
-                                                        v-model="sexo"
-                                                    >
-                                                    <vs-option v-for="(s, index) in sex()" :key="index" :label="s" :value="s">
-                                                        {{s}}
-                                                    </vs-option>
-                                                    </vs-select>
-                                                </div>
+                                        <label  style="margin-bottom:10px;" for="">Sexo</label>
+                                        <div class="form-control">
+                                            <vs-select
+                                                placeholder="Sexo"
+                                                v-model="sexo"
+                                            >
+                                            <vs-option v-for="(s, index) in sex()" :key="index" :label="s" :value="s">
+                                                {{s}}
+                                            </vs-option>
+                                            </vs-select>
                                         </div>
+                                    </div>
                                     </template>
                                     <!-- Componente-->
                                     <!--<inf-estadocivil />-->
@@ -134,45 +134,45 @@
                                         <!-- Componente-->
                                         <!--<inf-contacto />-->
                                         <template>
-                                            <div>
+                                        <div>
+                                        <div class="form-control" style="margin-top:10px;">
+                                            <label   for="">Teléfono celular de llamada</label>
+                                            <vs-input 
+                                                style="margin-top:10px;" 
+                                                v-model="cllamadas" 
+                                                placeholder="Celular" 
+                                                shadow 
+                                            >
+                                                <template #icon>
+                                                    <i class='bx bx-phone' ></i>
+                                                </template>
+                                            </vs-input>
+                                            </div>
                                             <div class="form-control" style="margin-top:10px;">
-                                                <label   for="">Teléfono celular de llamada</label>
+                                                <label   for="">Teléfono celular de WhatsApp</label>
                                                 <vs-input 
                                                     style="margin-top:10px;" 
-                                                    v-model="cllamadas" 
+                                                    v-model="cwasap" 
                                                     placeholder="Celular" 
-                                                    shadow 
-                                                >
+                                                    shadow>
                                                     <template #icon>
-                                                        <i class='bx bx-phone' ></i>
+                                                        <i class='bx bxl-whatsapp' ></i>
                                                     </template>
                                                 </vs-input>
-                                                </div>
+                                            </div>
                                                 <div class="form-control" style="margin-top:10px;">
-                                                    <label   for="">Teléfono celular de WhatsApp</label>
-                                                    <vs-input 
-                                                        style="margin-top:10px;" 
-                                                        v-model="cwasap" 
-                                                        placeholder="Celular" 
-                                                        shadow>
-                                                        <template #icon>
-                                                            <i class='bx bxl-whatsapp' ></i>
-                                                        </template>
-                                                    </vs-input>
-                                                </div>
-                                                    <div class="form-control" style="margin-top:10px;">
-                                                    <label   for="">Correo electronico</label>
-                                                    <vs-input 
-                                                        style="margin-top:10px;" 
-                                                        v-model="email" 
-                                                        placeholder="Email" 
-                                                        shadow>
-                                                        <template #icon>
-                                                            <i class='bx bx-mail-send' ></i>
-                                                        </template>
-                                                    </vs-input>
-                                                </div>
-                                            </div>    
+                                                <label   for="">Correo electronico</label>
+                                                <vs-input 
+                                                    style="margin-top:10px;" 
+                                                    v-model="email" 
+                                                    placeholder="Email" 
+                                                    shadow>
+                                                    <template #icon>
+                                                        <i class='bx bx-mail-send' ></i>
+                                                    </template>
+                                                </vs-input>
+                                            </div>
+                                        </div>    
                                         </template>
                                         <!-- Componente-->
                                         <!--<inf-residencial />-->
@@ -182,7 +182,7 @@
                                             <h2 class="form-title">Información residencial</h2>
                                             <p style="margin-bottom:30px;">Actualize la información residencial</p>
                                             </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
                                                     <label  style="margin-bottom:10px;" for="">Departamento</label>
                                                     <div class="form-control">
                                                         <vs-select
@@ -235,7 +235,7 @@
                                                     </div>
                                                     </div>
                                             </div>
-                                        </template>
+                                        </template>    
                                         <!-- Componente-->
                                         <!--<inf-laboral />-->
                                         <template>
@@ -356,9 +356,128 @@
                                         </template>
                                         <!-- Componente-->
                                         <!--<inf-centralesderiesgo />-->
-                                        
+                                        <template>
+                                        <div class="resi" style="margin-top=30px;">
+                                            <div>
+                                            <h2 class="form-title">Información en las centrales de riesgo</h2>
+                                            <p style="margin-bottom:30px;">Actualize la información de las centrales de riesgo</p>
+                                            </div>
+                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                    <label  style="margin-bottom:10px;" for="">¿Tienes suscripción en Datacrédito o TransUnion?</label>
+                                                    <div class="form-control">
+                                                        <vs-select
+                                                        placeholder="Si / No"
+                                                        v-model="sdatacre"
+                                                        >
+                                                        <vs-option label="Si" :value=1>
+                                                            Si
+                                                        </vs-option>
+                                                        <vs-option label="No" :value="0">
+                                                            No
+                                                        </vs-option>
+                                                        </vs-select>
+                                                    </div>
+                                                    </div>
+                                                    <div v-if="sdatacre" style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                    <label  style="margin-bottom:10px;" for="">¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa?</label>
+                                                    <div class="form-control">
+                                                        <vs-select
+                                                        placeholder="Nº de cuentas bancarias"
+                                                        v-model="sdatacresi"
+                                                        >
+                                                        <vs-option v-for="(sds, index) in datacreds()" :key="index" :label="sds" :value="sds">
+                                                            {{sds}}
+                                                        </vs-option>
+                                                        </vs-select>
+                                                    </div>
+                                                    </div>
+                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                    <label  style="margin-bottom:10px;" for="">¿Estas reportado negativamente?</label>
+                                                    <div class="form-control">
+                                                        <vs-select
+                                                        placeholder="Esta Reportado negativamente?"
+                                                        v-model="reportn"
+                                                        >
+                                                        <vs-option v-for="(rp, index) in rportneg()" :key="index" :label="rp" :value="rp">
+                                                            {{rp}}
+                                                        </vs-option>
+                                                        </vs-select>
+                                                    </div>
+                                                    </div>
+                                            </div>
+                                        </template>
                                         <!-- Componente-->
                                         <!--<inf-contable />-->
+                                        <template>
+                                            <div class="resi" style="margin-top=30px;">
+                                                <div>
+                                                <h2 class="form-title">Información contable</h2>
+                                                <p style="margin-bottom:30px;">Actualize la información contable</p>
+                                                </div>
+                                                        <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                        <label  style="margin-bottom:10px;" for="">¿Tiene RUT?</label>
+                                                        <div class="form-control">
+                                                            <vs-select
+                                                            placeholder="Si / No"
+                                                            v-model="rut"
+                                                            >
+                                                            <vs-option label="Si" :value=1>
+                                                                Si
+                                                            </vs-option>
+                                                            <vs-option label="No" :value=0>
+                                                                No
+                                                            </vs-option>
+                                                            </vs-select>
+                                                        </div>
+                                                        </div>
+                                                        <div v-if="rut" style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                        <div class="form-control">
+                                                            <label  style="margin-bottom:10px;" for=""> Actividad principal en el RUT (digite nombre de la actividad o código CIIU)</label>
+                                                            <vs-input style="margin-top:10px;" v-model="arut" placeholder="Actividad" shadow>
+                                                                <template #icon>
+                                                                    <i class='bx bx-money'></i>
+                                                                </template>
+                                                            </vs-input>
+                                                        </div>
+                                                        </div>
+                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                        <label  style="margin-bottom:10px;" for="">¿Declara renta?</label>
+                                                        <div class="form-control">
+                                                            <vs-select
+                                                            placeholder="Si / No"
+                                                            v-model="drenta"
+                                                            >
+                                                            <vs-option label="Si" :value= 1>
+                                                                Si
+                                                            </vs-option>
+                                                            <vs-option label="No" :value= 0>
+                                                                No
+                                                            </vs-option>
+                                                            </vs-select>
+                                                        </div>
+                                                        </div>
+                                                        <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                        <div class="form-control">
+                                                            <label  style="margin-bottom:10px;" for="">Total Patrimonio bruto</label>
+                                                            <vs-input style="margin-top:10px;" v-model="tpatrim" placeholder="Total patrimonio" shadow>
+                                                                <template #icon>
+                                                                    <i class='bx bx-money'></i>
+                                                                </template>
+                                                            </vs-input>
+                                                        </div>
+                                                        </div>
+                                                        <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
+                                                        <div class="form-control">
+                                                            <label  style="margin-bottom:10px;" for="">Total deudas</label>
+                                                            <vs-input style="margin-top:10px;" v-model="tdeudas" placeholder="Total deudas" shadow>
+                                                                <template #icon>
+                                                                    <i class='bx bx-money'></i>
+                                                                </template>
+                                                            </vs-input>
+                                                        </div>
+                                                        </div>
+                                                </div>
+                                            </template>
                                         </vs-row>
                                     </div>
                                     <div class="form-control">
@@ -454,7 +573,7 @@ export default {
                             var exdate = new Date(exyears=this.exano, exmonth=this.exmes, exday=this.exdia)
                             console.log(exdate);
                             const plan =  window.localStorage.getItem('plan')
-                            const email =  window.localStorage.getItem('email')
+                            const email =  window.localStorage.getItem('email').replace(/['"]+/g, '')
                             const metoken =  window.localStorage.getItem('jwt')
                             const username = window.localStorage.getItem('username').replace(/['"]+/g, '')
                             const usernameid = parseInt(username)
@@ -473,7 +592,7 @@ export default {
                             fexpedicion: exdate,
                             cllamadas:this.cllamadas,
                             cwasap:this.cwasap,
-                            email:this.email,
+                            email: email,
                             departamento: this.departamento,
                             ciudad:this.ciudad,
                             tvivienda :this.tvivienda,
@@ -582,7 +701,7 @@ export default {
                     civilstatus : ()=>{
                     var estadocivil = [
 
-                        "Solter@","Casada@","Comprometid@","Divorciad@"
+                        "Solter@","Casad@","Comprometid@","Divorciad@"
                     ]
                     return estadocivil;
                 },
