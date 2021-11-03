@@ -1,5 +1,4 @@
  <template>
-    <form @submit.prevent="login">
         <div class="center grid">
             <vs-row>
                 <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
@@ -37,9 +36,8 @@
                                                     style="margin-bottom:30px;margin-top:30px;"
                                                     flat
                                                     :active="active == 0"
-                                                    @click="active = 0"
+                                                    @click="active = 0, login()"
                                                     block
-                                                    type="submit" 
                                                     size="large"
                                                     :disabled="password.length < 5"
                                                     >Entrar</vs-button>
@@ -47,7 +45,7 @@
                                             </vs-row>
                                             <vs-row>
                                                 <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                    <a href="/signup" style="text-decoration: none;">Registrarme</a>
+                                                <a href="#" style="text-decoration: none;" @click="gosignup($event)">Registrarme</a>
                                                 </vs-col>
                                                 <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
                                                     <a href="/recover" style="text-decoration: none;">¿Olvidaste tu contraseña?</a>
@@ -61,13 +59,10 @@
                 </vs-col>
             </vs-row>
         </div>
-    </form>    
 </template>
 <script>
 export default {
-        created() {
-            console.log("type", this.$route.query.type)
-        },
+
         name: 'Login',
             data(){
                 return{
@@ -83,19 +78,20 @@ export default {
                     success:false,
                     successMsg:'logueado con exito',
                     ag:'',
-                    ap:''
+                    ap:'',
+                    plan:''
                     }
                     
                 },
-                created(to, from) {
-                    console.log(this.$route.params);
-                    console.log(this.$route.path);
-                },
             methods: {
 
-            verurl(){
-                    console.log(this.$route.params);
-                },
+                  gosignup(event) {
+                      event.preventDefault();
+            
+                            let uri = this.$route.query.tase;
+                            this.$router.push('/signup/?tase=' + uri)
+                            
+                        },
 
             async login() {
                     try {
@@ -104,9 +100,12 @@ export default {
                             password: this.password
                         });
                         
-                        const { jwt, user } = res.data
+                        const { jwt, user, } = res.data
                         window.localStorage.setItem('jwt', jwt)
                         window.localStorage.setItem('userData', JSON.stringify(user))
+                        window.localStorage.setItem('username', JSON.stringify(user.username))
+                        window.localStorage.setItem('plan', JSON.stringify(user.plan))
+                        window.localStorage.setItem('email', JSON.stringify(user.email))
                         this.success = this.openSuccess('top-center','success')
                         this.actDatos = this.actDatos()
                     } catch(error) {
@@ -121,7 +120,7 @@ export default {
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
                     let res = await this.$axios.get("/perfil/username/" + this.username)
                     const useract1 = res.data
-                    if(useract1[0].actDatos1){
+                    if(!useract1){
                         this.go('/board')
                     }else{
                         this.go('/actDatos1')

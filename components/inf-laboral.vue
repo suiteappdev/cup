@@ -62,13 +62,10 @@
 export default {
         data(){
             return{
+              nestudio:'',
               actsoy :'',
               imensual : '',
               gtomensual : '',
-              nestudio : '',
-              as : '',
-              actualsoy : ''
-
             }
         },
                 methods: {

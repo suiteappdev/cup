@@ -70,12 +70,6 @@
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
-          <p @click="$router.push('/contact')">Contactanos</p>
-        </vs-sidebar-item>
-        <vs-sidebar-item>
-          <template #icon>
-            <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
-          </template>
           <p @click="logout()">Salir</p>
         </vs-sidebar-item>
         <template #footer>
@@ -99,6 +93,9 @@
         logout(){
           window.localStorage.removeItem('jwt')
           window.localStorage.removeItem('userData')
+          window.localStorage.removeItem('username')
+          window.localStorage.removeItem('plan')
+          window.localStorage.removeItem('email')
           let instance = this.$axios.create();
           delete instance.defaults.headers.common['Authorization'];
           this.go('/')

@@ -70,6 +70,9 @@
 </template>
 <script>
     export default {
+        created (){
+           this.plan = this.$route.query.tase;
+        },
       data(){
           return{
                     username : '',
@@ -85,19 +88,47 @@
         },
                 methods: {
                 async registrar() {
+                    let plan = this.plan;
                     try {
                         let res = await this.$axios.post("auth/local/register", {
                             username: this.username,
                             password: this.password,
                             email: this.email,
-                            celular: this.celular
+                            celular: this.celular,
+                            plan: plan
                         });
-                        this.$router.push('login')
+
+                        this.success = this.openSuccess('top-center','success')
+                        this.go('/login')
                     } catch(error) {
-                        this.error = true
+                        this.error = this.openError('top-center', 'danger')
+                        this.$router.push('/signup')
                         this.password = ''
                     }
                 },
+                
+                go : (route)=>{
+                    window.location.href = route
+                },
+
+                openSuccess(position = null, color) {
+                    const noti = this.$vs.notification({
+                        flat: true,
+                        color,
+                        position,
+                        title: 'Mensaje',
+                        text: `Registrado con exito`
+                    })
+                    },
+                openError(position = null, color) {
+                    const noti = this.$vs.notification({
+                        flat: true,
+                        color,
+                        position,
+                        title: 'Mensaje',
+                        text: `Ocurrio un error al registrarse`
+                    })
+                    }
         
                 }
     }
@@ -130,8 +161,6 @@
 
     .form-inner{
         width: 80%;
-        padding: 20px;
-        padding: 2%;
     }
     
     .form-control{

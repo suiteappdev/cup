@@ -62,13 +62,11 @@
 export default {
         data(){
             return{
+              departamento: '',
+              ciudad:'',
               tvivienda :'',
               estrato :'',
-              departamento : '',
-              ciudad : '',
-              d: '',
               selectedCiudades :''
-
             }
         },
         
