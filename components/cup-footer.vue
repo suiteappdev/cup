@@ -17,7 +17,7 @@
                                 <h1 class="footer-title">Compañia</h1>
                                 <ul class="link-list">
                                    <li class="footer-link">Email <br />
-                                    <a href="mailto:asesoriasflorez1@gmail.com" class="no-underline"><p class="light" style="font-size:14px;margin:0;">asesoriasflorez1@gmail.com</p></a>
+                                    <a style="cursor:unset;"  href="mailto:asesoriasflorez1@gmail.com" class="no-underline"><p class="light" style="font-size:14px;margin:0;">asesoriasflorez1@gmail.com</p></a>
                                    </li>
                                    <li  class="footer-link">Teléfono
                                    <a class="no-underline"><p class="light" style="font-size:14px;margin:0;">3118221549</p></a>

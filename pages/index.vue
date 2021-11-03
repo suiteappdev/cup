@@ -162,10 +162,7 @@
                                             <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
                                             <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
                                         </svg>
-                                        <div class="pricing-price"><span class="pricing-currency">$</span>50.000
-                                          <span class="pricing-period">/ Pago único</span>
-                                        </div>
-                                        <h3 class="pricing-title">Otros servicios</h3>
+                                        <div class="pricing-price">Otros servicios</div>
                                     </div>
                                     <div class="pricing-feature-list">
                                         <ul class="service-list vineta">
@@ -395,7 +392,7 @@ body .arrows:after {
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
-            cursor: pointer;
+            cursor: unset;
             font-size: 0.9rem;
         }
 
@@ -403,7 +400,7 @@ body .arrows:after {
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
-            cursor: pointer;
+            cursor: unset;
             font-size: 0.9rem;
         }
 
