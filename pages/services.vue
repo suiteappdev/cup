@@ -1,0 +1,3 @@
+<template>
+    <inf-servicios />
+</template>

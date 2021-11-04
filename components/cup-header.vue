@@ -55,7 +55,7 @@
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
-          <p @click="$router.push('/signup')">Registrarme</p>
+          <p @click="$router.push('/services')">Registrarme</p>
         </vs-sidebar-item>
           <vs-sidebar-item >
           <template #icon>
