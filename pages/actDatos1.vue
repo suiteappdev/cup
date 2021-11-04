@@ -1,5 +1,5 @@
  <template>
-        <div class="center-grid">
+        <div class="center-grid" style="padding-left: 20%; padding-right: 20%; padding-top: 30%; padding-bottom: 40%;">
             <vs-row>
                 <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
                         <div class="box-right">
@@ -2122,8 +2122,8 @@ export default {
          margin-top: 30px;
      }   
      .center-grid{
-        height: 2500px !important;
-        margin-top: 90px;
+        /*height: 2500px !important;
+        margin-top: 90px;*/
      }   
      .box-right{
         width: 100%;
@@ -2158,9 +2158,14 @@ export default {
      }
 
     .form-inner{
-        width: 80%;
-        padding: 20px;
-        padding: 30%;
+
+    width: 80%;
+    /* padding: 20
+px
+; */
+    padding: 0% 0% 110% 0%;
+    height: 100%;
+
     }
     
     .form-control{

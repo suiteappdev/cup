@@ -9,16 +9,28 @@
                                         <h1 class="form-title">Formulario de registro</h1>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="username" placeholder="Cédula o dcumento de identidad" shadow>
+                                        <vs-input v-model="username" type="number" placeholder="Cédula o dcumento de identidad" shadow>
                                             <template #icon>
                                             <i class='bx bx-card'></i>
+                                            </template>
+                                            <template v-if="username.length > 6" #message-success>
+                                            Cedula Valida
+                                            </template>
+                                            <template v-if="username.length < 5 && username !== ''" #message-danger>
+                                            Cedula invalida
                                             </template>
                                         </vs-input>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="email" placeholder="Correo electronico" shadow>
+                                        <vs-input v-model="email" placeholder="micorreo@ejemplo.com" shadow>
                                             <template #icon>
                                             <i class='bx bx-mail-send' ></i>
+                                            </template>
+                                            <template v-if="validEmail" #message-success>
+                                            Email Valido
+                                            </template>
+                                            <template v-if="!validEmail && email !== ''" #message-danger>
+                                            Email Invalido
                                             </template>
                                         </vs-input>
                                     </div>
@@ -27,35 +39,41 @@
                                             <template #icon>
                                                 <i class='bx bx-phone'></i>
                                             </template>
+                                            <template v-if="celular.length >= 10" #message-success>
+                                            Celular Valido
+                                            </template>
+                                            <template v-if="celular.length < 7 && celular !== ''" #message-danger>
+                                            Celular invalido
+                                            </template>
                                         </vs-input>
                                     </div>
-<template>
-<div> 
-	<div class="form-control">
-		<vs-input :class='{valid:passwordValidation.valid}' :type="passwordVisible ? 'text' : 'password'" v-model="password" placeholder="Password" shadow>
-		<template #icon>
-        <i class='bx bx-lock-alt'></i>
-        </template>
-        </vs-input>
-	</div>
+                                    <template>
+                                    <div> 
+                                        <div class="form-control">
+                                            <vs-input :class='{valid:passwordValidation.valid}' :type="passwordVisible ? 'text' : 'password'" v-model="password" placeholder="Password" shadow>
+                                            <template #icon>
+                                            <i class='bx bx-lock-alt'></i>
+                                            </template>
+                                            </vs-input>
+                                        </div>
 
-	<vs-input type="password" v-model.lazy='checkPassword' placeholder="Password" shadow>
-    	<template #icon>
-        <i class='bx bx-lock-alt'></i>
-        </template>
-    </vs-input>
-	<transition name="hint" appear>
-		<div v-if='passwordValidation.errors.length > 0 && !submitted' class='hints'>
-			<h3>Sugerencias Para la Contraseña</h3>
-			<p v-for="(e, index) in passwordValidation.errors" :key="index">{{e}}</p>
-		</div>
-	</transition>
-		<div class="matches" v-if='notSamePasswords'>
-		<p>Passwords no son iguales.</p>
-	</div>
+                                        <vs-input type="password" v-model.lazy='checkPassword' placeholder="Password" shadow>
+                                            <template #icon>
+                                            <i class='bx bx-lock-alt'></i>
+                                            </template>
+                                        </vs-input>
+                                        <transition name="hint" appear>
+                                            <div v-if='passwordValidation.errors.length > 0 && !submitted' class='hints'>
+                                                <h3>Sugerencias Para la Contraseña</h3>
+                                                <p v-for="(e, index) in passwordValidation.errors" :key="index">{{e}}</p>
+                                            </div>
+                                        </transition>
+                                            <div class="matches" v-if='notSamePasswords'>
+                                            <p>Passwords no son iguales.</p>
+                                        </div>
 
-</div>
-</template>
+                                    </div>
+                                    </template>
                                         <div class="center grid">
                                             <vs-row>
                                             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
@@ -66,7 +84,7 @@
                                                             :active="active == 0"
                                                             @click="active = 0, registrar()"
                                                             block
-                                                            v-if='passwordsFilled && !notSamePasswords && passwordValidation.valid'
+                                                            v-if='passwordsFilled && !notSamePasswords && passwordValidation.valid && validEmail && username.length > 6 && celular.length >= 10'
                                                         >
                                                         Registrarme
                                                         </vs-button>
@@ -189,6 +207,13 @@
                     } else {
                         return { valid:false, errors }
                     }
+                },
+
+                validEmail() {
+                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)
+                },
+                validCC(){
+                    return /(\.\w{2,3})+$/.test(this.username)
                 }
 	}
     }
