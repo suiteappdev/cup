@@ -18,7 +18,7 @@
                                     <div class="form-control">
                                         <vs-input v-model="email" placeholder="Correo electronico" shadow>
                                             <template #icon>
-                                            <i class='bx bx-user'></i>
+                                            <i class='bx bx-mail-send' ></i>
                                             </template>
                                         </vs-input>
                                     </div>
@@ -29,20 +29,33 @@
                                             </template>
                                         </vs-input>
                                     </div>
-                                    <div class="form-control">
-                                        <vs-input color="#7d33ff" shadow type="password" v-model="password" placeholder="Contraseña">
-                                            <template #icon>
-                                                <i class='bx bx-lock-open-alt'></i>
-                                            </template>
-                                        </vs-input>
-                                    </div>
-                                    <div class="form-control">
-                                        <vs-input color="#7d33ff" shadow type="password" v-model="password" placeholder="Confirmar contraseña">
-                                            <template #icon>
-                                                <i class='bx bx-lock-open-alt'></i>
-                                            </template>
-                                        </vs-input>
-                                    </div>
+<template>
+<div> 
+	<div class="form-control">
+		<vs-input :class='{valid:passwordValidation.valid}' :type="passwordVisible ? 'text' : 'password'" v-model="password" placeholder="Password" shadow>
+		<template #icon>
+        <i class='bx bx-lock-alt'></i>
+        </template>
+        </vs-input>
+	</div>
+
+	<vs-input type="password" v-model.lazy='checkPassword' placeholder="Password" shadow>
+    	<template #icon>
+        <i class='bx bx-lock-alt'></i>
+        </template>
+    </vs-input>
+	<transition name="hint" appear>
+		<div v-if='passwordValidation.errors.length > 0 && !submitted' class='hints'>
+			<h3>Sugerencias Para la Contraseña</h3>
+			<p v-for="(e, index) in passwordValidation.errors" :key="index">{{e}}</p>
+		</div>
+	</transition>
+		<div class="matches" v-if='notSamePasswords'>
+		<p>Passwords no son iguales.</p>
+	</div>
+
+</div>
+</template>
                                         <div class="center grid">
                                             <vs-row>
                                             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
@@ -53,7 +66,7 @@
                                                             :active="active == 0"
                                                             @click="active = 0, registrar()"
                                                             block
-                                                            
+                                                            v-if='passwordsFilled && !notSamePasswords && passwordValidation.valid'
                                                         >
                                                         Registrarme
                                                         </vs-button>
@@ -82,11 +95,32 @@
                     active: false,
                     email: '',
                     password: '',
-                    remember: false
-                }
+                    remember: false,
+                    rules: [
+                                { message:'Se requiere una letra minúscula.', regex:/[a-z]+/ },
+                                { message:"Se requiere una letra mayúscula.",  regex:/[A-Z]+/ },
+                                { message:"8 caracteres como mínimo.", regex:/.{8,}/ },
+                                { message:"Se requiere un número.", regex:/[0-9]+/ }
+			                ],
+		            checkPassword:'',
+			        passwordVisible:false,
+			        submitted:false}
       
         },
                 methods: {
+
+                resetPasswords () {
+                    this.password = ''
+                    this.checkPassword = ''
+                    this.submitted = true
+                    setTimeout(() => {
+                        this.submitted = false
+                    }, 2000)
+                },
+                togglePasswordVisibility () {
+                    this.passwordVisible = !this.passwordVisible
+                },
+
                 async registrar() {
                     let plan = this.plan;
                     try {
@@ -130,7 +164,33 @@
                     })
                     }
         
+                },
+
+            computed: {
+                notSamePasswords () {
+                    if (this.passwordsFilled) {
+                        return (this.password !== this.checkPassword)
+                    } else {
+                        return false
+                    }
+                },
+                passwordsFilled () {
+                    return (this.password !== '' && this.checkPassword !== '')
+                },
+                passwordValidation () {
+                    let errors = []
+                    for (let condition of this.rules) {
+                        if (!condition.regex.test(this.password)) {
+                            errors.push(condition.message)
+                        }
+                    }
+                    if (errors.length === 0) {
+                        return { valid:true, errors }
+                    } else {
+                        return { valid:false, errors }
+                    }
                 }
+	}
     }
   </script>
  <style>

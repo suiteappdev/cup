@@ -546,6 +546,7 @@ export default {
                 actsoy :'',
                 imensual : '',
                 gtomensual : '',
+                tase : '',
                 active: false,
                 option : false,
                 remember: false,
@@ -572,7 +573,7 @@ export default {
                             var exday = this.exdia 
                             var exdate = new Date(exyears=this.exano, exmonth=this.exmes, exday=this.exdia)
                             console.log(exdate);
-                            const plan =  window.localStorage.getItem('plan')
+                            const plan =  window.localStorage.getItem('plan').replace(/['"]+/g, '')
                             const email =  window.localStorage.getItem('email').replace(/['"]+/g, '')
                             const metoken =  window.localStorage.getItem('jwt')
                             const username = window.localStorage.getItem('username').replace(/['"]+/g, '')
@@ -613,6 +614,7 @@ export default {
                             actsoy : this.actsoy,
                             imensual : this.imensual,
                             gtomensual : this.gtomensual,
+                            tase : plan,
                             disabled: true
 
                             });

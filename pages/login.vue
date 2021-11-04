@@ -118,12 +118,15 @@ export default {
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + ''
                     const metoken =  window.localStorage.getItem('jwt')
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
-                    let res = await this.$axios.get("/perfil/username/" + this.username)
-                    const useract1 = res.data
-                    if(!useract1){
-                        this.go('/board')
-                    }else{
-                        this.go('/actDatos1')
+                    let res = await this.$axios.get("/perfil/username/" + this.username);
+
+                    if(res.data.length > 0){
+                        const useract1 = res.data
+                        if(useract1[0].actDatos1){
+                            this.go('/board')
+                        }else{
+                            this.go('/actDatos1')
+                        }                        
                     }
                 },
 
