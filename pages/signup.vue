@@ -39,7 +39,7 @@
                                             <template #icon>
                                                 <i class='bx bx-phone'></i>
                                             </template>
-                                            <template v-if="celular.length >= 10" #message-success>
+                                            <template v-if="celular.length >= 8" #message-success>
                                             Celular Valido
                                             </template>
                                             <template v-if="celular.length < 7 && celular !== ''" #message-danger>
@@ -78,13 +78,13 @@
                                             <vs-row>
                                             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
                                                         <vs-button
-                                                            style="margin-bottom:30px;margin-top:30px;" 
-                                                            size="large"
+                                                            style="margin-bottom:30px;margin-top:30px;"
                                                             flat
                                                             :active="active == 0"
                                                             @click="active = 0, registrar()"
                                                             block
-                                                            v-if='passwordsFilled && !notSamePasswords && passwordValidation.valid && validEmail && username.length > 6 && celular.length >= 10'
+                                                            size="large"
+                                                            :disabled="password.length && checkPassword.length < 8 && username && email && celular"
                                                         >
                                                         Registrarme
                                                         </vs-button>

@@ -13,6 +13,12 @@
                                             <template #icon>
                                                 <i class='bx bx-user'></i>
                                             </template>
+                                            <template v-if="nombrec == '' && nombrec.length < 9" #message-warn>
+                                                Digite su nombre completo
+                                            </template>
+                                            <template v-if="nombrec.length >= 10" #message-success>
+                                                ok
+                                            </template>
                                         </vs-input>
                                     <!-- Componente-->
                                         <template>
@@ -20,6 +26,7 @@
                                                 <label  style="margin-bottom:10px;" for="">Fecha de nacimiento</label>
                                                 <div style="display:flex;margin-top:10px;
                                                 ">
+                                                                                         
                                                 <vs-select style="padding-left: 10px;"
                                                     placeholder="Año"
                                                     v-model="fnano"
@@ -27,6 +34,12 @@
                                                 <vs-option v-for="(a, index) in years()" :key="index" :label="a" :value="a">
                                                     {{a}}
                                                 </vs-option>
+                                                <template v-if="fnano == ''" #message-warn>
+                                                    Año es requerido
+                                                </template>
+                                                <template v-if="fnano" #message-success>
+                                                    ok
+                                                </template>
                                                 </vs-select>
                                                 <vs-select  style="padding-left: 10px;"
                                                     placeholder="Mes"
@@ -35,6 +48,12 @@
                                                 <vs-option v-for="(m, index) in months()" :key="index" :label="m.mes" :value="m.id">
                                                     {{m.mes}}
                                                 </vs-option>
+                                                <template v-if="fnmes == ''" #message-warn>
+                                                    Mes es requerido
+                                                </template>
+                                                 <template v-if="fnmes" #message-success>
+                                                    ok
+                                                </template>
                                                 </vs-select>
                                                 <vs-select style="padding-left: 10px;"
                                                     placeholder="Dia"
@@ -43,6 +62,12 @@
                                                 <vs-option v-for="(d, index) in days()" :key="index" :label="d" :value="d">
                                                     {{d}}
                                                 </vs-option>
+                                                <template v-if="fndia == ''" #message-warn>
+                                                    Dia es requerido
+                                                </template>
+                                                <template v-if="fndia" #message-success>
+                                                    ok
+                                                </template>
                                                 </vs-select>
                                             </div>
                                             </div>
@@ -60,6 +85,12 @@
                                             <vs-option v-for="(s, index) in sex()" :key="index" :label="s" :value="s">
                                                 {{s}}
                                             </vs-option>
+                                                <template v-if="sexo == ''" #message-warn>
+                                                    Sexo es requerido
+                                                </template>
+                                                <template v-if="sexo" #message-success>
+                                                    ok
+                                                </template>
                                             </vs-select>
                                         </div>
                                     </div>
@@ -77,6 +108,12 @@
                                             <vs-option v-for="(e, index) in civilstatus()" :key="index" :label="e" :value="e">
                                                 {{e}}
                                             </vs-option>
+                                                <template v-if="estadocivil == ''" #message-warn>
+                                                    Estado civil es requerido
+                                                </template>
+                                                <template v-if="estadocivil" #message-success>
+                                                    ok
+                                                </template>
                                             </vs-select>
                                         </div>
                                         </div>
@@ -92,7 +129,6 @@
                                                     <template #icon>
                                                         <i class='bx bx-lock-open-alt'></i>
                                                     </template>
-                                                    {{username}}
                                                 </vs-input>
                                             </div>
                                         </div>
@@ -109,6 +145,12 @@
                                                 <vs-option v-for="(a, index) in years()" :key="index" :label="a" :value="a">
                                                     {{a}}
                                                 </vs-option>
+                                                <template v-if="exano == ''" #message-warn>
+                                                    Año es requerido
+                                                </template>
+                                                <template v-if="exano" #message-success>
+                                                    ok
+                                                </template>
                                                 </vs-select>
                                                 <vs-select  style="padding-left: 10px;"
                                                     placeholder="Mes"
@@ -117,6 +159,12 @@
                                                 <vs-option v-for="(m, index) in months()" :key="index" :label="m.mes" :value="m.id">
                                                     {{m.mes}}
                                                 </vs-option>
+                                                <template v-if="exmes == ''" #message-warn>
+                                                    mes es requerido
+                                                </template>
+                                                <template v-if="exmes" #message-success>
+                                                    ok
+                                                </template>
                                                 </vs-select>
                                                 <vs-select style="padding-left: 10px;"
                                                     placeholder="Dia"
@@ -125,6 +173,12 @@
                                                 <vs-option v-for="(d, index) in days()" :key="index" :label="d" :value="d">
                                                     {{d}}
                                                 </vs-option>
+                                                <template v-if="exdia == ''" #message-warn>
+                                                    Dia es requerido
+                                                </template>
+                                                <template v-if="exdia" #message-success>
+                                                    ok
+                                                </template>
                                                 </vs-select>
                                             </div>
                                             </div>
@@ -146,6 +200,12 @@
                                                 <template #icon>
                                                     <i class='bx bx-phone' ></i>
                                                 </template>
+                                                <template v-if="cllamadas == ''" #message-warn>
+                                                    Celular llamadas es requerido
+                                                </template>
+                                                <template v-if="cllamadas" #message-success>
+                                                    ok
+                                                </template>
                                             </vs-input>
                                             </div>
                                             <div class="form-control" style="margin-top:10px;">
@@ -158,11 +218,18 @@
                                                     <template #icon>
                                                         <i class='bx bxl-whatsapp' ></i>
                                                     </template>
+                                                <template v-if="cwasap == ''" #message-warn>
+                                                    Dia es requerido
+                                                </template>
+                                                <template v-if="cwasap" #message-success>
+                                                    ok
+                                                </template>
                                                 </vs-input>
-                                            </div>
+                                                </div>
                                                 <div class="form-control" style="margin-top:10px;">
                                                 <label   for="">Correo electronico</label>
                                                 <vs-input 
+                                                    disabled
                                                     style="margin-top:10px;" 
                                                     v-model="email" 
                                                     placeholder="Email" 
@@ -192,7 +259,14 @@
                                                         <vs-option v-for="(d, index) in dpto()" :key="index" :label="d.departamento" :value="d.id">
                                                             {{d.departamento}}
                                                         </vs-option>
+                                                        <template v-if="departamento == ''" #message-warn>
+                                                            Departamento es requerido
+                                                        </template>
+                                                         <template v-if="departamento" #message-success>
+                                                            ok
+                                                        </template> 
                                                         </vs-select>
+
                                                     </div>
                                                     </div>
                                                     <div style="float: left; margin-top:10px;padding-left: 10px;">  
@@ -201,10 +275,17 @@
                                                         <vs-select
                                                         placeholder="Ciudad"
                                                         v-model="ciudad"
+                                                        :disabled ="departamento"
                                                         >
                                                         <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c" :value="c">
                                                             {{c}}
                                                         </vs-option>
+                                                        <template v-if="ciudad == ''" #message-warn>
+                                                            Departamento es requerido
+                                                        </template>
+                                                         <template v-if="ciudad" #message-success>
+                                                            ok
+                                                        </template> 
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -218,6 +299,12 @@
                                                         <vs-option v-for="(v, index) in tvienda()" :key="index" :label="v" :value="v">
                                                             {{v}}
                                                         </vs-option>
+                                                        <template v-if="tvivienda == ''" #message-warn>
+                                                            Tipo de vivienda es requerido
+                                                        </template>
+                                                         <template v-if="tvivienda" #message-success>
+                                                            ok
+                                                        </template> 
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -231,6 +318,12 @@
                                                         <vs-option v-for="(e, index) in est()" :key="index" :label="e" :value="e">
                                                             {{e}}
                                                         </vs-option>
+                                                        <template v-if="estrato == ''" #message-warn>
+                                                            Estrato es requerido
+                                                        </template>
+                                                         <template v-if="estrato" #message-success>
+                                                            ok
+                                                        </template> 
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -254,6 +347,12 @@
                                                         <vs-option v-for="(ne, index) in nivest()" :key="index" :label="ne" :value="ne">
                                                             {{ne}}
                                                         </vs-option>
+                                                        <template v-if="nestudio == ''" #message-warn>
+                                                            Nivel de estudio es requerido
+                                                        </template>
+                                                        <template v-if="nestudio" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -267,6 +366,12 @@
                                                         <vs-option v-for="(as, index) in actualmentes()" :key="index" :label="as" :value="as">
                                                             {{as}}
                                                         </vs-option>
+                                                         <template v-if="actsoy == ''" #message-warn>
+                                                            Actualmente soy es requerido
+                                                        </template>
+                                                        <template v-if="actsoy" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -280,6 +385,12 @@
                                                         <vs-option v-for="(im, index) in ingmensual()" :key="index" :label="im" :value="im">
                                                             {{im}}
                                                         </vs-option>
+                                                        <template v-if="imensual == ''" #message-warn>
+                                                            Ingreso mensual es requerido
+                                                        </template>
+                                                        <template v-if="imensual" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -293,6 +404,12 @@
                                                         <vs-option v-for="(gm, index) in gmensual()" :key="index" :label="gm" :value="gm">
                                                             {{gm}}
                                                         </vs-option>
+                                                        <template v-if="gtomensual == ''" #message-warn>
+                                                            Gasto mensual es requerido
+                                                        </template>
+                                                        <template v-if="gtomensual" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -316,6 +433,12 @@
                                                         <vs-option v-for="(cb, index) in ncuentas()" :key="index" :label="cb" :value="cb">
                                                             {{cb}}
                                                         </vs-option>
+                                                        <template v-if="ctasbancarias == ''" #message-warn>
+                                                            N° de cuentas bancarias es requerido
+                                                        </template>
+                                                        <template v-if="ctasbancarias" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -329,6 +452,12 @@
                                                         <vs-option v-for="(tc, index) in tcredito()" :key="index" :label="tc" :value="tc">
                                                             {{tc}}
                                                         </vs-option>
+                                                        <template v-if="tartienes == ''" #message-warn>
+                                                            N° de tarjetas es requerido
+                                                        </template>
+                                                        <template v-if="tartienes" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -339,6 +468,12 @@
                                                             <template #icon>
                                                                 <i class='bx bx-money'></i>
                                                             </template>
+                                                        <template v-if="cupototal == ''" #message-warn>
+                                                            Cupo total es requerido
+                                                        </template>
+                                                        <template v-if="cupototal" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-input>
                                                     </div>
                                                     </div>
@@ -349,6 +484,12 @@
                                                             <template #icon>
                                                                 <i class='bx bx-money'></i>
                                                             </template>
+                                                        <template v-if="cuantodebes == ''" #message-warn>
+                                                            Cuanto debes es requerido
+                                                        </template>
+                                                        <template v-if="cuantodebes" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-input>
                                                     </div>
                                                     </div>
@@ -375,6 +516,12 @@
                                                         <vs-option label="No" :value="0">
                                                             No
                                                         </vs-option>
+                                                        <template v-if="sdatacre == ''" #message-warn>
+                                                            Cuanto debes es requerido
+                                                        </template>
+                                                        <template v-if="sdatacre" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -388,6 +535,12 @@
                                                         <vs-option v-for="(sds, index) in datacreds()" :key="index" :label="sds" :value="sds">
                                                             {{sds}}
                                                         </vs-option>
+                                                        <template v-if="sdatacresi == ''" #message-warn>
+                                                            Cuanto debes es requerido
+                                                        </template>
+                                                        <template v-if="sdatacresi" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -401,6 +554,12 @@
                                                         <vs-option v-for="(rp, index) in rportneg()" :key="index" :label="rp" :value="rp">
                                                             {{rp}}
                                                         </vs-option>
+                                                        <template v-if="reportn == ''" #message-warn>
+                                                            Estas reportado es requerido
+                                                        </template>
+                                                        <template v-if="reportn" #message-success>
+                                                            ok
+                                                        </template>
                                                         </vs-select>
                                                     </div>
                                                     </div>
@@ -427,6 +586,12 @@
                                                             <vs-option label="No" :value=0>
                                                                 No
                                                             </vs-option>
+                                                        <template v-if="rut == ''" #message-warn>
+                                                            Rut es requerido
+                                                        </template>
+                                                        <template v-if="rut" #message-success>
+                                                            ok
+                                                        </template>
                                                             </vs-select>
                                                         </div>
                                                         </div>
@@ -437,6 +602,12 @@
                                                                 <template #icon>
                                                                     <i class='bx bx-money'></i>
                                                                 </template>
+                                                        <template v-if="arut == ''" #message-warn>
+                                                            Actividad principal debes es requerido
+                                                        </template>
+                                                        <template v-if="arut" #message-success>
+                                                            ok
+                                                        </template>
                                                             </vs-input>
                                                         </div>
                                                         </div>
@@ -453,6 +624,12 @@
                                                             <vs-option label="No" :value= 0>
                                                                 No
                                                             </vs-option>
+                                                        <template v-if="drenta == ''" #message-warn>
+                                                            Declara renta es requerido
+                                                        </template>
+                                                        <template v-if="drenta" #message-success>
+                                                            ok
+                                                        </template>
                                                             </vs-select>
                                                         </div>
                                                         </div>
@@ -463,6 +640,12 @@
                                                                 <template #icon>
                                                                     <i class='bx bx-money'></i>
                                                                 </template>
+                                                        <template v-if="tpatrim == ''" #message-warn>
+                                                            Total patroimonio es requerido
+                                                        </template>
+                                                        <template v-if="tpatrim" #message-success>
+                                                            ok
+                                                        </template>
                                                             </vs-input>
                                                         </div>
                                                         </div>
@@ -473,6 +656,12 @@
                                                                 <template #icon>
                                                                     <i class='bx bx-money'></i>
                                                                 </template>
+                                                        <template v-if="tdeudas == ''" #message-warn>
+                                                            Total de deudas es requerido
+                                                        </template>
+                                                        <template v-if="tdeudas" #message-success>
+                                                            ok
+                                                        </template>
                                                             </vs-input>
                                                         </div>
                                                         </div>
@@ -489,6 +678,34 @@
                                                             :active="active == 0"
                                                             @click="active = 0, actperfil()"
                                                             block
+                                                            v-if='nombrec &&
+                                                             fnano &&
+                                                             fnmes &&
+                                                             fndia &&
+                                                             exano &&
+                                                             exmes &&
+                                                             exdia && 
+                                                             sexo && 
+                                                             estadocivil &&
+                                                             cllamadas && 
+                                                             cwasap && 
+                                                             departamento &&
+                                                             ciudad && 
+                                                             tvivienda &&
+                                                             estrato  && 
+                                                            cuantodebes && 
+                                                            cupototal && 
+                                                            tartienes && 
+                                                            ctasbancarias && 
+                                                            sdatacre && 
+                                                            sdatacresi && 
+                                                            reportn && 
+                                                            arut && 
+                                                            rut && 
+                                                            nestudio && 
+                                                            actsoy && 
+                                                            imensual && 
+                                                            gtomensual'
                                                         >
                                                         Actualizar
                                                         </vs-button>
@@ -524,7 +741,7 @@ export default {
                 fexpedicion: '',
                 cllamadas:'',
                 cwasap:'',
-                email:'',
+                email:'prueba',
                 departamento: '',
                 selectedCiudades:'',
                 ciudad:'',
@@ -553,6 +770,7 @@ export default {
                 erro: 'ocurrio un error'
             }
         },
+
 
                 watch: {
                           departamento(nuevoValor, valorAnterior){
