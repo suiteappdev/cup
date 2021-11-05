@@ -4,19 +4,19 @@
                 <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
                         <div class="box-right">
                             <div class="form">
-                                <div class="form-inner">
+                                <div class="">
                                     <div class="form-control">
                                         <h1 class="form-title">Inicia sesión</h1>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="username" placeholder="Cédula o dcumento de identidad" shadow>
+                                        <vs-input v-model="username" placeholder="Cédula o documento de identidad" shadow>
                                             <template #icon>
                                             <i class='bx bx-user'></i>
                                             </template>
                                         </vs-input>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input color="#7d33ff" shadow type="password" v-model="password" placeholder="Password">
+                                        <vs-input color="#7d33ff" shadow type="password" v-model="password" placeholder="Contraseña">
                                             <template #icon>
                                                 <i class='bx bx-lock-open-alt'></i>
                                             </template>
@@ -62,7 +62,6 @@
 </template>
 <script>
 export default {
-
         name: 'Login',
             data(){
                 return{
@@ -185,12 +184,6 @@ export default {
         height: 100%;
      }
 
-    .form-inner{
-        width: 80%;
-        padding: 20px;
-        padding: 30%;
-    }
-    
     .form-control{
         margin-bottom: 24px;
         height: 40px;
