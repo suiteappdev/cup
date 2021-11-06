@@ -507,7 +507,7 @@
                                                     <label  style="margin-bottom:10px;" for="">¿Tienes suscripción en Datacrédito o TransUnion?</label>
                                                     <div class="form-control">
                                                         <vs-select
-                                                        placeholder="Si / No"
+                                                        placeholder=""
                                                         v-model="sdatacre"
                                                         >
                                                         <vs-option label="Si" :value=1>
@@ -516,9 +516,9 @@
                                                         <vs-option label="No" :value="0">
                                                             No
                                                         </vs-option>
-                                                        <template v-if="sdatacre == ''" #message-warn>
-                                                            Cuanto debes es requerido
-                                                        </template>
+                                                        <!--<template v-if="sdatacre == ''" #message-warn>
+                                                            Campo requerido
+                                                        </template>-->
                                                         <template v-if="sdatacre" #message-success>
                                                             ok
                                                         </template>
@@ -529,7 +529,7 @@
                                                     <label  style="margin-bottom:10px;" for="">¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa?</label>
                                                     <div class="form-control">
                                                         <vs-select
-                                                        placeholder="Nº de cuentas bancarias"
+                                                        placeholder="Asesoria"
                                                         v-model="sdatacresi"
                                                         >
                                                         <vs-option v-for="(sds, index) in datacreds()" :key="index" :label="sds" :value="sds">
@@ -577,7 +577,7 @@
                                                         <label  style="margin-bottom:10px;" for="">¿Tiene RUT?</label>
                                                         <div class="form-control">
                                                             <vs-select
-                                                            placeholder="Si / No"
+                                                            placeholder=""
                                                             v-model="rut"
                                                             >
                                                             <vs-option label="Si" :value=1>
@@ -586,9 +586,9 @@
                                                             <vs-option label="No" :value=0>
                                                                 No
                                                             </vs-option>
-                                                        <template v-if="rut == ''" #message-warn>
+                                                        <!--<template v-if="rut == ''" #message-warn>
                                                             Rut es requerido
-                                                        </template>
+                                                        </template>-->
                                                         <template v-if="rut" #message-success>
                                                             ok
                                                         </template>
@@ -615,7 +615,7 @@
                                                         <label  style="margin-bottom:10px;" for="">¿Declara renta?</label>
                                                         <div class="form-control">
                                                             <vs-select
-                                                            placeholder="Si / No"
+                                                            placeholder=""
                                                             v-model="drenta"
                                                             >
                                                             <vs-option label="Si" :value= 1>
@@ -624,10 +624,10 @@
                                                             <vs-option label="No" :value= 0>
                                                                 No
                                                             </vs-option>
-                                                        <template v-if="drenta == ''" #message-warn>
+                                                      <!--  <template v-if="drenta == '' " #message-warn>
                                                             Declara renta es requerido
-                                                        </template>
-                                                        <template v-if="drenta" #message-success>
+                                                        </template>-->
+                                                        <template v-if="drenta || !drenta == 0 && !tpatrim == 0 && !tdeudas == 0" #message-success>
                                                             ok
                                                         </template>
                                                             </vs-select>
@@ -636,11 +636,11 @@
                                                         <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
                                                         <div class="form-control">
                                                             <label  style="margin-bottom:10px;" for="">Total Patrimonio bruto</label>
-                                                            <vs-input style="margin-top:10px;" v-model="tpatrim" placeholder="Total patrimonio" shadow>
+                                                            <vs-input style="margin-top:10px;" v-model="tpatrim" placeholder="Total patrimonio" shadow value= 0>
                                                                 <template #icon>
                                                                     <i class='bx bx-money'></i>
                                                                 </template>
-                                                        <template v-if="tpatrim == ''" #message-warn>
+                                                        <template v-if="tpatrim == ''  " #message-warn>
                                                             Total patroimonio es requerido
                                                         </template>
                                                         <template v-if="tpatrim" #message-success>
@@ -652,7 +652,7 @@
                                                         <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
                                                         <div class="form-control">
                                                             <label  style="margin-bottom:10px;" for="">Total deudas</label>
-                                                            <vs-input style="margin-top:10px;" v-model="tdeudas" placeholder="Total deudas" shadow>
+                                                            <vs-input style="margin-top:10px;" v-model="tdeudas" placeholder="Total deudas" shadow value= 0>
                                                                 <template #icon>
                                                                     <i class='bx bx-money'></i>
                                                                 </template>
@@ -678,34 +678,30 @@
                                                             :active="active == 0"
                                                             @click="active = 0, actperfil()"
                                                             block
-                                                            v-if='nombrec &&
-                                                             fnano &&
-                                                             fnmes &&
-                                                             fndia &&
-                                                             exano &&
-                                                             exmes &&
-                                                             exdia && 
-                                                             sexo && 
-                                                             estadocivil &&
-                                                             cllamadas && 
-                                                             cwasap && 
-                                                             departamento &&
-                                                             ciudad && 
-                                                             tvivienda &&
-                                                             estrato  && 
-                                                            cuantodebes && 
-                                                            cupototal && 
-                                                            tartienes && 
-                                                            ctasbancarias && 
-                                                            sdatacre && 
-                                                            sdatacresi && 
-                                                            reportn && 
-                                                            arut && 
-                                                            rut && 
-                                                            nestudio && 
-                                                            actsoy && 
-                                                            imensual && 
-                                                            gtomensual'
+                                                            :disabled="nombrec.length < 1 ||
+                                                             fnano.length < 1 ||
+                                                             fnmes.length < 1 ||
+                                                             fndia.length < 1 ||
+                                                             exano.length < 1 ||
+                                                             exmes.length < 1 ||
+                                                             exdia.length < 1 || 
+                                                             sexo.length < 1 || 
+                                                             estadocivil.length < 1 ||
+                                                             cllamadas.length < 1 || 
+                                                             cwasap.length < 1 || 
+                                                             departamento.length < 1 ||
+                                                             ciudad.length < 1 || 
+                                                             tvivienda.length < 1 ||
+                                                             estrato .length < 1 || 
+                                                            cuantodebes.length < 1 || 
+                                                            cupototal.length < 1 || 
+                                                            tartienes.length < 1 || 
+                                                            ctasbancarias.length < 1 || 
+                                                            nestudio.length < 1 || 
+                                                            actsoy.length < 1 || 
+                                                            imensual.length < 1 || 
+                                                            gtomensual.length < 1 ||
+                                                            reportn.length < 1"
                                                         >
                                                         Actualizar
                                                         </vs-button>
@@ -723,8 +719,15 @@
 
 export default {
 
+    mounted(){
+        let meuser = window.localStorage.getItem('username').replace(/['"]+/g, '')
+        let meuseremail = window.localStorage.getItem('email').replace(/['"]+/g, '')
+        this.username = meuser
+        this.email = meuseremail
+
+    },
+
         data(){
-            
             return{
                 serverDate :'',
                 nombrec:'',
@@ -741,7 +744,7 @@ export default {
                 fexpedicion: '',
                 cllamadas:'',
                 cwasap:'',
-                email:'prueba',
+                email:'',
                 departamento: '',
                 selectedCiudades:'',
                 ciudad:'',
@@ -751,14 +754,14 @@ export default {
                 cupototal : '0',
                 tartienes : '',
                 ctasbancarias : '',
-                sdatacre :'',
+                sdatacre :0,
                 sdatacresi : '',
                 reportn : '',
-                tdeudas :'',
-                tpatrim : '',
-                drenta : '',
-                arut : '',
-                rut : '',
+                tdeudas :'0',
+                tpatrim : '0',
+                drenta : 0,
+                arut : 'na',
+                rut : 0,
                 nestudio:'',
                 actsoy :'',
                 imensual : '',
@@ -767,6 +770,7 @@ export default {
                 active: false,
                 option : false,
                 remember: false,
+                meuser:'',
                 erro: 'ocurrio un error'
             }
         },
@@ -775,7 +779,7 @@ export default {
                 watch: {
                           departamento(nuevoValor, valorAnterior){
                             this.selectedCiudades = this.dpto().filter((e)=>{return e.id == nuevoValor})[0].ciudades;
-                        }
+                        },
                 },
 
                 methods: {

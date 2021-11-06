@@ -1,87 +1,41 @@
 <template>
- <div class="wrapper">
-        <div class="pricing-section">
-            <h1 style="margin-top: 50px;" class="text-white text-center cases animated bounceInRight">Paquetes de <span class="light">servicio</span></h1>
-            <template>
+    <div class="wrapper">
+        <div class="testimonial-section">
+            <h1 >Elige uno de nuestros <span class="light">planes</span></h1>
                 <div class="center grid">
-                    <section>
-                            <div class="pricing pricing-palden">
-                                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
-                                    <div class="pricing-deco">
-                                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
-                                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
-                                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
-                                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
-                                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
-                                        </svg>
-                                        <div class="pricing-price"><span class="pricing-currency">$</span>0.00
-                                        </div>
-                                        <h3 class="pricing-title">Asesoría gratuita</h3>
-                                        </div>
-                                    <div class="pricing-feature-list">
-                                     <ul class="service-list vineta">
-                                        <li class="text-dark service-item-premium">Asesoría personalizada</li>
-                                        <li class="text-dark service-item-premium">Resolver todas tus dudas financieras y contables</li>
-                                        <li class="text-dark service-item-premium">Quitar reporte negativo o aumentar el puntaje en las centrales de riesgo</li>
-                                        </ul>  
-                                    </div>
-                                    <button class="pricing-action" @click="$router.push('/login/?tase=ag')">Quiero mi asesoría  gratis ya</button>
-                                </div>
-                                <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-2" style="min-height: 497px;">
-                                    <div class="pricing-deco" style="background: linear-gradient(135deg,#a93bfe,#584efd)">
-                                        <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
-                                            <path class="deco-layer deco-layer--1" d="M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z" fill="#FFFFFF" opacity="0.6"></path>
-                                            <path class="deco-layer deco-layer--2" d="M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z" fill="#FFFFFF" opacity="0.6"></path>
-                                            <path class="deco-layer deco-layer--3" d="M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716H42.401L43.415,98.342z" fill="#FFFFFF" opacity="0.7"></path>
-                                            <path class="deco-layer deco-layer--4" d="M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z" fill="#FFFFFF"></path>
-                                        </svg>
-                                        <div class="pricing-price"><span class="pricing-currency">$</span>965.000
-                                          <span class="pricing-period">/ Anual</span>
-                                        </div>
-                                        <h3 class="pricing-title">Acompañamiento financiero premium anual - 965.000 (cupos limitados 300)</h3>
-                                    </div>
-                                    <div class="pricing-feature-list">
-                                        <ul class="service-list vineta">
-                                            <li class="text-dark service-item-premium">No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
-                                            <li class="text-dark service-item-premium">Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
-                                        </ul>
-                                    </div>
-                                    <button @click="$router.push('/login/?tase=ap')" class="pricing-action">Recibe tu asesoría preferencial - $99.500 COP</button>
-                                    </div>
+                    <vs-row>
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="6" xs="6">
+                            <div>
+                            
+                                <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important;">
+                                        <template #title>
+                                            <h3>sesoria Gratuita</h3>
+                                        </template>
+                                        <vs-button primary icon @click="$router.push('/testimonio/?cliente=' + col.id)">
+                                            Conocer Historia
+                                        <i class='bx bx-heart'></i>
+                                    </vs-button>
+                                </vs-card>
+
                             </div>
-                        </section>
-                </div>
-            </template>
-        </div> 
- </div>
- 
-     
- </template>
-<script>
-    export default {
-        beforeMount(){
-            this.$nextTick( ()=> {
-                //alert("before render");
-            }); 
-        },
-        mounted() {
-            this.$nextTick( ()=> {
-               // alert("after rendered");
-            });
-        },
-        data:() => ({
-        ap:'',
-        ag:'',
-        active: false,
+                            <div>
+                            
+                                <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important;">
+                                    <p>Asesoria Premiun</p>
+                                        <vs-button primary icon @click="$router.push('/testimonio/?cliente=' + col.id)">
+                                            Conocer Historia
+                                        <i class='bx bx-heart'></i>
+                                    </vs-button>
+                                </vs-card>
 
-      })
-    }
-  </script>
-<style>
-
- .vs-card{
-      cursor: unset!important;
-  }
+                            </div>
+                        </vs-col>
+                    </vs-row>
+                </div>    
+        </div>
+    </div>
+</template>
+<style scoped>
  .strong{
      font-weight: bold;
  }
@@ -89,7 +43,7 @@
   position: relative;
   width: 20px;
   height: 20px;
-  top: 50px;
+  top: 180px;
   transform: translate(-50%, -50%);
 }
 body .arrows:before {
@@ -198,7 +152,7 @@ body .arrows:after {
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
-            cursor: unset;
+            cursor: pointer;
             font-size: 0.9rem;
         }
 
@@ -206,7 +160,7 @@ body .arrows:after {
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
-            cursor: unset;
+            cursor: pointer;
             font-size: 0.9rem;
         }
 
@@ -226,6 +180,7 @@ body .arrows:after {
         .box-service-2{
             box-sizing: border-box;
             width: 100%;
+            height: 800px;
         }
 
         .vineta{
@@ -242,7 +197,7 @@ body .arrows:after {
         
         .pricing-feature-list {
             text-align: left;
-            padding: 10px!important;
+            padding: 27px!important;
             top: -60px;
             position: relative;
         }
@@ -266,13 +221,8 @@ body .arrows:after {
                 z-index: 10;
                 box-shadow: 0 0 20px rgba(46, 59, 125, 0.23);
             }
-
-            .testimonial-section{
-                padding: 10px!important;
-            }
         }
-
-    
+        
         .pricing-palden .pricing-deco {
             border-radius: 10px 10px 0 0;
             background: linear-gradient(135deg,#4097f9,#0af0c7);
@@ -462,6 +412,7 @@ body .arrows:after {
 
     .box-right{
         width: 100%;
+        height: 600px; 
         background-color: white;
      }
      
@@ -533,90 +484,5 @@ body .arrows:after {
     .text-left{
         text-align: left;
     }
-
-    /* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
-
-@media (min-width: 1281px) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {
-
-
-  .testimonial-section{
-      padding: 10px!important;
-  }
-
-  .vs-card-content{
-      width: 90%!important;
-  }
-
-  .pricing-section{
-      padding: 10px!important;
-  }
-
-  .cup-footer{
-      padding: 20px!important;
-  }
-
-  .form-inner{
-      padding: 10%!important;
-  }
-  
-}
     
  </style>

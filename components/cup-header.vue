@@ -45,31 +45,31 @@
           </template>
           <p @click="$router.push('/')" >Inicio</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="veringresar">
           <template #icon>
             <i class='bx bx-user-circle bx-tada' ></i>
           </template>
           <p @click="$router.push('/login')">Ingresar</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="verregistro">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
           <p @click="$router.push('/services')">Registrarme</p>
         </vs-sidebar-item>
-          <vs-sidebar-item >
+          <vs-sidebar-item v-show="verperfil">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
           <p @click="$router.push('/profile')">Perfil</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="verboard">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
           <p @click="$router.push('/meboard')">Board</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="versalir">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
@@ -107,11 +107,39 @@
           window.location.href = route
         }
         },
+        mounted(){
+
+            if(localStorage.getItem('jwt')){
+            
+             this.versalir = true
+             this.verprofile = true
+             this.verboard = true
+             this.verregistro = false
+             this.veringresar = false
+
+        }else{
+
+          this.veringresar = true
+          this.veregistro = true
+          this.versalir = false
+          this.verprofile = false
+          this.verboard = false
+        }
+
+
+        },
         data(){
           return {
             active: 'home',
-            activeSidebar: false
+            activeSidebar: false,
+            versalir:false,
+            verprofile:false,
+            verregistro: true,
+            verigresar: true,
+            verboard:false
         }
+
+      
         
     },
 

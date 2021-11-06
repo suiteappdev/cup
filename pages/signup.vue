@@ -84,7 +84,7 @@
                                                             @click="active = 0, registrar()"
                                                             block
                                                             size="large"
-                                                            :disabled="password.length && checkPassword.length < 8 && username && email && celular"
+                                                            :disabled="password.length || checkPassword.length < 8 || username || email || celular"
                                                         >
                                                         Registrarme
                                                         </vs-button>

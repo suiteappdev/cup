@@ -121,20 +121,20 @@ export default {
                     let res = await this.$axios.get("/perfil/username/" + this.username);
                     let useract1 = res.data
                     console.log(useract1);
-                    console.log(useract1.actdatos1)
+                    //console.log(res.data[0].actDatos1)
                     console.log(res.data);
                     //alert('ver res')
                     if(res.data.length == 0){
                             //alert('length')
                             this.go('/actDatos1')
                                                 
-                    }if(res.data.actDatos1){
+                    }else{
+
+                        if(res.data[0].actDatos1){
 
                         this.go('/board')
 
-                    }if(this.useract1[0].actdatos1){
-
-                       // this.go('/board')
+                    }
 
                     }
                 },
