@@ -6,72 +6,21 @@
                             <div class="form">
                                 <div class="form-inner">
                                     <div class="form-control">
-                                        <h1 class="form-title">Formulario de registro</h1>
+                                        <h1 class="form-title">Formula tu pregunta</h1>
                                     </div>
-                                    <div class="form-control">
-                                        <vs-input v-model="username" type="number" placeholder="Cédula o dcumento de identidad" shadow>
-                                            <template #icon>
-                                            <i class='bx bx-card'></i>
-                                            </template>
-                                            <template v-if="username.length > 6" #message-success>
-                                            Cedula Valida
-                                            </template>
-                                            <template v-if="username.length < 5 && username !== ''" #message-danger>
-                                            Cedula invalida
-                                            </template>
-                                        </vs-input>
-                                    </div>
-                                    <div class="form-control">
-                                        <vs-input v-model="email" placeholder="micorreo@ejemplo.com" shadow>
-                                            <template #icon>
-                                            <i class='bx bx-mail-send' ></i>
-                                            </template>
-                                            <template v-if="validEmail" #message-success>
-                                            Email Valido
-                                            </template>
-                                            <template v-if="!validEmail && email !== ''" #message-danger>
-                                            Email Invalido
-                                            </template>
-                                        </vs-input>
-                                    </div>
-                                    <div class="form-control">
-                                        <vs-input v-model="celular" placeholder="Numero telefonico" shadow>
-                                            <template #icon>
-                                                <i class='bx bx-phone'></i>
-                                            </template>
-                                            <template v-if="celular.length >= 8" #message-success>
-                                            Celular Valido
-                                            </template>
-                                            <template v-if="celular.length < 7 && celular !== ''" #message-danger>
-                                            Celular invalido
-                                            </template>
-                                        </vs-input>
+                                    <div>
+                                        <b-form-textarea 
+                                            v-model="preguntar" 
+                                            debounce="500" 
+                                            rows="1" 
+                                            max-rows="100" 
+                                            placeholder="Enter at least 10 characters"
+                                            
+                                        >
+                                        </b-form-textarea>
                                     </div>
                                     <template>
                                     <div> 
-                                        <div class="form-control">
-                                            <vs-input :class='{valid:passwordValidation.valid}' :type="passwordVisible ? 'text' : 'password'" v-model="password" placeholder="Password" shadow>
-                                            <template #icon>
-                                            <i class='bx bx-lock-alt'></i>
-                                            </template>
-                                            </vs-input>
-                                        </div>
-
-                                        <vs-input type="password" v-model.lazy='checkPassword' placeholder="Password" shadow>
-                                            <template #icon>
-                                            <i class='bx bx-lock-alt'></i>
-                                            </template>
-                                        </vs-input>
-                                        <transition name="hint" appear>
-                                            <div v-if='passwordValidation.errors.length > 0 && !submitted' class='hints'>
-                                                <h3>Sugerencias Para la Contraseña</h3>
-                                                <p v-for="(e, index) in passwordValidation.errors" :key="index">{{e}}</p>
-                                            </div>
-                                        </transition>
-                                            <div class="matches" v-if='notSamePasswords'>
-                                            <p>Passwords no son iguales.</p>
-                                        </div>
-
                                     </div>
                                     </template>
                                         <div class="center grid">
@@ -81,12 +30,12 @@
                                                             style="margin-bottom:30px;margin-top:30px;"
                                                             flat
                                                             :active="active == 0"
-                                                            @click="active = 0, registrar()"
+                                                            @click="active = 0, preguntar()"
                                                             block
                                                             size="large"
-                                                            :disabled="password.length || checkPassword.length < 8 || username || email || celular"
+                                                            
                                                         >
-                                                        Registrarme
+                                                        Enviar
                                                         </vs-button>
                                                 </vs-col>
                                             </vs-row>
@@ -106,70 +55,43 @@
         },
       data(){
           return{
-                    username : '',
-                    email:'',
-                    celular:'',
-                    option : false,
-                    active: false,
-                    email: '',
-                    password: '',
-                    remember: false,
-                    rules: [
-                                { message:'Se requiere una letra minúscula.', regex:/[a-z]+/ },
-                                { message:"Se requiere una letra mayúscula.",  regex:/[A-Z]+/ },
-                                { message:"8 caracteres como mínimo.", regex:/.{8,}/ },
-                                { message:"Se requiere un número.", regex:/[0-9]+/ }
-			                ],
-		            checkPassword:'',
-			        passwordVisible:false,
-			        submitted:false}
+                    preguntar : '',
+                    estadopreg:''
+                }
       
         },
                 methods: {
 
-                resetPasswords () {
-                    this.password = ''
-                    this.checkPassword = ''
-                    this.submitted = true
-                    setTimeout(() => {
-                        this.submitted = false
-                    }, 2000)
-                },
-                togglePasswordVisibility () {
-                    this.passwordVisible = !this.passwordVisible
-                },
-
-                async registrar() {
-                    let plan = this.plan;
+                async enviar() {
                     try {
-                        let res = await this.$axios.post("auth/local/register", {
-                            username: this.username,
-                            password: this.password,
-                            email: this.email,
-                            celular: this.celular,
-                            plan: plan
+
+                        this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+                        const _id = window.localStorage.sgetItem('id').replace(/['"]+/g, '')
+                        let res = await this.$axios.put("/perfils/" + _id, {
+                            pregunta: this.pregunta,
+                            estadopreg: true,
                         });
 
                         this.success = this.openSuccess('top-center','success')
-                        this.go('/login')
+                        this.go('/perfil')
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
-                        this.$router.push('/signup')
-                        this.password = ''
+                        this.$router.go('/asesoriag')
+                        this.password = this.pregunta
                     }
                 },
                 
                 go : (route)=>{
                     window.location.href = route
                 },
-
+                
                 openSuccess(position = null, color) {
                     const noti = this.$vs.notification({
                         flat: true,
                         color,
                         position,
                         title: 'Mensaje',
-                        text: `Registrado con exito`
+                        text: `Su pregunta fue enviada con exito`
                     })
                     },
                 openError(position = null, color) {
@@ -178,44 +100,15 @@
                         color,
                         position,
                         title: 'Mensaje',
-                        text: `Ocurrio un error al registrarse`
+                        text: `Ocurrio un error al enviar la pregunta`
                     })
-                    }
-        
+                    },
+
                 },
 
             computed: {
-                notSamePasswords () {
-                    if (this.passwordsFilled) {
-                        return (this.password !== this.checkPassword)
-                    } else {
-                        return false
-                    }
-                },
-                passwordsFilled () {
-                    return (this.password !== '' && this.checkPassword !== '')
-                },
-                passwordValidation () {
-                    let errors = []
-                    for (let condition of this.rules) {
-                        if (!condition.regex.test(this.password)) {
-                            errors.push(condition.message)
-                        }
-                    }
-                    if (errors.length === 0) {
-                        return { valid:true, errors }
-                    } else {
-                        return { valid:false, errors }
-                    }
-                },
 
-                validEmail() {
-                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)
-                },
-                validCC(){
-                    return /(\.\w{2,3})+$/.test(this.username)
-                }
-	}
+ 	            }
     }
   </script>
  <style>

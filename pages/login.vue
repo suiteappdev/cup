@@ -132,7 +132,19 @@ export default {
 
                         if(res.data[0].actDatos1){
 
-                        this.go('/board')
+                            if(res.data[0].estadopreg){
+
+                                this.go('/profile')
+
+                            }else{
+                                this.go('/asesoriap')
+                            }
+
+                        
+
+                    }else{
+
+                        this.go('/actDatos1')
 
                     }
 

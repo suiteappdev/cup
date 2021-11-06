@@ -771,6 +771,7 @@ export default {
                 option : false,
                 remember: false,
                 meuser:'',
+                disabled: '',
                 erro: 'ocurrio un error'
             }
         },
@@ -841,9 +842,10 @@ export default {
 
                             });
 
+                            const perfil = res.data
+                            window.localStorage.setItem('id', JSON.stringify(perfil._id))
                             this.success = this.openSuccess('top-center','success')
                                 if(localStorage.getItem('plan') == 'ag'){
-                                    alert('entra')
                                     this.go('/asesoriag')
 
                                 }else{
