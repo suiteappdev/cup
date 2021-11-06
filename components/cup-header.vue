@@ -112,7 +112,7 @@
             if(localStorage.getItem('jwt')){
             
              this.versalir = true
-             this.verprofile = true
+             this.verperfil = true
              this.verboard = true
              this.verregistro = false
              this.veringresar = false
@@ -120,9 +120,9 @@
         }else{
 
           this.veringresar = true
-          this.veregistro = true
+          this.verregistro = true
           this.versalir = false
-          this.verprofile = false
+          this.verperfil = false
           this.verboard = false
         }
 
@@ -133,9 +133,9 @@
             active: 'home',
             activeSidebar: false,
             versalir:false,
-            verprofile:false,
+            verperfil:false,
             verregistro: true,
-            verigresar: true,
+            veringresar: true,
             verboard:false
         }
 

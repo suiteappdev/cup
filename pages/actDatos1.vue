@@ -842,7 +842,15 @@ export default {
                             });
 
                             this.success = this.openSuccess('top-center','success')
-                            this.go('/board')
+                                if(localStorage.getItem('plan') == 'ag'){
+                                    alert('entra')
+                                    this.go('/asesoriag')
+
+                                }else{
+
+                                    this.go('/asesoriap')
+
+                            }
                         }   
                         catch(error) {
                            this.error = this.openError('top-center', 'danger')
