@@ -103,9 +103,9 @@ export default {
                         const { jwt, user, } = res.data
                         window.localStorage.setItem('jwt', jwt)
                         window.localStorage.setItem('userData', JSON.stringify(user))
-                        window.localStorage.setItem('username', JSON.stringify(user.username))
+                        window.localStorage.setItem('username', user.username)
                         window.localStorage.setItem('plan', JSON.stringify(user.plan))
-                        window.localStorage.setItem('email', JSON.stringify(user.email))
+                        window.localStorage.setItem('email', user.email)
                         this.success = this.openSuccess('top-center','success')
                         this.actDatos = this.actDatos()
                     } catch(error) {
