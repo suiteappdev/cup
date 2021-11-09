@@ -745,6 +745,7 @@ import { ModelSelect } from 'vue-search-select'
 
 export default {
     mounted(){
+
         let meuser = window.localStorage.getItem('username')
         let meuseremail = window.localStorage.getItem('email')
         this.username = meuser
@@ -781,12 +782,12 @@ export default {
                 tartienes : '',
                 ctasbancarias : '',
                 sdatacre :0,
-                sdatacresi : '',
+                sdatacresi : 'no',
                 reportn : '',
                 tdeudas :'0',
                 tpatrim : '0',
                 drenta : 0,
-                arut : 'na',
+                arut : '0',
                 rut : 0,
                 nestudio:'',
                 actsoy :'',
@@ -7947,7 +7948,7 @@ export default {
                     ncuentas : ()=>{
                     var ncuenta = [
 
-                        "1","2","3","4 o mas"
+                        "0","1","2","3","4 o mas"
                     ]
                     return ncuenta;
                     
@@ -7956,7 +7957,7 @@ export default {
                     tcredito : ()=>{
                     var tcreditos = [
 
-                        "1","2","3","4 o mas"
+                        "0","1","2","3","4 o mas"
                     ]
                     return tcreditos;
                     

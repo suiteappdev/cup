@@ -15,13 +15,13 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>Cedula:</vs-td><vs-td>1103098183</vs-td>
+                            <vs-td>Cedula:</vs-td><vs-td>{{username}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Fecha de expedicion:</vs-td><vs-td>Corozal</vs-td>
+                            <vs-td>Fecha de expedicion:</vs-td><vs-td>{{fexpedicion}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Ciudad de expedicion</vs-td> <vs-td>Corozal</vs-td>
+                            <vs-td>Ciudad de expedicion</vs-td> <vs-td>{{ciudadexp}}</vs-td>
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -40,13 +40,13 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>Departamento:</vs-td><vs-td>Sucre</vs-td>
+                            <vs-td>Departamento:</vs-td><vs-td>{{departamento}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Ciudad:</vs-td><vs-td>Corozal</vs-td>
+                            <vs-td>Ciudad:</vs-td><vs-td>{{ciudad}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Dirección residencial</vs-td><vs-td>Kra 26 A # 35 - 56</vs-td>
+                            <vs-td>Dirección residencial</vs-td><vs-td>{{direccion}}</vs-td>
                         </vs-tr>
                         <vs-tr>
                             <vs-td>Tipo de vivienda</vs-td><vs-td>Familiar</vs-td>
@@ -71,16 +71,16 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>Nivel de estudio:</vs-td><vs-td>Tecnologo</vs-td>
+                            <vs-td>Nivel de estudio:</vs-td><vs-td>{{nestudio}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Actualmente soy:</vs-td><vs-td>Independiente</vs-td>
+                            <vs-td>Actualmente soy:</vs-td><vs-td>{{actsoy}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Ingresos mensuales</vs-td> <vs-td>1.500.000 a 2.500.000</vs-td>
+                            <vs-td>Ingresos mensuales</vs-td> <vs-td>{{imensual}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Gastos mensuales</vs-td> <vs-td>1.000.000 a 1.500.000</vs-td>
+                            <vs-td>Gastos mensuales</vs-td> <vs-td>{{gtomensual}}</vs-td>
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -99,16 +99,16 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>¿Cuantas cuentas bancarias tienes?:</vs-td><vs-td>1</vs-td>
+                            <vs-td>¿Cuantas cuentas bancarias tienes?:</vs-td><vs-td>{{ctasbancarias}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>¿Cuantas tarjetas de crédito tienes?:</vs-td><vs-td>0</vs-td>
+                            <vs-td>¿Cuantas tarjetas de crédito tienes?:</vs-td><vs-td>{{tartienes}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Cupo actual en todos tus productos financieros</vs-td> <vs-td>5.000.000</vs-td>
+                            <vs-td>Cupo actual en todos tus productos financieros</vs-td> <vs-td>{{cupototal}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Cupo utilizado</vs-td> <vs-td>1.500.000</vs-td>
+                            <vs-td>Cupo utilizado</vs-td> <vs-td>{{cuantodebes}}</vs-td>
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -127,13 +127,13 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>¿Tienes suscripción en Datacrédito o TransUnion?:</vs-td><vs-td>no</vs-td>
+                            <vs-td>¿Tienes suscripción en Datacrédito o TransUnion?:</vs-td><vs-td>{{sdatacre}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>¿Estas reportado negativamente? (si, no, no se)</vs-td><vs-td>no lo se</vs-td>
+                            <vs-td>¿Estas reportado negativamente? (si, no, no se)</vs-td><vs-td>{{reportn}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa</vs-td> <vs-td>si</vs-td>
+                            <vs-td>¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa</vs-td> <vs-td>{{sdatacresi}}</vs-td>
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -152,19 +152,19 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>¿Tiene RUT?:</vs-td><vs-td>si</vs-td>
+                            <vs-td>¿Tiene RUT?:</vs-td><vs-td>{{rut}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Actividad principal en el RUT:</vs-td><vs-td>45</vs-td>
+                            <vs-td>Actividad principal en el RUT:</vs-td><vs-td>{{arut}}</vs-td>
                         </vs-tr>
                         <vs-tr>
                             <vs-td>¿Declara renta?:</vs-td> <vs-td>si</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Total Patrimonio bruto:</vs-td> <vs-td>68.000.000</vs-td>
+                            <vs-td>Total Patrimonio bruto:</vs-td> <vs-td>{{tpatrim}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Total deudas</vs-td> <vs-td>18.000.000</vs-td>
+                            <vs-td>Total deudas</vs-td> <vs-td>{{tdeudas}}</vs-td>
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -194,19 +194,19 @@
                                     <template>
                                         <i class='bx bx-mail-send' ></i>
                                     </template>
-                                        Email: {{correo}}</p>
+                                        {{correo}}</p>
                                     <br />
                                     <p>
                                      <template>
                                         <i class='bx bx-phone-outgoing'></i>
                                     </template>
-                                        {{cellamadas}}</p>
+                                        {{cllamadas}}</p>
                                     <br />
                                     <p>
                                      <template>
                                         <i class='bx bxl-whatsapp' ></i>
                                     </template>
-                                        {{celwhatsapp}}</p>
+                                        {{cwasap}}</p>
                                     <br />
                                     <p>
                                      <template>
@@ -236,28 +236,108 @@
 <script>
 export default {
 
+     async mounted() {
+                    const metoken =  window.localStorage.getItem('jwt')
+                    let meuser = window.localStorage.getItem('username')
+                    this.username = meuser
+                    this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+                    let res = await this.$axios.get("/perfil/username/" + this.username);
+                    let medata = res.data[0]
+                    let nombrec = medata.nombrec
+                    this.name = nombrec
+                    let fnacimiento = medata.fnacimiento
+                    this.fnacimiento = fnacimiento
+                    let axcorreo = medata.email
+                    this.correo = axcorreo
+                    let axcllamadas = medata.cllamadas
+                    this.cllamadas = axcllamadas
+                    let axcwasap = medata.cwasap
+                    this.cwasap = axcwasap
+                    let axsexo = medata.sexo
+                    this.sexo = axsexo
+                    let axestadocivil = medata.estadocivil
+                    this.estadocivil =  axestadocivil
+                    let axcedula = medata.username
+                    this.username = axcedula
+                    let axfexpedicion = medata.fexpedicion
+                    this.fexpedicion = axfexpedicion
+                    let axciudadexp = medata.ciudadexp
+                    this.ciudadexp = axciudadexp
+                    let axdepartamento = medata.departamento
+                    this.departamento = axdepartamento
+                    let axciudad = medata.ciudad
+                    this.ciudad = axciudad
+                    let axdireccion = medata.direccion
+                    this.direccion = axdireccion
+                    let axnestudio = medata.nestudio
+                    this.nestudio = axnestudio
+                    let axactsoy = medata.actsoy
+                    this.actsoy = axactsoy
+                    let aximensuales = medata.imensual
+                    this.imensual = aximensuales
+                    let axgtomensual = medata.gtomensual
+                    this.gtomensual = axgtomensual
+                    let axctasbancarias = medata.ctasbancarias
+                    this.ctasbancarias = axctasbancarias
+                    let axtartienes = medata.tartienes
+                    this.tartienes = axtartienes
+                    let axcuantodebes = medata.cuantodebes
+                    this.cuantodebes = axcuantodebes
+                    let axcupototal = medata.cupototal
+                    this.cupototal = axcupototal
+                    let axsdatacre = medata.sdatacre
+                    this.sdatacre = axsdatacre
+                    let axsdatacresi = medata.sdatacresi
+                    this.sdatacresi = axsdatacresi
+                    let axreportn = medata.sdatacre
+                    this.reportn = axreportn
+                    let axrut = medata.rut
+                    this.rut = axrut
+                    let axarut = medata.arut
+                    this.arut = axarut
+                    let axdrenta = medata.drenta
+                    this.drenta = axdrenta
+                    let axtpatrim = medata.tpatrim
+                    this.tpatrim = axtpatrim
+                    let axtdeudas = medata.tdeudas
+                    this.tdeudas = axtdeudas
+                },
+
    data(){
         return{
-                    name : 'Mauricio Jose Castro Vital', 
+                    nombrec:'',
+                    name : '', 
                     image :`${require(`~/assets/images/foto5.png`)}`, 
-                    correo :'majoca10@gmail.com',
-                    username : '1103098183',
-                    fnacimiento : '23-12-1986',
-                    cellamadas : '3004140039',
-                    celwhatsapp : '3004140039',
-                    sexo:'masculino',
-                    estadocivil:'soltero',
-                            text: `
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-          richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-          brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-          tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-          wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-          vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-          synth nesciunt you probably haven't heard of them accusamus labore VHS.
-        `
-                
+                    correo :'',
+                    username : '',
+                    fnacimiento : '',
+                    cllamadas : '',
+                    cwasap : '',
+                    sexo:'',
+                    estadocivil:'',
+                    cedula : '',
+                    fexpedicion: '',
+                    ciudadexp:'',
+                    departamento: '',
+                    ciudad:'',
+                    direccion:'',
+                    nestudio:'',
+                    actsoy:'',
+                    imensual:'',
+                    gtomensual:'',
+                    tartienes:'',
+                    cuantodebes:'',
+                    ctasbancarias:'',
+                    cupototal:'',
+                    sdatacre:'',
+                    sdatacresi:'',
+                    reportn:'',
+                    rut:'',
+                    arut:'',
+                    drenta:'',
+                    tpatrim:'',
+                    tdeudas:'',
+                    text: ''
         }
                 
 

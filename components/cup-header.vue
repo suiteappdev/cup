@@ -99,6 +99,7 @@
           window.localStorage.removeItem('username')
           window.localStorage.removeItem('plan')
           window.localStorage.removeItem('email')
+          window.localStorage.removeItem('id')
           let instance = this.$axios.create();
           delete instance.defaults.headers.common['Authorization'];
           this.go('/')

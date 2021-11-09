@@ -20,15 +20,32 @@
                                         </b-form-textarea>
                                     </div>
                                     <div class="form-control" v-show="meplan">
-                                        <b-form-textarea 
-                                            v-model="pregunta" 
-                                            debounce="500" 
-                                            rows="1" 
-                                            max-rows="100" 
-                                            placeholder="(elabora la pregunta de manera precisa, así el asesor que analice tu caso te dará la información completa. Recuerda que si tienes mas de una duda a resolver, debes tomar la asesoría preferencial)"
-                                            style="font-family: Poppins; font-size: smaller; height: 130px"
-                                        >
-                                        </b-form-textarea>
+                                    <h1 class="form-title">Formas de pagos</h1>
+                                    <p style="margin-bottom:30px;">Te responderemos todas tus dudas en un plazo máximo de 12 horas hábiles, te enviaremos un mensaje a tu numero de WhatsApp para acordar la hora de la llamada.</p>
+                                    <p style="margin-bottom:30px;">Realiza el pago de tu asesoría preferencial a una de las siguientes cuentas bancarias y envía el comprobante de pago a  nuestro numero de WhatsApp 3118221549</p>
+                                    <template>
+                                    <vs-tr>
+                                        <vs-td>Cuenta de ahorros Bancolombia: </vs-td><vs-td>50672061269 </vs-td>
+                                    </vs-tr>
+                                    <vs-tr>
+                                        <vs-td>Cuenta de ahorros Davivienda</vs-td><vs-td>206000722424</vs-td>
+                                    </vs-tr>
+                                    <vs-tr>
+                                        <vs-td>Cuenta de ahorros Banco de Bogotá:</vs-td> <vs-td>592622575</vs-td>
+                                    </vs-tr>
+                                    <vs-tr>
+                                        <vs-td>Cuenta de ahorros Colpatria</vs-td> <vs-td>9362004758</vs-td>
+                                    </vs-tr>
+                                    <vs-tr>
+                                        <vs-td>Cuenta de ahorros banco caja social: </vs-td> <vs-td>24103774390</vs-td>
+                                    </vs-tr>
+                                    <vs-tr>
+                                        <vs-td>Total Patrimonio bruto:</vs-td> <vs-td>68.000.000</vs-td>
+                                    </vs-tr>
+                                    <vs-tr>
+                                        <vs-td>Total deudas</vs-td> <vs-td>18.000.000</vs-td>
+                                    </vs-tr>
+                                    </template>
                                     </div>
                                     <template>
                                     <div> 
@@ -164,7 +181,7 @@
     
     .form-control{
         margin-bottom: 0px;
-        height: 130px;
+        /*height: 130px;*/
         width: 100%;
     }
 
