@@ -1,7 +1,7 @@
 <template>
     <div class="center-grid">
         <vs-row style="margin-top: 100px;">
-            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="8" style="padding: 0px 0px 0px 140px;">
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="8" style="padding: 0px 0px 0px 15px;">
                 <template>
                 <div class="accordion" role="tablist">
                     <b-card no-body class="mb-1">
@@ -175,7 +175,7 @@
                 </template>   
             </vs-col>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
-                    <vs-card style="margin-bottom: 30px!important;padding: 0px 0px 50px 80px;">
+                    <vs-card style="margin-bottom: 30px!important;padding: 0px 30px 40px 30px;">
                                 <template #title>
                                     <h3> {{ name }}</h3>
                                 </template>

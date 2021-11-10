@@ -62,7 +62,7 @@
 </template>
 <script>
 export default {
-
+middleware: 'nologin',
         name: 'Login',
             data(){
                 return{
@@ -137,6 +137,12 @@ export default {
                                 this.go('/profile')
 
                             }else{
+                                const metoken =  window.localStorage.getItem('jwt')
+                                this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+                                let res = await this.$axios.get("/perfil/username/" + this.username);
+                                const perfil = res.data
+                                window.localStorage.setItem('id', perfil[0].id)
+                                console.log(perfil[0])
                                 this.go('/asesoriap')
                             }
 

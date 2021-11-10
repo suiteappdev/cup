@@ -744,6 +744,7 @@
 import { ModelSelect } from 'vue-search-select'
 
 export default {
+
     mounted(){
 
         let meuser = window.localStorage.getItem('username')
