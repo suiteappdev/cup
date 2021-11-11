@@ -67,7 +67,7 @@
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
-          <p @click="$router.push('/meboard')">Board</p>
+          <p @click="$router.push('/board')">Board</p>
         </vs-sidebar-item>
         <vs-sidebar-item v-show="versalir">
           <template #icon>
@@ -93,7 +93,8 @@
     export default {
 
       methods : {
-        logout(){
+        async logout(){
+          await this.$auth.logout()
           window.localStorage.removeItem('jwt')
           window.localStorage.removeItem('userData')
           window.localStorage.removeItem('username')

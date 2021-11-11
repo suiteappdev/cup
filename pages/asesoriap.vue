@@ -78,7 +78,7 @@
 </template>
 <script>
     export default {
-
+      middleware:'silogin',
       mounted(){
           let plan = window.localStorage.getItem('plan').replace(/['"]+/g, '')
           if(plan == "ap"){

@@ -235,7 +235,7 @@
 </template>
 <script>
 export default {
-
+     middleware:'silogin',
      async mounted() {
                     const metoken =  window.localStorage.getItem('jwt')
                     let meuser = window.localStorage.getItem('username')

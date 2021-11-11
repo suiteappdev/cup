@@ -744,13 +744,25 @@
 import { ModelSelect } from 'vue-search-select'
 
 export default {
-
-    mounted(){
-
+middleware:'silogin',    
+async mounted(){
+        
         let meuser = window.localStorage.getItem('username')
         let meuseremail = window.localStorage.getItem('email')
         this.username = meuser
         this.email = meuseremail
+
+        let actDatos = await this.$axios.get('/perfil/username/' + meuser)
+        //let actualD = actDatos.data[0].actDatos1
+        //let actP = actDatos.data[0].estadopreg
+        console.log(actDatos)
+        //console.log(actP)
+        if(actDatos < 0){
+          alert('entra')  
+        }
+        
+        
+        
 
     },
 

@@ -159,6 +159,7 @@
  </style>
 <script>
     export default {
+    middleware:'silogin', 
       data:() => ({
         value1 : '',
         value2:'',

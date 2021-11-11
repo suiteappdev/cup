@@ -63,6 +63,7 @@
 <script>
 export default {
 middleware: 'nologin',
+
         name: 'Login',
             data(){
                 return{
@@ -95,9 +96,10 @@ middleware: 'nologin',
 
             async login() {
                     try {
-                        let res = await this.$axios.post("auth/local", {
+                        let res = await this.$auth.loginWith("local", {
+                            data:{
                             identifier: this.username,
-                            password: this.password
+                            password: this.password}                            
                         });
                         
                         const { jwt, user, } = res.data

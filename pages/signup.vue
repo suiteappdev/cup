@@ -149,7 +149,6 @@
                             celular: this.celular,
                             plan: plan
                         });
-
                         this.success = this.openSuccess('top-center','success')
                         this.go('/login')
                     } catch(error) {
@@ -159,6 +158,8 @@
                     }
                 },
                 
+
+
                 go : (route)=>{
                     window.location.href = route
                 },
