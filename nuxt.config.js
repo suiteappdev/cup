@@ -41,8 +41,33 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
+
+  /*
+ ** Auth module configuration
+ ** See https://auth.nuxtjs.org/schemes/local.html#options
+ */
+  auth: {
+    strategies: {
+    local: {
+    endpoints: {
+    login: {
+    url: 'auth/local',
+    method: 'post',
+    propertyName: 'jwt'
+    },
+    user: {
+    url: 'users/me',
+    method: 'get',
+    propertyName: false
+    },
+    logout: false
+    }
+    }
+    }
+   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -54,4 +79,9 @@ export default {
   },
 
   //ssr:false
+  loading: {
+    color: 'blue',
+    height: '5px',
+    duration : 3000
+  }
 }

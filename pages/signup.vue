@@ -84,7 +84,7 @@
                                                             @click="active = 0, registrar()"
                                                             block
                                                             size="large"
-                                                            :disabled="password.length && checkPassword.length < 8 && username && email && celular"
+                                                            :disabled="password.length < 8 || checkPassword.length < 8 || username < 6 || celular < 7"
                                                         >
                                                         Registrarme
                                                         </vs-button>
@@ -149,7 +149,6 @@
                             celular: this.celular,
                             plan: plan
                         });
-
                         this.success = this.openSuccess('top-center','success')
                         this.go('/login')
                     } catch(error) {
@@ -159,6 +158,8 @@
                     }
                 },
                 
+
+
                 go : (route)=>{
                     window.location.href = route
                 },

@@ -62,6 +62,8 @@
 </template>
 <script>
 export default {
+middleware: 'nologin',
+
         name: 'Login',
             data(){
                 return{
@@ -94,17 +96,18 @@ export default {
 
             async login() {
                     try {
-                        let res = await this.$axios.post("auth/local", {
+                        let res = await this.$auth.loginWith("local", {
+                            data:{
                             identifier: this.username,
-                            password: this.password
+                            password: this.password}                            
                         });
                         
                         const { jwt, user, } = res.data
                         window.localStorage.setItem('jwt', jwt)
                         window.localStorage.setItem('userData', JSON.stringify(user))
-                        window.localStorage.setItem('username', JSON.stringify(user.username))
+                        window.localStorage.setItem('username', user.username)
                         window.localStorage.setItem('plan', JSON.stringify(user.plan))
-                        window.localStorage.setItem('email', JSON.stringify(user.email))
+                        window.localStorage.setItem('email', user.email)
                         this.success = this.openSuccess('top-center','success')
                         this.actDatos = this.actDatos()
                     } catch(error) {
@@ -119,6 +122,39 @@ export default {
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
                     let res = await this.$axios.get("/perfil/username/" + this.username);
                     let useract1 = res.data
+                    console.log(useract1);
+                    //console.log(res.data[0].actDatos1)
+                    console.log(res.data);
+                    //alert('ver res')
+                    if(res.data.length == 0){
+                            //alert('length')
+                            this.go('/actDatos1')
+                                                
+                    }else{
+
+                        if(res.data[0].actDatos1){
+
+                            if(res.data[0].estadopreg){
+
+                                this.go('/profile')
+
+                            }else{
+                                const metoken =  window.localStorage.getItem('jwt')
+                                this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+                                let res = await this.$axios.get("/perfil/username/" + this.username);
+                                const perfil = res.data
+                                window.localStorage.setItem('id', perfil[0].id)
+                                console.log(perfil[0])
+                                this.go('/asesoriap')
+                            }
+
+                        
+
+                    }else{
+
+                        this.go('/actDatos1')
+
+                    }
 
                     if(res.data.length == 0){
                         this.go('/actDatos1')

@@ -1,5 +1,4 @@
  <template>
-    <form @submit.prevent="recover">
         <div class="center grid">
             <vs-row>
                 <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
@@ -7,95 +6,112 @@
                             <div class="form">
                                 <div class="form-inner">
                                     <div class="form-control">
-                                        <h1 class="form-title">Recuperar contraseña</h1>
+                                        <h1 class="form-title">Formula tu pregunta</h1>
                                     </div>
-                                    <div class="form-control">
-                                        <vs-input
-                                         v-model="email"
-                                         placeholder="Escriba el correo electronico"
-                                         shadow
-                                         type = email
-                                         >
-                                            <template #icon>
-                                            <i class='bx bx-user'></i>
-                                            </template>
-                                        </vs-input>
+                                    <div>
+                                        <b-form-textarea 
+                                            v-model="preguntar" 
+                                            debounce="500" 
+                                            rows="1" 
+                                            max-rows="100" 
+                                            placeholder="Enter at least 10 characters"
+                                            
+                                        >
+                                        </b-form-textarea>
                                     </div>
+                                    <template>
+                                    <div> 
+                                    </div>
+                                    </template>
                                         <div class="center grid">
                                             <vs-row>
                                             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
-                                                <vs-button 
-                                                    style="margin-bottom:30px;margin-top:30px;"
-                                                    flat
-                                                    :active="active == 0"
-                                                    @click="active = 0"
-                                                    block
-                                                    type="submit" 
-                                                    size="large"
-                                                    >Recuperar</vs-button>
+                                                        <vs-button
+                                                            style="margin-bottom:30px;margin-top:30px;"
+                                                            flat
+                                                            :active="active == 0"
+                                                            @click="active = 0, preguntar()"
+                                                            block
+                                                            size="large"
+                                                            
+                                                        >
+                                                        Enviar
+                                                        </vs-button>
                                                 </vs-col>
                                             </vs-row>
                                         </div>
+
                                </div>
                             </div>
                         </div>
                 </vs-col>
             </vs-row>
         </div>
-    </form>    
 </template>
 <script>
-
     export default {
-        name: 'Login',
-            data(){
-                return{
-                    email : '',
-                    option : false,
-                    active: false,
-                    }
-                },
-            methods: {
-                async recover() {
+        created (){
+           this.plan = this.$route.query.tase;
+        },
+      data(){
+          return{
+                    preguntar : '',
+                    estadopreg:''
+                }
+      
+        },
+                methods: {
+
+                async enviar() {
                     try {
-                        this.$axios.post("auth/forgot-password", {
-                                email: this.email
-                            })
+
+                        this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+                        const _id = window.localStorage.sgetItem('id').replace(/['"]+/g, '')
+                        let res = await this.$axios.put("/perfils/" + _id, {
+                            pregunta: this.pregunta,
+                            estadopreg: true,
+                        });
 
                         this.success = this.openSuccess('top-center','success')
-
+                        this.go('/perfil')
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
-                        this.$router.push('/recover')
-                        this.password = ''
+                        this.$router.go('/asesoriag')
+                        this.password = this.pregunta
                     }
                 },
-                    openSuccess(position = null, color) {
+                
+                go : (route)=>{
+                    window.location.href = route
+                },
+                
+                openSuccess(position = null, color) {
                     const noti = this.$vs.notification({
                         flat: true,
                         color,
                         position,
                         title: 'Mensaje',
-                        text: `Hemos enviado un enlace de recuperación a tu bandeja de entrada o correo no deseado. Expira en 1 Hora`
+                        text: `Su pregunta fue enviada con exito`
                     })
                     },
-                    openError(position = null, color) {
+                openError(position = null, color) {
                     const noti = this.$vs.notification({
                         flat: true,
                         color,
                         position,
                         title: 'Mensaje',
-                        text: `No existe una cuenta asociada a este correo.`
+                        text: `Ocurrio un error al enviar la pregunta`
                     })
-                    }
-        
-                }
+                    },
+
+                },
+
+            computed: {
+
+ 	            }
     }
   </script>
  <style>
-     .footer-link{
-         text-combine-upright: none;   
-     }
      .box-left{
         background-image: url('~/assets/images/bg.jpg');
         background-size: cover;
@@ -123,8 +139,6 @@
 
     .form-inner{
         width: 80%;
-        padding: 20px;
-        padding: 30%;
     }
     
     .form-control{
@@ -139,7 +153,6 @@
 
     .box-right{
         width: 100%;
-        height: 600px; 
         background-color: white;
      }
      
@@ -269,19 +282,6 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-  
-  .testimonial-section{
-      padding: 10px!important;
-  }
-
-  .vs-card-content{
-      width: 90%!important;
-  }
-
-  .pricing-section{
-      padding: 10px!important;
-  }
-
   .cup-footer{
       padding: 20px!important;
   }
@@ -289,7 +289,5 @@
   .form-inner{
       padding: 10%!important;
   }
-  
 }
-    
  </style>

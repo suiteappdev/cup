@@ -45,31 +45,31 @@
           </template>
           <p @click="$router.push('/')" >Inicio</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="veringresar">
           <template #icon>
             <i class='bx bx-user-circle bx-tada' ></i>
           </template>
           <p @click="$router.push('/login')">Ingresar</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="verregistro">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
           <p @click="$router.push('/services')">Registrarme</p>
         </vs-sidebar-item>
-          <vs-sidebar-item >
+          <vs-sidebar-item v-show="verperfil">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
           <p @click="$router.push('/profile')">Perfil</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="verboard">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
-          <p @click="$router.push('/meboard')">Board</p>
+          <p @click="$router.push('/board')">Board</p>
         </vs-sidebar-item>
-        <vs-sidebar-item>
+        <vs-sidebar-item v-show="versalir">
           <template #icon>
             <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
           </template>
@@ -93,12 +93,14 @@
     export default {
 
       methods : {
-        logout(){
+        async logout(){
+          await this.$auth.logout()
           window.localStorage.removeItem('jwt')
           window.localStorage.removeItem('userData')
           window.localStorage.removeItem('username')
           window.localStorage.removeItem('plan')
           window.localStorage.removeItem('email')
+          window.localStorage.removeItem('id')
           let instance = this.$axios.create();
           delete instance.defaults.headers.common['Authorization'];
           this.go('/')
@@ -107,11 +109,39 @@
           window.location.href = route
         }
         },
+        mounted(){
+
+            if(localStorage.getItem('jwt')){
+            
+             this.versalir = true
+             this.verperfil = true
+             this.verboard = true
+             this.verregistro = false
+             this.veringresar = false
+
+        }else{
+
+          this.veringresar = true
+          this.verregistro = true
+          this.versalir = false
+          this.verperfil = false
+          this.verboard = false
+        }
+
+
+        },
         data(){
           return {
             active: 'home',
-            activeSidebar: false
+            activeSidebar: false,
+            versalir:false,
+            verperfil:false,
+            verregistro: true,
+            veringresar: true,
+            verboard:false
         }
+
+      
         
     },
 
