@@ -52,7 +52,7 @@
                                 <template #text>
                                     <p>Te ayudamos a elaborar  un plan financiero a mediano plazo ( 2 años) con el que vas a lograr tus objetivos y a  mejorar tu vida financiera.</p>
                                     <br />
-                                    <vs-button primary nlock icon @click="$router.push('/testimonio/?cliente=')">
+                                    <vs-button primary block icon @click="$router.push('/testimonio/?cliente=')">
                                       Recibe tu asesoría gratuita
                                     </vs-button>
                                 </template>
