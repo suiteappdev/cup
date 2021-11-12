@@ -287,7 +287,7 @@
                                                         v-model="ciudad"
                                                         :disabled ="departamento"
                                                         >
-                                                        <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c" :value="c">
+                                                        <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c.select" :value="c">
                                                             {{c}}
                                                         </vs-option>
                                                         <template v-if="ciudad == ''" #message-warn>
@@ -753,17 +753,38 @@ async mounted(){
         this.email = meuseremail
 
         let actDatos = await this.$axios.get('/perfil/username/' + meuser)
+        
+        //let pregunta = actDatos.data[0].estadopreg
+        //let obj = {};
         //let actualD = actDatos.data[0].actDatos1
         //let actP = actDatos.data[0].estadopreg
-        console.log(actDatos)
+        //console.log('perfil', perfil)
+        //console.log('pregunta', pregunta)
         //console.log(actP)
-        if(actDatos < 0){
-          alert('entra')  
-        }
+        let obj = JSON.stringify(actDatos.data)
+        console.log(Object.keys(obj).length)
         
-        
-        
+        if(Object.keys(obj).length === 2){
 
+            this.$router.push('actDatos1')
+
+        }else{
+
+            this.$router.push('asesoriap')
+
+        }
+        //if(perfil.length = 0 || !perfil){
+           
+           //this.$router.push('asesoriap')
+             // if(pregunta = true){
+             //     this.$router.push('board')
+        //}else{
+         // alert('ve asesoria')
+                 // this.$router.push('asesoriap')
+       // }
+        //}else{
+                 // this.$router.push('actDatos1')
+       // }
     },
 
         data(){
@@ -6453,12 +6474,7 @@ async mounted(){
                         try {
 
                             this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
-                            console.log(plan)
-                            console.log(email)
-                            console.log(metoken)
-                            console.log(usernameid)
 
-                            alert('estamos aqui')
                             
                             let res = await this.$axios.post("perfils", {
                             actDatos1:true,    
