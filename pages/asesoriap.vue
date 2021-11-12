@@ -79,7 +79,15 @@
 <script>
     export default {
       middleware:'silogin',
-      mounted(){
+   async mounted(){
+        let meuser = window.localStorage.getItem('username')
+        let actDatos = await this.$axios.get('/perfil/username/' + meuser)
+        let pregunta = actDatos.data[0].estadopreg
+        if(pregunta){
+            this.$router.push('board')
+        }else{
+            this.$router.push('asesoriap')
+        }
           let plan = window.localStorage.getItem('plan').replace(/['"]+/g, '')
           if(plan == "ap"){
               this.meplan = true

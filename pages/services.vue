@@ -5,33 +5,19 @@
             <template>
                 <div class="center grid">
                     <vs-row>
-                        <vs-col vs-type="flex"  vs-align="center" w="6" lg="6" sm="6" xs="6">
-                            <vs-card vs-align="center" class="card" style="margin-bottom: 30px!important; margin-left: 150px!important; padding-left: 150px important;">
-                                <template #title>
-                                    <h3> Asesoria Gratuita</h3>
+                        <vs-col :key="index" v-for="col, index in comments" vs-type="flex" vs-justify="center" vs-align="center"  w="6" sm="12" xs="12">
+                            <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important; max-width: 100% !important;">
+                                 <template #title>
+                                    <h3>{{col.name}}</h3>
+                                </template>
+                                <template #img>
+                                    <img style="max-height: 100% !important;" :src="col.image" alt="">
                                 </template>
                                 <template #text>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto amet ad, sequi, debitis veniam unde harum rem quaerat culpa impedit nemo quo quia! Optio minima facilis autem omnis quod!</p>
+                                    <p>{{col.preview}}</p>
                                     <br />
-                                    <vs-button primary icon @click="$router.push('/login/?tase=ag')">
-                                      Asesoria Gratuita  
-                                    </vs-button>
-                                </template>
-                                <template #interactions>
-                              
-                                </template>
-                            </vs-card>
-                        </vs-col>
-                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
-                            <vs-card style="margin-bottom: 30px!important;">
-                                <template #title>
-                                    <h3> Asesoria Premiun</h3>
-                                </template>
-                                <template #text>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta architecto amet ad, sequi, debitis veniam unde harum rem quaerat culpa impedit nemo quo quia! Optio minima facilis autem omnis quod!</p>
-                                    <br />
-                                    <vs-button primary icon @click="$router.push('/login/?tase=ap')">
-                                      Asesoria Premiun  
+                                    <vs-button primary icon block @click="$router.push('/login/?tase=' + col.tase)" style="color: blue important;">
+                                        {{col.ttase}}
                                     </vs-button>
                                 </template>
                                 <template #interactions>
@@ -45,8 +31,8 @@
         </div> 
  </div>
 </template>
-<style scoped>
-.strong{
+ <style scoped>
+ .strong{
      font-weight: bold;
  }
 .arrows {
@@ -365,24 +351,6 @@ body .arrows:after {
         padding-top: 10%;
     }
 
-.card {
-    background: rgba(255, 255, 255, 1);
-    background: rgba(var(--vs-background), 1);
-    color: rgba(44, 62, 80, 1);
-    color: rgba(var(--vs-text), 1);
-    width: 100%;
-    /* max-width: 350px; */
-    -webkit-box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 5%);
-    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, var(--vs-shadow-opacity));
-    box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 5%);
-    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, var(--vs-shadow-opacity));
-    border-radius: 20px;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    cursor: pointer;
-    position: relative;
-}
-
      .vs-card-content{
          margin : 0 auto!important;
      }
@@ -497,4 +465,51 @@ body .arrows:after {
     .text-left{
         text-align: left;
     }
-</style>
+    
+.vs-card {
+    background: rgba(255, 255, 255, 1);
+    background: rgba(var(--vs-background), 1);
+    color: rgba(44, 62, 80, 1);
+    color: rgba(var(--vs-text), 1);
+    width: 100%;
+    /*max-width: 350px;*/
+    -webkit-box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 5%);
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, var(--vs-shadow-opacity));
+    box-shadow: 0px 5px 20px 0px rgb(0 0 0 / 5%);
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, var(--vs-shadow-opacity));
+    border-radius: 20px;    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    position: relative;
+}    
+ </style>
+<script>
+    export default {
+        beforeMount(){
+            this.$nextTick( ()=> {
+                //alert("before render");
+            }); 
+        },
+        mounted() {
+            this.$nextTick( ()=> {
+               // alert("after rendered");
+            });
+        },
+        data:() => ({
+        comments : [
+                {
+                    tase: 'ag', 
+                    name : 'Asesoria Gratuita', 
+                    image :`${require(`~/assets/images/asesoriagratuita.jpeg`)}`,
+                    ttase : 'Asesoria Gratuita',
+                },
+                {
+                    tase : 'ap', 
+                    name : 'Asesoria Preferencial', 
+                    image : `${require(`~/assets/images/asesoriapreferencial.jpeg`)}`,
+                    ttase : 'Asesoria Preferencial', 
+                },
+            ],
+      })
+    }
+  </script>
