@@ -7,8 +7,7 @@
                             <div class="box-left">
                                 <div class="presentation">
                                     <div class="wrap-overlay flex flex-center flex-column">
-                                        <h1 class="text-white animated fadeInUp entry-title">Bienvenido a <span class="light">Asesorías Florez</span> ,<br /> Te ayudamos a mejorar tu vida financiera</h1>
-                                        <p class="text-white animated fadeInUp" style="line-height : 1.5;width:100%;">Aquí te guiamos paso a paso para que mejores tu vida financiera.</p>   
+                                        <p class="text-white animated fadeInUp entry-title">Aquí te guiamos paso a paso para que mejores tu vida financiera.</p>
                                         <div class="arrows"></div>
                                     </div>
                                 </div>
@@ -17,6 +16,97 @@
                 </vs-row>
             </div>            
         </div>
+        <div class="testimonial-section">
+            <h1 class="text-center cases animated bounceInRight">Paquetes de <span class="light">Asesorías Florez</span></h1>
+            <template>
+                <div class="center grid">
+                    <vs-row justify="center">
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
+                            <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important;">
+                                <template #title>
+                                    <h3>Asesoría gratuita</h3>
+                                </template>
+                                <template #img>
+                                    <img src='~/assets/images/gratuita.jpeg' alt="">
+                                </template>
+                                <template #text>
+                                    <p>¡Pregúntanos lo que quieras! te ayudamos a resolver gratis cualquier duda financiera que tengas.</p>
+                                    <br />
+                                    <vs-button primary icon block @click="$router.push('/testimonio/?cliente=')">
+                                       Recibe tu asesoría gratuita
+                                    </vs-button>
+                                </template>
+                                <template #interactions>
+                              
+                                </template>
+                            </vs-card>
+                       </vs-col>
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
+                            <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important;">
+                                <template #title>
+                                    <h3>Asesoría preferencial</h3>
+                                </template>
+                                <template #img>
+                                    <img src='~/assets/images/preferencial.jpeg' alt="">
+                                </template>
+                                <template #text>
+                                    <p>Te ayudamos a elaborar  un plan financiero a mediano plazo ( 2 años) con el que vas a lograr tus objetivos y a  mejorar tu vida financiera.</p>
+                                    <br />
+                                    <vs-button primary nlock icon @click="$router.push('/testimonio/?cliente=')">
+                                      Recibe tu asesoría gratuita
+                                    </vs-button>
+                                </template>
+                                <template #interactions>
+                              
+                                </template>
+                            </vs-card>
+                       </vs-col>
+                    </vs-row>
+                    <vs-row justify="center">
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
+                            <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important;">
+                                <template #title>
+                                    <h3>Acompañamiento financiero premium</h3>
+                                </template>
+                                <template #img>
+                                    <img src='~/assets/images/premiun.jpeg' alt="">
+                                </template>
+                                <template #text>
+                                    <p>No des más vueltas, esta es la mejor decisión que puede tomar para mejorar tu vida financiera en un 100%.</p>
+                                    <br />
+                                    <vs-button primary block icon @click="$router.push('/testimonio/?cliente=')">
+                                        Recibe tu acompañamiento financiero premium
+                                    </vs-button>
+                                </template>
+                                <template #interactions>
+                              
+                                </template>
+                            </vs-card>
+                       </vs-col>
+                        <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" lg="3" sm="12" xs="12">
+                            <vs-card class="animated fadeInLeft" style="margin-bottom: 30px!important;">
+                                <template #title>
+                                    <h3>Otros servicios</h3>
+                                </template>
+                                <template #img>
+                                    <img src='~/assets/images/otros.jpeg' alt="">
+                                </template>
+                                <template #text>
+                                    <p>¿Necesitas una consulta en Datacrédito, eliminar un reporte negativo, una asesoría contable o jurídica?  Elige esta opción y te ayudamos</p>
+                                    <br />
+                                    <vs-button primary block icon @click="$router.push('/testimonio/?cliente=')">
+                                        Escríbenos por WhatsApp
+                                    </vs-button>
+                                </template>
+                                <template #interactions>
+                              
+                                </template>
+                            </vs-card>
+                       </vs-col>
+                    </vs-row>
+                </div>
+            </template>
+        </div> 
         <div class="services-section">
             <div class="center grid">
                 <vs-row>
@@ -200,6 +290,9 @@
 
  .vs-card{
       cursor: unset!important;
+  }
+  .vs-card-content{
+      width: 90%!important;
   }
  .strong{
      font-weight: bold;
@@ -501,7 +594,7 @@ body .arrows:after {
     }
 
     .vs-card-content{
-        width: 70%!important;
+        width: 90%!important;
     }
 
     .howto-text{
@@ -534,9 +627,9 @@ body .arrows:after {
     .box-left{
         background-image: url('~/assets/images/bg.jpg');
         background-size: cover;
-        background-position: center;
+        background-position: unset;
         width: 100%;
-        height: 800px;
+        height: 400px;
      }
 
      .vs-card-content{
@@ -554,21 +647,6 @@ body .arrows:after {
         -moz-box-shadow: 0px -43px 33px -46px rgb(0 230 227 / 71%) inset;
      }
 
-     .form{
-        padding-top: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-     }
-
-    .form-inner{
-        width: 80%;
-        padding: 20px;
-        padding: 24%;
-    }
-    
     .form-control{
         margin-bottom: 24px;
         height: 40px;
@@ -720,9 +798,6 @@ body .arrows:after {
       padding: 10px!important;
   }
 
-  .vs-card-content{
-      width: 90%!important;
-  }
 
   .pricing-section{
       padding: 10px!important;

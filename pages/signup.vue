@@ -225,7 +225,6 @@
         background-size: cover;
         background-position: center;
         width: 100%;
-        height: 800px;
      }
 
      .presentation{
@@ -326,7 +325,6 @@
         padding-left: 40px;
         width : 70%;
         border-radius: 20px;
-        border-left: 1px solid #1fc6e2;
     }
 
         /* 

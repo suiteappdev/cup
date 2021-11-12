@@ -13,14 +13,14 @@
         <vs-navbar-item  @click="$router.push('/about') && (active = 0)" :active="active == 'about'" id="about">
             Quiénes somos?
         </vs-navbar-item>
+        <vs-navbar-item @click="$router.push('/package')" :active="active == 'package'" id="package">
+          Paquete de servicios
+        </vs-navbar-item>
         <vs-navbar-item  @click="$router.push('/unique')" :active="active == 'unique'" id="unique">
          ¿Por qué debes elegirnos?
         </vs-navbar-item>
         <vs-navbar-item  @click="$router.push('/cases')" :active="active == 'cases'" id="cases">
           Casos de éxito
-        </vs-navbar-item>
-        <vs-navbar-item @click="$router.push('/package')" :active="active == 'package'" id="package">
-          Paquete de servicios
         </vs-navbar-item>
         <vs-navbar-item @click="$router.push('/faq')" :active="active == 'faq'" id="faq">
           Preguntas frencuentes

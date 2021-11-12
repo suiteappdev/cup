@@ -1,6 +1,6 @@
  <template>
  <div class="wrapper">
-        <div class="testimonial-section">
+        <div class="service-page-section">
             <h1 class="text-center cases animated bounceInRight">Elige uno de nuestros planes</h1>
             <template>
                 <div class="center grid">
@@ -350,19 +350,11 @@ body .arrows:after {
         margin: 0 auto;
     }
 
-    .testimonial-section{
+    .service-page-section{
         box-sizing: border-box;
         padding: 50px;
         width: 100%;
     }
-
-    .pricing-section{
-        box-sizing: border-box;
-        padding: 50px;
-        width: 100%;
-        background-color: #00131c;
-    }
-
 
     .howto-section{
         box-sizing: border-box;
@@ -372,13 +364,6 @@ body .arrows:after {
         background-color: #00131c;
         padding-top: 10%;
     }
-    .box-left{
-        background-image: url('~/assets/images/bg.jpg');
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 800px;
-     }
 
 .card {
     background: rgba(255, 255, 255, 1);

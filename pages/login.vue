@@ -62,8 +62,7 @@
 </template>
 <script>
 export default {
-middleware: 'nologin',
-
+        middleware : 'nologin',
         name: 'Login',
             data(){
                 return{
@@ -122,39 +121,6 @@ middleware: 'nologin',
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
                     let res = await this.$axios.get("/perfil/username/" + this.username);
                     let useract1 = res.data
-                    console.log(useract1);
-                    //console.log(res.data[0].actDatos1)
-                    console.log(res.data);
-                    //alert('ver res')
-                    if(res.data.length == 0){
-                            //alert('length')
-                            this.go('/actDatos1')
-                                                
-                    }else{
-
-                        if(res.data[0].actDatos1){
-
-                            if(res.data[0].estadopreg){
-
-                                this.go('/profile')
-
-                            }else{
-                                const metoken =  window.localStorage.getItem('jwt')
-                                this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
-                                let res = await this.$axios.get("/perfil/username/" + this.username);
-                                const perfil = res.data
-                                window.localStorage.setItem('id', perfil[0].id)
-                                console.log(perfil[0])
-                                this.go('/asesoriap')
-                            }
-
-                        
-
-                    }else{
-
-                        this.go('/actDatos1')
-
-                    }
 
                     if(res.data.length == 0){
                         this.go('/actDatos1')
@@ -198,7 +164,7 @@ middleware: 'nologin',
         background-size: cover;
         background-position: center;
         width: 100%;
-        height: 800px;
+        height: 400px;
      }
 
      .presentation{

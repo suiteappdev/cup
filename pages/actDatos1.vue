@@ -1,743 +1,647 @@
  <template>
-        <div class="center-grid" style="padding-left: 20%; padding-right: 20%; padding-top: 30%; padding-bottom: 40%;">
-            <vs-row>
-                <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
-                        <div class="box-right">
-                            <div class="form">
-                                <div class="form-inner">
-                                    <h1 class="form-title">Formulario de actualización Imformacion Basica</h1>
-                                    <p style="margin-bottom:30px;">Por favor complete todo el formulario para asesorte de mejor manera</p>
-                                    <div class="form-control">
-                                        <label   for="">Nombre completo</label>
-                                        <vs-input style="margin-top:10px;" v-model="nombrec" placeholder="Nombre completo" shadow>
-                                            <template #icon>
-                                                <i class='bx bx-user'></i>
-                                            </template>
-                                            <template v-if="nombrec == '' && nombrec.length < 9" #message-warn>
-                                                Digite su nombre completo
-                                            </template>
-                                            <template v-if="nombrec.length >= 10" #message-success>
-                                                ok
-                                            </template>
-                                        </vs-input>
-                                    <!-- Componente-->
-                                        <template>
-                                            <div class="form-control" style="margin-top:15px">
-                                                <label  style="margin-bottom:10px;" for="">Fecha de nacimiento</label>
-                                                <div style="display:flex;margin-top:10px;
-                                                ">
-                                                                                         
-                                                <vs-select style="padding-left: 10px;"
-                                                    placeholder="Año"
-                                                    v-model="fnano"
-                                                >
-                                                <vs-option v-for="(a, index) in years()" :key="index" :label="a" :value="a">
-                                                    {{a}}
-                                                </vs-option>
-                                                <template v-if="fnano == ''" #message-warn>
-                                                    Año es requerido
-                                                </template>
-                                                <template v-if="fnano" #message-success>
-                                                    ok
-                                                </template>
-                                                </vs-select>
-                                                <vs-select  style="padding-left: 10px;"
-                                                    placeholder="Mes"
-                                                    v-model="fnmes"
-                                                >
-                                                <vs-option v-for="(m, index) in months()" :key="index" :label="m.mes" :value="m.id">
-                                                    {{m.mes}}
-                                                </vs-option>
-                                                <template v-if="fnmes == ''" #message-warn>
-                                                    Mes es requerido
-                                                </template>
-                                                 <template v-if="fnmes" #message-success>
-                                                    ok
-                                                </template>
-                                                </vs-select>
-                                                <vs-select style="padding-left: 10px;"
-                                                    placeholder="Dia"
-                                                    v-model="fndia"
-                                                >
-                                                <vs-option v-for="(d, index) in days()" :key="index" :label="d" :value="d">
-                                                    {{d}}
-                                                </vs-option>
-                                                <template v-if="fndia == ''" #message-warn>
-                                                    Dia es requerido
-                                                </template>
-                                                <template v-if="fndia" #message-success>
-                                                    ok
-                                                </template>
-                                                </vs-select>
-                                            </div>
-                                            </div>
-                                        </template>
-                                    <!-- Componente-->
-                                    <!--<inf-sexo />-->
-                                    <template>
-                                        <div style="float: left; margin-top:10px;padding-left: 10px;">    
-                                        <label  style="margin-bottom:10px;" for="">Sexo</label>
-                                        <div class="form-control">
-                                            <vs-select
-                                                placeholder="Sexo"
-                                                v-model="sexo"
-                                            >
-                                            <vs-option v-for="(s, index) in sex()" :key="index" :label="s" :value="s">
-                                                {{s}}
-                                            </vs-option>
-                                                <template v-if="sexo == ''" #message-warn>
-                                                    Sexo es requerido
-                                                </template>
-                                                <template v-if="sexo" #message-success>
-                                                    ok
-                                                </template>
-                                            </vs-select>
-                                        </div>
-                                    </div>
-                                    </template>
-                                    <!-- Componente-->
-                                    <!--<inf-estadocivil />-->
-                                    <template>
-                                        <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                        <label  style="margin-bottom:10px;" for="">Estado civil</label>
-                                        <div class="form-control">
-                                            <vs-select
-                                                placeholder="Estado civil"
-                                                v-model="estadocivil"
-                                            >
-                                            <vs-option v-for="(e, index) in civilstatus()" :key="index" :label="e" :value="e">
-                                                {{e}}
-                                            </vs-option>
-                                                <template v-if="estadocivil == ''" #message-warn>
-                                                    Estado civil es requerido
-                                                </template>
-                                                <template v-if="estadocivil" #message-success>
-                                                    ok
-                                                </template>
-                                            </vs-select>
-                                        </div>
-                                        </div>
-                                    </template>
-                                    <!-- Componente-->
-                                    <!--<inf-username />-->
-                                        <vs-row>
-                                        <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
-                                        <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                            <label  style="margin-bottom:10px;" for="">Cedula</label>
-                                            <div class="form-control">
-                                                <vs-input disabled style="margin-top:10px;" v-model="username" placeholder="Cedula" shadow>
-                                                    <template #icon>
-                                                        <i class='bx bx-lock-open-alt'></i>
-                                                    </template>
-                                                </vs-input>
-                                            </div>
-                                        </div>
-                                        <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Ciudad de expedicion</label>
-                                                    <div class="form-control">
-                                                        <model-select :options="options"
-                                                                                :value="ciudadexp.text"
-                                                                                v-model="ciudadexp"
-                                                                                placeholder="selecciona">
-                                                        </model-select>
-                                                    </div>
-                                                    </div>
-                                        <!-- Fecha de Expedicion -->
-                                        <template>
-                                            <div class="form-control" style="float:left">
-                                                <label  style="margin-bottom:10px;" for="">Fecha de expedicion</label>
-                                                <div style="display:flex;margin-top:10px;
-                                                ">
-                                                <vs-select style="padding-left: 10px;"
-                                                    placeholder="Año"
-                                                    v-model="exano"
-                                                >
-                                                <vs-option v-for="(a, index) in years()" :key="index" :label="a" :value="a">
-                                                    {{a}}
-                                                </vs-option>
-                                                <template v-if="exano == ''" #message-warn>
-                                                    Año es requerido
-                                                </template>
-                                                <template v-if="exano" #message-success>
-                                                    ok
-                                                </template>
-                                                </vs-select>
-                                                <vs-select  style="padding-left: 10px;"
-                                                    placeholder="Mes"
-                                                    v-model="exmes"
-                                                >
-                                                <vs-option v-for="(m, index) in months()" :key="index" :label="m.mes" :value="m.id">
-                                                    {{m.mes}}
-                                                </vs-option>
-                                                <template v-if="exmes == ''" #message-warn>
-                                                    mes es requerido
-                                                </template>
-                                                <template v-if="exmes" #message-success>
-                                                    ok
-                                                </template>
-                                                </vs-select>
-                                                <vs-select style="padding-left: 10px;"
-                                                    placeholder="Dia"
-                                                    v-model="exdia"
-                                                >
-                                                <vs-option v-for="(d, index) in days()" :key="index" :label="d" :value="d">
-                                                    {{d}}
-                                                </vs-option>
-                                                <template v-if="exdia == ''" #message-warn>
-                                                    Dia es requerido
-                                                </template>
-                                                <template v-if="exdia" #message-success>
-                                                    ok
-                                                </template>
-                                                </vs-select>
-                                            </div>
-                                            </div>
-                                        </template>
-                                        <!-- Componente-->
-                                        </vs-col>
-                                        <!-- Componente-->
-                                        <!--<inf-contacto />-->
-                                        <template>
-                                        <div>
-                                        <div class="form-control" style="margin-top:10px;">
-                                            <label   for="">Teléfono celular de llamada</label>
-                                            <vs-input 
-                                                style="margin-top:10px;" 
-                                                v-model="cllamadas" 
-                                                placeholder="Celular" 
-                                                shadow 
-                                            >
-                                                <template #icon>
-                                                    <i class='bx bx-phone' ></i>
-                                                </template>
-                                                <template v-if="cllamadas == ''" #message-warn>
-                                                    Celular llamadas es requerido
-                                                </template>
-                                                <template v-if="cllamadas" #message-success>
-                                                    ok
-                                                </template>
-                                            </vs-input>
-                                            </div>
-                                            <div class="form-control" style="margin-top:10px;">
-                                                <label   for="">Teléfono celular de WhatsApp</label>
-                                                <vs-input 
-                                                    style="margin-top:10px;" 
-                                                    v-model="cwasap" 
-                                                    placeholder="Celular" 
-                                                    shadow>
-                                                    <template #icon>
-                                                        <i class='bx bxl-whatsapp' ></i>
-                                                    </template>
-                                                <template v-if="cwasap == ''" #message-warn>
-                                                    Dia es requerido
-                                                </template>
-                                                <template v-if="cwasap" #message-success>
-                                                    ok
-                                                </template>
-                                                </vs-input>
-                                                </div>
-                                                <div class="form-control" style="margin-top:10px;">
-                                                <label   for="">Correo electronico</label>
-                                                <vs-input 
-                                                    disabled
-                                                    style="margin-top:10px;" 
-                                                    v-model="email" 
-                                                    placeholder="Email" 
-                                                    shadow>
-                                                    <template #icon>
-                                                        <i class='bx bx-mail-send' ></i>
-                                                    </template>
-                                                </vs-input>
-                                            </div>
-                                        </div>    
-                                        </template>
-                                        <!-- Componente-->
-                                        <!--<inf-residencial />-->
-                                        <template>
-                                        <div class="resi" style="margin-top=30px;">
-                                            <div>
-                                            <h2 class="form-title">Información residencial</h2>
-                                            <p style="margin-bottom:30px;">Actualize la información residencial</p>
-                                            </div>
-                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Departamento</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Departamento"
-                                                        v-model="departamento"
-                                                        >
-                                                        <vs-option v-for="(d, index) in dpto()" :key="index" :label="d.departamento" :value="d.id">
-                                                            {{d.departamento}}
-                                                        </vs-option>
-                                                        <template v-if="departamento == ''" #message-warn>
-                                                            Departamento es requerido
-                                                        </template>
-                                                         <template v-if="departamento" #message-success>
-                                                            ok
-                                                        </template> 
-                                                        </vs-select>
-
-                                                    </div>
-                                                    </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Ciudad</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Ciudad"
-                                                        v-model="ciudad"
-                                                        :disabled ="departamento"
-                                                        >
-                                                        <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c" :value="c">
-                                                            {{c}}
-                                                        </vs-option>
-                                                        <template v-if="ciudad == ''" #message-warn>
-                                                            Departamento es requerido
-                                                        </template>
-                                                         <template v-if="ciudad" #message-success>
-                                                            ok
-                                                        </template> 
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                    <div class="form-control" style="margin-top:10px;">
-                                                    <label   for="">Direccion</label>
-                                                    <vs-input 
-                                                        style="margin-top:10px;" 
-                                                        v-model="direccion" 
-                                                        placeholder="Direccion" 
-                                                        shadow>
-                                                        <template v-if="direccion == ''" #message-warn>
-                                                            Direccion es requerido
-                                                        </template>
-                                                         <template v-if="direccion" #message-success>
-                                                            ok
-                                                    </template>
-                                                    </vs-input>
-                                                    </div>
-                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Tipo de vivienda</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Tipo de vivienda"
-                                                        v-model="tvivienda"
-                                                        >
-                                                        <vs-option v-for="(v, index) in tvienda()" :key="index" :label="v" :value="v">
-                                                            {{v}}
-                                                        </vs-option>
-                                                        <template v-if="tvivienda == ''" #message-warn>
-                                                            Tipo de vivienda es requerido
-                                                        </template>
-                                                         <template v-if="tvivienda" #message-success>
-                                                            ok
-                                                        </template> 
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Estrato</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Estrato"
-                                                        v-model="estrato"
-                                                        >
-                                                        <vs-option v-for="(e, index) in est()" :key="index" :label="e" :value="e">
-                                                            {{e}}
-                                                        </vs-option>
-                                                        <template v-if="estrato == ''" #message-warn>
-                                                            Estrato es requerido
-                                                        </template>
-                                                         <template v-if="estrato" #message-success>
-                                                            ok
-                                                        </template> 
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                            </div>
-                                        </template>    
-                                        <!-- Componente-->
-                                        <!--<inf-laboral />-->
-                                        <template>
-                                        <div class="resi" style="margin-top=30px;">
-                                            <div>
-                                            <h2 class="form-title">Información laboral</h2>
-                                            <p style="margin-bottom:30px;">Actualize la información laboral</p>
-                                            </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Nivel de estudio</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Nivel de estudio"
-                                                        v-model="nestudio"
-                                                        >
-                                                        <vs-option v-for="(ne, index) in nivest()" :key="index" :label="ne" :value="ne">
-                                                            {{ne}}
-                                                        </vs-option>
-                                                        <template v-if="nestudio == ''" #message-warn>
-                                                            Nivel de estudio es requerido
-                                                        </template>
-                                                        <template v-if="nestudio" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Actualmente soy</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Actualmente soy"
-                                                        v-model="actsoy"
-                                                        >
-                                                        <vs-option v-for="(as, index) in actualmentes()" :key="index" :label="as" :value="as">
-                                                            {{as}}
-                                                        </vs-option>
-                                                         <template v-if="actsoy == ''" #message-warn>
-                                                            Actualmente soy es requerido
-                                                        </template>
-                                                        <template v-if="actsoy" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Ingresos mensuales</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Ingresos mensuales"
-                                                        v-model="imensual"
-                                                        >
-                                                        <vs-option v-for="(im, index) in ingmensual()" :key="index" :label="im" :value="im">
-                                                            {{im}}
-                                                        </vs-option>
-                                                        <template v-if="imensual == ''" #message-warn>
-                                                            Ingreso mensual es requerido
-                                                        </template>
-                                                        <template v-if="imensual" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">Gastos mensuales</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Gastos mensuales"
-                                                        v-model="gtomensual"
-                                                        >
-                                                        <vs-option v-for="(gm, index) in gmensual()" :key="index" :label="gm" :value="gm">
-                                                            {{gm}}
-                                                        </vs-option>
-                                                        <template v-if="gtomensual == ''" #message-warn>
-                                                            Gasto mensual es requerido
-                                                        </template>
-                                                        <template v-if="gtomensual" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                            </div>
-                                        </template>
-                                        <!-- Componente-->
-                                        <!--<inf-bancaria />-->
-                                        <template>
-                                        <div class="resi" style="margin-top=30px;">
-                                            <div>
-                                            <h2 class="form-title">Información bancaria</h2>
-                                            <p style="margin-bottom:30px;">Actualize la información bancaria</p>
-                                            </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">¿Cuantas cuentas bancarias tienes?</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Nº de cuentas bancarias"
-                                                        v-model="ctasbancarias"
-                                                        >
-                                                        <vs-option v-for="(cb, index) in ncuentas()" :key="index" :label="cb" :value="cb">
-                                                            {{cb}}
-                                                        </vs-option>
-                                                        <template v-if="ctasbancarias == ''" #message-warn>
-                                                            N° de cuentas bancarias es requerido
-                                                        </template>
-                                                        <template v-if="ctasbancarias" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">¿Cuantas tarjetas de crédito tienes?</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Nº de tarjetas de credito"
-                                                        v-model="tartienes"
-                                                        >
-                                                        <vs-option v-for="(tc, index) in tcredito()" :key="index" :label="tc" :value="tc">
-                                                            {{tc}}
-                                                        </vs-option>
-                                                        <template v-if="tartienes == ''" #message-warn>
-                                                            N° de tarjetas es requerido
-                                                        </template>
-                                                        <template v-if="tartienes" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <div class="form-control">
-                                                        <label  style="margin-bottom:10px;" for="">Cupo actual en todos tus productos financieros</label>
-                                                        <vs-input style="margin-top:10px;" v-model="cupototal" placeholder="Cupo total" shadow>
-                                                            <template #icon>
-                                                                <i class='bx bx-money'></i>
-                                                            </template>
-                                                        <template v-if="cupototal == ''" #message-warn>
-                                                            Cupo total es requerido
-                                                        </template>
-                                                        <template v-if="cupototal" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-input>
-                                                    </div>
-                                                    </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <div class="form-control">
-                                                        <label  style="margin-bottom:10px;" for="">Cupo utilizado</label>
-                                                        <vs-input style="margin-top:10px;" v-model="cuantodebes" placeholder="Cuanto debes" shadow>
-                                                            <template #icon>
-                                                                <i class='bx bx-money'></i>
-                                                            </template>
-                                                        <template v-if="cuantodebes == ''" #message-warn>
-                                                            Cuanto debes es requerido
-                                                        </template>
-                                                        <template v-if="cuantodebes" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-input>
-                                                    </div>
-                                                    </div>
-                                            </div>
-                                        </template>
-                                        <!-- Componente-->
-                                        <!--<inf-centralesderiesgo />-->
-                                        <template>
-                                        <div class="resi" style="margin-top=30px;">
-                                            <div>
-                                            <h2 class="form-title">Información en las centrales de riesgo</h2>
-                                            <p style="margin-bottom:30px;">Actualize la información de las centrales de riesgo</p>
-                                            </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">¿Tienes suscripción en Datacrédito o TransUnion?</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder=""
-                                                        v-model="sdatacre"
-                                                        >
-                                                        <vs-option label="Si" :value=1>
-                                                            Si
-                                                        </vs-option>
-                                                        <vs-option label="No" :value="0">
-                                                            No
-                                                        </vs-option>
-                                                        <!--<template v-if="sdatacre == ''" #message-warn>
-                                                            Campo requerido
-                                                        </template>-->
-                                                        <template v-if="sdatacre" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                    <div v-if="sdatacre" style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa?</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Asesoria"
-                                                        v-model="sdatacresi"
-                                                        >
-                                                        <vs-option v-for="(sds, index) in datacreds()" :key="index" :label="sds" :value="sds">
-                                                            {{sds}}
-                                                        </vs-option>
-                                                        <template v-if="sdatacresi == ''" #message-warn>
-                                                            Cuanto debes es requerido
-                                                        </template>
-                                                        <template v-if="sdatacresi" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                                <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                    <label  style="margin-bottom:10px;" for="">¿Estas reportado negativamente?</label>
-                                                    <div class="form-control">
-                                                        <vs-select
-                                                        placeholder="Esta Reportado negativamente?"
-                                                        v-model="reportn"
-                                                        >
-                                                        <vs-option v-for="(rp, index) in rportneg()" :key="index" :label="rp" :value="rp">
-                                                            {{rp}}
-                                                        </vs-option>
-                                                        <template v-if="reportn == ''" #message-warn>
-                                                            Estas reportado es requerido
-                                                        </template>
-                                                        <template v-if="reportn" #message-success>
-                                                            ok
-                                                        </template>
-                                                        </vs-select>
-                                                    </div>
-                                                    </div>
-                                            </div>
-                                        </template>
-                                        <!-- Componente-->
-                                        <!--<inf-contable />-->
-                                        <template>
-                                            <div class="resi" style="margin-top=30px;">
-                                                <div>
-                                                <h2 class="form-title">Información contable</h2>
-                                                <p style="margin-bottom:30px;">Actualize la información contable</p>
-                                                </div>
-                                                        <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                        <label  style="margin-bottom:10px;" for="">¿Tiene RUT?</label>
-                                                        <div class="form-control">
-                                                            <vs-select
-                                                            placeholder=""
-                                                            v-model="rut"
-                                                            >
-                                                            <vs-option label="Si" :value=1>
-                                                                Si
-                                                            </vs-option>
-                                                            <vs-option label="No" :value=0>
-                                                                No
-                                                            </vs-option>
-                                                        <!--<template v-if="rut == ''" #message-warn>
-                                                            Rut es requerido
-                                                        </template>-->
-                                                        <template v-if="rut" #message-success>
-                                                            ok
-                                                        </template>
-                                                            </vs-select>
-                                                        </div>
-                                                        </div>
-                                                        <div v-if="rut" style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                        <div class="form-control">
-                                                            <label  style="margin-bottom:10px;" for=""> Actividad principal en el RUT (digite nombre de la actividad o código CIIU)</label>
-                                                            <vs-input style="margin-top:10px;" v-model="arut" placeholder="Actividad" shadow>
-                                                                <template #icon>
-                                                                    <i class='bx bx-money'></i>
-                                                                </template>
-                                                        <template v-if="arut == ''" #message-warn>
-                                                            Actividad principal debes es requerido
-                                                        </template>
-                                                        <template v-if="arut" #message-success>
-                                                            ok
-                                                        </template>
-                                                            </vs-input>
-                                                        </div>
-                                                        </div>
-                                                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                        <label  style="margin-bottom:10px;" for="">¿Declara renta?</label>
-                                                        <div class="form-control">
-                                                            <vs-select
-                                                            placeholder=""
-                                                            v-model="drenta"
-                                                            >
-                                                            <vs-option label="Si" :value= 1>
-                                                                Si
-                                                            </vs-option>
-                                                            <vs-option label="No" :value= 0>
-                                                                No
-                                                            </vs-option>
-                                                      <!--  <template v-if="drenta == '' " #message-warn>
-                                                            Declara renta es requerido
-                                                        </template>-->
-                                                        <template v-if="drenta || !drenta == 0 && !tpatrim == 0 && !tdeudas == 0" #message-success>
-                                                            ok
-                                                        </template>
-                                                            </vs-select>
-                                                        </div>
-                                                        </div>
-                                                        <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                        <div class="form-control">
-                                                            <label  style="margin-bottom:10px;" for="">Total Patrimonio bruto</label>
-                                                            <vs-input style="margin-top:10px;" v-model="tpatrim" placeholder="Total patrimonio" shadow value= 0>
-                                                                <template #icon>
-                                                                    <i class='bx bx-money'></i>
-                                                                </template>
-                                                        <template v-if="tpatrim == ''  " #message-warn>
-                                                            Total patroimonio es requerido
-                                                        </template>
-                                                        <template v-if="tpatrim" #message-success>
-                                                            ok
-                                                        </template>
-                                                            </vs-input>
-                                                        </div>
-                                                        </div>
-                                                        <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
-                                                        <div class="form-control">
-                                                            <label  style="margin-bottom:10px;" for="">Total deudas</label>
-                                                            <vs-input style="margin-top:10px;" v-model="tdeudas" placeholder="Total deudas" shadow value= 0>
-                                                                <template #icon>
-                                                                    <i class='bx bx-money'></i>
-                                                                </template>
-                                                        <template v-if="tdeudas == ''" #message-warn>
-                                                            Total de deudas es requerido
-                                                        </template>
-                                                        <template v-if="tdeudas" #message-success>
-                                                            ok
-                                                        </template>
-                                                            </vs-input>
-                                                        </div>
-                                                        </div>
-                                                </div>
-                                            </template>
-                                        </vs-row>
-                                    </div>
-                                    <div class="form-control">
-                                            <div>
-                                                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
-                                                        <vs-button
-                                                            size="large"
-                                                            flat
-                                                            :active="active == 0"
-                                                            @click="active = 0, actperfil()"
-                                                            block
-                                                            :disabled="nombrec.length < 1 ||
-                                                             fnano.length < 1 ||
-                                                             fnmes.length < 1 ||
-                                                             fndia.length < 1 ||
-                                                             exano.length < 1 ||
-                                                             exmes.length < 1 ||
-                                                             exdia.length < 1 || 
-                                                             sexo.length < 1 || 
-                                                             estadocivil.length < 1 ||
-                                                             cllamadas.length < 1 || 
-                                                             cwasap.length < 1 || 
-                                                             departamento.length < 1 ||
-                                                             ciudad.length < 1 || 
-                                                             tvivienda.length < 1 ||
-                                                             estrato .length < 1 || 
-                                                            cuantodebes.length < 1 || 
-                                                            cupototal.length < 1 || 
-                                                            tartienes.length < 1 || 
-                                                            ctasbancarias.length < 1 || 
-                                                            nestudio.length < 1 || 
-                                                            actsoy.length < 1 || 
-                                                            imensual.length < 1 || 
-                                                            gtomensual.length < 1 ||
-                                                            reportn.length < 1"
-                                                        >
-                                                        Actualizar
-                                                        </vs-button>
-                                                </vs-col>
-                                            </div>
-                                    </div>
-                               </div>
-                            </div>
-                        </div>
+        <div class="center-grid" style="width:80%;height:auto;margin:0 auto;margin-top:70px;">
+            <h1 class="form-title text-center">Formulario de actualización información basica</h1>
+            <p class="text-center">Por favor complete todo el formulario para asesorte de mejor manera</p>
+             <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
+                  <div class="form-control">
+                    <label for=""  style="font-size:12px;">Nombre completo</label>
+                    <vs-input style="margin-top:10px;" v-model="nombrec" placeholder="Nombre completo" shadow>
+                        <template #icon>
+                            <i class='bx bx-user'></i>
+                        </template>
+                        <template v-if="nombrec == '' && nombrec.length < 9" #message-warn>
+                            Digite su nombre completo
+                        </template>
+                        <template v-if="nombrec.length >= 10" #message-success>
+                            ok
+                        </template>
+                    </vs-input>
+                  </div>
                 </vs-col>
             </vs-row>
+            <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="5" lg="5" sm="12" xs="12">
+                    <div class="form-control">
+                       <label for=""  style="font-size:12px;">Fecha de nacimiento</label>
+                        <div style="display:flex;margin-top:10px;
+                        ">
+                                                                  
+                        <vs-select
+                            placeholder="Año"
+                            v-model="fnano"
+                        >
+                        <vs-option v-for="(a, index) in years()" :key="index" :label="a" :value="a">
+                            {{a}}
+                        </vs-option>
+                        <template v-if="fnano == ''" #message-warn>
+                           campo requerido
+                        </template>
+                        </vs-select>
+                        <vs-select  style="padding-left: 10px;"
+                            placeholder="Mes"
+                            v-model="fnmes"
+                        >
+                        <vs-option v-for="(m, index) in months()" :key="index" :label="m.mes" :value="m.id">
+                            {{m.mes}}
+                        </vs-option>
+                        <template v-if="fnmes == ''" #message-warn>
+                            campo requerido
+                        </template>
+                        </vs-select>
+                        <vs-select style="padding-left: 10px;"
+                            placeholder="Dia"
+                            v-model="fndia"
+                        >
+                        <vs-option v-for="(d, index) in days()" :key="index" :label="d" :value="d">
+                            {{d}}
+                        </vs-option>
+                        <template v-if="fndia == ''" #message-warn>
+                             campo requerido
+                        </template>
+                        </vs-select>
+                    </div>
+                    </div>
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <template>
+                      <div class="form-control">
+                          <label for="" style="font-size:12px;">Sexo</label>
+                          <vs-select
+                              style="margin-top:10px;margin-left:10px;"
+                              placeholder="Sexo"
+                              v-model="sexo"
+                          >
+                          <vs-option v-for="(s, index) in sex()" :key="index" :label="s" :value="s">
+                              {{s}}
+                          </vs-option>
+                              <template v-if="sexo == ''" #message-warn>
+                                  campo requerido
+                              </template>
+                          </vs-select>
+                      </div>
+                  </template>
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center"  w="4" sm="12" xs="12">
+
+                </vs-col>
+            </vs-row>
+            <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                    <template>
+                      <div style="float: left; margin-top:10px;margin-right:10px;">    
+                         <label for=""  style="font-size:12px;">Estado civil</label>
+                          <div class="form-control">
+                              <vs-select
+                                  placeholder="Estado civil"
+                                  v-model="estadocivil"
+                              >
+                              <vs-option v-for="(e, index) in civilstatus()" :key="index" :label="e" :value="e">
+                                  {{e}}
+                              </vs-option>
+                                  <template v-if="estadocivil == ''" #message-warn>
+                                      Campo requerido
+                                  </template>
+                              </vs-select>
+                          </div>
+                      </div>
+                    </template>               
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                    <template>
+                        <div style="float: left; margin-top:10px;">  
+                            <label for=""  style="font-size:12px;">Cedula</label>
+                            <div class="form-control">
+                                <vs-input disabled v-model="username" placeholder="Cedula" shadow>
+                                    <template #icon>
+                                        <i class='bx bx-lock-open-alt'></i>
+                                    </template>
+                                </vs-input>
+                            </div>
+                        </div>
+                    </template>               
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                    <template>
+                      <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                              <label for=""  style="font-size:12px;">Ciudad de expedicion</label>
+                              <div class="form-control">
+                                  <model-select :options="options"
+                                      :value="ciudadexp.text"
+                                      v-model="ciudadexp"
+                                      placeholder="selecciona">
+                                  </model-select>
+                              </div>
+                        </div>
+                    </template>               
+                </vs-col>
+            </vs-row>
+             <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="5">
+                    <template>
+                      <div style="float: left; margin-top:10px">
+                          <div class="form-control" style="float:left">
+                              <label for=""  style="font-size:12px;">Fecha de expedicion</label>
+                              <div style="display:flex;margin-top:10px;
+                              ">
+                              <vs-select
+                                  placeholder="Año"
+                                  v-model="exano"
+                              >
+                              <vs-option v-for="(a, index) in years()" :key="index" :label="a" :value="a">
+                                  {{a}}
+                              </vs-option>
+                              <template v-if="exano == ''" #message-warn>
+                                  Año es requerido
+                              </template>
+                              <template v-if="exano" #message-success>
+                                  ok
+                              </template>
+                              </vs-select>
+                              <vs-select  style="padding-left: 10px;"
+                                  placeholder="Mes"
+                                  v-model="exmes"
+                              >
+                              <vs-option v-for="(m, index) in months()" :key="index" :label="m.mes" :value="m.id">
+                                  {{m.mes}}
+                              </vs-option>
+                              <template v-if="exmes == ''" #message-warn>
+                                  mes es requerido
+                              </template>
+                              <template v-if="exmes" #message-success>
+                                  ok
+                              </template>
+                              </vs-select>
+                              <vs-select style="padding-left: 10px;"
+                                  placeholder="Dia"
+                                  v-model="exdia"
+                              >
+                              <vs-option v-for="(d, index) in days()" :key="index" :label="d" :value="d">
+                                  {{d}}
+                              </vs-option>
+                              <template v-if="exdia == ''" #message-warn>
+                                  Dia es requerido
+                              </template>
+                              <template v-if="exdia" #message-success>
+                                  ok
+                              </template>
+                              </vs-select>
+                          </div>
+                          </div>                    
+                      </div>
+                    </template>
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3"  sm="12" xs="12">
+                    <div class="form-control" style="margin-top:10px;">
+                      <label for=""  style="font-size:12px;">Teléfono celular de WhatsApp</label>
+                      <vs-input 
+                          style="margin-top:10px;" 
+                          v-model="cwasap" 
+                          placeholder="Celular" 
+                          shadow>
+                          <template #icon>
+                              <i class='bx bxl-whatsapp' ></i>
+                          </template>
+                      <template v-if="cwasap == ''" #message-warn>
+                          Dia es requerido
+                      </template>
+                      <template v-if="cwasap" #message-success>
+                          ok
+                      </template>
+                      </vs-input>
+                    </div>
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3"  sm="12" xs="12">
+                  <template>
+                    <div class="form-control" style="margin-top:10px;">
+                        <label for=""  style="font-size:12px;">Celular de llamada</label>
+                            <vs-input 
+                                style="margin-top:10px;" 
+                                v-model="cllamadas" 
+                                placeholder="Celular" 
+                                shadow 
+                            >
+                            <template #icon>
+                                <i class='bx bx-phone' ></i>
+                            </template>
+                            <template v-if="cllamadas == ''" #message-warn>
+                                campo requerido
+                            </template>
+                        </vs-input>
+                      </div>
+                </template>
+                </vs-col>
+            </vs-row>
+            <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12" sm="12" xs="12">
+                  <template>
+                    <div class="form-control" style="margin-top:10px;">
+                      <label for=""  style="font-size:12px;">Correo electronico</label>
+                      <vs-input 
+                          disabled
+                          style="margin-top:10px;" 
+                          v-model="email" 
+                          placeholder="Email" 
+                          shadow>
+                          <template #icon>
+                              <i class='bx bx-mail-send' ></i>
+                          </template>
+                      </vs-input> 
+                    </div>
+                  </template>
+                </vs-col>
+            </vs-row>
+             <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                    <label for=""  style="font-size:12px;">Departamento</label>
+                    <div class="form-control">
+                        <vs-select
+                        placeholder="Departamento"
+                        v-model="departamento"
+                        >
+                        <vs-option v-for="(d, index) in dpto()" :key="index" :label="d.departamento" :value="d.id">
+                            {{d.departamento}}
+                        </vs-option>
+                        <template v-if="departamento == ''" #message-warn>
+                            Departamento es requerido
+                        </template>
+                          <template v-if="departamento" #message-success>
+                            ok
+                        </template> 
+                        </vs-select>
+                    </div>
+                    </div>
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                  <label for=""  style="font-size:12px;">Ciudad</label>
+                  <div class="form-control">
+                      <vs-select
+                      placeholder="Ciudad"
+                      v-model="ciudad"
+                      :disabled ="departamento"
+                      >
+                      <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c" :value="c">
+                          {{c}}
+                      </vs-option>
+                      <template v-if="ciudad == ''" #message-warn>
+                          Departamento es requerido
+                      </template>
+                        <template v-if="ciudad" #message-success>
+                          ok
+                      </template> 
+                      </vs-select>
+                  </div>
+                  </div>
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <template>
+                      <div class="form-control">
+                      <label for=""  style="font-size:12px;">Direccion</label>
+                      <vs-input 
+                          style="margin-top:10px;" 
+                          v-model="direccion" 
+                          placeholder="Direccion" 
+                          shadow>
+                          <template v-if="direccion == ''" #message-warn>
+                              Direccion es requerido
+                          </template>
+                            <template v-if="direccion" #message-success>
+                              ok
+                      </template>
+                      </vs-input>
+                      </div>                    
+                  </template>
+                </vs-col>
+            </vs-row>
+            <vs-row>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+              <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                  <label for=""  style="font-size:12px;">Tipo de vivienda</label>
+                  <div class="form-control">
+                      <vs-select
+                      placeholder="Tipo de vivienda"
+                      v-model="tvivienda"
+                      >
+                      <vs-option v-for="(v, index) in tvienda()" :key="index" :label="v" :value="v">
+                          {{v}}
+                      </vs-option>
+                      <template v-if="tvivienda == ''" #message-warn>
+                          Tipo de vivienda es requerido
+                      </template>
+                        <template v-if="tvivienda" #message-success>
+                          ok
+                      </template> 
+                      </vs-select>
+                  </div>
+                </div>
+              </vs-col>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+              <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                  <label for=""  style="font-size:12px;">Estrato</label>
+                  <div class="form-control">
+                      <vs-select
+                      placeholder="Estrato"
+                      v-model="estrato"
+                      >
+                      <vs-option v-for="(e, index) in est()" :key="index" :label="e" :value="e">
+                          {{e}}
+                      </vs-option>
+                      <template v-if="estrato == ''" #message-warn>
+                          Estrato es requerido
+                      </template>
+                        <template v-if="estrato" #message-success>
+                          ok
+                      </template> 
+                      </vs-select>
+                  </div>
+                </div>
+              </vs-col>
+            </vs-row>
+            <vs-row>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                  <label for=""  style="font-size:12px;">Nivel de estudio</label>
+                  <div class="form-control">
+                      <vs-select
+                      placeholder="Nivel de estudio"
+                      v-model="nestudio"
+                      >
+                      <vs-option v-for="(ne, index) in nivest()" :key="index" :label="ne" :value="ne">
+                          {{ne}}
+                      </vs-option>
+                      <template v-if="nestudio == ''" #message-warn>
+                          Nivel de estudio es requerido
+                      </template>
+                      <template v-if="nestudio" #message-success>
+                          ok
+                      </template>
+                      </vs-select>
+                  </div>
+                  </div>
+              </vs-col>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                    <label for=""  style="font-size:12px;">Actualmente soy</label>
+                    <div class="form-control">
+                        <vs-select
+                        placeholder="Actualmente soy"
+                        v-model="actsoy"
+                        >
+                        <vs-option v-for="(as, index) in actualmentes()" :key="index" :label="as" :value="as">
+                            {{as}}
+                        </vs-option>
+                          <template v-if="actsoy == ''" #message-warn>
+                            Actualmente soy es requerido
+                        </template>
+                        <template v-if="actsoy" #message-success>
+                            ok
+                        </template>
+                        </vs-select>
+                    </div>
+                </div>
+              </vs-col>
+              <vs-row>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                    <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                          <div class="form-control">
+                            <label for=""  style="font-size:12px;">Ingresos mensuales</label>
+                              <vs-select
+                                placeholder="Ingresos mensuales"
+                                v-model="imensual"
+                                >
+                                <vs-option v-for="(im, index) in ingmensual()" :key="index" :label="im" :value="im">
+                                    {{im}}
+                                </vs-option>
+                                <template v-if="imensual == ''" #message-warn>
+                                    Ingreso mensual es requerido
+                                </template>
+                                <template v-if="imensual" #message-success>
+                                    ok
+                                </template>
+                                </vs-select>
+                          </div>
+                    </div>
+                </vs-col>
+                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                    <label for=""  style="font-size:12px;">Gastos mensuales</label>
+                    <div class="form-control">
+                        <vs-select
+                        placeholder="Gastos mensuales"
+                        v-model="gtomensual"
+                        >
+                        <vs-option v-for="(gm, index) in gmensual()" :key="index" :label="gm" :value="gm">
+                            {{gm}}
+                        </vs-option>
+                        <template v-if="gtomensual == ''" #message-warn>
+                            Gasto mensual es requerido
+                        </template>
+                        <template v-if="gtomensual" #message-success>
+                            ok
+                        </template>
+                        </vs-select>
+                    </div>
+                    </div>
+                </vs-col>
+            </vs-row>
+          </vs-row>
+          <vs-row>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                    <label for=""  style="font-size:12px;">¿Cuantas cuentas bancarias tienes?</label>
+                    <div class="form-control">
+                        <vs-select
+                        placeholder="Nº de cuentas bancarias"
+                        v-model="ctasbancarias"
+                        >
+                        <vs-option v-for="(cb, index) in ncuentas()" :key="index" :label="cb" :value="cb">
+                            {{cb}}
+                        </vs-option>
+                          <template v-if="!ctasbancarias" #message-warn>
+                            campo requerido
+                          </template>
+                        </vs-select>
+                    </div>
+                    </div>
+            </vs-col>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+              <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                  <label for=""  style="font-size:12px;">¿Cuantas tarjetas de crédito tienes?</label>
+                  <div class="form-control">
+                      <vs-select
+                      placeholder="Nº de tarjetas de credito"
+                      v-model="tartienes"
+                      >
+                      <vs-option v-for="(tc, index) in tcredito()" :key="index" :label="tc" :value="tc">
+                          {{tc}}
+                      </vs-option>
+                      <template v-if="!tartienes" #message-warn>
+                         campo requerido
+                      </template>
+                      </vs-select>
+                  </div>
+                </div>
+            </vs-col>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                        <div class="form-control">
+                            <label for=""  style="font-size:12px;">Cupo actual en todos tus productos financieros</label>
+                            <vs-input style="margin-top:10px;" v-model="cupototal" placeholder="Cupo total" shadow>
+                                <template #icon>
+                                    <i class='bx bx-money'></i>
+                                </template>
+                                <template v-if="!cupototal" #message-warn>
+                                   campo requerido
+                                </template>
+                            </vs-input>
+                        </div>
+                    </div>
+              </vs-col>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                  <div class="form-control">
+                      <label for=""  style="font-size:12px;">Cupo utilizado</label>
+                      <vs-input style="margin-top:10px;" v-model="cuantodebes" placeholder="Cuanto debes" shadow>
+                          <template #icon>
+                              <i class='bx bx-money'></i>
+                          </template>
+                      <template v-if="!cuantodebes" #message-warn>
+                          Cuanto debes es requerido
+                      </template>
+                      </vs-input>
+                  </div>
+                  </div>
+              </vs-col>
+        </vs-row>
+        <vs-row>
+          <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+              <div style="float: left; margin-top:10px;padding-left: 10px;">  
+             <label for=""  style="font-size:12px;">¿Tienes suscripción en Datacrédito o TransUnion?</label>
+              <div class="form-control">
+                  <vs-select
+                  placeholder=""
+                  v-model="sdatacre"
+                  >
+                  <vs-option label="Si" :value=1>
+                      Si
+                  </vs-option>
+                  <vs-option label="No" :value="0">
+                      No
+                  </vs-option>
+                  <template v-if="!sdatacre" #message-warn>
+                      Campo requerido
+                  </template>
+                  </vs-select>
+              </div>
+              </div>
+          </vs-col>
+          <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" sm="12" xs="12">
+              <div v-if="sdatacre" style="float: left; margin-top:10px;padding-left: 10px;">  
+              <label for=""  style="font-size:12px;">¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa?</label>
+              <div class="form-control">
+                  <vs-select
+                  placeholder="Asesoria"
+                  v-model="sdatacresi"
+                  >
+                  <vs-option v-for="(sds, index) in datacreds()" :key="index" :label="sds" :value="sds">
+                      {{sds}}
+                  </vs-option>
+                  <template v-if="sdatacresi == ''" #message-warn>
+                      campo es requerido
+                  </template>
+                  </vs-select>
+              </div>
+              </div>
+          </vs-col>
+        <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" sm="12" xs="12">
+          <div style="float: left; margin-top:10px;padding-left: 10px;">  
+              <label for=""  style="font-size:12px;">¿Estas reportado negativamente?</label>
+              <div class="form-control">
+                  <vs-select
+                  placeholder="Reportado?"
+                  v-model="reportn"
+                  >
+                  <vs-option v-for="(rp, index) in rportneg()" :key="index" :label="rp" :value="rp">
+                      {{rp}}
+                  </vs-option>
+                  <template v-if="!reportn" #message-warn>
+                      campo requerido
+                  </template>
+                  </vs-select>
+              </div>
+              </div>
+          </vs-col>
+        </vs-row>
+          <vs-row>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                  <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                  <label for=""  style="font-size:12px;">¿Tiene RUT?</label>
+                  <div class="form-control">
+                      <vs-select
+                      placeholder=""
+                      v-model="rut"
+                      >
+                      <vs-option label="Si" :value=1>
+                          Si
+                      </vs-option>
+                      <vs-option label="No" :value=0>
+                          No
+                      </vs-option>
+                      </vs-select>
+                  </div>
+                  </div>
+              </vs-col>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+              <div v-if="rut">  
+                <div class="form-control">
+                    <label for=""  style="font-size:12px;">Código CIIU</label>
+                    <vs-input style="margin-top:10px;" v-model="arut" placeholder="Actividad" shadow>
+                        <template #icon>
+                            <i class='bx bx-note'></i>
+                        </template>
+                        <template v-if="!arut" #message-warn>
+                            campo requerido
+                        </template>
+                    </vs-input>
+                </div>
+              </div>
+            </vs-col>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                <div style="float: left; margin-top:10px;padding-left: 10px;">  
+                    <label for=""  style="font-size:12px;">¿Declara renta?</label>
+                    <div class="form-control">
+                        <vs-select
+                        placeholder=""
+                        v-model="drenta"
+                        >
+                        <vs-option label="Si" :value= 1>
+                            Si
+                        </vs-option>
+                        <vs-option label="No" :value= 0>
+                            No
+                        </vs-option>
+                        </vs-select>
+                    </div>
+                    </div>
+              </vs-col>
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
+                <div class="form-control">
+                    <label for=""  style="font-size:12px;">Total Patrimonio bruto</label>
+                    <vs-input style="margin-top:10px;" v-model="tpatrim" placeholder="Total patrimonio" shadow value= 0>
+                        <template #icon>
+                            <i class='bx bx-money'></i>
+                        </template>
+                        <template v-if="tpatrim == ''  " #message-warn>
+                            Total patroimonio es requerido
+                        </template>
+                    </vs-input>
+                </div>
+                </div>
+              </vs-col>
+        </vs-row>
         </div>
 </template>
 <script>
@@ -760,10 +664,6 @@ async mounted(){
         if(actDatos < 0){
           alert('entra')  
         }
-        
-        
-        
-
     },
 
         data(){
@@ -8009,10 +7909,6 @@ async mounted(){
  <style scoped>
      .resi{
          margin-top: 30px;
-     }   
-     .center-grid{
-        /*height: 2500px !important;
-        margin-top: 90px;*/
      }   
      .box-right{
         width: 100%;

@@ -266,10 +266,6 @@ body .arrows:after {
                 z-index: 10;
                 box-shadow: 0 0 20px rgba(46, 59, 125, 0.23);
             }
-
-            .testimonial-section{
-                padding: 10px!important;
-            }
         }
 
     
@@ -390,12 +386,6 @@ body .arrows:after {
         margin: 0 auto;
     }
 
-    .testimonial-section{
-        box-sizing: border-box;
-        padding: 50px;
-        width: 100%;
-    }
-
     .pricing-section{
         box-sizing: border-box;
         padding: 50px;
@@ -417,7 +407,6 @@ body .arrows:after {
         background-size: cover;
         background-position: center;
         width: 100%;
-        height: 800px;
      }
 
      .vs-card-content{
@@ -435,21 +424,6 @@ body .arrows:after {
         -moz-box-shadow: 0px -43px 33px -46px rgb(0 230 227 / 71%) inset;
      }
 
-     .form{
-        padding-top: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-     }
-
-    .form-inner{
-        width: 80%;
-        padding: 20px;
-        padding: 24%;
-    }
-    
     .form-control{
         margin-bottom: 24px;
         height: 40px;
@@ -595,11 +569,6 @@ body .arrows:after {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-
-
-  .testimonial-section{
-      padding: 10px!important;
-  }
 
   .vs-card-content{
       width: 90%!important;
