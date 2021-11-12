@@ -83,5 +83,10 @@ export default {
     color: 'blue',
     height: '5px',
     duration : 3000
+  },
+
+  server: {
+    host: '0.0.0.0',
+    port: 80
   }
 }

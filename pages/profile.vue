@@ -56,6 +56,30 @@
                         </vs-tr>
                         </template>
                     </vs-table>
+
+                        <template>
+                            <div class="center">
+                            <vs-button class="vs-button__content" @click="active=!active" style="width: 20%;">
+                                Editar
+                            </vs-button>
+                            <vs-dialog blur v-model="active">
+                                <template #header>
+                                <h4 class="not-margin">
+                                    Informacion <b>Basica</b>
+                                </h4>
+                                </template>
+                                    
+                                <template #footer>
+                                <div class="footer-dialog">
+                                    <vs-button block>
+                                    Actualizar
+                                    </vs-button>
+                                </div>
+                                </template>
+                            </vs-dialog>
+                            </div>
+                        </template>
+
                         </b-card-body>
                     </b-collapse>
                     </b-card>
@@ -337,7 +361,9 @@ export default {
                     drenta:'',
                     tpatrim:'',
                     tdeudas:'',
-                    text: ''
+                    text: '',
+                    active:false,
+
         }
                 
 

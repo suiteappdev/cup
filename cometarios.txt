@@ -1,0 +1,2 @@
+https://github.com/TugayYaldiz/vue-comment-grid
+https://strapi.io/video-library/create-comment-system-articles
