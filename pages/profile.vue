@@ -260,9 +260,16 @@
 <script>
 export default {
      middleware:'silogin',
-     async mounted() {
-                    const metoken =  window.localStorage.getItem('jwt')
+                async mounted() {
+                
                     let meuser = window.localStorage.getItem('username')
+                    let actDatos = await this.$axios.get('/perfil/username/' + meuser)
+                    let obj = JSON.stringify(actDatos.data)
+                    if(Object.keys(obj).length === 2){
+                        this.$router.push('actDatos1')
+                    }else{
+
+                    const metoken =  window.localStorage.getItem('jwt')
                     this.username = meuser
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
                     let res = await this.$axios.get("/perfil/username/" + this.username);
@@ -325,6 +332,10 @@ export default {
                     this.tpatrim = axtpatrim
                     let axtdeudas = medata.tdeudas
                     this.tdeudas = axtdeudas
+
+                    }
+
+
                 },
 
    data(){
@@ -363,13 +374,17 @@ export default {
                     tdeudas:'',
                     text: '',
                     active:false,
+                    progress: 0
 
         }
                 
 
 
                     
-    }
+    },
+                go : (route)=>{
+                    window.location.href = route
+                },
 }
 </script>
 <style scoped>

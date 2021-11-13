@@ -518,23 +518,26 @@
         <vs-row>
           <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
               <div style="float: left; margin-top:10px;padding-left: 10px;">  
-             <label for=""  style="font-size:12px;">¿Tienes suscripción en Datacrédito o TransUnion?</label>
-              <div class="form-control">
-                  <vs-select
-                  placeholder=""
-                  v-model="sdatacre"
-                  >
-                  <vs-option label="Si" :value=1>
-                      Si
-                  </vs-option>
-                  <vs-option label="No" :value="0">
-                      No
-                  </vs-option>
-                  <template v-if="!sdatacre" #message-warn>
-                      Campo requerido
-                  </template>
-                  </vs-select>
-              </div>
+             <label  style="margin-bottom:10px;" for="">¿Tienes suscripción en Datacrédito o TransUnion?</label>
+            <div class="form-control">
+                <vs-select
+                placeholder=""
+                v-model="sdatacre"
+                >
+                <vs-option label="Si" :value=1>
+                    Si
+                </vs-option>
+                <vs-option label="No" :value="0">
+                    No
+                </vs-option>
+                <!--<template v-if="sdatacre == ''" #message-warn>
+                    Campo requerido
+                </template>-->
+                <template v-if="sdatacre" #message-success>
+                    ok
+                </template>
+                </vs-select>
+            </div>
               </div>
           </vs-col>
           <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" sm="12" xs="12">
@@ -641,6 +644,43 @@
                 </div>
                 </div>
               </vs-col>
+
+              <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
+                      <vs-button
+                          size="large"
+                          flat
+                          :active="active == 0"
+                          @click="active = 0, actperfil()"
+                          block
+                          :disabled="nombrec.length < 1 ||
+                            fnano.length < 1 ||
+                            fnmes.length < 1 ||
+                            fndia.length < 1 ||
+                            exano.length < 1 ||
+                            exmes.length < 1 ||
+                            exdia.length < 1 || 
+                            sexo.length < 1 || 
+                            estadocivil.length < 1 ||
+                            cllamadas.length < 1 || 
+                            cwasap.length < 1 || 
+                            departamento.length < 1 ||
+                            ciudad.length < 1 || 
+                            tvivienda.length < 1 ||
+                            estrato .length < 1 || 
+                          cuantodebes.length < 1 || 
+                          cupototal.length < 1 || 
+                          tartienes.length < 1 || 
+                          ctasbancarias.length < 1 || 
+                          nestudio.length < 1 || 
+                          actsoy.length < 1 || 
+                          imensual.length < 1 || 
+                          gtomensual.length < 1 ||
+                          reportn.length < 1"
+                      >
+                      Actualizar
+                      </vs-button>
+                </vs-col>
+
         </vs-row>
         </div>
 </template>
@@ -6422,14 +6462,8 @@ async mounted(){
                             window.localStorage.setItem('id', perfil._id)
                             this.success = this.openSuccess('top-center','success')
                             
-                                if(localStorage.getItem('plan') == 'ag'){
-                                    this.go('/asesoriag')
-
-                                }else{
-
                                     this.go('/asesoriap')
-
-                            }
+                            
                         }   
                         catch(error) {
                            this.error = this.openError('top-center', 'danger')

@@ -4,7 +4,7 @@
             <div class="center grid">
                 <vs-row>
                     <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12" lg="12" sm="12" xs="12">
-                            <div class="box-left">
+                            <div class="box-left" style="height: 600px; important">
                                 <div class="presentation">
                                     <div class="wrap-overlay flex flex-center flex-column">
                                         <p class="text-white animated fadeInUp entry-title">Aquí te guiamos paso a paso para que mejores tu vida financiera.</p>

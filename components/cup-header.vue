@@ -49,29 +49,29 @@
           <template #icon>
             <i class='bx bx-user-circle bx-tada' ></i>
           </template>
-          <p @click="$router.push('/login')">Ingresar</p>
+          <p @click="$router.push('/loginoptions')">Ingresar</p>
         </vs-sidebar-item>
         <vs-sidebar-item v-show="verregistro">
           <template #icon>
-            <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
+            <i class='bx bx-user-pin bx-tada' ></i>
           </template>
           <p @click="$router.push('/services')">Registrarme</p>
         </vs-sidebar-item>
           <vs-sidebar-item v-show="verperfil">
           <template #icon>
-            <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
+            <i class='bx bx-street-view bx-tada' ></i>
           </template>
           <p @click="$router.push('/profile')">Perfil</p>
         </vs-sidebar-item>
         <vs-sidebar-item v-show="verboard">
           <template #icon>
-            <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
+            <i class='bx bxs-dashboard bx-tada' ></i>
           </template>
           <p @click="$router.push('/board')">Board</p>
         </vs-sidebar-item>
         <vs-sidebar-item v-show="versalir">
           <template #icon>
-            <i class='bx bx-right-down-arrow-circle bx-tada bx-flip-horizontal' ></i>
+            <i class='bx bx-log-out-circle bx-tada' ></i>
           </template>
           <p @click="logout()">Salir</p>
         </vs-sidebar-item>

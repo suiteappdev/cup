@@ -45,7 +45,7 @@
                                             </vs-row>
                                             <vs-row>
                                                 <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
-                                                <a href="#" style="text-decoration: none;" @click="gosignup($event)">Registrarme</a>
+                                                <a href="#" style="text-decoration: none;" @click="$router.push('/services')">Registrarme</a>
                                                 </vs-col>
                                                 <vs-col style="text-align:center;" vs-type="flex" vs-justify="center" vs-align="center" w="6">
                                                     <a href="/recover" style="text-decoration: none;">¿Olvidaste tu contraseña?</a>
