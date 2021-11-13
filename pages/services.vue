@@ -16,7 +16,7 @@
                                 <template #text>
                                     <p>{{col.preview}}</p>
                                     <br />
-                                    <vs-button primary icon block @click="$router.push('/login/?tase=' + col.tase)" style="color: blue important;">
+                                    <vs-button primary icon block @click="$router.push('/signup/?tase=' + col.tase)" style="color: blue important;">
                                         {{col.ttase}}
                                     </vs-button>
                                 </template>
