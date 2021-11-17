@@ -107,7 +107,7 @@ export default {
                         window.localStorage.setItem('username', user.username)
                         window.localStorage.setItem('plan', JSON.stringify(user.plan))
                         window.localStorage.setItem('email', user.email)
-                        this.success = this.openSuccess('top-center','success')
+                        this.success = this.openSuccess(6000, 'top-center','success')
                         this.actDatos = this.actDatos()
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
@@ -125,7 +125,7 @@ export default {
                     if(res.data.length == 0){
                         this.go('/actDatos1')
                     }else{
-                        this.go('board');
+                        this.go('asesoriap');
                     }
                 },
 
@@ -133,8 +133,9 @@ export default {
                     window.location.href = route
                 },
 
-            openSuccess(position = null, color) {
+            openSuccess(duration, position = null, color) {
                     const noti = this.$vs.notification({
+                        duration,
                         flat: true,
                         color,
                         position,

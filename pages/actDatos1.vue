@@ -406,43 +406,33 @@
                 <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
                     <div style="float: left; margin-top:10px;padding-left: 10px;">  
                           <div class="form-control">
-                            <label for=""  style="font-size:12px;">Ingresos mensuales</label>
-                              <vs-select
-                                placeholder="Ingresos mensuales"
-                                v-model="imensual"
-                                >
-                                <vs-option v-for="(im, index) in ingmensual()" :key="index" :label="im" :value="im">
-                                    {{im}}
-                                </vs-option>
+                            <label  for=""  style="font-size:12px;">Ingresos mensuales</label>
+                              <vs-input type="text" v-model="imensual">
                                 <template v-if="imensual == ''" #message-warn>
-                                    Ingreso mensual es requerido
+                                    Ingresos mensual es requerido
                                 </template>
                                 <template v-if="imensual" #message-success>
                                     ok
                                 </template>
-                                </vs-select>
+                              </vs-input>
+                            {{imensual | currency}}
                           </div>
                     </div>
                 </vs-col>
                 <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
                   <div style="float: left; margin-top:10px;padding-left: 10px;">  
-                    <label for=""  style="font-size:12px;">Gastos mensuales</label>
-                    <div class="form-control">
-                        <vs-select
-                        placeholder="Gastos mensuales"
-                        v-model="gtomensual"
-                        >
-                        <vs-option v-for="(gm, index) in gmensual()" :key="index" :label="gm" :value="gm">
-                            {{gm}}
-                        </vs-option>
-                        <template v-if="gtomensual == ''" #message-warn>
-                            Gasto mensual es requerido
-                        </template>
-                        <template v-if="gtomensual" #message-success>
-                            ok
-                        </template>
-                        </vs-select>
-                    </div>
+                          <div class="form-control">
+                            <label  for=""  style="font-size:12px;">Gastos mensuales</label>
+                              <vs-input type="text" v-model="gtomensual">
+                                <template v-if="gtomensual == ''" #message-warn>
+                                    Gastos mensual es requerido
+                                </template>
+                                <template v-if="gtomensual" #message-success>
+                                    ok
+                                </template>
+                              </vs-input>
+                            {{gtomensual | currency}}
+                          </div>
                     </div>
                 </vs-col>
             </vs-row>
@@ -496,6 +486,7 @@
                                    campo requerido
                                 </template>
                             </vs-input>
+                            {{cupototal | currency}}
                         </div>
                     </div>
               </vs-col>
@@ -511,6 +502,7 @@
                           Cuanto debes es requerido
                       </template>
                       </vs-input>
+                      {{cuantodebes | currency}}
                   </div>
                   </div>
               </vs-col>
@@ -608,6 +600,8 @@
                             campo requerido
                         </template>
                     </vs-input>
+                    <vs-input type="file" name="image" @change="selectupload"></vs-input>
+                    <vs-button @click="onuploadselect">Enviar</vs-button>
                 </div>
               </div>
             </vs-col>
@@ -777,6 +771,8 @@ async mounted(){
                 remember: false,
                 meuser:'',
                 disabled: '',
+                file:'',
+                selectfile: null,
                 erro: 'ocurrio un error',
                 options: [
   {
@@ -6392,7 +6388,18 @@ async mounted(){
                     ModelSelect
                 },
                 methods: {
-               
+
+                  selectupload(event){
+                    this.selectfile = event.target.files[0]
+                    const name = this.selectfile.name
+                  },
+
+                  onuploadselect(){
+                    let data = {}
+                    const fd = new FormData();
+                    fd.append("file", this.selectfile.name)
+                    this.$axios.post('upload', fd).then(res => console.log(res))
+                  },
                             reset () {
                                 this.item = {}
                             },

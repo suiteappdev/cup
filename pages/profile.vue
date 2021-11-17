@@ -49,36 +49,37 @@
                             <vs-td>Dirección residencial</vs-td><vs-td>{{direccion}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Tipo de vivienda</vs-td><vs-td>Familiar</vs-td>
+                            <vs-td>Tipo de vivienda</vs-td><vs-td>{{tvivienda}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>Estrato</vs-td><vs-td>2</vs-td>
+                            <vs-td>Estrato</vs-td><vs-td>{{estrato}}</vs-td>
+                        </vs-tr>
+                        <vs-tr>
+                            <vs-td></vs-td><vs-td>
+                                <template>
+                                    <div class="center">
+                                    <vs-button class="vs-button__content" @click="active=!active" style="width: 20%;">
+                                        Editar
+                                    </vs-button>
+                                    <vs-dialog blur v-model="active">
+                                        <template #header>
+                                            <div>
+                                            <h2 class="form-title">Información residencial</h2>
+                                            <p style="margin-bottom:30px;">Actualize la información residencial</p>
+                                            </div>
+                                        </template>
+                                            <edit-residencial />
+                                        <template #footer>
+                                        </template>
+                                    </vs-dialog>
+                                    </div>
+                                </template>
+                            </vs-td>
                         </vs-tr>
                         </template>
                     </vs-table>
 
-                        <template>
-                            <div class="center">
-                            <vs-button class="vs-button__content" @click="active=!active" style="width: 20%;">
-                                Editar
-                            </vs-button>
-                            <vs-dialog blur v-model="active">
-                                <template #header>
-                                <h4 class="not-margin">
-                                    Informacion <b>Basica</b>
-                                </h4>
-                                </template>
-                                    
-                                <template #footer>
-                                <div class="footer-dialog">
-                                    <vs-button block>
-                                    Actualizar
-                                    </vs-button>
-                                </div>
-                                </template>
-                            </vs-dialog>
-                            </div>
-                        </template>
+
 
                         </b-card-body>
                     </b-collapse>
@@ -105,6 +106,28 @@
                         </vs-tr>
                         <vs-tr>
                             <vs-td>Gastos mensuales</vs-td> <vs-td>{{gtomensual}}</vs-td>
+                        </vs-tr>
+                            <vs-tr>
+                            
+                                <template>
+                                    <div class="center">
+                                    <vs-button class="vs-button__content" @click="active2=!active2" style="width: 100%;">
+                                        Editar
+                                    </vs-button>
+                                    <vs-dialog blur v-model="active2">
+                                        <template #header>
+                                            <div>
+                                            <h2 class="form-title">Información bancaria</h2>
+                                            <p style="margin-bottom:30px;">Actualize la información bancaria</p>
+                                            </div>
+                                        </template>
+                                            
+                                        <template #footer>
+                                        </template>
+                                    </vs-dialog>
+                                    </div>
+                                </template>
+                            
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -133,6 +156,28 @@
                         </vs-tr>
                         <vs-tr>
                             <vs-td>Cupo utilizado</vs-td> <vs-td>{{cuantodebes}}</vs-td>
+                        </vs-tr>
+                        <vs-tr>
+                            
+                                <template>
+                                    <div class="center">
+                                    <vs-button class="vs-button__content" @click="active3=!active3" style="width: 100%;">
+                                        Editar
+                                    </vs-button>
+                                    <vs-dialog blur v-model="active3">
+                                        <template #header>
+                                            <div>
+                                            <h2 class="form-title">Información bancaria</h2>
+                                            <p style="margin-bottom:30px;">Actualize la información bancaria</p>
+                                            </div>
+                                        </template>
+                                            
+                                        <template #footer>
+                                        </template>
+                                    </vs-dialog>
+                                    </div>
+                                </template>
+                            
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -258,7 +303,11 @@
        </div>
 </template>
 <script>
+import { ModelSelect } from 'vue-search-select'
+import EditLaboral from '~/components/edit-laboral.vue'
+import editResidencial from '~/components/edit-residencial.vue'
 export default {
+  components: { editResidencial, EditLaboral },
      middleware:'silogin',
                 async mounted() {
                 
@@ -298,6 +347,10 @@ export default {
                     this.departamento = axdepartamento
                     let axciudad = medata.ciudad
                     this.ciudad = axciudad
+                    let axtvivienda = medata.tvivienda
+                    this.tvivienda = axtvivienda
+                    let axestrato = medata.estrato
+                    this.estrato = axestrato
                     let axdireccion = medata.direccion
                     this.direccion = axdireccion
                     let axnestudio = medata.nestudio
@@ -356,6 +409,8 @@ export default {
                     departamento: '',
                     ciudad:'',
                     direccion:'',
+                    tvivienda:'',
+                    estrato:'',
                     nestudio:'',
                     actsoy:'',
                     imensual:'',
@@ -374,6 +429,8 @@ export default {
                     tdeudas:'',
                     text: '',
                     active:false,
+                    active2:false,
+                    active3:false,
                     progress: 0
 
         }
@@ -382,12 +439,41 @@ export default {
 
                     
     },
+
+    methods:{
+
+                async editresidencial() {
+                    try {
+                        const metoken =  window.localStorage.getItem('jwt')
+                        this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+                        const meid = window.localStorage.getItem('id').replace(/['"]+/g, '')
+                        alert('entra')
+                        let res = await this.$axios.put("perfils/" + meid, {
+                          
+                            departamento: this.departamento,
+                            ciudad:this.ciudad,
+                            direccion: this.direccion,
+                            tvivienda :this.tvivienda,
+                            estrato :this.estrato,
+                        });
+
+                        this.success = this.openSuccess('top-center','success')
+                        this.go('/profile')
+                    } catch(error) {
+                        this.error = this.openError('top-center', 'danger')
+                        this.$router.go('/asesoriag')
+                        this.pregunta = this.pregunta
+                    }
+                }
+
+    },
                 go : (route)=>{
                     window.location.href = route
                 },
 }
 </script>
 <style scoped>
+
 .btn{
     margin: 3px;
     display: inline-block;

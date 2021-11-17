@@ -19,9 +19,12 @@
                                         >
                                         </b-form-textarea>
                                     </div>
+                                    <div class="form-control" v-show="!meplan">
+                                    <p style="margin-bottom:30px;">Te responderemos todas tus dudas en un plazo máximo de 24 horas hábiles, te enviaremos un mensaje a tu numero de WhatsApp para acordar la hora de la llamada.</p>
+                                    </div>
                                     <div class="form-control" v-show="meplan">
-                                    <h1 class="form-title">Formas de pagos</h1>
                                     <p style="margin-bottom:30px;">Te responderemos todas tus dudas en un plazo máximo de 12 horas hábiles, te enviaremos un mensaje a tu numero de WhatsApp para acordar la hora de la llamada.</p>
+                                    <h1 class="form-title">Formas de pagos</h1>
                                     <p style="margin-bottom:30px;">Realiza el pago de tu asesoría preferencial a una de las siguientes cuentas bancarias y envía el comprobante de pago a  nuestro numero de WhatsApp 3118221549</p>
                                     <template>
                                     <vs-tr>
@@ -118,7 +121,7 @@
                             estadopreg: true,
                         });
 
-                        this.success = this.openSuccess('top-center','success')
+                        this.success = this.openSuccess(6000, 'top-center','success')
                         this.go('/profile')
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
@@ -131,13 +134,14 @@
                     window.location.href = route
                 },
                 
-                openSuccess(position = null, color) {
+                openSuccess(duration, position = null, color) {
                     const noti = this.$vs.notification({
+                        duration,
                         flat: true,
                         color,
                         position,
                         title: 'Mensaje',
-                        text: `Su pregunta fue enviada con exito`
+                        text: `Te responderemos tu duda por este medio o con un mensaje a tu numero de WhatsApp en menos de 24 horas hábiles.`
                     })
                     },
                 openError(position = null, color) {

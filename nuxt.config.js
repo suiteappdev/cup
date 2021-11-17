@@ -80,9 +80,9 @@ export default {
 
   //ssr:false
   loading: {
-    color: 'blue',
+    color: '#00E6E3',
     height: '5px',
-    duration : 3000
+    duration : 6000
   },
 
   server: {

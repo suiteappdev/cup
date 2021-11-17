@@ -24,6 +24,7 @@
     "nuxt": "^2.15.3",
     "simple-vue-validator": "^0.16.0",
     "vue": "^2.6.14",
+    "vue-currency-filter": "^5.2.0",
     "vue-search-select": "^2.9.5",
     "vue-textarea-autosize": "^1.1.1",
     "vuesax": "^4.0.1-alpha.25"

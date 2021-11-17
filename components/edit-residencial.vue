@@ -1,9 +1,5 @@
 <template>
 <div class="resi" style="margin-top=30px;">
-<div>
-<h2 class="form-title">Información residencial</h2>
-<p style="margin-bottom:30px;">Actualize la información residencial</p>
-</div>
     <div style="float: left; margin-top:10px;padding-left: 10px;">  
         <label  style="margin-bottom:10px;" for="">Departamento</label>
         <div class="form-control">
@@ -30,7 +26,6 @@
             <vs-select
             placeholder="Ciudad"
             v-model="ciudad"
-            :disabled ="departamento"
             >
             <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c.select" :value="c">
                 {{c}}
@@ -97,12 +92,39 @@
             </vs-select>
         </div>
         </div>
+        <div class="footer-dialog">
+            <vs-button block @click="editresidencial()">
+            Actualizar
+            </vs-button>
+        </div>
 </div>
 </template>
 <script>
 import { ModelSelect } from 'vue-search-select'
 
 export default {
+
+       async mounted(){
+
+        const metoken =  window.localStorage.getItem('jwt')
+        let meuser = window.localStorage.getItem('username')
+        this.username = meuser
+        this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+        let res = await this.$axios.get("/perfil/username/" + this.username);
+        let medata = res.data[0]
+        let axdepartamento = medata.departamento
+        this.departamento = axdepartamento
+        let axciudad = medata.ciudad
+        this.ciudad = axciudad
+        let axtvivienda = medata.tvivienda
+        this.tvivienda = axtvivienda
+        let axestrato = medata.estrato
+        this.estrato = axestrato
+        let axdireccion = medata.direccion
+        this.direccion = axdireccion
+
+        },
+
         data(){
             return{
                 serverDate :'',
@@ -5764,7 +5786,33 @@ export default {
                     ModelSelect
                 },
                 methods: {
-        
+
+
+                  async editresidencial() {
+                    try {
+                        const metoken =  window.localStorage.getItem('jwt')
+                        this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
+                        const meid = window.localStorage.getItem('id').replace(/['"]+/g, '')
+                        alert('entra')
+                        let res = await this.$axios.put("perfils/" + meid, {
+                          
+                            departamento: this.departamento,
+                            ciudad:this.ciudad,
+                            direccion: this.direccion,
+                            tvivienda :this.tvivienda,
+                            estrato :this.estrato,
+                        });
+
+                        this.success = this.openSuccess('top-center','success')
+                        this.go('/profile')
+                    } catch(error) {
+                        this.error = this.openError('top-center', 'danger')
+                        this.$router.go('/asesoriag')
+                        this.pregunta = this.pregunta
+                    }
+                },
+
+      
                     reset () {
                         this.item = {}
                     },
@@ -5836,23 +5884,7 @@ export default {
                     return currentDays;
                 },
                 
-                    sex : ()=>{
-                    var sexo = [
-
-                        "Masculino","Femenino"
-                    ]
-                    return sexo;
-                },
-
-                    civilstatus : ()=>{
-                    var estadocivil = [
-
-                        "Solter@","Casad@","Comprometid@","Divorciad@"
-                    ]
-                    return estadocivil;
-                },
-
-                                tvienda : ()=>{
+                tvienda : ()=>{
                     var tipovivienda = [
 
                         "Propia","Familiar","Arrendada"
@@ -7173,91 +7205,6 @@ export default {
                               ]
                     return dto;
                 },
-
-                nivest : ()=>{
-                    var nivestudio = [
-
-                        "Basica Primaria","Bachiller","Tecnico","Tecnologo","Profesional"
-                    ]
-                    return nivestudio;
-                    
-                },
-
-                actualmentes : ()=>{
-                    var actualmente = [
-
-                        "Estudiante","Empleado","Independiente","Desempleado","Pensionado"
-                    ]
-                    return actualmente;
-                    
-                },
-
-                ingmensual : ()=>{
-                    var ingmensuales = [
-
-                        "Menos de 500.000","de 500.000 a 1.000.000","de 1.000.000  a 1.500.000",
-                        "de 1.500.000  a 2.000.000","de 2.000.000  a 2.500.000","de 2.500.000  a 3.000.000",
-                        "de 3.000.000  a 3.500.000"
-                    ]
-                    return ingmensuales;
-                    
-                },
-
-                gmensual : ()=>{
-                    var ingmensuales = [
-
-                        "Menos de 500.000","de 500.000 a 1.000.000","de 1.000.000  a 1.500.000",
-                        "de 1.500.000  a 2.000.000","de 2.000.000  a 2.500.000","de 2.500.000  a 3.000.000",
-                        "de 3.000.000  a 3.500.000"
-                    ]
-                    return ingmensuales;
-                },
-
-                    ncuentas : ()=>{
-                    var ncuenta = [
-
-                        "0","1","2","3","4 o mas"
-                    ]
-                    return ncuenta;
-                    
-                },
-
-                    tcredito : ()=>{
-                    var tcreditos = [
-
-                        "0","1","2","3","4 o mas"
-                    ]
-                    return tcreditos;
-                    
-                },
-
-                    datacred : ()=>{
-                    var susdatacred = [
-                            
-                        "Si","No"
-                    ]
-                    return susdatacred;
-                    
-                },
-
-                    datacreds : ()=>{
-                    var datacredis = [
-
-                        "Si","No"
-                    ]
-                    return datacredis;
-                    
-                },
-
-                    rportneg : ()=>{
-                    var rportnega = [
-
-                         "Si","No","No lo se"
-                    ]
-                    return rportnega;
-                    
-                },
-
                 }
             }
 </script>

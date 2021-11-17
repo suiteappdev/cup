@@ -13,10 +13,10 @@
                                             <template #icon>
                                             <i class='bx bx-card'></i>
                                             </template>
-                                            <template v-if="username.length > 6" #message-success>
+                                            <template v-if="username.length > 4" #message-success>
                                             Cedula Valida
                                             </template>
-                                            <template v-if="username.length < 5 && username !== ''" #message-danger>
+                                            <template v-if="username.length < 4 && username !== ''" #message-danger>
                                             Cedula invalida
                                             </template>
                                         </vs-input>
@@ -34,7 +34,7 @@
                                             </template>
                                         </vs-input>
                                     </div>
-                                    <div class="form-control">
+                                    <!--<div class="form-control">
                                         <vs-input v-model="celular" placeholder="Numero telefonico" shadow>
                                             <template #icon>
                                                 <i class='bx bx-phone'></i>
@@ -46,7 +46,7 @@
                                             Celular invalido
                                             </template>
                                         </vs-input>
-                                    </div>
+                                    </div>-->
                                     <template>
                                     <div> 
                                         <div class="form-control">
@@ -84,7 +84,7 @@
                                                             @click="active = 0, registrar()"
                                                             block
                                                             size="large"
-                                                            :disabled="password.length < 8 || checkPassword.length < 8 || username < 6 || celular < 7 || notSamePasswords"
+                                                            :disabled="password.length < 4 || checkPassword.length < 4 || username < 4 || notSamePasswords"
                                                         >
                                                         Registrarme
                                                         </vs-button>
@@ -107,22 +107,23 @@
       data(){
           return{
                     username : '',
-                    email:'',
-                    celular:'',
+                    //celular:'',
                     option : false,
                     active: false,
                     email: '',
                     password: '',
                     remember: false,
                     rules: [
-                                { message:'Se requiere una letra minúscula.', regex:/[a-z]+/ },
-                                { message:"Se requiere una letra mayúscula.",  regex:/[A-Z]+/ },
-                                { message:"8 caracteres como mínimo.", regex:/.{8,}/ },
-                                { message:"Se requiere un número.", regex:/[0-9]+/ }
+                                //{ message:'Se requiere una letra minúscula.', regex:/[a-z]+/ },
+                                //{ message:"Se requiere una letra mayúscula.",  regex:/[A-Z]+/ },
+                                { message:"4 caracteres como mínimo.", regex:/.{4,}/ },
+                                //{ message:"Se requiere un número.", regex:/[0-9]+/ }
 			                ],
 		            checkPassword:'',
 			        passwordVisible:false,
-			        submitted:false}
+			        submitted:false,
+                    length:''
+                    }
       
         },
                 methods: {
