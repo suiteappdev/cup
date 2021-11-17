@@ -415,7 +415,9 @@
                                     ok
                                 </template>
                               </vs-input>
-                            {{imensual | currency}}
+                              <div style="font-size:12px;">
+                                  {{imensual | currency}}
+                              </div>
                           </div>
                     </div>
                 </vs-col>
@@ -431,7 +433,9 @@
                                     ok
                                 </template>
                               </vs-input>
-                            {{gtomensual | currency}}
+                              <div  style="font-size:12px;">
+                                  {{gtomensual | currency}}
+                              </div>
                           </div>
                     </div>
                 </vs-col>
@@ -486,7 +490,9 @@
                                    campo requerido
                                 </template>
                             </vs-input>
-                            {{cupototal | currency}}
+                            <div style="font-size:12px;">
+                                {{cupototal | currency}}
+                            </div>
                         </div>
                     </div>
               </vs-col>
@@ -502,7 +508,9 @@
                           Cuanto debes es requerido
                       </template>
                       </vs-input>
-                      {{cuantodebes | currency}}
+                      <div style="font-size:12px;">
+                          {{cuantodebes | currency}}
+                      </div>
                   </div>
                   </div>
               </vs-col>
@@ -510,7 +518,7 @@
         <vs-row>
           <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
               <div style="float: left; margin-top:10px;padding-left: 10px;">  
-             <label  style="margin-bottom:10px;" for="">¿Tienes suscripción en Datacrédito o TransUnion?</label>
+              <label for=""  style="font-size:12px;">¿Tienes suscripción en Datacrédito o TransUnion?</label>
             <div class="form-control">
                 <vs-select
                 placeholder=""
