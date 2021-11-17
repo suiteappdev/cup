@@ -5793,7 +5793,6 @@ export default {
                         const metoken =  window.localStorage.getItem('jwt')
                         this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
                         const meid = window.localStorage.getItem('id').replace(/['"]+/g, '')
-                        alert('entra')
                         let res = await this.$axios.put("perfils/" + meid, {
                           
                             departamento: this.departamento,

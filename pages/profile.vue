@@ -121,7 +121,6 @@
                                             <p style="margin-bottom:30px;">Actualize la información bancaria</p>
                                             </div>
                                         </template>
-                                            
                                         <template #footer>
                                         </template>
                                     </vs-dialog>
