@@ -632,7 +632,7 @@
                             <i class='bx bx-money'></i>
                         </template>
                         <template v-if="tpatrim == ''  " #message-warn>
-                            Total patroimonio es requerido
+                            Total patrimonio es requerido
                         </template>
                     </vs-input>
                 </div>
@@ -6389,24 +6389,23 @@ async mounted(){
                 },
                 methods: {
 
-                  selectupload(event){
-                    this.selectfile = event.target.files[0]
-                    const name = this.selectfile.name
+                  async selectupload(event){
+                      const formdata = new FormData();
+                      Array.from(event.target.files).forEach(image => {
+                          formdata.append('files', image);
+                      });
+                      
+                      delete this.$axios.defaults.headers.common["Authorization"];
+                      let response = await this.$axios.post('upload', formdata);
+                      console.log(response);
                   },
-
-                  onuploadselect(){
-                    let data = {}
-                    const fd = new FormData();
-                    fd.append("file", this.selectfile.name)
-                    this.$axios.post('upload', fd).then(res => console.log(res))
+                  reset () {
+                      this.item = {}
                   },
-                            reset () {
-                                this.item = {}
-                            },
-                            selectFromParentComponent1 () {
-                                // select option from parent component
-                                this.item = this.options[0]
-                            },
+                  selectFromParentComponent1 () {
+                      // select option from parent component
+                      this.item = this.options[0]
+                  },
 
                     async actperfil() {
                             var fnyears = this.fnano

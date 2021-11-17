@@ -7,7 +7,7 @@
                             <div class="box-left" style="height: 600px; important">
                                 <div class="presentation">
                                     <div class="wrap-overlay flex flex-center flex-column">
-                                        <p class="text-white animated fadeInUp entry-title">Aquí te guiamos paso a paso para que mejores tu vida financiera.</p>
+                                        <h1 class="text-white animated fadeInUp entry-title">Aquí te guiamos paso a paso para que mejores tu vida financiera.</h1>
                                         <div class="arrows"></div>
                                     </div>
                                 </div>
