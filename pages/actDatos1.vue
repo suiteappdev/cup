@@ -365,6 +365,7 @@
                   <label for=""  style="font-size:12px;">Nivel de estudio</label>
                   <div class="form-control">
                       <vs-select
+                      filter
                       placeholder="Nivel de estudio"
                       v-model="nestudio"
                       >
