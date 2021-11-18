@@ -4,7 +4,8 @@
                 <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
                         <div class="box-right">
                             <div class="form">
-                                <div class="">
+                                <img style="width:10%;margin-bottom:30px;" src='~/assets/images/logo-negative.png' alt="asesorias florez">
+                                <div style="width:30%;">
                                     <div class="form-control">
                                         <h1 class="form-title">Inicia sesión</h1>
                                     </div>
@@ -183,6 +184,7 @@ export default {
         justify-content: center;
         width: 100%;
         height: 100%;
+        flex-direction: column;
      }
 
     .form-control{

@@ -466,6 +466,21 @@ font-size: 0.6em;
  </style>
 <script>
     export default {
+        beforeMount(){
+            this.$nextTick( ()=> {
+                this.loading = this.$vs.loading({
+                    background: '#7a76cb',
+                    color: '#fff'
+                });
+            }); 
+        },
+        mounted() {
+            this.$nextTick( ()=> {
+                setTimeout(()=>{
+                    this.loading.close();
+                }, 2000);
+            });
+        },
       data:() => ({
         value1 : '', 
         value2:'',

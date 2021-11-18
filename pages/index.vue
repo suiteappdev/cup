@@ -8,7 +8,6 @@
                                 <div class="presentation">
                                     <div class="wrap-overlay flex flex-center flex-column">
                                         <h1 class="text-white animated fadeInUp entry-title">Aquí te guiamos paso a paso para que mejores tu vida financiera.</h1>
-                                        <div class="arrows"></div>
                                     </div>
                                 </div>
                             </div>
@@ -195,18 +194,26 @@
                 </div>
             </template>
         </div> 
+        <template>
+            <vs-button @click="openLoading">Open Loading</vs-button>
+        </template>
  </div>
 </template>
 <script>
     export default {
         beforeMount(){
             this.$nextTick( ()=> {
-                //alert("before render");
+                this.loading = this.$vs.loading({
+                    background: '#7a76cb',
+                    color: '#fff'
+                });
             }); 
         },
         mounted() {
             this.$nextTick( ()=> {
-               // alert("after rendered");
+                setTimeout(()=>{
+                    this.loading.close();
+                }, 2000);
             });
         },
         data:() => ({
