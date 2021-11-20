@@ -38,49 +38,43 @@
         </vs-select>
     </div>
 </div>
-    <div style="float: left; margin-top:10px;padding-left: 10px;">  
-          <div class="form-control">
-            <label for=""  style="font-size:12px;">Ingresos mensuales</label>
-              <vs-select
-                placeholder="Ingresos mensuales"
-                v-model="imensual"
-                >
-                <vs-option v-for="(im, index) in ingmensual()" :key="index" :label="im" :value="im">
-                    {{im}}
-                </vs-option>
-                <template v-if="imensual == ''" #message-warn>
-                    Ingreso mensual es requerido
-                </template>
-                <template v-if="imensual" #message-success>
-                    ok
-                </template>
-                </vs-select>
-          </div>
-    </div>
-  <div style="float: left; margin-top:10px;padding-left: 10px;">  
-    <label for=""  style="font-size:12px;">Gastos mensuales</label>
-    <div class="form-control">
-        <vs-select
-        placeholder="Gastos mensuales"
-        v-model="gtomensual"
-        >
-        <vs-option v-for="(gm, index) in gmensual()" :key="index" :label="gm" :value="gm">
-            {{gm}}
-        </vs-option>
-        <template v-if="gtomensual == ''" #message-warn>
-            Gasto mensual es requerido
-        </template>
-        <template v-if="gtomensual" #message-success>
-            ok
-        </template>
-        </vs-select>
-    </div>
-    </div>
-        <div class="footer-dialog">
-            <vs-button block @click="editlaboral()">
-            Actualizar
-            </vs-button>
+<div style="float: left; margin-top:10px;padding-left: 10px;">  
+        <div class="form-control">
+        <label  for=""  style="font-size:12px;">Ingresos mensuales</label>
+            <vs-input type="text" v-model="imensual">
+            <template v-if="imensual == ''" #message-warn>
+                Ingresos mensual es requerido
+            </template>
+            <template v-if="imensual" #message-success>
+                ok
+            </template>
+            </vs-input>
+            <div style="font-size:12px;">
+                {{imensual | currency}}
+            </div>
         </div>
+</div>
+<div style="float: left; margin-top:10px;padding-left: 10px;">  
+        <div class="form-control">
+        <label  for=""  style="font-size:12px;">Gastos mensuales</label>
+            <vs-input type="text" v-model="gtomensual">
+            <template v-if="gtomensual == ''" #message-warn>
+                Gastos mensual es requerido
+            </template>
+            <template v-if="gtomensual" #message-success>
+                ok
+            </template>
+            </vs-input>
+            <div  style="font-size:12px;">
+                {{gtomensual | currency}}
+            </div>
+        </div>
+</div>
+<div class="footer-dialog">
+    <vs-button block @click="editlaboral()">
+    Actualizar
+    </vs-button>
+</div>
 </div>
 </template>
 <script>
@@ -95,6 +89,7 @@ async mounted(){
         this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
         let res = await this.$axios.get("/perfil/username/" + this.username);
         let medata = res.data[0]
+        window.localStorage.setItem('id', medata.id)
         let axnestudio = medata.nestudio
         this.nestudio = axnestudio
         let axactsoy = medata.actsoy

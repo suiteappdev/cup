@@ -112,6 +112,7 @@ export default {
         this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
         let res = await this.$axios.get("/perfil/username/" + this.username);
         let medata = res.data[0]
+        window.localStorage.setItem('id', medata.id)
         let axdepartamento = medata.departamento
         this.departamento = axdepartamento
         let axciudad = medata.ciudad

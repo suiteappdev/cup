@@ -25,7 +25,7 @@
         <vs-navbar-item @click="$router.push('/faq')" :active="active == 'faq'" id="faq">
           Preguntas frencuentes
         </vs-navbar-item>
-        <vs-navbar-item v-if="loggedInUser">
+        <vs-navbar-item v-if="loggedInUser" @click="$router.push('/profile')" :active="active == 'profile'" id="profile">
           <i class='bx bx-user' ></i>
           - {{loggedInUser.email}}
         </vs-navbar-item>

@@ -54,11 +54,9 @@
                         <vs-tr>
                             <vs-td>Estrato</vs-td><vs-td>{{estrato}}</vs-td>
                         </vs-tr>
-                        <vs-tr>
-                            <vs-td></vs-td><vs-td>
+                        <vs-col size="large" flat vs-type="flex" vs-justify="center" vs-align="center" w="12">
                                 <template>
-                                    <div class="center">
-                                    <vs-button class="vs-button__content" @click="active=!active" style="width: 20%;">
+                                    <vs-button warn @click="active=!active" >
                                         Editar
                                     </vs-button>
                                     <vs-dialog blur v-model="active">
@@ -72,19 +70,13 @@
                                         <template #footer>
                                         </template>
                                     </vs-dialog>
-                                    </div>
                                 </template>
-                            </vs-td>
-                        </vs-tr>
+                        </vs-col>        
                         </template>
                     </vs-table>
-
-
-
                         </b-card-body>
                     </b-collapse>
                     </b-card>
-
                     <b-card no-body class="mb-1">
                     <b-card-header header-tag="header" class="p-1" role="tab">
                         <vs-button block v-b-toggle.accordion-3 variant="info">Información laboral</vs-button>
@@ -107,27 +99,24 @@
                         <vs-tr>
                             <vs-td>Gastos mensuales</vs-td> <vs-td>{{gtomensual}}</vs-td>
                         </vs-tr>
-                            <vs-tr>
-                            
+                        <vs-col size="large" flat vs-type="flex" vs-justify="center" vs-align="center" w="12">
                                 <template>
-                                    <div class="center">
-                                    <vs-button class="vs-button__content" @click="active2=!active2" style="width: 100%;">
+                                    <vs-button warn @click="active2=!active2" >
                                         Editar
                                     </vs-button>
                                     <vs-dialog blur v-model="active2">
                                         <template #header>
                                             <div>
-                                            <h2 class="form-title">Información bancaria</h2>
-                                            <p style="margin-bottom:30px;">Actualize la información bancaria</p>
+                                            <h2 class="form-title">Información laboral</h2>
+                                            <p style="margin-bottom:30px;">Actualize la información laboral</p>
                                             </div>
                                         </template>
+                                        <edit-laboral />
                                         <template #footer>
                                         </template>
                                     </vs-dialog>
-                                    </div>
                                 </template>
-                            
-                        </vs-tr>
+                        </vs-col>
                         </template>
                     </vs-table>
                         </b-card-body>
@@ -157,10 +146,9 @@
                             <vs-td>Cupo utilizado</vs-td> <vs-td>{{cuantodebes}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            
+                        <vs-col size="large" flat vs-type="flex" vs-justify="center" vs-align="center" w="12">
                                 <template>
-                                    <div class="center">
-                                    <vs-button class="vs-button__content" @click="active3=!active3" style="width: 100%;">
+                                    <vs-button warn @click="active3=!active3" >
                                         Editar
                                     </vs-button>
                                     <vs-dialog blur v-model="active3">
@@ -170,13 +158,12 @@
                                             <p style="margin-bottom:30px;">Actualize la información bancaria</p>
                                             </div>
                                         </template>
-                                            
+                                        <edit-bancaria />
                                         <template #footer>
                                         </template>
                                     </vs-dialog>
-                                    </div>
                                 </template>
-                            
+                        </vs-col>
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -311,10 +298,11 @@
 </template>
 <script>
 import { ModelSelect } from 'vue-search-select'
+import EditBancaria from '~/components/edit-bancaria.vue'
 import EditLaboral from '~/components/edit-laboral.vue'
 import editResidencial from '~/components/edit-residencial.vue'
 export default {
-  components: { editResidencial, EditLaboral },
+  components: { editResidencial, EditLaboral, EditBancaria },
      middleware:'silogin',
                 async mounted() {
                 
