@@ -243,60 +243,68 @@
                 </template>   
             </vs-col>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
-                    <vs-card style="margin-bottom: 30px!important;padding: 0px 30px 40px 30px;">
-                                <template #title>
-                                    <h3> {{ name }}</h3>
-                                </template>
-                                <template #img>
-                                    <img :src="image" alt="">
-                                </template>
-                                <template #text>
-                                    <p>
-                                    <template>
-                                        <i class='bx bx-happy' ></i>
-                                    </template>
-                                        {{fnacimiento}}</p>
-                                    <br />
-                                    <p>
-                                    <p>
-                                    <template>
-                                        <i class='bx bx-mail-send' ></i>
-                                    </template>
-                                        {{correo}}</p>
-                                    <br />
-                                    <p>
-                                     <template>
-                                        <i class='bx bx-phone-outgoing'></i>
-                                    </template>
-                                        {{cllamadas}}</p>
-                                    <br />
-                                    <p>
-                                     <template>
-                                        <i class='bx bxl-whatsapp' ></i>
-                                    </template>
-                                        {{cwasap}}</p>
-                                    <br />
-                                    <p>
-                                     <template>
-                                        <i class='bx bx-street-view'></i>
-                                    </template>
-                                        {{sexo}}</p>
-                                    <br />
-                                        <p>
-                                     <template>
-                                        <i class='bx bx-radio-circle-marked'></i>
-                                    </template>
-                                            {{estadocivil}}</p>
-                                    <br />
-                                    
-                                    <vs-button primary icon @click="$router.push('/testimonio/?cliente=' + col.id)">
-                                        Conocer Historia
-                                    </vs-button>
-                                </template>
-                                <template #interactions>
-                              
-                                </template>
-                            </vs-card>
+            <vs-card style="margin-bottom: 30px!important;padding: 0px 30px 40px 30px;">
+                <template #title>
+                <h3> {{ name }}</h3>
+                </template>
+                <template #img>
+                <img :src="imgperfil" alt="">
+                </template>
+                <template #text>
+            <p>
+            <template>
+                <i class='bx bx-happy' ></i>
+            </template>
+                {{fnacimiento}}</p>
+            <br />
+            <p>
+            <p>
+            <template>
+                <i class='bx bx-mail-send' ></i>
+            </template>
+                {{correo}}</p>
+            <br />
+            <p>
+                <template>
+                <i class='bx bx-phone-outgoing'></i>
+            </template>
+                {{cllamadas}}</p>
+            <br />
+            <p>
+                <template>
+                <i class='bx bxl-whatsapp' ></i>
+            </template>
+                {{cwasap}}</p>
+            <br />
+            <p>
+                <template>
+                <i class='bx bx-street-view'></i>
+            </template>
+                {{sexo}}</p>
+            <br />
+                <p>
+                <template>
+                <i class='bx bx-radio-circle-marked'></i>
+            </template>
+                    {{estadocivil}}</p>
+            <br />
+            
+            <vs-button primary icon @click="$router.push('/testimonio/?cliente=' + col.id)">
+                Conocer Historia
+            </vs-button>
+            </template>
+            <template #interactions>
+            <input
+                style="display:none;"
+                ref="imgperfil" 
+                type="file"
+                @change="selectuploadperfil" 
+            >
+            <vs-button @click="$refs.imgperfil.click()" primary icon>
+                <i class='bx bx-plus' ></i>
+            </vs-button>
+            </template>
+        </vs-card>
             </vs-col>
         </vs-row>
        </div>
@@ -384,10 +392,10 @@ export default {
                     this.tpatrim = axtpatrim
                     let axtdeudas = medata.tdeudas
                     this.tdeudas = axtdeudas
+                    let aximgperfil = medata.imgperfil[0].url
+                    this.imgperfil = 'http://52.15.244.21:1337' + aximgperfil
 
                     }
-
-
                 },
 
    data(){
@@ -430,16 +438,75 @@ export default {
                     active:false,
                     active2:false,
                     active3:false,
-                    progress: 0
-
+                    progress: 0,
+                    imgperfil:''
         }
-                
-
-
-                    
     },
 
     methods:{
+
+                openSuccess(position = null, color) {
+                    const noti = this.$vs.notification({
+                        flat: true,
+                        color,
+                        position,
+                        title: 'Mensaje',
+                        text: `Actualizo su perfil con exito`
+                    })
+                    },
+                openError(position = null, color) {
+                    const noti = this.$vs.notification({
+                        flat: true,
+                        color,
+                        position,
+                        title: 'Mensaje',
+                        text: `Ocurrio un error al Actualizar el perfil`
+                    })
+                    },
+
+
+                async actimgperfil(){
+                    try {
+                        let meuser = window.localStorage.getItem('username')
+                        let actDatos = await this.$axios.get('/perfil/username/' + meuser)
+                        let idmeuser = actDatos.data[0].id
+                        let res = await this.$axios.put("perfils/" + idmeuser, {
+                            imgperfil: this.imgperfil
+                        });
+                        this.success = this.openSuccess('top-center','success')
+                        this.push('/profile')
+                    } catch(error) {
+                        this.$router.go('/profile')
+                    }
+                },
+
+                removeimgperfil(){
+                    this.imgperfil = '';
+                    this.percentperfil = '';
+                  },
+
+                  async selectuploadperfil(event){
+                      
+                      const formdata = new FormData();
+                      Array.from(event.target.files).forEach(image => {
+                          formdata.append('files', image);
+                      });
+                      
+                      if(formdata){
+                          let responseperfil = await this.$axios.post('upload', formdata, {
+                              onUploadProgress: progressEvent => {
+                                console.log('subida de archivo renta', parseInt(Math.round((progressEvent.loaded / progressEvent.total)* 100)), '%')
+                                const responseperfil = parseInt(Math.round((progressEvent.loaded / progressEvent.total)* 100))
+                                this.responseperfil = responseperfil
+                              }
+                            })
+                            this.imgperfil = responseperfil.data
+                            this.actimgperfil()
+                            console.log(responseperfil.data)
+                            console.log(this.imgperfil)
+                      }
+                      //delete this.$axios.defaults.headers.common["Authorization"];
+                  },
 
                 async editresidencial() {
                     try {

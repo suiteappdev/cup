@@ -125,7 +125,7 @@ export default {
                     if(res.data.length == 0){
                         this.go('/actDatos1')
                     }else{
-                        this.go('asesoriap');
+                        this.go('board');
                     }
                 },
 

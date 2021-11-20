@@ -25,6 +25,10 @@
         <vs-navbar-item @click="$router.push('/faq')" :active="active == 'faq'" id="faq">
           Preguntas frencuentes
         </vs-navbar-item>
+        <vs-navbar-item v-if="loggedInUser">
+          <i class='bx bx-user' ></i>
+          - {{loggedInUser.email}}
+        </vs-navbar-item>
         <template #right>
           <vs-button @click="activeSidebar = !activeSidebar" flat icon>
             <i class='bx bx-menu'></i>
@@ -69,6 +73,42 @@
           </template>
           <p @click="$router.push('/board')">Board</p>
         </vs-sidebar-item>
+        
+        <vs-sidebar-item v-show="menuhome">
+          <template #icon>
+            <i class='bx bxs-component'></i>
+          </template>
+          <p @click="$router.push('/about')">Quienes somos ?</p>
+        </vs-sidebar-item>
+
+        <vs-sidebar-item v-show="menuhome">
+          <template #icon>
+            <i class='bx bx-package' ></i>
+          </template>
+          <p @click="$router.push('/package')">Paquetes de servicio</p>
+        </vs-sidebar-item>
+
+        <vs-sidebar-item v-show="menuhome">
+          <template #icon>
+            <i class='bx bx-select-multiple' ></i>
+          </template>
+          <p @click="$router.push('/unique')">Por que debes elegirnos</p>
+        </vs-sidebar-item>
+
+        <vs-sidebar-item v-show="menuhome">
+          <template #icon>
+            <i class='bx bx-wink-smile' ></i>
+          </template>
+          <p @click="$router.push('/cases')">Casos de éxito</p>
+        </vs-sidebar-item>
+
+        <vs-sidebar-item v-show="menuhome">
+          <template #icon>
+            <i class='bx bx-help-circle'></i>
+          </template>
+          <p @click="$router.push('/faq')">Preguntas frecuentes</p>
+        </vs-sidebar-item>
+
         <vs-sidebar-item v-show="versalir">
           <template #icon>
             <i class='bx bx-log-out-circle bx-tada' ></i>
@@ -90,7 +130,12 @@
       </vs-navbar>
   </template>
 <script>
+import { mapGetters } from "vuex";
     export default {
+
+        computed: {
+        ...mapGetters(["loggedInUser"]),
+        },
 
       methods : {
         async logout(){
@@ -118,6 +163,8 @@
              this.verboard = true
              this.verregistro = false
              this.veringresar = false
+             
+             
 
         }else{
 
@@ -126,6 +173,7 @@
           this.versalir = false
           this.verperfil = false
           this.verboard = false
+          this.menuhome = true
         }
 
 
@@ -138,7 +186,8 @@
             verperfil:false,
             verregistro: true,
             veringresar: true,
-            verboard:false
+            verboard:false,
+            menuhome:true
         }
 
       

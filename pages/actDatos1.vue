@@ -39,6 +39,7 @@
                         </template>
                         </vs-select>
                         <vs-select  style="padding-left: 10px;"
+                            filter
                             placeholder="Mes"
                             v-model="fnmes"
                         >
@@ -68,6 +69,7 @@
                       <div class="form-control">
                           <label for="" style="font-size:12px;">Sexo</label>
                           <vs-select
+                              filter
                               style="margin-top:10px;margin-left:10px;"
                               placeholder="Sexo"
                               v-model="sexo"
@@ -93,6 +95,7 @@
                          <label for=""  style="font-size:12px;">Estado civil</label>
                           <div class="form-control">
                               <vs-select
+                                  filter
                                   placeholder="Estado civil"
                                   v-model="estadocivil"
                               >
@@ -159,6 +162,7 @@
                               </template>
                               </vs-select>
                               <vs-select  style="padding-left: 10px;"
+                                  filter
                                   placeholder="Mes"
                                   v-model="exmes"
                               >
@@ -257,6 +261,7 @@
                     <label for=""  style="font-size:12px;">Departamento</label>
                     <div class="form-control">
                         <vs-select
+                        filter
                         placeholder="Departamento"
                         v-model="departamento"
                         >
@@ -278,6 +283,7 @@
                   <label for=""  style="font-size:12px;">Ciudad</label>
                   <div class="form-control">
                       <vs-select
+                      filter
                       placeholder="Ciudad"
                       v-model="ciudad"
                       :disabled ="departamento"
@@ -321,6 +327,7 @@
                   <label for=""  style="font-size:12px;">Tipo de vivienda</label>
                   <div class="form-control">
                       <vs-select
+                      filter
                       placeholder="Tipo de vivienda"
                       v-model="tvivienda"
                       >
@@ -342,6 +349,7 @@
                   <label for=""  style="font-size:12px;">Estrato</label>
                   <div class="form-control">
                       <vs-select
+                      filter
                       placeholder="Estrato"
                       v-model="estrato"
                       >
@@ -387,6 +395,7 @@
                     <label for=""  style="font-size:12px;">Actualmente soy</label>
                     <div class="form-control">
                         <vs-select
+                        filter
                         placeholder="Actualmente soy"
                         v-model="actsoy"
                         >
@@ -448,6 +457,7 @@
                     <label for=""  style="font-size:12px;">¿Cuantas cuentas bancarias tienes?</label>
                     <div class="form-control">
                         <vs-select
+                        filter
                         placeholder="Nº de cuentas bancarias"
                         v-model="ctasbancarias"
                         >
@@ -466,6 +476,7 @@
                   <label for=""  style="font-size:12px;">¿Cuantas tarjetas de crédito tienes?</label>
                   <div class="form-control">
                       <vs-select
+                      filter
                       placeholder="Nº de tarjetas de credito"
                       v-model="tartienes"
                       >
@@ -522,13 +533,14 @@
               <label for=""  style="font-size:12px;">¿Tienes suscripción en Datacrédito o TransUnion?</label>
             <div class="form-control">
                 <vs-select
+                filter
                 placeholder=""
                 v-model="sdatacre"
                 >
-                <vs-option label="Si" :value=1>
+                <vs-option label="Si" :value= 1>
                     Si
                 </vs-option>
-                <vs-option label="No" :value="0">
+                <vs-option label="No" :value= 0>
                     No
                 </vs-option>
                 <!--<template v-if="sdatacre == ''" #message-warn>
@@ -546,6 +558,7 @@
               <label for=""  style="font-size:12px;">¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa?</label>
               <div class="form-control">
                   <vs-select
+                  filter
                   placeholder="Asesoria"
                   v-model="sdatacresi"
                   >
@@ -564,6 +577,7 @@
               <label for=""  style="font-size:12px;">¿Estas reportado negativamente?</label>
               <div class="form-control">
                   <vs-select
+                  filter
                   placeholder="Reportado?"
                   v-model="reportn"
                   >
@@ -609,8 +623,28 @@
                             campo requerido
                         </template>
                     </vs-input>
-                    <vs-input type="file" name="image" @change="selectupload"></vs-input>
-                    <vs-button @click="onuploadselect">Enviar</vs-button>
+                </div>
+              </div>
+            </vs-col>
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+              <div v-if="rut">  
+                <div class="form-control">
+                    <label for=""  style="font-size:12px;">Enviar RUT (opcional)</label>
+                      <div>
+                        <input
+                          style="display:none;"
+                          ref="inputrut" 
+                          type="file"
+                          @change="selectuploadrut" 
+                        >
+                        <vs-button v-if="!imgrut" @click="$refs.inputrut.click()" >Enviar</vs-button>
+                      </div>
+                      <div v-if="imgrut">
+                        <vs-button danger @click="removeimgrut">Borrar</vs-button>
+                      </div>
+                      <div ref="target" id="target" class="center">
+                      <progress max="100" :value.prop="percentrut"></progress>
+                      </div>
                 </div>
               </div>
             </vs-col>
@@ -619,6 +653,7 @@
                     <label for=""  style="font-size:12px;">¿Declara renta?</label>
                     <div class="form-control">
                         <vs-select
+                        filter
                         placeholder=""
                         v-model="drenta"
                         >
@@ -636,7 +671,7 @@
                 <div v-if="drenta" style="float: left; margin-top:10px;padding-left: 10px;">  
                 <div class="form-control">
                     <label for=""  style="font-size:12px;">Total Patrimonio bruto</label>
-                    <vs-input style="margin-top:10px;" v-model="tpatrim" placeholder="Total patrimonio" shadow value= 0>
+                    <vs-input style="margin-top:10px;" v-model="tpatrim" placeholder="Total patrimonio" shadow>
                         <template #icon>
                             <i class='bx bx-money'></i>
                         </template>
@@ -647,7 +682,28 @@
                 </div>
                 </div>
               </vs-col>
-
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+              <div v-if="drenta">  
+                <div class="form-control">
+                    <label for=""  style="font-size:12px;">Enviar declaracion de renta (opcional)</label>
+                      <div>
+                        <input
+                          style="display:none;"
+                          ref="inputrenta" 
+                          type="file"
+                          @change="selectuploadrenta" 
+                        >
+                        <vs-button v-if="!imgrenta" @click="$refs.inputrenta.click()" >Enviar</vs-button>
+                      </div>
+                      <div v-if="imgrenta">
+                        <vs-button danger @click="removeimgrenta">Borrar</vs-button>
+                      </div>
+                      <div ref="target" id="target" class="center">
+                      <progress max="100" :value.prop="percentrenta"></progress>
+                      </div>
+                </div>
+              </div>
+            </vs-col>
               <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
                       <vs-button
                           size="large"
@@ -782,6 +838,12 @@ async mounted(){
                 disabled: '',
                 file:'',
                 selectfile: null,
+                percentrenta: 0,
+                percentrut:0,
+                imgrenta:'',
+                imgrut:'',
+                time:0,
+                max: 100,
                 erro: 'ocurrio un error',
                 options: [
   {
@@ -6398,16 +6460,62 @@ async mounted(){
                 },
                 methods: {
 
-                  async selectupload(event){
+
+                  async selectuploadrut(event){
                       const formdata = new FormData();
                       Array.from(event.target.files).forEach(image => {
                           formdata.append('files', image);
+                          console.log(event)
                       });
                       
-                      delete this.$axios.defaults.headers.common["Authorization"];
-                      let response = await this.$axios.post('upload', formdata);
-                      console.log(response);
+                      if(formdata){
+                          let responserut = await this.$axios.post('upload', formdata, {
+                              onUploadProgress: progressEvent => {
+                              console.log('subida de archivo', parseInt(Math.round((progressEvent.loaded / progressEvent.total)* 100)), '%')
+                              const percentrut = parseInt(Math.round((progressEvent.loaded / progressEvent.total)* 100))
+                              this.percentrut = percentrut
+                              }
+                            })
+                            this.imgrut = responserut.data
+                            console.log(responserut.data)
+                            console.log(this.imgrut)
+                      }
+                      //delete this.$axios.defaults.headers.common["Authorization"];
+
                   },
+                  removeimgrut(){
+                    this.imgrut = '';
+                    this.percentrut = '';
+                  },
+
+                  removeimgrenta(){
+                    this.imgrenta = '';
+                    this.percentrenta = '';
+                  },
+
+                  async selectuploadrenta(event){
+                      const formdata = new FormData();
+                      Array.from(event.target.files).forEach(image => {
+                          formdata.append('files', image);
+                          console.log(event)
+                      });
+                      
+                      if(formdata){
+                          let responserenta = await this.$axios.post('upload', formdata, {
+                              onUploadProgress: progressEvent => {
+                                console.log('subida de archivo renta', parseInt(Math.round((progressEvent.loaded / progressEvent.total)* 100)), '%')
+                              const percentrenta = parseInt(Math.round((progressEvent.loaded / progressEvent.total)* 100))
+                              this.percentrenta = percentrenta
+                              }
+                            })
+
+                            this.imgrenta = responserenta.data
+                            console.log(responserenta.data)
+                            console.log(this.imgrenta)
+                      }
+                      //delete this.$axios.defaults.headers.common["Authorization"];
+                  },
+
                   reset () {
                       this.item = {}
                   },
@@ -6469,6 +6577,8 @@ async mounted(){
                             imensual : this.imensual,
                             gtomensual : this.gtomensual,
                             tase : plan,
+                            imgrut: this.imgrut,
+                            imgrenta: this.imgrenta,
 
                             });
 
@@ -7976,6 +8086,7 @@ async mounted(){
             }
   </script>
  <style scoped>
+ 
      .resi{
          margin-top: 30px;
      }   

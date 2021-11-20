@@ -9,12 +9,13 @@
                                         <h1 class="form-title">Formula tu pregunta</h1>
                                     </div>
                                     <div class="form-control">
+                                    <p style="margin-bottom:30px;">Elabora la pregunta de manera precisa, así el asesor que analice tu caso te dará la información completa. Recuerda que si tienes mas de una duda a resolver, debes tomar la asesoría preferencial.</p>
                                         <b-form-textarea 
                                             v-model="pregunta" 
                                             debounce="500" 
                                             rows="1" 
                                             max-rows="100" 
-                                            placeholder="(elabora la pregunta de manera precisa, así el asesor que analice tu caso te dará la información completa. Recuerda que si tienes mas de una duda a resolver, debes tomar la asesoría preferencial)"
+                                            placeholder="Elabora la pregunta. (digite lamenos 10 caracteres)"
                                             style="font-family: Poppins; font-size: smaller; height: 130px"
                                         >
                                         </b-form-textarea>
@@ -64,7 +65,7 @@
                                                             @click="active = 0, enviar()"
                                                             block
                                                             size="large"
-                                                            
+                                                            :disabled="pregunta.length < 10"
                                                         >
                                                         Enviar
                                                         </vs-button>
@@ -86,6 +87,7 @@
         let meuser = window.localStorage.getItem('username')
         let actDatos = await this.$axios.get('/perfil/username/' + meuser)
         let pregunta = actDatos.data[0].estadopreg
+        window.localStorage.setItem('id', actDatos.data[0].id)
         if(pregunta){
             this.$router.push('board')
         }else{
@@ -112,20 +114,16 @@
 
                 async enviar() {
                     try {
-                        const metoken =  window.localStorage.getItem('jwt')
-                        this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
-                        const meid = window.localStorage.getItem('id').replace(/['"]+/g, '')
-
-                        let res = await this.$axios.put("perfils/" + meid, {
+                        const meuser = window.localStorage.getItem('id')
+                        let res = await this.$axios.put("perfils/" + meuser, {
                             pregunta: this.pregunta,
                             estadopreg: true,
                         });
-
                         this.success = this.openSuccess(6000, 'top-center','success')
                         this.go('/profile')
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
-                        this.$router.go('/asesoriag')
+                        this.$router.go('/asesoriap')
                         this.pregunta = this.pregunta
                     }
                 },

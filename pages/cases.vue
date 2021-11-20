@@ -341,6 +341,7 @@ body .arrows:after {
         box-sizing: border-box;
         padding: 50px;
         width: 100%;
+        margin-top: 50px;
     }
 
     .pricing-section{
