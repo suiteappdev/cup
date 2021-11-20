@@ -1,5 +1,238 @@
  <template>
+ 
  <div class="wrapper">
+ <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_gratuito">
+        <template #header>
+          <h3>
+            Introduction
+          </h3>
+        </template>
+        <div class="con-content">
+          <h4>
+            Whats is Vuesax?
+          </h4>
+          <p>
+            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
+
+            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
+
+            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
+          </p>
+
+          <h4>
+            Why Vuesax?
+          </h4>
+
+          <p>
+            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
+            <br>
+            <br>
+            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
+
+            <br>
+            <br>
+            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
+
+            <br>
+            <br>
+            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
+            <br>
+            <br>
+
+            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
+            <br>
+            <br>
+
+            - An open-source community to create, improve and correct any component or function.
+            <br>
+            <br>
+
+            - Independent components to avoid importing unnecessary code.
+            <br>
+            <br>
+
+            - Markdown documents for better sustainability.
+            <br>
+            <br>
+
+            - and much more.
+          </p>
+        </div>
+      </vs-dialog>
+       <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_preferencial">
+        <template #header>
+          <h3>
+            Introduction
+          </h3>
+        </template>
+        <div class="con-content">
+          <h4>
+            Whats is Vuesax?
+          </h4>
+          <p>
+            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
+
+            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
+
+            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
+          </p>
+
+          <h4>
+            Why Vuesax?
+          </h4>
+
+          <p>
+            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
+            <br>
+            <br>
+            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
+
+            <br>
+            <br>
+            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
+
+            <br>
+            <br>
+            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
+            <br>
+            <br>
+
+            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
+            <br>
+            <br>
+
+            - An open-source community to create, improve and correct any component or function.
+            <br>
+            <br>
+
+            - Independent components to avoid importing unnecessary code.
+            <br>
+            <br>
+
+            - Markdown documents for better sustainability.
+            <br>
+            <br>
+
+            - and much more.
+          </p>
+        </div>
+      </vs-dialog>
+       <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_premiun">
+        <template #header>
+          <h3>
+            Introduction
+          </h3>
+        </template>
+        <div class="con-content">
+          <h4>
+            Whats is Vuesax?
+          </h4>
+          <p>
+            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
+
+            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
+
+            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
+          </p>
+
+          <h4>
+            Why Vuesax?
+          </h4>
+
+          <p>
+            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
+            <br>
+            <br>
+            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
+
+            <br>
+            <br>
+            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
+
+            <br>
+            <br>
+            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
+            <br>
+            <br>
+
+            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
+            <br>
+            <br>
+
+            - An open-source community to create, improve and correct any component or function.
+            <br>
+            <br>
+
+            - Independent components to avoid importing unnecessary code.
+            <br>
+            <br>
+
+            - Markdown documents for better sustainability.
+            <br>
+            <br>
+
+            - and much more.
+          </p>
+        </div>
+      </vs-dialog>
+             <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_otros">
+        <template #header>
+          <h3>
+            Introduction
+          </h3>
+        </template>
+        <div class="con-content">
+          <h4>
+            Whats is Vuesax?
+          </h4>
+          <p>
+            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
+
+            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
+
+            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
+          </p>
+
+          <h4>
+            Why Vuesax?
+          </h4>
+
+          <p>
+            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
+            <br>
+            <br>
+            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
+
+            <br>
+            <br>
+            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
+
+            <br>
+            <br>
+            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
+            <br>
+            <br>
+
+            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
+            <br>
+            <br>
+
+            - An open-source community to create, improve and correct any component or function.
+            <br>
+            <br>
+
+            - Independent components to avoid importing unnecessary code.
+            <br>
+            <br>
+
+            - Markdown documents for better sustainability.
+            <br>
+            <br>
+
+            - and much more.
+          </p>
+        </div>
+      </vs-dialog>
         <div class="home-section">
             <div class="center grid">
                 <vs-row>
@@ -8,7 +241,6 @@
                                 <div class="presentation">
                                     <div class="wrap-overlay flex flex-center flex-column">
                                         <h1 class="text-white animated fadeInUp entry-title">Aquí te guiamos paso a paso para que mejores tu vida financiera.</h1>
-                                        <div class="arrows"></div>
                                     </div>
                                 </div>
                             </div>
@@ -27,13 +259,28 @@
                                     <h3>Asesoría gratuita</h3>
                                 </template>
                                 <template #img>
-                                    <img src='~/assets/images/gratuita.jpeg' alt="">
+                                    <img src='~/assets/images/gratuita.png' alt="">
                                 </template>
                                 <template #text>
-                                    <p>¡Pregúntanos lo que quieras! te ayudamos a resolver gratis cualquier duda financiera que tengas.</p>
+                                    <p>¡Pregúntanos lo que quieras! te ayudamos a resolver gratis cualquier duda financiera que tengas.
+                                    <vs-button
+                                    @click="active_gratuito=!active_gratuito"
+                                        size="mini"
+                                    >
+                                        Saber más
+                                    </vs-button>
+                                    </p>
+
                                     <br />
-                                    <vs-button primary icon block @click="$router.push('/testimonio/?cliente=')">
-                                       Recibe tu asesoría gratuita
+                                    <vs-button
+                                        block
+                                        color="rgb(59,222,200)"
+                                        gradient
+                                        :active="active == 6"
+                                        @click="active = 6"
+                                        size="xl"
+                                    >
+                                    Recibe tu asesoría gratuita
                                     </vs-button>
                                 </template>
                                 <template #interactions>
@@ -50,10 +297,24 @@
                                     <img src='~/assets/images/preferencial.jpeg' alt="">
                                 </template>
                                 <template #text>
-                                    <p>Te ayudamos a elaborar  un plan financiero a mediano plazo ( 2 años) con el que vas a lograr tus objetivos y a  mejorar tu vida financiera.</p>
+                                    <p>Te ayudamos a elaborar  un plan financiero a mediano plazo ( 2 años) con el que vas a lograr tus objetivos...
+                                    <vs-button
+                                      @click="active_preferencial=!active_preferencial"
+                                        size="mini"
+                                    >
+                                    Saber más
+                                    </vs-button>
+                                    </p>
                                     <br />
-                                    <vs-button primary block icon @click="$router.push('/testimonio/?cliente=')">
-                                      Recibe tu asesoría gratuita
+                                    <vs-button
+                                        block
+                                        color="rgb(59,222,200)"
+                                        gradient
+                                        :active="active == 6"
+                                        @click="active = 6"
+                                        size="xl"
+                                    >
+                                      Recibe tu asesoría preferencial
                                     </vs-button>
                                 </template>
                                 <template #interactions>
@@ -72,10 +333,25 @@
                                     <img src='~/assets/images/premiun.jpeg' alt="">
                                 </template>
                                 <template #text>
-                                    <p>No des más vueltas, esta es la mejor decisión que puede tomar para mejorar tu vida financiera en un 100%.</p>
+                                    <p>No des más vueltas, esta es la mejor decisión que puede tomar para mejorar tu vida financiera en un 100%.
+                                        <vs-button
+                                            @click="active_premiun=!active_premiun"
+
+                                            size="mini"
+                                        >
+                                        Saber más
+                                        </vs-button>
+                                    </p>
                                     <br />
-                                    <vs-button primary block icon @click="$router.push('/testimonio/?cliente=')">
-                                        Recibe tu acompañamiento financiero premium
+                                    <vs-button
+                                        block
+                                        color="rgb(59,222,200)"
+                                        gradient
+                                        :active="active == 6"
+                                        @click="active = 6"
+                                        size="xl"
+                                    >
+                                        Acompañamiento financiero premium
                                     </vs-button>
                                 </template>
                                 <template #interactions>
@@ -92,11 +368,26 @@
                                     <img src='~/assets/images/otros.jpeg' alt="">
                                 </template>
                                 <template #text>
-                                    <p>¿Necesitas una consulta en Datacrédito, eliminar un reporte negativo, una asesoría contable o jurídica?  Elige esta opción y te ayudamos</p>
+                                    <p>¿Necesitas una consulta en Datacrédito, eliminar un reporte negativo, una asesoría contable o jurídica?  Elige esta opción y te ayudamos...
+                                    <vs-button
+                                        @click="active_otros=!active_otros"
+                                        size="mini"
+                                    >
+                                    Saber más
+                                    </vs-button>
+                                    </p>
                                     <br />
-                                    <vs-button primary block icon @click="$router.push('/testimonio/?cliente=')">
+                                    <vs-button
+                                        block
+                                        color="rgb(59,222,200)"
+                                        gradient
+                                        :active="active == 6"
+                                        @click="active = 6"
+                                        size="xl"
+                                    >
                                         Escríbenos por WhatsApp
                                     </vs-button>
+                                    <br />
                                 </template>
                                 <template #interactions>
                               
@@ -195,21 +486,33 @@
                 </div>
             </template>
         </div> 
+        <template>
+            <vs-button @click="openLoading">Open Loading</vs-button>
+        </template>
  </div>
 </template>
 <script>
     export default {
         beforeMount(){
             this.$nextTick( ()=> {
-                //alert("before render");
+                this.loading = this.$vs.loading({
+                    background: '#7a76cb',
+                    color: '#fff'
+                });
             }); 
         },
         mounted() {
             this.$nextTick( ()=> {
-               // alert("after rendered");
+                setTimeout(()=>{
+                    this.loading.close();
+                }, 2000);
             });
         },
         data:() => ({
+        active_gratuito : false,
+        active_preferencial : false,
+        active_premiun : false,
+        active_otros : false,
         ap:'',
         ag:'',
         comments : [

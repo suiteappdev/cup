@@ -488,12 +488,17 @@ body .arrows:after {
     export default {
         beforeMount(){
             this.$nextTick( ()=> {
-                //alert("before render");
+                this.loading = this.$vs.loading({
+                    background: '#7a76cb',
+                    color: '#fff'
+                });
             }); 
         },
         mounted() {
             this.$nextTick( ()=> {
-               // alert("after rendered");
+                setTimeout(()=>{
+                    this.loading.close();
+                }, 2000);
             });
         },
         data:() => ({

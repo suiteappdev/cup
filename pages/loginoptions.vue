@@ -34,7 +34,7 @@
                                     <img style="max-height: 100% !important;" :src="col.image" alt="">
                                 </template>-->
                                 <template #text>
-                                    <p>Si es tu primer préstamo asesoria.</p>
+                                    <p>Si es tu primera asesoria.</p>
                                     <br />
                                      
                                     <br />
