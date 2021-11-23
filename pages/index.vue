@@ -486,9 +486,6 @@
                 </div>
             </template>
         </div> 
-        <template>
-            <vs-button @click="openLoading">Open Loading</vs-button>
-        </template>
  </div>
 </template>
 <script>

@@ -5807,8 +5807,6 @@ export default {
                         this.go('/profile')
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
-                        this.$router.go('/asesoriag')
-                        this.pregunta = this.pregunta
                     }
                 },
 

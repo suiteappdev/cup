@@ -98,6 +98,7 @@ middleware:'silogin',
                     this.username = meuser
                     this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
                     let res = await this.$axios.get("/perfil/username/" + this.username);
+                    window.localStorage.setItem('id', medata.id)
                     let medata = res.data[0]
                     let nombrec = medata.nombrec
                     this.name = nombrec

@@ -170,7 +170,6 @@
                         </b-card-body>
                     </b-collapse>
                     </b-card>
-
                     <b-card no-body class="mb-1">
                     <b-card-header header-tag="header" class="p-1" role="tab">
                         <vs-button block v-b-toggle.accordion-5 variant="info">Información en las centrales de riesgo</vs-button>
@@ -189,6 +188,26 @@
                         </vs-tr>
                         <vs-tr>
                             <vs-td>¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa</vs-td> <vs-td>{{sdatacresi}}</vs-td>
+                        </vs-tr>
+                        <vs-tr>
+                        <vs-col size="large" flat vs-type="flex" vs-justify="center" vs-align="center" w="12">
+                                <template>
+                                    <vs-button warn @click="active4=!active4" >
+                                        Editar
+                                    </vs-button>
+                                    <vs-dialog blur v-model="active4">
+                                        <template #header>
+                                            <div>
+                                            <h2 class="form-title">Información centrales de riesgo</h2>
+                                            <p style="margin-bottom:30px;">Actualize la información centrales de riesgo</p>
+                                            </div>
+                                        </template>
+                                        <edit-centralesderiesgo />
+                                        <template #footer>
+                                        </template>
+                                    </vs-dialog>
+                                </template>
+                        </vs-col>
                         </vs-tr>
                         </template>
                     </vs-table>
@@ -210,10 +229,34 @@
                             <vs-td>¿Tiene RUT?:</vs-td><vs-td>{{rut}}</vs-td>
                         </vs-tr>
                         <vs-tr>
+                            <vs-td>RUT:</vs-td><vs-td>
+                                <vs-button
+                                    :href= imgrut
+                                    blank
+                                    primary
+                                    flat
+                                >
+                                    ver
+                                </vs-button>
+                            </vs-td>
+                        </vs-tr>
+                        <vs-tr>
                             <vs-td>Actividad principal en el RUT:</vs-td><vs-td>{{arut}}</vs-td>
                         </vs-tr>
                         <vs-tr>
                             <vs-td>¿Declara renta?:</vs-td> <vs-td>si</vs-td>
+                        </vs-tr>
+                        <vs-tr>
+                            <vs-td>Renta:</vs-td><vs-td>
+                                <vs-button
+                                    :href= imgrenta
+                                    blank
+                                    primary
+                                    flat
+                                >
+                                    ver
+                                </vs-button>
+                        </vs-td>
                         </vs-tr>
                         <vs-tr>
                             <vs-td>Total Patrimonio bruto:</vs-td> <vs-td>{{tpatrim}}</vs-td>
@@ -221,13 +264,33 @@
                         <vs-tr>
                             <vs-td>Total deudas</vs-td> <vs-td>{{tdeudas}}</vs-td>
                         </vs-tr>
+                        <vs-tr>
+                        <vs-col size="large" flat vs-type="flex" vs-justify="center" vs-align="center" w="12">
+                        <template>
+                        <vs-button warn @click="active4=!active4" >
+                            Editar
+                        </vs-button>
+                        <vs-dialog blur v-model="active4">
+                            <template #header>
+                                <div>
+                                <h2 class="form-title">Información contable</h2>
+                                <p style="margin-bottom:30px;">Actualize la información contable</p>
+                                </div>
+                            </template>
+                            <template #footer>
+                            </template>
+                        </vs-dialog>
+                        </template>
+                        </vs-col>
+                        </vs-tr>
                         </template>
                     </vs-table>
                         </b-card-body>
                     </b-collapse>
                     </b-card>
                 </div>
-                </template>   
+                </template>
+                   
             </vs-col>
             <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
             <vs-card style="margin-bottom: 30px!important;padding: 0px 30px 40px 30px;">
@@ -276,9 +339,20 @@
                     {{estadocivil}}</p>
             <br />
             
-            <vs-button primary icon @click="$router.push('/testimonio/?cliente=' + col.id)">
-                Conocer Historia
+            <vs-button primary icon warn @click="active5=!active5">
+                Actualizar
             </vs-button>
+            <vs-dialog blur v-model="active5">
+                <template #header>
+                    <div>
+                    <h2 class="form-title">Información de contacto</h2>
+                    <p style="margin-bottom:30px;">Actualize la información contacto</p>
+                    </div>
+                </template>
+                <edit-contact />
+                <template #footer>
+                </template>
+            </vs-dialog>
             </template>
             <template #interactions>
             <input
@@ -299,10 +373,11 @@
 <script>
 import { ModelSelect } from 'vue-search-select'
 import EditBancaria from '~/components/edit-bancaria.vue'
+import EditCentralesderiesgo from '~/components/edit-centralesderiesgo.vue'
 import EditLaboral from '~/components/edit-laboral.vue'
 import editResidencial from '~/components/edit-residencial.vue'
 export default {
-  components: { editResidencial, EditLaboral, EditBancaria },
+  components: { editResidencial, EditLaboral, EditBancaria, EditCentralesderiesgo },
      middleware:'silogin',
                 async mounted() {
                 
@@ -382,6 +457,10 @@ export default {
                     this.tdeudas = axtdeudas
                     let aximgperfil = medata.imgperfil[0].url
                     this.imgperfil = 'http://52.15.244.21:1337' + aximgperfil
+                    let aximgrut = medata.imgrut[0].url
+                    this.imgrut = 'http://52.15.244.21:1337' + aximgrut
+                    let aximgrenta = medata.imgrenta[0].url
+                    this.imgrenta = 'http://52.15.244.21:1337' + aximgrenta
 
                     }
                 },
@@ -426,6 +505,8 @@ export default {
                     active:false,
                     active2:false,
                     active3:false,
+                    active4:false,
+                    active5: false,
                     progress: 0,
                     imgperfil:''
         }

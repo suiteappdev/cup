@@ -40,7 +40,7 @@
                                                     @click="active = 0, login()"
                                                     block
                                                     size="large"
-                                                    :disabled="password.length < 5"
+                                                    :disabled="password.length < 4"
                                                     >Entrar</vs-button>
                                                 </vs-col>
                                             </vs-row>
