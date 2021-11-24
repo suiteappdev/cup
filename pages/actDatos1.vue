@@ -278,27 +278,26 @@
                     </div>
                     </div>
                 </vs-col>
-                <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
+                <vs-col v-if="departamento"  vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
                   <div style="float: left; margin-top:10px;padding-left: 10px;">  
                   <label for=""  style="font-size:12px;">Ciudad</label>
-                  <div class="form-control">
+                    <div class="form-control">
                       <vs-select
-                      filter
-                      placeholder="Ciudad"
-                      v-model="ciudad"
-                      :disabled ="!departamento"
-                      >
-                      <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c" :value="c">
-                          {{c}}
-                      </vs-option>
-                      <template v-if="ciudad == ''" #message-warn>
-                          Departamento es requerido
-                      </template>
-                        <template v-if="ciudad" #message-success>
-                          ok
-                      </template> 
-                      </vs-select>
-                  </div>
+                        filter
+                        placeholder="Ciudad"
+                        v-model="ciudad"
+                        >
+                        <vs-option v-for="(d) in selectedCiudades" :key="d.key" :label="d.key" :value="d.value">
+                            {{d.key}}
+                        </vs-option>
+                        <template v-if="ciudad == ''" #message-warn>
+                            El campo es requerido
+                        </template>
+                          <template v-if="ciudad" #message-success>
+                            ok
+                        </template> 
+                        </vs-select>
+                    </div>
                   </div>
                 </vs-col>
                 <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="3" sm="12" xs="12">
@@ -809,7 +808,7 @@ async mounted(){
                 cwasap:'',
                 email:'',
                 departamento: '',
-                selectedCiudades:'',
+                selectedCiudades:[],
                 ciudad:'',
                 direccion:'',
                 tvivienda :'',
@@ -6452,15 +6451,23 @@ async mounted(){
 
                 watch: {
                           departamento(nuevoValor, valorAnterior){
-                            this.selectedCiudades = this.dpto().filter((e)=>{return e.id == nuevoValor})[0].ciudades;
-                            console.log("selected", this.selectedCiudades)
+                            this.selectedCiudades = this.dpto().filter((e)=>{return e.id == nuevoValor})[0].ciudades.map((c)=>{
+                              return {
+                                key : c,
+                                value : c
+                              }
+                            });
+
+                            console.log("selected ciudades", this.selectedCiudades);
                         },
                 },
                 components: {
                     ModelSelect
                 },
                 methods: {
-
+                setSelectedCity(value){
+                  alert(value);
+                },
 
                   async selectuploadrut(event){
                       const formdata = new FormData();
