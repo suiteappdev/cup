@@ -6,6 +6,9 @@
   </div>
 </template>
 <style>
+  .vs-input-parent--shadow .vs-input-content .vs-input{
+    width: 100%!important;
+  }
   body {
     height: 100vh;
     width: 100vw;

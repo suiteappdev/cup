@@ -10,7 +10,7 @@
                                         <h1 class="form-title">Inicia sesión</h1>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="username" placeholder="Cédula o documento de identidad" shadow>
+                                        <vs-input type="text" class="full-witdh"  v-model="username" placeholder="Cédula o documento de identidad" shadow>
                                             <template #icon>
                                             <i class='bx bx-user'></i>
                                             </template>
@@ -158,6 +158,7 @@ export default {
     }
   </script>
  <style scoped>
+
      .footer-link{
          text-combine-upright: none;   
      }
