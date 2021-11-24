@@ -286,7 +286,7 @@
                       filter
                       placeholder="Ciudad"
                       v-model="ciudad"
-                      :disabled ="departamento"
+                      :disabled ="!departamento"
                       >
                       <vs-option v-for="(c, index) in selectedCiudades" :key="index" :label="c" :value="c">
                           {{c}}
@@ -6453,6 +6453,7 @@ async mounted(){
                 watch: {
                           departamento(nuevoValor, valorAnterior){
                             this.selectedCiudades = this.dpto().filter((e)=>{return e.id == nuevoValor})[0].ciudades;
+                            console.log("selected", this.selectedCiudades)
                         },
                 },
                 components: {
