@@ -508,7 +508,9 @@ export default {
                     active4:false,
                     active5: false,
                     progress: 0,
-                    imgperfil:''
+                    imgperfil:'',
+                    imgrut:'',
+                    imgrenta:''
         }
     },
 
