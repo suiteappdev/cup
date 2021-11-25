@@ -1,236 +1,78 @@
  <template>
- 
  <div class="wrapper">
  <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_gratuito">
         <template #header>
           <h3>
-            Introduction
+            Asesoría<span class="light"> gratuita</span> 
           </h3>
         </template>
         <div class="con-content">
-          <h4>
-            Whats is Vuesax?
-          </h4>
-          <p>
-            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
-
-            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
-
-            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
-          </p>
-
-          <h4>
-            Why Vuesax?
-          </h4>
-
-          <p>
-            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
-            <br>
-            <br>
-            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
-
-            <br>
-            <br>
-            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
-
-            <br>
-            <br>
-            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
-            <br>
-            <br>
-
-            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
-            <br>
-            <br>
-
-            - An open-source community to create, improve and correct any component or function.
-            <br>
-            <br>
-
-            - Independent components to avoid importing unnecessary code.
-            <br>
-            <br>
-
-            - Markdown documents for better sustainability.
-            <br>
-            <br>
-
-            - and much more.
-          </p>
+            <ul class="service-list vineta">
+                <li class="text-dark service-item">Aumentar tu puntaje en Datacrédito o TransUnion.</li>
+                <li class="text-dark service-item">Aumentar el cupo actual de tus tarjetas de crédito.</li>
+                <li class="text-dark service-item">Pagar menos intereses en tus préstamos bancarios.</li>
+                <li class="text-dark service-item">Saber si estas reportado en las centrales de riesgo.</li>
+                <li class="text-dark service-item">Conocer cuánto tiempo estarás reportado negativamente en las centrales de riesgo por incumplimiento de pago.</li>
+                <li class="text-dark service-item">Conocer cuáles son las mejores tarjetas de crédito en Colombia.</li>
+                <li class="text-dark service-item">Conocer cuáles son las mejores tasas de crédito hipotecario.</li>
+                <li class="text-dark service-item">Conocer los requisitos que exigen la mayoría de bancos a la hora de solicitar un préstamo de libre inversión.</li>
+                <li class="text-dark service-item">Como empezar tu vida crediticia (personas jóvenes o adultas que nunca han tenido un producto financiero).</li>
+                <li class="text-dark service-item">Saber si tengo que declarar renta o no.</li>
+                <p class="light">
+                    <span class="strong text-white">Nota:</span> <br />  Solo puedes seleccionar uno de los temas anteriores en la asesoría gratis. <br />
+                    <br />
+                    <span class="strong text-white">Nota:</span> <br /> Si quieres saber tu estado en las centrales de riesgo, debes pagar el valor de la consulta ($10.000).</p>
+            </ul>
         </div>
       </vs-dialog>
        <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_preferencial">
         <template #header>
           <h3>
-            Introduction
+            Asesoria <span class="light">preferencial</span> 
           </h3>
         </template>
         <div class="con-content">
-          <h4>
-            Whats is Vuesax?
-          </h4>
-          <p>
-            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
-
-            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
-
-            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
-          </p>
-
-          <h4>
-            Why Vuesax?
-          </h4>
-
-          <p>
-            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
-            <br>
-            <br>
-            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
-
-            <br>
-            <br>
-            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
-
-            <br>
-            <br>
-            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
-            <br>
-            <br>
-
-            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
-            <br>
-            <br>
-
-            - An open-source community to create, improve and correct any component or function.
-            <br>
-            <br>
-
-            - Independent components to avoid importing unnecessary code.
-            <br>
-            <br>
-
-            - Markdown documents for better sustainability.
-            <br>
-            <br>
-
-            - and much more.
-          </p>
+            <ul class="service-list vineta">
+                <li class="text-dark service-item-premium">Resolver todas tus dudas financieras por vía telefónica o WhatsApp.</li>
+                <li class="text-dark service-item-premium">Revisar minuciosamente tu Datacrédito y aumentar tu puntaje.</li>
+                <li class="text-dark service-item-premium">Interpretar tu historial crediticio de Datacrédito para que tengas claro cuáles son tus fortalezas y tus falencias.</li>
+                <li class="text-dark service-item-premium">Elaborar un plan financiero a mediano plazo (2 años), deberás seguirlo para
+                    mejorar tu vida financiera bien sea aumentando los cupos bancarios
+                    actuales o adquiriendo nuevos productos (nuevas tarjetas de créditos,
+                    nuevos cupos rotativos, nuevos préstamos hipotecarios, nuevos préstamos
+                    de libre inversión, etc.</li>
+                <li class="text-dark service-item-premium">Eliminar un reporte negativo en las centrales de riesgo.</li>
+                <li class="text-dark service-item-premium">Resolver todas tus dudas contables en materia tributaria (impuestos).</li>
+            </ul>
         </div>
       </vs-dialog>
        <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_premiun">
         <template #header>
           <h3>
-            Introduction
+            Acompañamiento <span class="light">financiero premium</span> 
           </h3>
         </template>
         <div class="con-content">
-          <h4>
-            Whats is Vuesax?
-          </h4>
-          <p>
-            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
-
-            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
-
-            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
-          </p>
-
-          <h4>
-            Why Vuesax?
-          </h4>
-
-          <p>
-            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
-            <br>
-            <br>
-            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
-
-            <br>
-            <br>
-            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
-
-            <br>
-            <br>
-            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
-            <br>
-            <br>
-
-            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
-            <br>
-            <br>
-
-            - An open-source community to create, improve and correct any component or function.
-            <br>
-            <br>
-
-            - Independent components to avoid importing unnecessary code.
-            <br>
-            <br>
-
-            - Markdown documents for better sustainability.
-            <br>
-            <br>
-
-            - and much more.
-          </p>
+            <ul class="service-list vineta">
+                <li class="text-dark service-item-premium">No des mas vueltas, esta es la mejor financiera que puede tomar para mejorar tu vida financiera en un 100%.</li>
+                <li class="text-dark service-item-premium">Si al finalizar el año no cumplimos tus objetivos te reembolsamos todo tu dinero.</li>
+            </ul>
         </div>
       </vs-dialog>
              <vs-dialog scroll overflow-hidden not-close auto-width v-model="active_otros">
         <template #header>
           <h3>
-            Introduction
+            Otros <span class="light">servicios</span> 
           </h3>
         </template>
         <div class="con-content">
-          <h4>
-            Whats is Vuesax?
-          </h4>
-          <p>
-            Vuesax (pronounced / vjusacksː /, as view sacks) is a framework of UI components created with Vuejs to make projects easily and with a unique and pleasant style, vuesax is created from scratch and designed for all types of developers from the frontend lover to the backend who wants to easily create their visual approach to the end-user
-
-            We are focused on streamlining the work of the programmer by giving components created in their entirety and with independent customization and very easy to implement, so creativity is in our hands but we do not neglect that each project is different both visually and in its ecosystem
-
-            Vuesax does not have a design line such as other component frameworks based on Material Design, we believe that there are already emaciated frameworks that look visually and in UI / UX and we don't want to be one more of the bunch, apart from that we love to create and design new experiences and surprise you with new elements or details that we can only do by being visually free.
-          </p>
-
-          <h4>
-            Why Vuesax?
-          </h4>
-
-          <p>
-            Vuesax is a relatively new framework with a refreshing design and in the latest trends, vuesax based on vuejs which means that we go hand in hand with one of the most popular javascript frameworks in the world and with a huge community with which you will have all the help and documentation to create and make your project
-            <br>
-            <br>
-            - Vuesax, unlike many frameworks, is designed from scratch and we are not anchored to any design line, this is something great since your project is going to be unique and very different from the others
-
-            <br>
-            <br>
-            - We are focused on the quick and easy creation of projects giving a beautiful visual line but without forgetting the personalization and independence of the developer
-
-            <br>
-            <br>
-            - Vuesax uses native css variables for better customization and production changes such as changing to dark theme or changing the main color of the entire application with few javascript lines
-            <br>
-            <br>
-
-            - Vuesax is a frame designed to have a great visual impact and that is always in trend with respect to design.
-            <br>
-            <br>
-
-            - An open-source community to create, improve and correct any component or function.
-            <br>
-            <br>
-
-            - Independent components to avoid importing unnecessary code.
-            <br>
-            <br>
-
-            - Markdown documents for better sustainability.
-            <br>
-            <br>
-
-            - and much more.
-          </p>
+            <ul class="service-list vineta">
+                <li class="text-dark service-item-premium">Consulta en Datacrédito</li>
+                <li class="text-dark service-item-premium">Eliminación de un reporte negativo</li>
+                <li class="text-dark service-item-premium">Asesoría contable</li>
+                <li class="text-dark service-item-premium">Asesoría jurídica en procesos financieros (embargos, suplantaciones, etc.)</li>
+                <li class="text-dark service-item-premium">Te respondemos en un plazo máximo de 8 horas hábiles.</li>                
+            </ul>
         </div>
       </vs-dialog>
         <div class="home-section">
@@ -398,64 +240,6 @@
                 </div>
             </template>
         </div> 
-        <div class="services-section">
-            <div class="center grid">
-                <vs-row>
-                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
-                        <div class="box-service-1" >
-                            <div class="box-service-inner flex flex-center flex-column">
-                                <h2 class="text-white no-margin text-left mt-40">Asesoría <span class="light">gratuita</span></h2>
-                                <p class="light" style="padding:40px;margin:0;">Selecciona esta opción y uno de nuestros profesionales en menos de 24 horas hábiles te ayudara a:</p>
-                                <ul class="service-list vineta">
-                                    <li class="text-white service-item">Aumentar tu puntaje en Datacrédito o TransUnion.</li>
-                                    <li class="text-white service-item">Aumentar el cupo actual de tus tarjetas de crédito.</li>
-                                    <li class="text-white service-item">Pagar menos intereses en tus préstamos bancarios.</li>
-                                    <li class="text-white service-item">Saber si estas reportado en las centrales de riesgo.</li>
-                                    <li class="text-white service-item">Conocer cuánto tiempo estarás reportado negativamente en las centrales de riesgo por incumplimiento de pago.</li>
-                                    <li class="text-white service-item">Conocer cuáles son las mejores tarjetas de crédito en Colombia.</li>
-                                    <li class="text-white service-item">Conocer cuáles son las mejores tasas de crédito hipotecario.</li>
-                                    <li class="text-white service-item">Conocer los requisitos que exigen la mayoría de bancos a la hora de solicitar un préstamo de libre inversión.</li>
-                                    <li class="text-white service-item">Como empezar tu vida crediticia (personas jóvenes o adultas que nunca han tenido un producto financiero).</li>
-                                    <li class="text-white service-item">Saber si tengo que declarar renta o no.</li>
-                                    <p class="light">
-                                       <span class="strong text-white">Nota:</span> <br />  Solo puedes seleccionar uno de los temas anteriores en la asesoría gratis. <br />
-                                       <br />
-                                       <span class="strong text-white">Nota:</span> <br /> Si quieres saber tu estado en las centrales de riesgo, debes pagar el valor de la consulta ($10.000).</p>
-                                </ul>
-                                <br />
-                                    <vs-button v-model="ag" size="xl" @click="$router.push('/login/?tase=ag')">
-                                    Recibe tu asesoría gratuita
-                                    </vs-button> 
-                            </div>
-                        </div>
-                    </vs-col>
-                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" lg="6" sm="12" xs="12">
-                        <div class="box-service-2">
-                            <div class="box-service-inner flex flex-center flex-column">
-                                <h2 class="text-dark no-margin text-center mt-40">Asesoría <span class="light">preferencial</span></h2>
-                                <p style="padding:40px;margin:0;" class="light">Selecciona esta opción y uno de nuestros profesionales en menos de 12 horas hábiles te ayudara a:</p>
-                                <ul class="service-list vineta">
-                                    <li class="text-dark service-item-premium">Resolver todas tus dudas financieras por vía telefónica o WhatsApp.</li>
-                                    <li class="text-dark service-item-premium">Revisar minuciosamente tu Datacrédito y aumentar tu puntaje.</li>
-                                    <li class="text-dark service-item-premium">Interpretar tu historial crediticio de Datacrédito para que tengas claro cuáles son tus fortalezas y tus falencias.</li>
-                                    <li class="text-dark service-item-premium">Elaborar un plan financiero a mediano plazo (2 años), deberás seguirlo para
-                                        mejorar tu vida financiera bien sea aumentando los cupos bancarios
-                                        actuales o adquiriendo nuevos productos (nuevas tarjetas de créditos,
-                                        nuevos cupos rotativos, nuevos préstamos hipotecarios, nuevos préstamos
-                                        de libre inversión, etc.</li>
-                                    <li class="text-dark service-item-premium">Eliminar un reporte negativo en las centrales de riesgo.</li>
-                                    <li class="text-dark service-item-premium">Resolver todas tus dudas contables en materia tributaria (impuestos).</li>
-                                </ul>
-                                <br />
-                                <vs-button v-model="ap" size="xl" @click="$router.push('/login/?tase=ap')">
-                                    Recibe tu asesoría preferencial - $99.500 COP
-                                </vs-button>
-                            </div>
-                        </div>
-                    </vs-col>
-                </vs-row>
-            </div>            
-        </div>
         <div class="testimonial-section">
             <h1 class="text-center cases animated bounceInRight">Casos de <span class="light">éxito</span></h1>
             <template>

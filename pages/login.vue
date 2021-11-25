@@ -4,8 +4,8 @@
                 <vs-col  vs-type="flex" vs-justify="center" vs-align="center" w="12">
                         <div class="box-right">
                             <div class="form">
-                                <img style="width:10%;margin-bottom:30px;" src='~/assets/images/logo-negative.png' alt="asesorias florez">
-                                <div style="width:30%;">
+                                <img  class="login-logo" style="width:10%;margin-bottom:30px;" src='~/assets/images/logo-negative.png' alt="asesorias florez">
+                                <div>
                                     <div class="form-control">
                                         <h1 class="form-title">Inicia sesión</h1>
                                     </div>
@@ -158,7 +158,6 @@ export default {
     }
   </script>
  <style scoped>
-
      .footer-link{
          text-combine-upright: none;   
      }
@@ -330,6 +329,10 @@ export default {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+
+    .login-logo{
+        width: 50%!important;
+    }
   
   .testimonial-section{
       padding: 10px!important;
