@@ -79,12 +79,6 @@ export default {
 
   },
   
-  loading: {
-    color: '#00E6E3',
-    height: '5px',
-    duration : 6000
-  },
-
   server: {
     host: '0.0.0.0',
     port: 80
