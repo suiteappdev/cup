@@ -9,7 +9,7 @@
                                         <h1 class="form-title">Formulario de registro</h1>
                                     </div>
                                     <div class="form-control">
-                                        <vs-input v-model="username" type="number" placeholder="Cédula o dcumento de identidad" shadow>
+                                        <vs-input v-model="username" type="number" placeholder="Cédula o documento de identidad" shadow>
                                             <template #icon>
                                             <i class='bx bx-card'></i>
                                             </template>
@@ -151,7 +151,7 @@
                             plan: plan
                         });
                         this.success = this.openSuccess('top-center','success')
-                        this.go('/login')
+                        this.$router.push('/login')
                     } catch(error) {
                         this.error = this.openError('top-center', 'danger')
                         this.$router.push('/signup')
