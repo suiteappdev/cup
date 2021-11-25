@@ -13,9 +13,6 @@
                         <template v-if="nombrec == '' && nombrec.length < 9" #message-warn>
                             Digite su nombre completo
                         </template>
-                        <template v-if="nombrec.length >= 10" #message-success>
-                            ok
-                        </template>
                     </vs-input>
                   </div>
                 </vs-col>
@@ -157,9 +154,6 @@
                               <template v-if="exano == ''" #message-warn>
                                   Año es requerido
                               </template>
-                              <template v-if="exano" #message-success>
-                                  ok
-                              </template>
                               </vs-select>
                               <vs-select  style="padding-left: 10px;"
                                   filter
@@ -172,9 +166,6 @@
                               <template v-if="exmes == ''" #message-warn>
                                   mes es requerido
                               </template>
-                              <template v-if="exmes" #message-success>
-                                  ok
-                              </template>
                               </vs-select>
                               <vs-select style="padding-left: 10px;"
                                   placeholder="Dia"
@@ -185,9 +176,6 @@
                               </vs-option>
                               <template v-if="exdia == ''" #message-warn>
                                   Dia es requerido
-                              </template>
-                              <template v-if="exdia" #message-success>
-                                  ok
                               </template>
                               </vs-select>
                           </div>
@@ -208,9 +196,6 @@
                           </template>
                       <template v-if="cwasap == ''" #message-warn>
                           Dia es requerido
-                      </template>
-                      <template v-if="cwasap" #message-success>
-                          ok
                       </template>
                       </vs-input>
                     </div>
@@ -271,9 +256,6 @@
                         <template v-if="departamento == ''" #message-warn>
                             Departamento es requerido
                         </template>
-                          <template v-if="departamento" #message-success>
-                            ok
-                        </template> 
                         </vs-select>
                     </div>
                     </div>
@@ -293,9 +275,6 @@
                         <template v-if="ciudad == ''" #message-warn>
                             El campo es requerido
                         </template>
-                          <template v-if="ciudad" #message-success>
-                            ok
-                        </template> 
                         </vs-select>
                     </div>
                   </div>
@@ -312,9 +291,6 @@
                           <template v-if="direccion == ''" #message-warn>
                               Direccion es requerido
                           </template>
-                            <template v-if="direccion" #message-success>
-                              ok
-                      </template>
                       </vs-input>
                       </div>                    
                   </template>
@@ -336,9 +312,6 @@
                       <template v-if="tvivienda == ''" #message-warn>
                           Tipo de vivienda es requerido
                       </template>
-                        <template v-if="tvivienda" #message-success>
-                          ok
-                      </template> 
                       </vs-select>
                   </div>
                 </div>
@@ -358,9 +331,6 @@
                       <template v-if="estrato == ''" #message-warn>
                           Estrato es requerido
                       </template>
-                        <template v-if="estrato" #message-success>
-                          ok
-                      </template> 
                       </vs-select>
                   </div>
                 </div>
@@ -382,9 +352,6 @@
                       <template v-if="nestudio == ''" #message-warn>
                           Nivel de estudio es requerido
                       </template>
-                      <template v-if="nestudio" #message-success>
-                          ok
-                      </template>
                       </vs-select>
                   </div>
                   </div>
@@ -404,9 +371,6 @@
                           <template v-if="actsoy == ''" #message-warn>
                             Actualmente soy es requerido
                         </template>
-                        <template v-if="actsoy" #message-success>
-                            ok
-                        </template>
                         </vs-select>
                     </div>
                 </div>
@@ -419,9 +383,6 @@
                               <vs-input type="text" v-model="imensual">
                                 <template v-if="imensual == ''" #message-warn>
                                     Ingresos mensual es requerido
-                                </template>
-                                <template v-if="imensual" #message-success>
-                                    ok
                                 </template>
                               </vs-input>
                               <div style="font-size:12px;">
@@ -437,9 +398,6 @@
                               <vs-input type="text" v-model="gtomensual">
                                 <template v-if="gtomensual == ''" #message-warn>
                                     Gastos mensual es requerido
-                                </template>
-                                <template v-if="gtomensual" #message-success>
-                                    ok
                                 </template>
                               </vs-input>
                               <div  style="font-size:12px;">
@@ -545,9 +503,6 @@
                 <!--<template v-if="sdatacre == ''" #message-warn>
                     Campo requerido
                 </template>-->
-                <template v-if="sdatacre" #message-success>
-                    ok
-                </template>
                 </vs-select>
             </div>
               </div>
@@ -839,9 +794,6 @@ async mounted(){
                 selectfile: null,
                 percentrenta: 0,
                 percentrut:0,
-                imgrenta:'[{ "url":"/uploads/nofile_08192abf9e.png"}]',
-                imgrut:'[{ "url":"/uploads/nofile_08192abf9e.png"}]',
-                imgperfil: '[ { "url":"/uploads/user_c3993e34df.png" } ]',
                 time:0,
                 max: 100,
                 erro: 'ocurrio un error',
@@ -6485,9 +6437,7 @@ async mounted(){
                               this.percentrut = percentrut
                               }
                             })
-                            this.imgrut = responserut.data
-                            console.log(responserut.data)
-                            console.log(this.imgrut)
+                            this.imgrut = responserut.data[0]
                       }
                       //delete this.$axios.defaults.headers.common["Authorization"];
 
@@ -6518,9 +6468,7 @@ async mounted(){
                               }
                             })
 
-                            this.imgrenta = responserenta.data
-                            console.log(responserenta.data)
-                            console.log(this.imgrenta)
+                            this.imgrenta = responserenta.data[0]
                       }
                       //delete this.$axios.defaults.headers.common["Authorization"];
                   },
@@ -6585,18 +6533,16 @@ async mounted(){
                             imensual : this.imensual,
                             gtomensual : this.gtomensual,
                             tase : plan,
-                            imgrut:  this.imgrut,
-                            imgrenta: this.imgrenta,
-                            imgperfil : this.imgperfil 
-
+                            imgrut:  this.imgrut || {},
+                            imgrenta: this.imgrenta || {},
+                            imgperfil : this.imgperfil|| {} 
                             });
 
                             const perfil = res.data
                             console.log(perfil)
                             window.localStorage.setItem('id', perfil._id)
                             this.success = this.openSuccess('top-center','success')
-                            
-                                    this.go('/asesoriap')
+                            this.go('/asesoriap')
                             
                         }   
                         catch(error) {

@@ -230,7 +230,9 @@
                         </vs-tr>
                         <vs-tr>
                             <vs-td>RUT:</vs-td><vs-td>
+                                <p v-if="!imgrut">Sin archivo RUT</p>
                                 <vs-button
+                                    v-if="imgrut"
                                     :href= imgrut
                                     blank
                                     primary
@@ -248,7 +250,9 @@
                         </vs-tr>
                         <vs-tr>
                             <vs-td>Renta:</vs-td><vs-td>
+                                 <p v-if="!imgrenta">Sin archivo de RENTA</p>
                                 <vs-button
+                                    v-if="imgrenta"
                                     :href= imgrenta
                                     blank
                                     primary
@@ -298,7 +302,7 @@
                 <h3> {{ name }}</h3>
                 </template>
                 <template #img>
-                <img :src="imgperfil" alt="">
+                    <img :src="imgperfil.url ? ('http://52.15.244.21:1337' + imgperfil.url)  : 'http://52.15.244.21:1337/uploads/user_c3993e34df.png'" alt="">
                 </template>
                 <template #text>
             <p>
@@ -455,19 +459,9 @@ export default {
                     this.tpatrim = axtpatrim
                     let axtdeudas = medata.tdeudas
                     this.tdeudas = axtdeudas
-                    let aximgperfil = medata.imgperfil[0].url
-                    console.log(aximgperfil)
-                    this.imgperfil = 'http://52.15.244.21:1337' + aximgperfil
-                    if(medata.imgrut.length > 0){
-                        this.imgrut = 'http://52.15.244.21:1337' + medata.imgrut[0].url
-                    }else{
-                        this.imgrut = 'http://52.15.244.21:1337/uploads/nofile_08192abf9e.png'
-                    }
-                    if(medata.imgrenta.length > 0){
-                        this.imgrenta = 'http://52.15.244.21:1337' + medata.imgrenta[0].url
-                    }else{
-                        this.imgrenta = 'http://52.15.244.21:1337/uploads/nofile_08192abf9e.png'
-                    }
+                    this.imgperfil = medata.imgperfil ? medata.imgperfil  : null;
+                    this.imgrut = medata.imgrut.url
+                    this.imgrenta = medata.imgrenta.url
                     }
                 },
 
@@ -577,7 +571,7 @@ export default {
                                 this.responseperfil = responseperfil
                               }
                             })
-                            this.imgperfil = responseperfil.data
+                            this.imgperfil = responseperfil.data[0]
                             this.actimgperfil()
                             console.log(responseperfil.data)
                             console.log(this.imgperfil)
