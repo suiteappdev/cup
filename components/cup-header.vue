@@ -25,10 +25,7 @@
         <vs-navbar-item @click="$router.push('/faq')" :active="active == 'faq'" id="faq">
           Preguntas frencuentes
         </vs-navbar-item>
-        <vs-navbar-item v-if="loggedInUser" @click="$router.push('/profile')" :active="active == 'profile'" id="profile">
-          <i class='bx bx-user' ></i>
-          - {{loggedInUser.email}}
-        </vs-navbar-item>
+
         <template #right>
           <vs-button @click="activeSidebar = !activeSidebar" flat icon>
             <i class='bx bx-menu'></i>
@@ -43,6 +40,10 @@
         <template #logo>
           <!-- ...img logo -->
         </template>
+        <vs-sidebar-item v-if="loggedInUser" @click="$router.push('/profile')" :active="active == 'profile'" id="profile">
+          <i class='bx bx-user' ></i>
+          - {{loggedInUser.email}}
+        </vs-sidebar-item>
         <vs-sidebar-item id="home">
           <template #icon>
             <i class='bx bx-home bx-tada'></i>

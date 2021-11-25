@@ -840,8 +840,9 @@ async mounted(){
                 selectfile: null,
                 percentrenta: 0,
                 percentrut:0,
-                imgrenta:'',
-                imgrut:'',
+                imgrenta:'[]',
+                imgrut:'[]',
+                imgperfil: '[ { "url":"/uploads/user_c3993e34df.png" } ]',
                 time:0,
                 max: 100,
                 erro: 'ocurrio un error',
@@ -6542,7 +6543,6 @@ async mounted(){
                         try {
 
                             this.$axios.defaults.headers.common['Authorization'] = 'Bearer ' + metoken
-
                             
                             let res = await this.$axios.post("perfils", {
                             actDatos1:true,    
@@ -6578,8 +6578,9 @@ async mounted(){
                             imensual : this.imensual,
                             gtomensual : this.gtomensual,
                             tase : plan,
-                            imgrut: this.imgrut,
+                            imgrut:  this.imgrut,
                             imgrenta: this.imgrenta,
+                            imgperfil : this.imgperfil 
 
                             });
 

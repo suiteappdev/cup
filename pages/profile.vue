@@ -456,12 +456,18 @@ export default {
                     let axtdeudas = medata.tdeudas
                     this.tdeudas = axtdeudas
                     let aximgperfil = medata.imgperfil[0].url
+                    console.log(aximgperfil)
                     this.imgperfil = 'http://52.15.244.21:1337' + aximgperfil
-                    let aximgrut = medata.imgrut[0].url
-                    this.imgrut = 'http://52.15.244.21:1337' + aximgrut
-                    let aximgrenta = medata.imgrenta[0].url
-                    this.imgrenta = 'http://52.15.244.21:1337' + aximgrenta
-
+                    if(medata.imgrut.length > 0){
+                        this.imgrut = 'http://52.15.244.21:1337' + medata.imgrut[0].url
+                    }else{
+                        this.imgrut = 'http://52.15.244.21:1337/uploads/nofile_08192abf9e.png'
+                    }
+                    if(medata.imgrenta.length > 0){
+                        this.imgrenta = 'http://52.15.244.21:1337' + medata.imgrenta[0].url
+                    }else{
+                        this.imgrenta = 'http://52.15.244.21:1337/uploads/nofile_08192abf9e.png'
+                    }
                     }
                 },
 
