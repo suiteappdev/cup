@@ -1,7 +1,17 @@
 <template>
     <div class="center-grid">
+        <vs-dialog blur v-model="active_contable">
+            <template #header>
+                <div>
+                <h2 class="form-title">Información contable</h2>
+                <p style="margin-bottom:30px;">Actualize la información contable</p>
+                </div>
+            </template>
+            <template #footer>
+            </template>
+        </vs-dialog>
         <vs-row style="margin-top: 100px;">
-            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="8" style="padding: 0px 0px 0px 15px;">
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center"  w="8" lg="8" sm="12" xs="12" style="padding: 0px 0px 0px 15px;">
                 <template>
                 <div class="accordion" role="tablist">
                     <b-card no-body class="mb-1">
@@ -181,10 +191,10 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>¿Tienes suscripción en Datacrédito o TransUnion?:</vs-td><vs-td>{{sdatacre}}</vs-td>
+                            <vs-td>¿Tienes suscripción en Datacrédito o TransUnion?:</vs-td><vs-td>{{sdatacre ? 'Si' : 'No'}}</vs-td>
                         </vs-tr>
                         <vs-tr>
-                            <vs-td>¿Estas reportado negativamente? (si, no, no se)</vs-td><vs-td>{{reportn}}</vs-td>
+                            <vs-td>¿Estas reportado negativamente? (si, no, no se)</vs-td><vs-td>{{reportn ? 'Si' : 'No'}}</vs-td>
                         </vs-tr>
                         <vs-tr>
                             <vs-td>¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa</vs-td> <vs-td>{{sdatacresi}}</vs-td>
@@ -271,19 +281,9 @@
                         <vs-tr>
                         <vs-col size="large" flat vs-type="flex" vs-justify="center" vs-align="center" w="12">
                         <template>
-                        <vs-button warn @click="active4=!active4" >
+                        <vs-button warn @click="active_contable=!active_contable" >
                             Editar
                         </vs-button>
-                        <vs-dialog blur v-model="active4">
-                            <template #header>
-                                <div>
-                                <h2 class="form-title">Información contable</h2>
-                                <p style="margin-bottom:30px;">Actualize la información contable</p>
-                                </div>
-                            </template>
-                            <template #footer>
-                            </template>
-                        </vs-dialog>
                         </template>
                         </vs-col>
                         </vs-tr>
@@ -296,7 +296,7 @@
                 </template>
                    
             </vs-col>
-            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4">
+            <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="4" lg="4" sm="6" xs="6">
             <vs-card style="margin-bottom: 30px!important;padding: 0px 30px 40px 30px;">
                 <template #title>
                 <h3> {{ name }}</h3>
@@ -507,6 +507,7 @@ export default {
                     active3:false,
                     active4:false,
                     active5: false,
+                    active_contable : false,
                     progress: 0,
                     imgperfil:'',
                     imgrut:'',
