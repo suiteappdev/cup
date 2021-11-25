@@ -236,7 +236,7 @@
                         </template>
                         <template #tbody>
                         <vs-tr>
-                            <vs-td>¿Tiene RUT?:</vs-td><vs-td>{{rut}}</vs-td>
+                            <vs-td>¿Tiene RUT?:</vs-td><vs-td>{{rut ? 'Si' : 'No'}}</vs-td>
                         </vs-tr>
                         <vs-tr>
                             <vs-td>RUT:</vs-td><vs-td>

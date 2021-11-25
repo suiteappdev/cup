@@ -6542,12 +6542,12 @@ async mounted(){
                             console.log(perfil)
                             window.localStorage.setItem('id', perfil._id)
                             this.success = this.openSuccess('top-center','success')
-                            this.go('/asesoriap')
+                            this.$router.push('/asesoriap');
                             
                         }   
                         catch(error) {
                            this.error = this.openError('top-center', 'danger')
-                           this.$router.go('/actDatos1')
+                           this.$router.push('/actDatos1')
                         }
                 },
 
