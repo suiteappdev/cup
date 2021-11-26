@@ -1,62 +1,62 @@
 <template>
 <vs-row>
-                    <div class="form-control" style="margin-top:10px;">
-                      <label for=""  style="font-size:12px;">Teléfono celular de WhatsApp</label>
-                      <vs-input 
-                          style="margin-top:10px;" 
-                          v-model="cwasap" 
-                          placeholder="Celular" 
-                          shadow>
-                          <template #icon>
-                              <i class='bx bxl-whatsapp' ></i>
-                          </template>
-                      <template v-if="cwasap == ''" #message-warn>
-                          Dia es requerido
-                      </template>
-                      <template v-if="cwasap" #message-success>
-                          ok
-                      </template>
-                      </vs-input>
-                    </div>
-                  <template>
-                    <div class="form-control" style="margin-top:10px;">
-                        <label for=""  style="font-size:12px;">Celular de llamada</label>
-                            <vs-input 
-                                style="margin-top:10px;" 
-                                v-model="cllamadas" 
-                                placeholder="Celular" 
-                                shadow 
-                            >
-                            <template #icon>
-                                <i class='bx bx-phone' ></i>
-                            </template>
-                            <template v-if="cllamadas == ''" #message-warn>
-                                campo requerido
-                            </template>
-                        </vs-input>
-                      </div>
-                </template>
-                  <template>
-                    <div class="form-control" style="margin-top:10px;">
-                      <label for=""  style="font-size:12px;">Correo electronico</label>
-                      <vs-input 
-                          style="margin-top:10px;" 
-                          v-model="correo" 
-                          placeholder="Email" 
-                          shadow>
-                          <template #icon>
-                              <i class='bx bx-mail-send' ></i>
-                          </template>
-                      </vs-input> 
-                    </div>
-                  </template>
-                    <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
-                        <div class="footer-dialog">
-                            <vs-button block @click="editcontacto()">
-                            Actualizar
-                            </vs-button>
-                        </div>
-                    </vs-col>
+<div class="form-control" style="margin-top:10px;">
+    <label for=""  style="font-size:12px;">Teléfono celular de WhatsApp</label>
+    <vs-input 
+        style="margin-top:10px;" 
+        v-model="cwasap" 
+        placeholder="Celular" 
+        shadow>
+        <template #icon>
+            <i class='bx bxl-whatsapp' ></i>
+        </template>
+    <template v-if="cwasap == ''" #message-warn>
+        Dia es requerido
+    </template>
+    <template v-if="cwasap" #message-success>
+        ok
+    </template>
+    </vs-input>
+</div>
+<template>
+<div class="form-control" style="margin-top:10px;">
+    <label for=""  style="font-size:12px;">Celular de llamada</label>
+        <vs-input 
+            style="margin-top:10px;" 
+            v-model="cllamadas" 
+            placeholder="Celular" 
+            shadow 
+        >
+        <template #icon>
+            <i class='bx bx-phone' ></i>
+        </template>
+        <template v-if="cllamadas == ''" #message-warn>
+            campo requerido
+        </template>
+    </vs-input>
+    </div>
+</template>
+<template>
+<div class="form-control" style="margin-top:10px;">
+    <label for=""  style="font-size:12px;">Correo electronico</label>
+    <vs-input 
+        style="margin-top:10px;" 
+        v-model="correo" 
+        placeholder="Email" 
+        shadow>
+        <template #icon>
+            <i class='bx bx-mail-send' ></i>
+        </template>
+    </vs-input> 
+</div>
+</template>
+<vs-col vs-type="flex" vs-justify="center" vs-align="center" w="12">
+    <div class="footer-dialog">
+        <vs-button block @click="editcontacto()">
+        Actualizar
+        </vs-button>
+    </div>
+</vs-col>
 </vs-row>
 </template>
 <script>

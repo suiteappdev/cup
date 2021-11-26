@@ -41,7 +41,7 @@
           <!-- ...img logo -->
         </template>
         <vs-sidebar-item v-if="loggedInUser" @click="$router.push('/profile')" :active="active == 'profile'" id="profile">
-          <i class='bx bx-user' ></i>
+          <i class='bx bx-user bx-tada' ></i>
           - {{loggedInUser.email}}
         </vs-sidebar-item>
         <vs-sidebar-item id="home">
@@ -77,35 +77,35 @@
         
         <vs-sidebar-item v-show="menuhome">
           <template #icon>
-            <i class='bx bxs-component'></i>
+            <i class='bx bxs-component bx-tada'></i>
           </template>
           <p @click="$router.push('/about')">Quienes somos ?</p>
         </vs-sidebar-item>
 
         <vs-sidebar-item v-show="menuhome">
           <template #icon>
-            <i class='bx bx-package' ></i>
+            <i class='bx bx-package bx-tada' ></i>
           </template>
           <p @click="$router.push('/package')">Paquetes de servicio</p>
         </vs-sidebar-item>
 
         <vs-sidebar-item v-show="menuhome">
           <template #icon>
-            <i class='bx bx-select-multiple' ></i>
+            <i class='bx bx-select-multiple bx-tada' ></i>
           </template>
           <p @click="$router.push('/unique')">Por que debes elegirnos</p>
         </vs-sidebar-item>
 
         <vs-sidebar-item v-show="menuhome">
           <template #icon>
-            <i class='bx bx-wink-smile' ></i>
+            <i class='bx bx-wink-smile bx-tada' ></i>
           </template>
           <p @click="$router.push('/cases')">Casos de éxito</p>
         </vs-sidebar-item>
 
         <vs-sidebar-item v-show="menuhome">
           <template #icon>
-            <i class='bx bx-help-circle'></i>
+            <i class='bx bx-help-circle bx-tada'></i>
           </template>
           <p @click="$router.push('/faq')">Preguntas frecuentes</p>
         </vs-sidebar-item>

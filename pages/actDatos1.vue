@@ -6626,7 +6626,7 @@ async mounted(){
                     civilstatus : ()=>{
                     var estadocivil = [
 
-                        "Solter@","Casad@","Comprometid@","Divorciad@"
+                        "Solter@","Casad@","Viud@","Divorciad@","Union libre"
                     ]
                     return estadocivil;
                 },
