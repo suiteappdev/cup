@@ -25,6 +25,7 @@
                         ">
                                                                   
                         <vs-select
+                            filter
                             placeholder="Año"
                             v-model="fnano"
                         >
@@ -48,6 +49,7 @@
                         </template>
                         </vs-select>
                         <vs-select style="padding-left: 10px;"
+                            filter
                             placeholder="Dia"
                             v-model="fndia"
                         >
@@ -145,6 +147,7 @@
                               <div style="display:flex;margin-top:10px;
                               ">
                               <vs-select
+                                  filter
                                   placeholder="Año"
                                   v-model="exano"
                               >
@@ -168,8 +171,10 @@
                               </template>
                               </vs-select>
                               <vs-select style="padding-left: 10px;"
+                                  filter
                                   placeholder="Dia"
                                   v-model="exdia"
+                                  years
                               >
                               <vs-option v-for="(d, index) in days()" :key="index" :label="d" :value="d">
                                   {{d}}
@@ -500,15 +505,12 @@
                 <vs-option label="No" :value= 0>
                     No
                 </vs-option>
-                <!--<template v-if="sdatacre == ''" #message-warn>
-                    Campo requerido
-                </template>-->
                 </vs-select>
             </div>
               </div>
           </vs-col>
           <vs-col vs-type="flex" vs-justify="center" vs-align="center" w="6" sm="12" xs="12">
-              <div v-if="sdatacre" style="float: left; margin-top:10px;padding-left: 10px;">  
+              <div v-if="!sdatacre" style="float: left; margin-top:10px;padding-left: 10px;">  
               <label for=""  style="font-size:12px;">¿Le gustaría que uno de nuestros asesores lo consulte en las centrales de riesgo para brindarle una información mas completa?</label>
               <div class="form-control">
                   <vs-select
@@ -6582,7 +6584,7 @@ async mounted(){
                         years.push(startYear++);
                     }
 
-                    return years;
+                    return years.map((y)=>y.toString());
                 },
                     months  : ()=> {
 
@@ -6612,7 +6614,7 @@ async mounted(){
                         30,31
                     ]
 
-                    return currentDays;
+                    return currentDays.map((d)=>d.toString());
                 },
                 
                     sex : ()=>{
@@ -6631,7 +6633,7 @@ async mounted(){
                     return estadocivil;
                 },
 
-                                tvienda : ()=>{
+                tvienda : ()=>{
                     var tipovivienda = [
 
                         "Propia","Familiar","Arrendada"
